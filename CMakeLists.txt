@@ -39,3 +39,9 @@ add_executable(example_logging example_logging.c)
 TARGET_LINK_LIBRARIES(example_logging ${GLIB_LIBRARIES})
 add_executable(example_logging_cpp example_logging.cpp)
 TARGET_LINK_LIBRARIES(example_logging_cpp ${GLIB_LIBRARIES})
+
+# To add the command line argument parser.
+add_executable(cli_arguments cli_arguments.c)
+target_link_libraries(cli_arguments PRIVATE argp)
+
+

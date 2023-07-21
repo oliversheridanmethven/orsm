@@ -8,6 +8,18 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/")
 find_package(Criterion REQUIRED)
 
+# So we can add versioning to our repo
+find_package(Git)
+add_custom_target(repo_version
+        ${CMAKE_COMMAND} -D SRC=${CMAKE_SOURCE_DIR}/version.h.in
+        -D DST=${CMAKE_BINARY_DIR}/version.h
+        -D GIT_EXECUTABLE=${GIT_EXECUTABLE}
+        -P ${CMAKE_SOURCE_DIR}/GenerateVersionHeader.cmake
+        )
+add_executable(version version.c)
+add_dependencies(version repo_version)
+
+
 add_executable(hello_world hello_world.c)
 
 enable_testing()

@@ -1,0 +1,4 @@
+#ifndef REPO_VERSION_H_
+#define REPO_VERSION_H_
+#define REPO_VERSION "@REPO_VERSION@"
+#endif  /* REPO_VERSION_H_ */

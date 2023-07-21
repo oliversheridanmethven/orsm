@@ -1,3 +1,5 @@
+set(REPO_NAME ${CMAKE_PROJECT_NAME})
+
 # Taken from https://github.com/nocnokneo/cmake-git-versioning-example
 if(GIT_EXECUTABLE)
   message(STATUS "Using git to determine the version.")

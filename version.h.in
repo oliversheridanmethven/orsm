@@ -1,4 +1,7 @@
 #ifndef REPO_VERSION_H_
 #define REPO_VERSION_H_
+#define REPO_NAME "@REPO_NAME@"
 #define REPO_VERSION "@REPO_VERSION@"
+#define REPO_AUTHOR "Dr Oliver Sheridan-Methven"
+#define REPO_EMAIL "oliver.sheridan-methven@hotmail.co.uk"
 #endif  /* REPO_VERSION_H_ */

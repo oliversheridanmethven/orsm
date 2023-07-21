@@ -15,6 +15,7 @@ add_custom_target(repo_version
         ${CMAKE_COMMAND} -D SRC=${CMAKE_SOURCE_DIR}/version.h.in
         -D DST=${CMAKE_BINARY_DIR}/version.h
         -D GIT_EXECUTABLE=${GIT_EXECUTABLE}
+        -D CMAKE_PROJECT_NAME=${CMAKE_PROJECT_NAME}
         -P ${CMAKE_SOURCE_DIR}/GenerateVersionHeader.cmake
         )
 add_executable(version version.c)

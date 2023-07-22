@@ -1,7 +1,7 @@
 /* An example of using the Criterion testing framework. */
 
 #include <string.h>
-#include <criterion/criterion.h>
+#include "testing.h"
 
 /* This is what a failing test looks like. */
 //Test(example, test_failure) {
@@ -9,5 +9,5 @@
 //}
 
 Test(example, test_pass) {
-    cr_expect(strlen("Hello") == 5, "This should pass.");
+    EXPECT(strlen("Hello") == 5, "This should pass.");
 }

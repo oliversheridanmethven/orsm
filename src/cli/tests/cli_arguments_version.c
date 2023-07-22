@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <argp.h>
-#include "version.h"
+#include "version/version.h"
 
 static int parse_opt (int key, char *arg, struct argp_state *state)
 {

@@ -1,0 +1,3 @@
+# To add logging using GLIB.
+PKG_CHECK_MODULES(GLIB REQUIRED glib-2.0)
+INCLUDE_DIRECTORIES(src/include/ ${GLIB_INCLUDE_DIRS})

@@ -13,7 +13,6 @@ add_custom_command(
 
 add_library(version INTERFACE)
 target_include_directories(version INTERFACE ${CMAKE_CURRENT_BINARY_DIR}/..)
-# ^ We use the parent directory so it has to be included in the #include statement
 
 
 

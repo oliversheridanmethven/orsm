@@ -1,7 +1,7 @@
 /* An example of using the Criterion testing framework. */
 
 #include <string.h>
-#include "testing.h"
+#include "testing/testing.h"
 
 /* This is what a failing test looks like. */
 //Test(example, test_failure) {

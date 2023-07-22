@@ -8,6 +8,14 @@ set(ERROR_FLAGS  "-Wall -Wextra -Werror -pedantic -Wno-int-conversion -Wno-missi
 set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} ${ERROR_FLAGS}")
 set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${ERROR_FLAGS}")
 
+include(CheckCCompilerFlag)
+CHECK_C_COMPILER_FLAG("-std=c2x" COMPILER_SUPPORTS_C2X)
+if(COMPILER_SUPPORTS_C2X)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c2x")
+else()
+    message(FATAL_ERROR "Compiler ${CMAKE_C_COMPILER} has no C2X support.")
+endif()
+
 # To enable testing and use of ctest.
 enable_testing()
 # ^ This must be before any calls to add_subdirectory to ensure it is enabled recursively.

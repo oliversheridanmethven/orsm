@@ -36,6 +36,15 @@ ctest
 ```
 > NB: `make test` and `ctest` are synonymous. 
 
+>We are trying to use a very modern C standard
+> (C23 is brand new at the time of writing), and compiler
+> support for this is very limited. To ensure `cmake` can find
+> a sufficiently new compiler version, it may be necessary to
+> hard wire paths to these in your invocation of `cmake`, e.g.:  
+    ```
+    cmake -D CMAKE_C_COMPILER=/usr/local/Cellar/gcc/13.1.0/bin/gcc-13 -D CMAKE_CXX_COMPILER=/usr/local/Cellar/gcc/13.1.0/bin/g++-13 ..
+    ```
+
 If any tests are failing, then these 
 can be debugged further by running
 ```bash

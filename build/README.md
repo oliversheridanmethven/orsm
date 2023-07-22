@@ -1,1 +1,1 @@
-This directory exists only for manual building and testing with `cmake` et al.  
+This directory exists only for manual building and testing with `cmake` et al.

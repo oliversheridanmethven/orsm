@@ -30,7 +30,9 @@ void setup_regexp(void) {
     }
 }
 
-Test(version, matches_pattern_successes, .init=setup_regexp) {
+TestSuite(version, .init=setup_regexp);
+
+Test(version, matches_pattern_successes) {
     for (size_t i = 0; i < sizeof(good_patterns) / sizeof(good_patterns[0]); i++)
     {
         char * good_pattern = good_patterns[i];
@@ -48,7 +50,7 @@ Test(version, matches_pattern_successes, .init=setup_regexp) {
     }
 }
 
-Test(version, matches_pattern_failures, .init=setup_regexp) {
+Test(version, matches_pattern_failures) {
     for (size_t i = 0; i < sizeof(bad_patterns) / sizeof(bad_patterns[0]); i++)
     {
         char * bad_pattern = bad_patterns[i];
@@ -66,7 +68,7 @@ Test(version, matches_pattern_failures, .init=setup_regexp) {
     }
 }
 
-Test(version, matches_pattern, .init=setup_regexp) {
+Test(version, matches_pattern) {
     switch(regexec(&regexp, REPO_VERSION, 0, NULL, 0)) {
         case 0:
             LOG_INFO("Matched the pattern \"%s\" to %s", pattern, REPO_VERSION);
@@ -78,5 +80,4 @@ Test(version, matches_pattern, .init=setup_regexp) {
             LOG_ERROR("An error occured trying to match the pattern: \"%s\" to %s", pattern, REPO_NAME);
             break;
     }
-
 }

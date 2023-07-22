@@ -3,14 +3,14 @@
  * To set this with a command line argument, cf. https://stackoverflow.com/a/70019528/5134817
  * */
 
-#include <glib.h> // The logging library of choice.
+#include "logging/logging.h"
 
 int main (int argc, char ** argv) {
-    g_info("some info");
-    g_message("some message");
-    g_print("some print\n");
-    g_printerr("some print error\n");
-    g_debug("some debug");
-    g_warning("some warning");
+    INFO("some info");
+    MESSAGE("some message");
+    PRINT("some print\n");
+    PRINTERR("some print error\n");
+    DEBUG("some debug");
+    WARNING("some warning");
     g_error("some error");  // This terminates the program.
 }

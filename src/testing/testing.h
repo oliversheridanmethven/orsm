@@ -2,7 +2,6 @@
 #define TESTING_H_
 
 #include <criterion/criterion.h>
-
-#define EXPECT(condition, ...) cr_expect((condition), __VA_ARGS__)
+#include <criterion/new/assert.h>
 
 #endif /*TESTING_H_*/

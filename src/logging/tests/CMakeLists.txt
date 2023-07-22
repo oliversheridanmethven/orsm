@@ -1,4 +1,3 @@
-add_executable(example_logging example_logging.c)
-add_executable(example_logging_cpp example_logging.cpp)
-TARGET_LINK_LIBRARIES(example_logging ${GLIB_LIBRARIES})
-TARGET_LINK_LIBRARIES(example_logging_cpp ${GLIB_LIBRARIES})
+add_executable(logging_test logging_test.c)
+target_link_libraries(logging_test testing logging)
+add_test(NAME logging_test COMMAND logging_test)

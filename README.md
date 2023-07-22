@@ -32,6 +32,16 @@ cd build
 cmake .. 
 make 
 make test
+ctest 
 ```
+> NB: `make test` and `ctest` are synonymous. 
+
+If any tests are failing, then these 
+can be debugged further by running
+```bash
+ctest --rerun-failed --output-on-failure
+```
+
+
 
 

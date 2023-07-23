@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Dependencies - Testing</title>
+    <title>Building from source - Testing</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Dependencies";
-        var mkdocs_page_input_path = "docs/dependencies.md";
+        var mkdocs_page_name = "Building from source";
+        var mkdocs_page_input_path = "build/from_source.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -45,31 +45,29 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Docs</span></p>
-              <ul class="current">
-                  <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../docs/getting_started.html">Getting started</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="dependencies.html">Dependencies</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#list-of-dependencies">List of dependencies</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#the-source-code">The source code</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#the-documentation">The documentation</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../docs/dependencies.html">Dependencies</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="advanced.html">Advanced</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../docs/advanced.html">Advanced</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Build</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../build/index.html">Build</a>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="index.html">Build</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../build/from_source.html">Building from source</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="from_source.html">Building from source</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#out-of-source-builds">Out-of-source builds</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#modern-c23-compilers">Modern C23 compilers</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#debugging">Debugging</a>
+    </li>
+    </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Src</span></p>
@@ -107,10 +105,10 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html" class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-          <li>Docs &raquo;</li>
-      <li>Dependencies</li>
+          <li>Build &raquo;</li>
+      <li>Building from source</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/oliversheridanmethven/testing/edit/master/docs/docs/dependencies.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/oliversheridanmethven/testing/edit/master/docs/build/from_source.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -118,48 +116,53 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="dependencies">Dependencies</h1>
+                <h1 id="building-from-source">Building from source</h1>
 <div class="toc">
 <ul>
-<li><a href="#dependencies">Dependencies</a><ul>
-<li><a href="#list-of-dependencies">List of dependencies</a><ul>
-<li><a href="#the-source-code">The source code</a></li>
-<li><a href="#the-documentation">The documentation</a></li>
+<li><a href="#building-from-source">Building from source</a><ul>
+<li><a href="#out-of-source-builds">Out-of-source builds</a><ul>
+<li><a href="#modern-c23-compilers">Modern C23 compilers</a></li>
 </ul>
 </li>
-<li><a href="#installation">Installation</a></li>
+<li><a href="#debugging">Debugging</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<h2 id="list-of-dependencies">List of dependencies</h2>
-<p>The project relies on a few dependencies, the most notable of
-which include:</p>
-<h3 id="the-source-code">The source code</h3>
-<ul>
-<li>GCC (with C23 and C++23 support).</li>
-<li>CMake (for building).</li>
-<li>GLIB (for logging).</li>
-<li>Argp (for the CLI).</li>
-<li>Criterion (for testing).</li>
-</ul>
-<h3 id="the-documentation">The documentation</h3>
-<ul>
-<li>mkdocs (for documentation).<ul>
-<li>mkdocs-same-dir.</li>
-<li>mkdocs-awesome-pages-plugin.</li>
-</ul>
-</li>
-</ul>
-<h2 id="installation">Installation</h2>
-<p>Most of these can be installed either through <code>pip</code> or <code>brew</code>
-or similar. </p>
+<h2 id="out-of-source-builds">Out-of-source builds</h2>
+<p>We follow the CMake convention by only encouraging "out-of-source"
+builds, hence the reason for this build directory existing.
+This directory exists only for manual building and testing with <code>cmake</code> et al.</p>
+<p>To build the project:</p>
+<pre><code class="language-bash">cd build
+cmake .. 
+make 
+make test
+ctest 
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p><code>make test</code> and <code>ctest</code> are synonymous.</p>
+<h3 id="modern-c23-compilers">Modern C23 compilers</h3>
+<p>We are trying to use a very modern C standard
+(C23 is brand new at the time of writing), and compiler
+support for this is very limited. To ensure <code>cmake</code> can find
+a sufficiently new compiler version, it may be necessary to
+hard wire paths to these in your invocation of <code>cmake</code>, e.g.:</p>
+<pre><code class="language-bash">cmake -D CMAKE_C_COMPILER=/usr/local/Cellar/gcc/13.1.0/bin/gcc-13 -D CMAKE_CXX_COMPILER=/usr/local/Cellar/gcc/13.1.0/bin/g++-13 ..
+</code></pre>
+<h2 id="debugging">Debugging</h2>
+<p>If any tests are failing, then these
+can be debugged further by running</p>
+<pre><code class="language-bash">ctest --rerun-failed --output-on-failure
+</code></pre>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="getting_started.html" class="btn btn-neutral float-left" title="Getting started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="advanced.html" class="btn btn-neutral float-right" title="Advanced">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Build"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../src/index.html" class="btn btn-neutral float-right" title="Src">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -186,10 +189,10 @@ or similar. </p>
         </span>
     
     
-      <span><a href="getting_started.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="index.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="advanced.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../src/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

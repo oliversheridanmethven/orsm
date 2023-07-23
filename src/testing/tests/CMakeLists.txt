@@ -1,3 +1,3 @@
-add_executable(test_example test_example.c)
-target_link_libraries(test_example testing)
-add_test(NAME test_example COMMAND test_example)
+add_executable(example example.c)
+target_link_libraries(example testing)
+add_test(NAME example COMMAND example)

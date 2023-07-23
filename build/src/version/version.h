@@ -3,7 +3,7 @@
 
 /* These I will read from git and cmake. */
 #define REPO_NAME "testing"
-#define REPO_VERSION "v0.0.1-18-g43b451e"
+#define REPO_VERSION "v0.0.1-25-g2e1619a-dirty"
 
 /* I could change the following to use git, but then contributors
  * might get listed also, which I don't want for now. */

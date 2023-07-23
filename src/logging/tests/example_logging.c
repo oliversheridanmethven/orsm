@@ -5,12 +5,13 @@
 
 #include "logging/logging.h"
 
-int main (int argc, char ** argv) {
+int main(int argc, char **argv)
+{
     INFO("some info");
     MESSAGE("some message");
     PRINT("some print\n");
     PRINTERR("some print error\n");
     DEBUG("some debug");
     WARNING("some warning");
-    g_error("some error");  // This terminates the program.
+    g_error("some error");// This terminates the program.
 }

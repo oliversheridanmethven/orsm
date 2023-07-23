@@ -1,0 +1,124 @@
+Start testing: Jul 23 17:13 CEST
+----------------------------------------------------------
+1/5 Testing: logging_test
+1/5 Test: logging_test
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-debug/src/logging/tests/logging_test"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/logging/tests
+"logging_test" start time: Jul 23 17:13 CEST
+Output:
+----------------------------------------------------------
+
+** (process:38836): ERROR **: 17:13:11.774: some error
+** INFO: 17:13:11.774: some info
+** Message: 17:13:11.775: some message
+some print
+some print error
+** (process:38837): DEBUG: 17:13:11.775: some debug
+
+** (process:38837): WARNING **: 17:13:11.775: some warning
+some info, some string 10
+[====] Synthesis: Tested: 3 | Passing: 3 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Passed.
+"logging_test" end time: Jul 23 17:13 CEST
+"logging_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/5 Testing: test_example
+2/5 Test: test_example
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-debug/src/testing/tests/test_example"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/testing/tests
+"test_example" start time: Jul 23 17:13 CEST
+Output:
+----------------------------------------------------------
+[====] Synthesis: Tested: 2 | Passing: 2 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"test_example" end time: Jul 23 17:13 CEST
+"test_example" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/5 Testing: version_test
+3/5 Test: version_test
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-debug/src/version/tests/version_example"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/version/tests
+"version_test" start time: Jul 23 17:13 CEST
+Output:
+----------------------------------------------------------
+[----] ../../../../src/version/tests/version.c:13: Assertion Failed
+[----]   
+[----]   We found the word "dirty" in the repository version v0.0.1-25-g2e1619a-dirty
+[----]   
+[FAIL] version::not_dirty: (0.00s)
+Version: v0.0.1-25-g2e1619a-dirty
+[====] Synthesis: Tested: 6 | Passing: 5 | Failing: 1 | Crashing: 0 
+<end of output>
+Test time =   0.12 sec
+----------------------------------------------------------
+Test Failed.
+"version_test" end time: Jul 23 17:13 CEST
+"version_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/5 Testing: cli_arguments_0
+4/5 Test: cli_arguments_0
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-debug/src/cli/tests/cli_arguments_0"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/cli/tests
+"cli_arguments_0" start time: Jul 23 17:13 CEST
+Output:
+----------------------------------------------------------
+** INFO: 17:13:12.011: Parsing the input string: 
+** INFO: 17:13:12.011: Parsing the input string: --foo
+** INFO: 17:13:12.011: Parsing the input string: --help
+** INFO: 17:13:12.011: Parsing the input string: --Help
+** INFO: 17:13:12.012: Parsing the input string: --usage
+** INFO: 17:13:12.024: Successfully parsed the input string: command --Help
+** INFO: 17:13:12.024: Successfully parsed the input string: command --foo
+command: unrecognized option `--foo'
+** INFO: 17:13:12.024: Successfully parsed the input string: command --help
+Try `command --help' or `command --usage' for more information.
+** INFO: 17:13:12.024: Successfully parsed the input string: command --usage
+Usage: command [OPTION...]
+
+  -?, --help                 Give this help list
+      --usage                Give a short usage message
+command: unrecognized option `--Help'
+Try `command --help' or `command --usage' for more information.
+Usage: command [-?] [--help] [--usage]
+** INFO: 17:13:12.024: Successfully parsed the input string: command 
+[====] Synthesis: Tested: 5 | Passing: 5 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"cli_arguments_0" end time: Jul 23 17:13 CEST
+"cli_arguments_0" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/5 Testing: cli_arguments_version
+5/5 Test: cli_arguments_version
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-debug/src/cli/tests/cli_arguments_version"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/cli/tests
+"cli_arguments_version" start time: Jul 23 17:13 CEST
+Output:
+----------------------------------------------------------
+** INFO: 17:13:12.068: Parsing the input string: --version
+** INFO: 17:13:12.069: Parsing the input string: --version
+** INFO: 17:13:12.074: Successfully parsed the input string: command --version
+testing v0.0.1-25-g2e1619a-dirty
+** INFO: 17:13:12.075: Successfully parsed the input string: command --version
+testing v0.0.1-25-g2e1619a-dirty
+[====] Synthesis: Tested: 2 | Passing: 2 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"cli_arguments_version" end time: Jul 23 17:13 CEST
+"cli_arguments_version" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jul 23 17:13 CEST

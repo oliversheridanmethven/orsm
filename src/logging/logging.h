@@ -1,10 +1,10 @@
 #ifndef LOGGING_H_
 #define LOGGING_H_
 
-#include <stdlib.h>
+#include <glib.h>  // The logging library of choice.
+#include <iso646.h>// For nicer boolean operator spellings.
 #include <signal.h>
-#include <glib.h> // The logging library of choice.
-#include <iso646.h>  // For nicer boolean operator spellings.
+#include <stdlib.h>
 
 /* Some wrappers. */
 #define LOG_INFO(...) g_info(__VA_ARGS__)
@@ -16,12 +16,15 @@
 #define LOG_ERROR(...) g_error(__VA_ARGS__)
 
 #define LOGGING_ERROR_SIGNAL SIGTRAP
+
 /* g_error raises this via G_BREAKPOINT
  * cf. https://docs.gtk.org/glib/func.BREAKPOINT.html
  * */
 
-void show_all_logging(void) {
-    if (setenv("G_MESSAGES_DEBUG", "all", 1)) {
+void show_all_logging(void)
+{
+    if (setenv("G_MESSAGES_DEBUG", "all", 1))
+    {
         LOG_ERROR("Unable to set the G_MESSAGES_DEBUG environment variable.");
     };
 }

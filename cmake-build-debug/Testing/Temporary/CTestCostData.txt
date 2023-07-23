@@ -1,0 +1,7 @@
+logging_test 3 0.019268
+test_example 3 0.0119273
+version_test 0 0
+cli_arguments_0 3 0.0319514
+cli_arguments_version 3 0.0155164
+---
+version_test

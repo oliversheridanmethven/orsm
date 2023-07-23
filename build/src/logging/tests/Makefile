@@ -140,29 +140,29 @@ logging_test/fast:
 	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test.dir/build.make src/logging/tests/CMakeFiles/logging_test.dir/build
 .PHONY : logging_test/fast
 
-logging_test.o: logging_test.c.o
-.PHONY : logging_test.o
+logging.o: logging.c.o
+.PHONY : logging.o
 
 # target to build an object file
-logging_test.c.o:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test.dir/build.make src/logging/tests/CMakeFiles/logging_test.dir/logging_test.c.o
-.PHONY : logging_test.c.o
+logging.c.o:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test.dir/build.make src/logging/tests/CMakeFiles/logging_test.dir/logging.c.o
+.PHONY : logging.c.o
 
-logging_test.i: logging_test.c.i
-.PHONY : logging_test.i
+logging.i: logging.c.i
+.PHONY : logging.i
 
 # target to preprocess a source file
-logging_test.c.i:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test.dir/build.make src/logging/tests/CMakeFiles/logging_test.dir/logging_test.c.i
-.PHONY : logging_test.c.i
+logging.c.i:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test.dir/build.make src/logging/tests/CMakeFiles/logging_test.dir/logging.c.i
+.PHONY : logging.c.i
 
-logging_test.s: logging_test.c.s
-.PHONY : logging_test.s
+logging.s: logging.c.s
+.PHONY : logging.s
 
 # target to generate assembly for a file
-logging_test.c.s:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test.dir/build.make src/logging/tests/CMakeFiles/logging_test.dir/logging_test.c.s
-.PHONY : logging_test.c.s
+logging.c.s:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test.dir/build.make src/logging/tests/CMakeFiles/logging_test.dir/logging.c.s
+.PHONY : logging.c.s
 
 # Help Target
 help:
@@ -174,9 +174,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... logging_test"
-	@echo "... logging_test.o"
-	@echo "... logging_test.i"
-	@echo "... logging_test.s"
+	@echo "... logging.o"
+	@echo "... logging.i"
+	@echo "... logging.s"
 .PHONY : help
 
 

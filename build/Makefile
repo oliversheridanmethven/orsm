@@ -153,17 +153,17 @@ logging_test/fast:
 .PHONY : logging_test/fast
 
 #=============================================================================
-# Target rules for targets named test_example
+# Target rules for targets named example
 
 # Build rule for target.
-test_example: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_example
-.PHONY : test_example
+example: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example
+.PHONY : example
 
 # fast build rule for target.
-test_example/fast:
-	$(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/test_example.dir/build.make src/testing/tests/CMakeFiles/test_example.dir/build
-.PHONY : test_example/fast
+example/fast:
+	$(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/example.dir/build.make src/testing/tests/CMakeFiles/example.dir/build
+.PHONY : example/fast
 
 #=============================================================================
 # Target rules for targets named repo_version
@@ -229,9 +229,9 @@ help:
 	@echo "... repo_version"
 	@echo "... cli_arguments_0"
 	@echo "... cli_arguments_version"
+	@echo "... example"
 	@echo "... hello_world"
 	@echo "... logging_test"
-	@echo "... test_example"
 	@echo "... version_example"
 .PHONY : help
 

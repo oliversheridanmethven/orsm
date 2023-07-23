@@ -77,7 +77,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "src/hello_world/CMakeFiles/hello_world.dir/DependInfo.cmake"
   "src/logging/tests/CMakeFiles/logging_test.dir/DependInfo.cmake"
-  "src/testing/tests/CMakeFiles/test_example.dir/DependInfo.cmake"
+  "src/testing/tests/CMakeFiles/example.dir/DependInfo.cmake"
   "src/version/CMakeFiles/repo_version.dir/DependInfo.cmake"
   "src/version/tests/CMakeFiles/version_example.dir/DependInfo.cmake"
   "src/cli/tests/CMakeFiles/cli_arguments_0.dir/DependInfo.cmake"

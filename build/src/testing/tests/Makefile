@@ -127,42 +127,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/testing/tests/CMakeFiles/test_example.dir/rule:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/testing/tests/CMakeFiles/test_example.dir/rule
-.PHONY : src/testing/tests/CMakeFiles/test_example.dir/rule
+src/testing/tests/CMakeFiles/example.dir/rule:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/testing/tests/CMakeFiles/example.dir/rule
+.PHONY : src/testing/tests/CMakeFiles/example.dir/rule
 
 # Convenience name for target.
-test_example: src/testing/tests/CMakeFiles/test_example.dir/rule
-.PHONY : test_example
+example: src/testing/tests/CMakeFiles/example.dir/rule
+.PHONY : example
 
 # fast build rule for target.
-test_example/fast:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/test_example.dir/build.make src/testing/tests/CMakeFiles/test_example.dir/build
-.PHONY : test_example/fast
+example/fast:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/example.dir/build.make src/testing/tests/CMakeFiles/example.dir/build
+.PHONY : example/fast
 
-test_example.o: test_example.c.o
-.PHONY : test_example.o
+example.o: example.c.o
+.PHONY : example.o
 
 # target to build an object file
-test_example.c.o:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/test_example.dir/build.make src/testing/tests/CMakeFiles/test_example.dir/test_example.c.o
-.PHONY : test_example.c.o
+example.c.o:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/example.dir/build.make src/testing/tests/CMakeFiles/example.dir/example.c.o
+.PHONY : example.c.o
 
-test_example.i: test_example.c.i
-.PHONY : test_example.i
+example.i: example.c.i
+.PHONY : example.i
 
 # target to preprocess a source file
-test_example.c.i:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/test_example.dir/build.make src/testing/tests/CMakeFiles/test_example.dir/test_example.c.i
-.PHONY : test_example.c.i
+example.c.i:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/example.dir/build.make src/testing/tests/CMakeFiles/example.dir/example.c.i
+.PHONY : example.c.i
 
-test_example.s: test_example.c.s
-.PHONY : test_example.s
+example.s: example.c.s
+.PHONY : example.s
 
 # target to generate assembly for a file
-test_example.c.s:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/test_example.dir/build.make src/testing/tests/CMakeFiles/test_example.dir/test_example.c.s
-.PHONY : test_example.c.s
+example.c.s:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/example.dir/build.make src/testing/tests/CMakeFiles/example.dir/example.c.s
+.PHONY : example.c.s
 
 # Help Target
 help:
@@ -173,10 +173,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... test_example"
-	@echo "... test_example.o"
-	@echo "... test_example.i"
-	@echo "... test_example.s"
+	@echo "... example"
+	@echo "... example.o"
+	@echo "... example.i"
+	@echo "... example.s"
 .PHONY : help
 
 

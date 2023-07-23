@@ -240,8 +240,8 @@ build src/logging/rebuild_cache: phony src/logging/CMakeFiles/rebuild_cache.util
 
 build cmake_object_order_depends_target_logging_test: phony || src/logging/tests/CMakeFiles/logging_test.dir
 
-build src/logging/tests/CMakeFiles/logging_test.dir/logging_test.c.o: C_COMPILER__logging_test_Debug /Users/oliver/ClionProjects/testing/src/logging/tests/logging_test.c || cmake_object_order_depends_target_logging_test
-  DEP_FILE = src/logging/tests/CMakeFiles/logging_test.dir/logging_test.c.o.d
+build src/logging/tests/CMakeFiles/logging_test.dir/logging.c.o: C_COMPILER__logging_test_Debug /Users/oliver/ClionProjects/testing/src/logging/tests/logging.c || cmake_object_order_depends_target_logging_test
+  DEP_FILE = src/logging/tests/CMakeFiles/logging_test.dir/logging.c.o.d
   FLAGS = -Wall -Wextra -Werror -pedantic -Wno-int-conversion -Wno-missing-field-initializers -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -fdiagnostics-color=always -std=gnu2x
   INCLUDES = -I/Users/oliver/ClionProjects/testing/src/testing/.. -I/Users/oliver/ClionProjects/testing/src/logging/.. -I/usr/local/Cellar/glib/2.76.4/include/glib-2.0 -I/usr/local/Cellar/glib/2.76.4/lib/glib-2.0/include -I/usr/local/opt/gettext/include -I/usr/local/Cellar/pcre2/10.42/include
   OBJECT_DIR = src/logging/tests/CMakeFiles/logging_test.dir
@@ -255,7 +255,7 @@ build src/logging/tests/CMakeFiles/logging_test.dir/logging_test.c.o: C_COMPILER
 #############################################
 # Link the executable src/logging/tests/logging_test
 
-build src/logging/tests/logging_test: C_EXECUTABLE_LINKER__logging_test_Debug src/logging/tests/CMakeFiles/logging_test.dir/logging_test.c.o
+build src/logging/tests/logging_test: C_EXECUTABLE_LINKER__logging_test_Debug src/logging/tests/CMakeFiles/logging_test.dir/logging.c.o
   FLAGS = -Wall -Wextra -Werror -pedantic -Wno-int-conversion -Wno-missing-field-initializers -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6
   LINK_LIBRARIES = -lcriterion  -lglib-2.0  -lintl
   OBJECT_DIR = src/logging/tests/CMakeFiles/logging_test.dir
@@ -345,37 +345,37 @@ build src/testing/rebuild_cache: phony src/testing/CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 # =============================================================================
-# Object build statements for EXECUTABLE target test_example
+# Object build statements for EXECUTABLE target example
 
 
 #############################################
-# Order-only phony target for test_example
+# Order-only phony target for example
 
-build cmake_object_order_depends_target_test_example: phony || src/testing/tests/CMakeFiles/test_example.dir
+build cmake_object_order_depends_target_example: phony || src/testing/tests/CMakeFiles/example.dir
 
-build src/testing/tests/CMakeFiles/test_example.dir/test_example.c.o: C_COMPILER__test_example_Debug /Users/oliver/ClionProjects/testing/src/testing/tests/test_example.c || cmake_object_order_depends_target_test_example
-  DEP_FILE = src/testing/tests/CMakeFiles/test_example.dir/test_example.c.o.d
+build src/testing/tests/CMakeFiles/example.dir/example.c.o: C_COMPILER__example_Debug /Users/oliver/ClionProjects/testing/src/testing/tests/example.c || cmake_object_order_depends_target_example
+  DEP_FILE = src/testing/tests/CMakeFiles/example.dir/example.c.o.d
   FLAGS = -Wall -Wextra -Werror -pedantic -Wno-int-conversion -Wno-missing-field-initializers -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6 -fdiagnostics-color=always -std=gnu2x
   INCLUDES = -I/Users/oliver/ClionProjects/testing/src/testing/..
-  OBJECT_DIR = src/testing/tests/CMakeFiles/test_example.dir
-  OBJECT_FILE_DIR = src/testing/tests/CMakeFiles/test_example.dir
+  OBJECT_DIR = src/testing/tests/CMakeFiles/example.dir
+  OBJECT_FILE_DIR = src/testing/tests/CMakeFiles/example.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target test_example
+# Link build statements for EXECUTABLE target example
 
 
 #############################################
-# Link the executable src/testing/tests/test_example
+# Link the executable src/testing/tests/example
 
-build src/testing/tests/test_example: C_EXECUTABLE_LINKER__test_example_Debug src/testing/tests/CMakeFiles/test_example.dir/test_example.c.o
+build src/testing/tests/example: C_EXECUTABLE_LINKER__example_Debug src/testing/tests/CMakeFiles/example.dir/example.c.o
   FLAGS = -Wall -Wextra -Werror -pedantic -Wno-int-conversion -Wno-missing-field-initializers -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.6
   LINK_LIBRARIES = -lcriterion
-  OBJECT_DIR = src/testing/tests/CMakeFiles/test_example.dir
+  OBJECT_DIR = src/testing/tests/CMakeFiles/example.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = src/testing/tests/test_example
-  TARGET_PDB = test_example.dbg
+  TARGET_FILE = src/testing/tests/example
+  TARGET_PDB = example.dbg
 
 
 #############################################
@@ -691,13 +691,13 @@ build cli_arguments_0: phony src/cli/tests/cli_arguments_0
 
 build cli_arguments_version: phony src/cli/tests/cli_arguments_version
 
+build example: phony src/testing/tests/example
+
 build hello_world: phony src/hello_world/hello_world
 
 build logging_test: phony src/logging/tests/logging_test
 
 build repo_version: phony src/version/repo_version
-
-build test_example: phony src/testing/tests/test_example
 
 build version_example: phony src/version/tests/version_example
 
@@ -765,7 +765,7 @@ build src/testing/all: phony src/testing/tests/all
 #############################################
 # Folder: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/testing/tests
 
-build src/testing/tests/all: phony src/testing/tests/test_example
+build src/testing/tests/all: phony src/testing/tests/example
 
 # =============================================================================
 

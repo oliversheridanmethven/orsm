@@ -18,7 +18,7 @@
 /Users/oliver/ClionProjects/testing/build/src/testing/CMakeFiles/test.dir
 /Users/oliver/ClionProjects/testing/build/src/testing/CMakeFiles/edit_cache.dir
 /Users/oliver/ClionProjects/testing/build/src/testing/CMakeFiles/rebuild_cache.dir
-/Users/oliver/ClionProjects/testing/build/src/testing/tests/CMakeFiles/test_example.dir
+/Users/oliver/ClionProjects/testing/build/src/testing/tests/CMakeFiles/example.dir
 /Users/oliver/ClionProjects/testing/build/src/testing/tests/CMakeFiles/test.dir
 /Users/oliver/ClionProjects/testing/build/src/testing/tests/CMakeFiles/edit_cache.dir
 /Users/oliver/ClionProjects/testing/build/src/testing/tests/CMakeFiles/rebuild_cache.dir

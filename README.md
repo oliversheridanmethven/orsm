@@ -11,9 +11,6 @@ A collection of various code snippets designed to
 test various ideas and code fragments, akin to a code scratch
 space. 
 
-[TOC]
+## Documentation 
 
-## Getting started
-
-For details about how to get started using the repository, see
-[Getting started](docs/getting_started.md).
+The full documenation can be found here [Documentation](https://oliversheridanmethven.github.io/testing/).

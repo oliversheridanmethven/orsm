@@ -16,7 +16,7 @@ git clone https://github.com/oliversheridanmethven/testing.git
 The dependencies and details about their installation can be
 found in [Dependencies](dependencies.md).
 
-### Building the documentation
+### Building the latest documentation
 
 In the project's root directory, run:
 ```bash

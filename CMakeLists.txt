@@ -4,9 +4,9 @@ project(testing C CXX) # We use a mix of C and C++.
 # We want to use the latest standards.
 set(CMAKE_C_STANDARD 23)
 set(CMAKE_CXX_STANDARD 23)
-set(ERROR_FLAGS  "-Wall -Wextra -Werror -pedantic -Wno-int-conversion -Wno-missing-field-initializers -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function")
-set(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} ${ERROR_FLAGS}")
-set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} ${ERROR_FLAGS}")
+set(ERROR_FLAGS "-Wall -Wextra -Werror -pedantic -Wno-int-conversion -Wno-missing-field-initializers -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${ERROR_FLAGS}")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ERROR_FLAGS}")
 
 include(CheckCCompilerFlag)
 CHECK_C_COMPILER_FLAG("-std=c2x" COMPILER_SUPPORTS_C2X)

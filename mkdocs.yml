@@ -1,0 +1,14 @@
+site_name: Testing
+
+docs_dir: .
+site_dir: site
+
+theme: readthedocs
+markdown_extensions:
+  - admonition
+
+plugins:
+  - search
+  - same-dir
+  - awesome-pages:
+      collapse_single_pages: true

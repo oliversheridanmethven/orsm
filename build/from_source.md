@@ -38,3 +38,7 @@ can be debugged further by running
 ```bash
 ctest --rerun-failed --output-on-failure
 ```
+
+## Demo
+
+![testing_demo](https://user-images.githubusercontent.com/13259221/255421785-e2c496a2-b824-462a-8d8e-df8ba762b838.gif)

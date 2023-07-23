@@ -1,25 +1,25 @@
 #ifndef CLI_TESTING_H_
 #define CLI_TESTING_H_
 
-#include <stdio.h>
-#include <argp.h>
-#include <wordexp.h>
-#include "testing/testing.h"
 #include "logging/logging.h"
+#include "testing/testing.h"
+#include <argp.h>
+#include <stdio.h>
+#include <wordexp.h>
 
 wordexp_t words;
 
-struct arguments
-{
+struct arguments {
     enum
     {
-        CHARACTER_MODE, WORD_MODE, LINE_MODE
+        CHARACTER_MODE,
+        WORD_MODE,
+        LINE_MODE
     } mode;
     bool isCaseInsensitive;
 };
 
-struct params
-{
+struct params {
     int argc;
     char **argv;
     struct arguments arguments;
@@ -58,6 +58,6 @@ void finalise_params(void)
     wordfree(&words);
 }
 
-TestSuite(cli, .init=show_all_logging, .fini=finalise_params);
+TestSuite(cli, .init = show_all_logging, .fini = finalise_params);
 
 #endif /*CLI_TESTING_H_*/

@@ -1,7 +1,7 @@
-#include "testing/testing.h"
 #include "logging/logging.h"
+#include "testing/testing.h"
 
-Test(logging, minimal_strings, .init=show_all_logging)
+Test(logging, minimal_strings, .init = show_all_logging)
 {
     LOG_INFO("some info");
     LOG_MESSAGE("some message");
@@ -16,7 +16,7 @@ Test(logging, variable_args)
     LOG_PRINT("some info, %s %i\n", "some string", 10);
 }
 
-Test(logging, error_fails, .signal=LOGGING_ERROR_SIGNAL)
+Test(logging, error_fails, .signal = LOGGING_ERROR_SIGNAL)
 {
-    LOG_ERROR("some error");  // This terminates the program.
+    LOG_ERROR("some error");// This terminates the program.
 }

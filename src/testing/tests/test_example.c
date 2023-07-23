@@ -1,7 +1,7 @@
 /* An example of using the Criterion testing framework. */
 
-#include <string.h>
 #include "testing/testing.h"
+#include <string.h>
 
 /* This is what a failing test looks like. */
 //Test(example, test_failure) {
@@ -15,6 +15,6 @@ Test(example, test_expect)
 
 Test(example, test_fail)
 {
-    cr_assert(eq(int, 2, 1+1), "This should pass.");
+    cr_assert(eq(int, 2, 1 + 1), "This should pass.");
     cr_assert(not(eq(int, 1, 2)), "This should pass.");
 }

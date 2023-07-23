@@ -1,9 +1,9 @@
-#include <stdio.h>
-#include <string.h>
-#include <regex.h>
-#include "testing/testing.h"
 #include "version/version.h"
 #include "logging/logging.h"
+#include "testing/testing.h"
+#include <regex.h>
+#include <stdio.h>
+#include <string.h>
 
 Test(version, print_version)
 {
@@ -35,7 +35,7 @@ void setup_regexp(void)
     }
 }
 
-TestSuite(version, .init=setup_regexp);
+TestSuite(version, .init = setup_regexp);
 
 Test(version, matches_pattern_successes)
 {

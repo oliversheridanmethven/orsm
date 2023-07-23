@@ -11,9 +11,8 @@ static char doc[] = "A small program to demonstrate using the command line inter
 Test(cli, test_version)
 {
     initialise_params("--version");
-    struct argp argp = {.doc=doc};
+    struct argp argp = {.doc = doc};
     argp_parse(&argp, params.argc, params.argv, 0, 0, &params.arguments);
-
 }
 
 
@@ -21,8 +20,7 @@ static int parse_opt(int key, char *arg, struct argp_state *state)
 {
     switch (key)
     {
-        case 'f':
-        {
+        case 'f': {
             printf("Doing something");
             break;
         }
@@ -36,8 +34,7 @@ Test(cli, test_short_option)
     struct argp_option options[] =
             {
                     {"foo", 'f', 0, 0, "Do something perhaps."},
-                    {0}
-            };
+                    {0}};
     struct argp argp = {options, parse_opt};
     argp_parse(&argp, params.argc, params.argv, 0, 0, &params.arguments);
 }

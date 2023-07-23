@@ -29,4 +29,3 @@ Test(cli, case_sensitive)
     initialise_params("--Help");
     cr_assert(ne(int, 0, argp_parse(0, params.argc, params.argv, ARGP_NO_EXIT, 0, &params.arguments)), "This should be case sensitive.");
 }
-

@@ -2,13 +2,13 @@
 // Created by Oliver Sheridan-Methven on 17/11/2020.
 //
 
-#include <vector>
-#include <utility>
-#include <stdexcept>
-#include <stack>
-#include <thread>
-#include <mutex>
 #include <condition_variable>
+#include <mutex>
+#include <stack>
+#include <stdexcept>
+#include <thread>
+#include <utility>
+#include <vector>
 
 #ifndef MISC_MY_SORT_HPP
 #define MISC_MY_SORT_HPP
@@ -18,7 +18,7 @@
 template<typename T>
 typename T::iterator quick_sort_partition(const typename T::iterator start, const typename T::iterator end)
 {
-    typename T::iterator pivot_value_ptr{end-1};
+    typename T::iterator pivot_value_ptr{end - 1};
     typename T::iterator left_insertion_position{start};
     for (typename T::iterator position{start}; position < pivot_value_ptr; position++)
     {
@@ -58,4 +58,4 @@ typedef std::pair<iterator, iterator> sort_job;
 
 void parallel_sort(iterator start, iterator end);
 
-#endif //MISC_MY_SORT_HPP
+#endif//MISC_MY_SORT_HPP

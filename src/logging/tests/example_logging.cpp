@@ -1,4 +1,4 @@
-#include <glib.h> // The logging library of choice.
+#include <glib.h>// The logging library of choice.
 
 int main(int argc, char **argv)
 {
@@ -8,5 +8,5 @@ int main(int argc, char **argv)
     g_printerr("some print error\n");
     g_debug("some debug");
     g_warning("some warning");
-    g_error("some error");  // This terminates the program.
+    g_error("some error");// This terminates the program.
 }

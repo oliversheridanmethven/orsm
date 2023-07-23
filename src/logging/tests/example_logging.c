@@ -13,5 +13,5 @@ int main(int argc, char **argv)
     PRINTERR("some print error\n");
     DEBUG("some debug");
     WARNING("some warning");
-    g_error("some error");  // This terminates the program.
+    g_error("some error");// This terminates the program.
 }

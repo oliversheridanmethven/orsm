@@ -5,10 +5,10 @@
 #ifndef MISC_MYQUEUES_HPP
 #define MISC_MYQUEUES_HPP
 
-#include <stdexcept>
 #include <algorithm>
-#include <thread>
 #include <mutex>
+#include <stdexcept>
+#include <thread>
 
 namespace my_queues
 {
@@ -21,7 +21,7 @@ namespace my_queues
     };
 
     template<typename T, int MAX_SIZE>
-    class LinearQueue: public Queue<T>
+    class LinearQueue : public Queue<T>
     {
     public:
         LinearQueue() : free_position{items}, n_items{0} {}
@@ -33,7 +33,7 @@ namespace my_queues
             T data = items[0];
             for (int i = 1; i < n_items; i++)
             {
-               items[i-1] = items[i];
+                items[i - 1] = items[i];
             }
             n_items--;
             return data;
@@ -49,14 +49,13 @@ namespace my_queues
 
     private:
         T items[MAX_SIZE];
-        T * free_position;
+        T *free_position;
         int n_items;
         std::mutex guard;
-
     };
 
     template<typename T, int MAX_SIZE>
-    class CircularQueue: public Queue<T>
+    class CircularQueue : public Queue<T>
     {
     public:
         CircularQueue() : n_items{0}, start{items}, first{items}, free{items}, end{start + MAX_SIZE}
@@ -85,6 +84,6 @@ namespace my_queues
         T *const start, *first, *free, *const end;
         int n_items;
     };
-}
+}// namespace my_queues
 
-#endif //MISC_MYQUEUES_HPP
+#endif//MISC_MYQUEUES_HPP

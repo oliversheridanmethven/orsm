@@ -2,16 +2,16 @@
 // Created by Oliver Sheridan-Methven on 17/11/2020.
 //
 
-#include <vector>
-#include <iostream>
-#include <utility>
-#include <stdexcept>
-#include <stack>
-#include <thread>
-#include <mutex>
+#include "my_sort.hpp"
 #include <chrono>
 #include <condition_variable>
-#include "my_sort.hpp"
+#include <iostream>
+#include <mutex>
+#include <stack>
+#include <stdexcept>
+#include <thread>
+#include <utility>
+#include <vector>
 
 typedef double T;
 typedef std::vector<T> container;
@@ -19,9 +19,8 @@ typedef container::iterator iterator;
 typedef std::pair<iterator, iterator> sort_job;
 
 class sorting_stack
-{  // A thread safe sorting stack;
+{// A thread safe sorting stack;
 public:
-
     sorting_stack() : n_threads_working_on_stack{0}
     {}
 
@@ -81,7 +80,7 @@ void parallel_sort(iterator start, iterator end)
 {
 
     unsigned long n_items = end - start;
-    if (n_items <= 1)  // Nothing to be done.
+    if (n_items <= 1)// Nothing to be done.
     {
         return;
     }
@@ -90,13 +89,13 @@ void parallel_sort(iterator start, iterator end)
     std::vector<std::thread> threads(n_threads);
 
     sorting_stack sort_stack;
-    sort_stack.push(sort_job(start, end)); // We get the stack started.
-    for (auto &thread: threads) // Launch the threads at the stack.
+    sort_stack.push(sort_job(start, end));// We get the stack started.
+    for (auto &thread: threads)           // Launch the threads at the stack.
     {
         thread = std::thread(work_on_stack, std::ref(sort_stack));
     }
 
-    for (auto &thread: threads)  // Tidy up the threads.
+    for (auto &thread: threads)// Tidy up the threads.
     {
         thread.join();
     }
@@ -105,11 +104,11 @@ void parallel_sort(iterator start, iterator end)
 void work_on_stack(sorting_stack &sort_stack)
 {
 
-    while (sort_stack.might_have_work_to_do()) // Race condition here?
+    while (sort_stack.might_have_work_to_do())// Race condition here?
     {
 
         sort_job work_iterators;
-        bool is_work = sort_stack.try_pop(work_iterators);  // Might be able to do this using a condition variable.
+        bool is_work = sort_stack.try_pop(work_iterators);// Might be able to do this using a condition variable.
         if (not is_work)
         {
             continue;
@@ -131,5 +130,3 @@ void work_on_stack(sorting_stack &sort_stack)
         sort_stack.announce_finished_work();
     }
 }
-
-

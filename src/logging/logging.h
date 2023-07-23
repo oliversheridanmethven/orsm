@@ -1,10 +1,10 @@
 #ifndef LOGGING_H_
 #define LOGGING_H_
 
-#include <stdlib.h>
+#include <glib.h>  // The logging library of choice.
+#include <iso646.h>// For nicer boolean operator spellings.
 #include <signal.h>
-#include <glib.h> // The logging library of choice.
-#include <iso646.h>  // For nicer boolean operator spellings.
+#include <stdlib.h>
 
 /* Some wrappers. */
 #define LOG_INFO(...) g_info(__VA_ARGS__)

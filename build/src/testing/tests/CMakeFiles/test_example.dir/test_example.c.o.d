@@ -1,5 +1,19 @@
 src/testing/tests/CMakeFiles/test_example.dir/test_example.c.o: \
  /Users/oliver/ClionProjects/testing/src/testing/tests/test_example.c \
+ /Users/oliver/ClionProjects/testing/src/testing/../testing/testing.h \
+ /usr/local/include/criterion/criterion.h \
+ /usr/local/include/criterion/types.h \
+ /usr/local/include/criterion/alloc.h \
+ /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/stddef.h \
+ /usr/local/include/criterion/internal/common.h \
+ /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/stdbool.h \
+ /usr/local/include/criterion/assert.h \
+ /usr/local/include/criterion/internal/assert.h \
+ /usr/local/include/criterion/internal/common.h \
+ /usr/local/include/criterion/internal/preprocess.h \
+ /usr/local/include/criterion/internal/asprintf-compat.h \
+ /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/stdarg.h \
+ /usr/local/include/criterion/internal/designated-initializer-compat.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/string.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/_types.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types.h \
@@ -33,20 +47,6 @@ src/testing/tests/CMakeFiles/test_example.dir/test_example.c.o: \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/secure/_strings.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/secure/_common.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/secure/_string.h \
- /Users/oliver/ClionProjects/testing/src/testing/../testing/testing.h \
- /usr/local/include/criterion/criterion.h \
- /usr/local/include/criterion/types.h \
- /usr/local/include/criterion/alloc.h \
- /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/stddef.h \
- /usr/local/include/criterion/internal/common.h \
- /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/stdbool.h \
- /usr/local/include/criterion/assert.h \
- /usr/local/include/criterion/internal/assert.h \
- /usr/local/include/criterion/internal/common.h \
- /usr/local/include/criterion/internal/preprocess.h \
- /usr/local/include/criterion/internal/asprintf-compat.h \
- /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/stdarg.h \
- /usr/local/include/criterion/internal/designated-initializer-compat.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/stdlib.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/wait.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_pid_t.h \

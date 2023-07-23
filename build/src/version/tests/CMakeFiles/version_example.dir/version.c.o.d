@@ -1,20 +1,36 @@
 src/version/tests/CMakeFiles/version_example.dir/version.c.o: \
  /Users/oliver/ClionProjects/testing/src/version/tests/version.c \
- /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include-fixed/stdio.h \
- /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/stdarg.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/_stdio.h \
+ /Users/oliver/ClionProjects/testing/build/src/version/../version/version.h \
+ /Users/oliver/ClionProjects/testing/src/testing/../logging/logging.h \
+ /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib.h \
+ /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/galloca.h \
+ /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gtypes.h \
+ /usr/local/Cellar/glib/2.76.4/lib/glib-2.0/include/glibconfig.h \
+ /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gmacros.h \
+ /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/stddef.h \
+ /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/limits.h \
+ /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/syslimits.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/limits.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/cdefs.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_symbol_aliasing.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_posix_availability.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/Availability.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/AvailabilityVersions.h \
- /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include-fixed/AvailabilityInternal.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/machine/limits.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/i386/limits.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/i386/_limits.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/syslimits.h \
+ /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/float.h \
+ /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gversionmacros.h \
+ /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/glib-visibility.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/time.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/_types.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/machine/_types.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/i386/_types.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_pthread/_pthread_types.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_va_list.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/Availability.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/AvailabilityVersions.h \
+ /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include-fixed/AvailabilityInternal.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_clock_t.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/machine/types.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/i386/types.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_int8_t.h \
@@ -27,36 +43,27 @@ src/version/tests/CMakeFiles/version_example.dir/version.c.o: \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_u_int64_t.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_intptr_t.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_uintptr_t.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_size_t.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_null.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/stdio.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/_ctermid.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_off_t.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_ssize_t.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/secure/_stdio.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/secure/_common.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_size_t.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_time_t.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_timespec.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/string.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_rsize_t.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_errno_t.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_ssize_t.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/strings.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/secure/_strings.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/secure/_common.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/secure/_string.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/regex.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/_regex.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_wchar_t.h \
- /Users/oliver/ClionProjects/testing/src/testing/../testing/testing.h \
- /usr/local/include/criterion/criterion.h \
- /usr/local/include/criterion/types.h \
- /usr/local/include/criterion/alloc.h \
- /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/stddef.h \
- /usr/local/include/criterion/internal/common.h \
- /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/stdbool.h \
- /usr/local/include/criterion/assert.h \
- /usr/local/include/criterion/internal/assert.h \
- /usr/local/include/criterion/internal/common.h \
- /usr/local/include/criterion/internal/preprocess.h \
- /usr/local/include/criterion/internal/asprintf-compat.h \
- /usr/local/include/criterion/internal/designated-initializer-compat.h \
+ /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/garray.h \
+ /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gasyncqueue.h \
+ /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gthread.h \
+ /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gatomic.h \
+ /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/glib-typeof.h \
+ /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gerror.h \
+ /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/stdarg.h \
+ /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gquark.h \
+ /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gutils.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/stdlib.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/wait.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_pid_t.h \
@@ -92,91 +99,13 @@ src/version/tests/CMakeFiles/version_example.dir/version.c.o: \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/alloca.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_ct_rune_t.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_rune_t.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_wchar_t.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/malloc/_malloc.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_dev_t.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_mode_t.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/wchar.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_mbstate_t.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/time.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_clock_t.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_time_t.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_timespec.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/_wctype.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/__wctype.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_wint_t.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/_types/_wctype_t.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/ctype.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/_ctype.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/runetype.h \
- /usr/local/include/criterion/internal/../types.h \
- /usr/local/include/criterion/internal/../stats.h \
- /usr/local/include/criterion/internal/../types.h \
- /usr/local/include/criterion/internal/../internal/deprecation.h \
- /usr/local/include/criterion/internal/../internal/preprocess.h \
- /usr/local/include/criterion/internal/../hooks.h \
- /usr/local/include/criterion/internal/../internal/hooks.h \
- /usr/local/include/criterion/internal/../internal/common.h \
- /usr/local/include/criterion/internal/../internal/../types.h \
- /usr/local/include/criterion/internal/../event.h \
- /usr/local/include/criterion/internal/../internal/common.h \
- /usr/local/include/criterion/internal/../stats.h \
- /usr/local/include/criterion/internal/../abort.h \
- /usr/local/include/criterion/internal/../options.h \
- /usr/local/include/criterion/internal/../logging.h \
- /usr/local/include/criterion/internal/../internal/ordered-set.h \
- /usr/local/include/criterion/internal/test.h \
- /usr/local/include/criterion/internal/assert.h \
- /usr/local/include/criterion/new/assert.h \
- /usr/local/include/criterion/new/memory.h \
- /usr/local/include/criterion/new/../internal/common.h \
- /usr/local/include/criterion/new/../internal/assert/memory.h \
- /usr/local/include/criterion/new/stream.h \
- /usr/local/include/criterion/new/../internal/assert/stream.h \
- /usr/local/include/criterion/new/../internal/new_asserts.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/inttypes.h \
- /usr/local/include/criterion/new/../internal/asprintf-compat.h \
- /usr/local/include/criterion/new/../internal/common.h \
- /usr/local/include/criterion/new/../internal/designated-initializer-compat.h \
- /usr/local/include/criterion/new/../internal/preprocess.h \
- /usr/local/include/criterion/new/../internal/capabilities.h \
- /usr/local/include/criterion/new/../internal/assert/op.h \
- /usr/local/include/criterion/new/../internal/assert/tag.h \
- /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/float.h \
- /usr/local/include/criterion/new/../internal/assert/memory.h \
- /usr/local/include/criterion/new/../internal/assert/complex.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/complex.h \
- /usr/local/include/criterion/new/../internal/assert/tostr.h \
- /usr/local/include/criterion/new/../internal/assert/tag.h \
- /usr/local/include/criterion/new/../internal/assert/types.h \
- /usr/local/include/criterion/new/../internal/assert/ieee.h \
- /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include-fixed/math.h \
- /Users/oliver/ClionProjects/testing/build/src/version/../version/version.h \
- /Users/oliver/ClionProjects/testing/src/testing/../logging/logging.h \
+ /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gbacktrace.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/signal.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_pthread/_pthread_t.h \
- /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib.h \
- /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/galloca.h \
- /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gtypes.h \
- /usr/local/Cellar/glib/2.76.4/lib/glib-2.0/include/glibconfig.h \
- /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gmacros.h \
- /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/limits.h \
- /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/syslimits.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/limits.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/machine/limits.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/i386/limits.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/i386/_limits.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/syslimits.h \
- /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gversionmacros.h \
- /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/glib-visibility.h \
- /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/garray.h \
- /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gasyncqueue.h \
- /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gthread.h \
- /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gatomic.h \
- /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/glib-typeof.h \
- /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gerror.h \
- /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gquark.h \
- /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gutils.h \
- /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gbacktrace.h \
  /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gbase64.h \
  /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gbitlock.h \
  /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gbookmarkfile.h \
@@ -265,6 +194,7 @@ src/version/tests/CMakeFiles/version_example.dir/version.c.o: \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_ino64_t.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_key_t.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_nlink_t.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_off_t.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_useconds_t.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_suseconds_t.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_fd_def.h \
@@ -291,4 +221,74 @@ src/version/tests/CMakeFiles/version_example.dir/version.c.o: \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/qos.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_mach_port_t.h \
  /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/glib-autocleanups.h \
- /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/iso646.h
+ /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/iso646.h \
+ /Users/oliver/ClionProjects/testing/src/testing/../testing/testing.h \
+ /usr/local/include/criterion/criterion.h \
+ /usr/local/include/criterion/types.h \
+ /usr/local/include/criterion/alloc.h \
+ /usr/local/include/criterion/internal/common.h \
+ /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/stdbool.h \
+ /usr/local/include/criterion/assert.h \
+ /usr/local/include/criterion/internal/assert.h \
+ /usr/local/include/criterion/internal/common.h \
+ /usr/local/include/criterion/internal/preprocess.h \
+ /usr/local/include/criterion/internal/asprintf-compat.h \
+ /usr/local/include/criterion/internal/designated-initializer-compat.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/wchar.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_mbstate_t.h \
+ /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include-fixed/stdio.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/_stdio.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_va_list.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/stdio.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/_ctermid.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/secure/_stdio.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/_wctype.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/__wctype.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_wint_t.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/_types/_wctype_t.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/ctype.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/_ctype.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/runetype.h \
+ /usr/local/include/criterion/internal/../types.h \
+ /usr/local/include/criterion/internal/../stats.h \
+ /usr/local/include/criterion/internal/../types.h \
+ /usr/local/include/criterion/internal/../internal/deprecation.h \
+ /usr/local/include/criterion/internal/../internal/preprocess.h \
+ /usr/local/include/criterion/internal/../hooks.h \
+ /usr/local/include/criterion/internal/../internal/hooks.h \
+ /usr/local/include/criterion/internal/../internal/common.h \
+ /usr/local/include/criterion/internal/../internal/../types.h \
+ /usr/local/include/criterion/internal/../event.h \
+ /usr/local/include/criterion/internal/../internal/common.h \
+ /usr/local/include/criterion/internal/../stats.h \
+ /usr/local/include/criterion/internal/../abort.h \
+ /usr/local/include/criterion/internal/../options.h \
+ /usr/local/include/criterion/internal/../logging.h \
+ /usr/local/include/criterion/internal/../internal/ordered-set.h \
+ /usr/local/include/criterion/internal/test.h \
+ /usr/local/include/criterion/internal/assert.h \
+ /usr/local/include/criterion/new/assert.h \
+ /usr/local/include/criterion/new/memory.h \
+ /usr/local/include/criterion/new/../internal/common.h \
+ /usr/local/include/criterion/new/../internal/assert/memory.h \
+ /usr/local/include/criterion/new/stream.h \
+ /usr/local/include/criterion/new/../internal/assert/stream.h \
+ /usr/local/include/criterion/new/../internal/new_asserts.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/inttypes.h \
+ /usr/local/include/criterion/new/../internal/asprintf-compat.h \
+ /usr/local/include/criterion/new/../internal/common.h \
+ /usr/local/include/criterion/new/../internal/designated-initializer-compat.h \
+ /usr/local/include/criterion/new/../internal/preprocess.h \
+ /usr/local/include/criterion/new/../internal/capabilities.h \
+ /usr/local/include/criterion/new/../internal/assert/op.h \
+ /usr/local/include/criterion/new/../internal/assert/tag.h \
+ /usr/local/include/criterion/new/../internal/assert/memory.h \
+ /usr/local/include/criterion/new/../internal/assert/complex.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/complex.h \
+ /usr/local/include/criterion/new/../internal/assert/tostr.h \
+ /usr/local/include/criterion/new/../internal/assert/tag.h \
+ /usr/local/include/criterion/new/../internal/assert/types.h \
+ /usr/local/include/criterion/new/../internal/assert/ieee.h \
+ /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include-fixed/math.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/regex.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/_regex.h

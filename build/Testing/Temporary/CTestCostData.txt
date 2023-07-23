@@ -1,7 +1,6 @@
-test_example 80 0.00226086
-logging_test 66 0.00464475
-version_test 27 0
-cli_arguments_0 27 0.00826363
-cli_arguments_version 7 0.030338
+test_example 83 0.000898803
+logging_test 69 0.00180338
+version_test 30 0.00421156
+cli_arguments_0 30 0.00404846
+cli_arguments_version 10 0.00926906
 ---
-version_test

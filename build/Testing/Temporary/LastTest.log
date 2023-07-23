@@ -1,28 +1,28 @@
-Start testing: Jul 23 17:29 CEST
+Start testing: Jul 23 18:23 CEST
 ----------------------------------------------------------
 1/5 Testing: logging_test
 1/5 Test: logging_test
 Command: "/Users/oliver/ClionProjects/testing/build/src/logging/tests/logging_test"
 Directory: /Users/oliver/ClionProjects/testing/build/src/logging/tests
-"logging_test" start time: Jul 23 17:29 CEST
+"logging_test" start time: Jul 23 18:23 CEST
 Output:
 ----------------------------------------------------------
-some info, some string 10
 
-** (process:40300): ERROR **: 17:29:51.514: some error
-** INFO: 17:29:51.513: some info
-** Message: 17:29:51.515: some message
+** (process:42677): ERROR **: 18:23:47.253: some error
+some info, some string 10
+** INFO: 18:23:47.253: some info
+** Message: 18:23:47.254: some message
 some print
 some print error
-** (process:40301): DEBUG: 17:29:51.515: some debug
+** (process:42678): DEBUG: 18:23:47.254: some debug
 
-** (process:40301): WARNING **: 17:29:51.515: some warning
+** (process:42678): WARNING **: 18:23:47.254: some warning
 [====] Synthesis: Tested: 3 | Passing: 3 | Failing: 0 | Crashing: 0 
 <end of output>
-Test time =   0.31 sec
+Test time =   0.12 sec
 ----------------------------------------------------------
 Test Passed.
-"logging_test" end time: Jul 23 17:29 CEST
+"logging_test" end time: Jul 23 18:23 CEST
 "logging_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -30,15 +30,15 @@ Test Passed.
 2/5 Test: test_example
 Command: "/Users/oliver/ClionProjects/testing/build/src/testing/tests/test_example"
 Directory: /Users/oliver/ClionProjects/testing/build/src/testing/tests
-"test_example" start time: Jul 23 17:29 CEST
+"test_example" start time: Jul 23 18:23 CEST
 Output:
 ----------------------------------------------------------
 [====] Synthesis: Tested: 2 | Passing: 2 | Failing: 0 | Crashing: 0 
 <end of output>
-Test time =   0.18 sec
+Test time =   0.07 sec
 ----------------------------------------------------------
 Test Passed.
-"test_example" end time: Jul 23 17:29 CEST
+"test_example" end time: Jul 23 18:23 CEST
 "test_example" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -46,21 +46,16 @@ Test Passed.
 3/5 Test: version_test
 Command: "/Users/oliver/ClionProjects/testing/build/src/version/tests/version_example"
 Directory: /Users/oliver/ClionProjects/testing/build/src/version/tests
-"version_test" start time: Jul 23 17:29 CEST
+"version_test" start time: Jul 23 18:23 CEST
 Output:
 ----------------------------------------------------------
-[----] ../../../../src/version/tests/version.c:15: Assertion Failed
-[----]   
-[----]   We found the word "dirty" in the repository version v0.0.1-25-g2e1619a-dirty
-[----]   
-[FAIL] version::not_dirty: (0.00s)
-Version: v0.0.1-25-g2e1619a-dirty
-[====] Synthesis: Tested: 6 | Passing: 5 | Failing: 1 | Crashing: 0 
+Version: v0.0.1-28-g8386830
+[====] Synthesis: Tested: 6 | Passing: 6 | Failing: 0 | Crashing: 0 
 <end of output>
-Test time =   0.23 sec
+Test time =   0.13 sec
 ----------------------------------------------------------
-Test Failed.
-"version_test" end time: Jul 23 17:29 CEST
+Test Passed.
+"version_test" end time: Jul 23 18:23 CEST
 "version_test" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -68,34 +63,34 @@ Test Failed.
 4/5 Test: cli_arguments_0
 Command: "/Users/oliver/ClionProjects/testing/build/src/cli/tests/cli_arguments_0"
 Directory: /Users/oliver/ClionProjects/testing/build/src/cli/tests
-"cli_arguments_0" start time: Jul 23 17:29 CEST
+"cli_arguments_0" start time: Jul 23 18:23 CEST
 Output:
 ----------------------------------------------------------
-** INFO: 17:29:52.135: Parsing the input string: --Help
-** INFO: 17:29:52.135: Parsing the input string: 
-** INFO: 17:29:52.135: Parsing the input string: --foo
-** INFO: 17:29:52.135: Parsing the input string: --help
-** INFO: 17:29:52.136: Parsing the input string: --usage
-** INFO: 17:29:52.150: Successfully parsed the input string: command --usage
-Usage: command [-?] [--help] [--usage]
-** INFO: 17:29:52.150: Successfully parsed the input string: command 
-** INFO: 17:29:52.150: Successfully parsed the input string: command --foo
-command: unrecognized option `--foo'
-Try `command --help' or `command --usage' for more information.
-** INFO: 17:29:52.150: Successfully parsed the input string: command --Help
+** INFO: 18:23:47.572: Parsing the input string: --help
+** INFO: 18:23:47.572: Parsing the input string: --Help
+** INFO: 18:23:47.572: Parsing the input string: 
+** INFO: 18:23:47.572: Parsing the input string: --foo
+** INFO: 18:23:47.572: Parsing the input string: --usage
+** INFO: 18:23:47.578: Successfully parsed the input string: command --Help
 command: unrecognized option `--Help'
 Try `command --help' or `command --usage' for more information.
-** INFO: 17:29:52.151: Successfully parsed the input string: command --help
+** INFO: 18:23:47.578: Successfully parsed the input string: command --help
+** INFO: 18:23:47.578: Successfully parsed the input string: command --foo
+command: unrecognized option `--foo'
+Try `command --help' or `command --usage' for more information.
 Usage: command [OPTION...]
 
   -?, --help                 Give this help list
       --usage                Give a short usage message
+** INFO: 18:23:47.578: Successfully parsed the input string: command 
+** INFO: 18:23:47.578: Successfully parsed the input string: command --usage
+Usage: command [-?] [--help] [--usage]
 [====] Synthesis: Tested: 5 | Passing: 5 | Failing: 0 | Crashing: 0 
 <end of output>
-Test time =   0.22 sec
+Test time =   0.12 sec
 ----------------------------------------------------------
 Test Passed.
-"cli_arguments_0" end time: Jul 23 17:29 CEST
+"cli_arguments_0" end time: Jul 23 18:23 CEST
 "cli_arguments_0" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -103,22 +98,22 @@ Test Passed.
 5/5 Test: cli_arguments_version
 Command: "/Users/oliver/ClionProjects/testing/build/src/cli/tests/cli_arguments_version"
 Directory: /Users/oliver/ClionProjects/testing/build/src/cli/tests
-"cli_arguments_version" start time: Jul 23 17:29 CEST
+"cli_arguments_version" start time: Jul 23 18:23 CEST
 Output:
 ----------------------------------------------------------
-** INFO: 17:29:52.359: Parsing the input string: --version
-** INFO: 17:29:52.360: Parsing the input string: --version
-** INFO: 17:29:52.364: Successfully parsed the input string: command --version
-testing v0.0.1-25-g2e1619a-dirty
-** INFO: 17:29:52.365: Successfully parsed the input string: command --version
-testing v0.0.1-25-g2e1619a-dirty
+** INFO: 18:23:47.665: Parsing the input string: --version
+** INFO: 18:23:47.666: Parsing the input string: --version
+** INFO: 18:23:47.671: Successfully parsed the input string: command --version
+testing v0.0.1-28-g8386830
+** INFO: 18:23:47.671: Successfully parsed the input string: command --version
+testing v0.0.1-28-g8386830
 [====] Synthesis: Tested: 2 | Passing: 2 | Failing: 0 | Crashing: 0 
 <end of output>
-Test time =   0.21 sec
+Test time =   0.09 sec
 ----------------------------------------------------------
 Test Passed.
-"cli_arguments_version" end time: Jul 23 17:29 CEST
+"cli_arguments_version" end time: Jul 23 18:23 CEST
 "cli_arguments_version" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jul 23 17:29 CEST
+End testing: Jul 23 18:23 CEST

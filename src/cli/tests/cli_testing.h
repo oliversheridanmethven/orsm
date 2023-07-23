@@ -7,7 +7,6 @@
 #include <stdio.h>
 #include <wordexp.h>
 
-
 wordexp_t words;
 
 struct arguments {

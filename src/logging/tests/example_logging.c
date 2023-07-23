@@ -5,7 +5,8 @@
 
 #include "logging/logging.h"
 
-int main (int argc, char ** argv) {
+int main(int argc, char **argv)
+{
     INFO("some info");
     MESSAGE("some message");
     PRINT("some print\n");

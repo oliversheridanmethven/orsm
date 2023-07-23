@@ -1,6 +1,7 @@
 #include <glib.h> // The logging library of choice.
 
-int main (int argc, char ** argv) {
+int main(int argc, char **argv)
+{
     g_info("some info");
     g_message("some message");
     g_print("some print\n");

@@ -17,27 +17,27 @@ Test(cli, test_version)
 }
 
 
-static int parse_opt (int key, char *arg, struct argp_state *state)
+static int parse_opt(int key, char *arg, struct argp_state *state)
 {
- switch (key)
- {
- case 'f':
- {
- printf("Doing something");
- break;
- }
- }
- return 0;
+    switch (key)
+    {
+        case 'f':
+        {
+            printf("Doing something");
+            break;
+        }
+    }
+    return 0;
 }
 
 Test(cli, test_short_option)
 {
     initialise_params("--version");
     struct argp_option options[] =
-        {
-        { "foo", 'f', 0, 0, "Do something perhaps."},
-        { 0 }
-        };
+            {
+                    {"foo", 'f', 0, 0, "Do something perhaps."},
+                    {0}
+            };
     struct argp argp = {options, parse_opt};
     argp_parse(&argp, params.argc, params.argv, 0, 0, &params.arguments);
 }

@@ -2,13 +2,19 @@ site_name: Testing
 
 docs_dir: .
 site_dir: site
+repo_url: https://github.com/oliversheridanmethven/testing
+
+use_directory_urls: false
+# Because we use the `README.md` convention rather than
+# the `index.md` convention, this ensures hyperlinks resolve
+# correctly.
 
 theme: readthedocs
 markdown_extensions:
-  - admonition
+  - admonition # Gives nice highlight fields.
 
 plugins:
   - search
-  - same-dir
+  - same-dir # Allows us to operate from the root directory.
   - awesome-pages:
       collapse_single_pages: true

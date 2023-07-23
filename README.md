@@ -15,4 +15,5 @@ space.
 
 ## Getting started
 
-TO 
+For details about how to get started using the repository, see
+[Getting started](docs/getting_started.md).

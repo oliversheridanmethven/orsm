@@ -1,0 +1,4 @@
+nav:
+    - from_source.md
+    - python_bindings.md
+    - ...

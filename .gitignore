@@ -5,3 +5,4 @@ cmake-build-*/
 data/
 venv/
 _skbuild/
+*.egg-info/

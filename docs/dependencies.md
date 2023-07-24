@@ -15,6 +15,10 @@ which include:
 - Argp (for the CLI).
 - Criterion (for testing).
 
+### Python bindings
+
+- scikit-build (for Python bindings).
+
 ### The documentation
 
 - mkdocs (for documentation).
@@ -25,3 +29,8 @@ which include:
 
 Most of these can be installed either through `pip` or `brew`
 or similar. 
+
+### Virtual environments
+
+In our setup, we use a Python-3.11 based virtual environment
+based in the root directory of the project. 

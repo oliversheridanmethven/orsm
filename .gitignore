@@ -3,3 +3,5 @@ build/
 site/
 cmake-build-*/
 data/
+venv/
+_skbuild/

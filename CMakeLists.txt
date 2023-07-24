@@ -33,17 +33,21 @@ enable_testing()
 # ^ This must be before any calls to add_subdirectory to ensure it is enabled recursively.
 # cf. https://stackoverflow.com/questions/54550939/ctest-add-tests-in-subdirectories#comment109191766_55835742
 
-# Where we find the source files for our builds.
-add_subdirectory(src)
+
+
+
 
 # Some C++ examples.
 #add_executable(main main.cpp my_stacks.hpp my_queues.hpp my_minimum.hpp) # my_sort.hpp my_sort.cpp)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/")
 find_package(PythonLibs REQUIRED)
+include_directories(${PYTHON_INCLUDE_DIRS})
+
 
 function(install_python_target target destination)
     if(SKBUILD)
+        find_package(PythonExtensions REQUIRED)
         include_directories(${PYTHON_INCLUDE_DIRS})
         target_link_libraries(${target} ${PYTHON_LIBRARIES})
         python_extension_module(${target})
@@ -57,13 +61,20 @@ if(SKBUILD)
     EXECUTE_PROCESS(COMMAND ${PYTHON_EXECUTABLE} -c "import importlib.resources; print(importlib.resources.files('skbuild').joinpath('resources/cmake'), end='')" OUTPUT_VARIABLE PYTHON_SKLIB_CMAKE_DIR)
     MESSAGE(STATUS "The Python scikit-build CMake directory is: ${PYTHON_SKLIB_CMAKE_DIR}")
     set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PYTHON_SKLIB_CMAKE_DIR}/")
-    find_package(PythonExtensions REQUIRED)
-    add_library(hello MODULE hello/hello.c)
-    install_python_target(hello hello)
+#    find_package(PythonExtensions REQUIRED)
 else()
     MESSAGE(STATUS "Could not find scikit-build for building.")
 endif()
 
 
+
+add_library(hello MODULE hello/hello.c)
+install_python_target(hello hello)
+
+add_subdirectory(foo)
+#add_library(bar MODULE foo/bar/bar.c)
+#install_python_target(bar bar)
+# Where we find the source files for our builds.
+add_subdirectory(src)
 
 

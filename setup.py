@@ -8,11 +8,17 @@ setup(
     license="MIT",
     packages=[
         "hello",
-        "foo"
+        "foo",
+        "fox",
+        "baz",
+        "binding"
     ],
     package_dir={
         "hello": "",
-        "foo": "."
+        "foo": ".",
+        "fox": "src",
+        "baz": "src/baz",
+        "binding": "src/binding"
     },
     python_requires=">=3.7",
 )

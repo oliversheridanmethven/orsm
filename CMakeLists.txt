@@ -40,9 +40,12 @@ enable_testing()
 # Some C++ examples.
 #add_executable(main main.cpp my_stacks.hpp my_queues.hpp my_minimum.hpp) # my_sort.hpp my_sort.cpp)
 
+# We get the python libraries for our wrappers.
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/")
 find_package(PythonLibs REQUIRED)
+# We will include and link to all the targets henceforth.
 include_directories(${PYTHON_INCLUDE_DIRS})
+link_libraries(${PYTHON_LIBRARIES})
 
 
 function(install_python_target target destination)
@@ -66,14 +69,8 @@ else()
     MESSAGE(STATUS "Could not find scikit-build for building.")
 endif()
 
-
-
-add_library(hello MODULE hello/hello.c)
-install_python_target(hello hello)
-
 add_subdirectory(foo)
-#add_library(bar MODULE foo/bar/bar.c)
-#install_python_target(bar bar)
+add_subdirectory(hello)
 # Where we find the source files for our builds.
 add_subdirectory(src)
 

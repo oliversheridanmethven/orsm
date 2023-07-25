@@ -1,7 +1,7 @@
 #include <Python.h>
 #include <stdio.h>
 
-static PyObject *bar_example(PyObject *self, PyObject *args)
+static PyObject *baz_example(PyObject *self, PyObject *args)
 {
     // Unpack a string from the arguments
     const char *strArg;
@@ -9,28 +9,28 @@ static PyObject *bar_example(PyObject *self, PyObject *args)
         return NULL;
 
     // Print message and return None
-    PySys_WriteStdout("Bar, %s!\n", strArg);
+    PySys_WriteStdout("baz, %s!\n", strArg);
     Py_RETURN_NONE;
 }
 
 //-----------------------------------------------------------------------------
-static PyMethodDef bar_methods[] = {
-        {"bar",
-         bar_example,
+static PyMethodDef baz_methods[] = {
+        {"baz",
+         baz_example,
          METH_VARARGS,
-         "Prints back 'Bar <param>', for example example: hello.hello('you')"},
+         "Prints back 'baz <param>', for example example: hello.hello('you')"},
         {NULL, NULL, 0, NULL} /* Sentinel */
 };
 
 //-----------------------------------------------------------------------------
-static struct PyModuleDef bar_module_def = {
+static struct PyModuleDef baz_module_def = {
         PyModuleDef_HEAD_INIT,
-        "bar",
-        "Internal \"bar\" module",
+        "baz",
+        "Internal \"baz\" module",
         -1,
-        bar_methods};
+        baz_methods};
 
-PyMODINIT_FUNC PyInit_bar(void)
+PyMODINIT_FUNC PyInit_baz(void)
 {
-    return PyModule_Create(&bar_module_def);
+    return PyModule_Create(&baz_module_def);
 }

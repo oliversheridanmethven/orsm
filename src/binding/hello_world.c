@@ -19,7 +19,7 @@ static PyObject *_hello_world(PyObject *self, PyObject *args, PyObject *kwargs)
 
 void func(int a, char *b)
 {
-    int rc = printf("The input values are: \"a\" = %i and \"b\" = %s\n", a, b);
+    int rc = printf("The input values are: a = %i and b = %s\n", a, b);
     if (rc < 0)
     {
         exit(1);
@@ -30,20 +30,19 @@ static PyObject *_func(PyObject *self, PyObject *args, PyObject *kwargs)
 {
     /* This is the python equivalent of: def foo(a, b="default", **kwargs): ...  */
     static char *keywords[] = {"a", "b", NULL};
-    PyObject *_a;
-    PyObject *_b;
+    //    PyObject *_a;
+    /* Integers in Python are stored as a long, whereas in C I want an int. Hence we might need
+     * to do some error checking or handling if we permit very long ints to be entered. */
     int a;
     char *b = "default";
 
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, "OO:_func", keywords, &_a, &_b))
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, "i|s:_func", keywords, &a, &b))
     {
         /* The arguments passed don't correspond to the signature described. */
         return NULL;
     }
-    a = PyLong_AsLong(_a);
-    //    b = PyBytes_AsString(_b); // Currently doesn't seem to be the right syntax.
+    //    a = PyLong_AsLong(_a);
     func(a, b);
-    //    func(a, c);
     return PyLong_FromLong(a);
 }
 

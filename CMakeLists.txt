@@ -58,6 +58,11 @@ function(install_python_target target destination)
     endif()
 endfunction()
 
+function(add_python_test python_file)
+    find_package(Python COMPONENTS Interpreter REQUIRED)
+    STRING(REGEX REPLACE "^test_" "" python_file_without_prefix ${python_file})
+    add_test(NAME ${python_file_without_prefix} COMMAND ${Python_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/${python_file})
+endfunction()
 # We use scikit-build to our python wrappers.
 if(SKBUILD)
     MESSAGE(STATUS "Trying to build using scikit-build")

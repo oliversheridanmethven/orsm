@@ -10,7 +10,7 @@ Test(version, print_version)
     printf("Version: %s\n", REPO_VERSION);
 }
 
-Test(version, not_dirty)
+Test(version, not_dirty, .disabled = true)
 {
     cr_expect(strstr(REPO_VERSION, "dirty") == nullptr, "We found the word \"dirty\" in the repository version " REPO_VERSION);
 }

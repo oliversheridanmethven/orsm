@@ -24,6 +24,7 @@ which include:
 - mkdocs (for documentation).
     - mkdocs-same-dir.
     - mkdocs-awesome-pages-plugin.
+    - mkdocs-exclude
 
 ## Installation
 

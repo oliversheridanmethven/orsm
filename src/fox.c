@@ -1,7 +1,7 @@
 #include <Python.h>
 #include <stdio.h>
 
-static PyObject *foo_example(PyObject *self, PyObject *args)
+static PyObject *fox_example(PyObject *self, PyObject *args)
 {
     // Unpack a string from the arguments
     const char *strArg;
@@ -9,28 +9,28 @@ static PyObject *foo_example(PyObject *self, PyObject *args)
         return NULL;
 
     // Print message and return None
-    PySys_WriteStdout("foo, %s!\n", strArg);
+    PySys_WriteStdout("fox, %s!\n", strArg);
     Py_RETURN_NONE;
 }
 
 //-----------------------------------------------------------------------------
-static PyMethodDef foo_methods[] = {
-        {"foo",
-         foo_example,
+static PyMethodDef fox_methods[] = {
+        {"fox",
+         fox_example,
          METH_VARARGS,
          "Prints back 'Bar <param>', for example example: hello.hello('you')"},
         {NULL, NULL, 0, NULL} /* Sentinel */
 };
 
 //-----------------------------------------------------------------------------
-static struct PyModuleDef foo_module_def = {
+static struct PyModuleDef fox_module_def = {
         PyModuleDef_HEAD_INIT,
-        "foo",
-        "Internal \"foo\" module",
+        "fox",
+        "Internal \"fox\" module",
         -1,
-        foo_methods};
+        fox_methods};
 
-PyMODINIT_FUNC PyInit_foo(void)
+PyMODINIT_FUNC PyInit_fox(void)
 {
-    return PyModule_Create(&foo_module_def);
+    return PyModule_Create(&fox_module_def);
 }

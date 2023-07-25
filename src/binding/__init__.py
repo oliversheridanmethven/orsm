@@ -1,2 +1,3 @@
-# from .binding import *
+# We expose any C extensions.
+from .binding import *
 # from .example import foo as foo_pure_python

@@ -4,5 +4,5 @@ ship and call elsewhere.
 """
 
 def foo(a: int, b: str) -> int:
-    print(f"The input values are: {a =} and {b =}")
+    print(f"The input values are: {a = } and {b = }")
     return a

@@ -6,3 +6,4 @@ data/
 venv/
 _skbuild/
 *.egg-info/
+__pycache__/

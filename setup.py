@@ -11,14 +11,16 @@ setup(
         "foo",
         "fox",
         "baz",
-        "binding"
+        "binding",
+        "common"
     ],
     package_dir={
         "hello": "",
         "foo": ".",
         "fox": "src",
         "baz": "src/baz",
-        "binding": "src/binding"
+        "binding": "src/binding",
+        "common": "src/common"
     },
     python_requires=">=3.7",
 )

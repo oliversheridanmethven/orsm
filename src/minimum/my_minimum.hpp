@@ -1,12 +1,12 @@
 //
 // Created by Oliver Sheridan-Methven on 15/11/2020.
 //
-#include <vector>
-#include <stdexcept>
 #include <algorithm>
-#include <thread>
 #include <future>
 #include <mutex>
+#include <stdexcept>
+#include <thread>
+#include <vector>
 
 #ifndef MISC_MY_MINIMUM_HPP
 #define MISC_MY_MINIMUM_HPP
@@ -32,7 +32,7 @@ namespace my_minimum
         if (beginning == end) return 0;
         unsigned int n_threads = std::thread::hardware_concurrency();
         std::vector<std::thread> threads(n_threads);
-        std::vector<std::future<T> > partial_sums(n_threads);
+        std::vector<std::future<T>> partial_sums(n_threads);
         unsigned long n_items = end - beginning;
         for (unsigned int t = 0; t < n_threads; t++)
         {
@@ -51,5 +51,5 @@ namespace my_minimum
 
         return running_min;
     }
-}
-#endif //MISC_MY_MINIMUM_HPP
+}// namespace my_minimum
+#endif//MISC_MY_MINIMUM_HPP

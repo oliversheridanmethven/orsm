@@ -1,11 +1,20 @@
+#!/usr/bin/env python3
+"""
+Testing the binding module.
+"""
+
 import unittest
+import binding
 
 
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        import binding
+class TestBindings(unittest.TestCase):
+    def test_bound_functions_run(self):
         binding.hello_world()
-        binding.func(1,'foo')
+        binding.foo(1,'foo')
+
+    # def test_fail(self):
+    #     # TODO: Figure out how to get this test to work properly.
+    #     self.assertRaises(SystemExit, binding.fail)
 
 
 if __name__ == '__main__':

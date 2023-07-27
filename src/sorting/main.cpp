@@ -6,7 +6,6 @@
 #include <stdexcept>
 #include <vector>
 
-
 #include "../minimum/my_minimum.hpp"
 #include "../queues/my_queues.hpp"
 #include "../stacks/my_stacks.hpp"

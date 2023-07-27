@@ -5,9 +5,9 @@
 #ifndef MISC_MYSTACK_HPP
 #define MISC_MYSTACK_HPP
 
-#include <stdexcept>
 #include <memory>
 #include <mutex>
+#include <stdexcept>
 
 namespace my_stacks
 {
@@ -25,7 +25,6 @@ namespace my_stacks
     {
         /* A templated stack where I use a backend container for the storage. */
     public:
-
         Stack_1() : free_position{items}, n_items{0}
         {}
 
@@ -89,7 +88,6 @@ namespace my_stacks
         /* A templated stack where I using unique pointers. */
 
     public:
-
         Stack_3() : free_position{items}, n_items{0}
         {}
 
@@ -111,13 +109,12 @@ namespace my_stacks
             **free_position++ = data;
         }
 
-
     private:
         std::unique_ptr<T> items[MAX_ITEMS];
         std::unique_ptr<T> *free_position;
         unsigned int n_items;
     };
 
-}
+}// namespace my_stacks
 
-#endif //MISC_MYSTACK_HPP
+#endif//MISC_MYSTACK_HPP

@@ -1,6 +1,3 @@
-//
-// Created by Oliver Sheridan-Methven on 17/11/2020.
-//
 
 #include <condition_variable>
 #include <mutex>
@@ -48,8 +45,6 @@ void scalar_sort(typename T::iterator start, typename T::iterator end)
 {
     quick_sort<T>(start, end);
 }
-
-
 
 typedef double T;
 typedef std::vector<T> container;

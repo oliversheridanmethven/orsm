@@ -12,6 +12,8 @@ static PyMethodDef binding_methods[] = {
          "Prints an arg and kwarg argument."},
         {"fail", PyFunc(_fail), METH_VARARGS | METH_KEYWORDS,
          "Fails and calls exit()."},
+        {"set_at_exit", PyFunc(_set_at_exit), METH_VARARGS | METH_KEYWORDS,
+         "Sets functionality to execute on exiting."},
         {NULL, NULL, 0, NULL} /* Sentinel */
 };
 

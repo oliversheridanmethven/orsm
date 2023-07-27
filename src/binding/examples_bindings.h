@@ -9,4 +9,6 @@ PyObject *_foo(PyObject *self, PyObject *args, PyObject *kwargs);
 
 PyObject *_fail(PyObject *self, PyObject *args, PyObject *kwargs);
 
+PyObject *_set_at_exit(PyObject *self, PyObject *args, PyObject *kwargs);
+
 #endif//TESTING_EXAMPLES_BINDINGS_H

@@ -2,7 +2,7 @@
 #include "examples.h"
 #include <Python.h>
 #include <stdio.h>
-
+#include <stdlib.h>
 /* Python bindings */
 
 PyObject *_hello_world(PyObject *self, PyObject *args, PyObject *kwargs)
@@ -29,6 +29,22 @@ PyObject *_foo(PyObject *self, PyObject *args, PyObject *kwargs)
     //    a = PyLong_AsLong(_a);
     foo(a, b);
     return PyLong_FromLong(a);
+}
+
+static void exit_handler(void)
+{
+    fprintf(stderr, "Calling the exit handler from C.\n");
+}
+
+static void set_at_exit(void)
+{
+    atexit(&exit_handler);
+}
+
+PyObject *_set_at_exit(PyObject *self, PyObject *args, PyObject *kwargs)
+{
+    set_at_exit();
+    Py_RETURN_NONE;
 }
 
 PyObject *_fail(PyObject *self, PyObject *args, PyObject *kwargs)

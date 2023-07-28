@@ -2,6 +2,9 @@ site_name: Testing
 
 docs_dir: .
 site_dir: site
+site_url: https://oliversheridanmethven.github.io/testing
+site_description: The testing suite.
+site_author: Dr Oliver Sheridan-Methven
 repo_name: testing
 repo_url: https://github.com/oliversheridanmethven/testing
 

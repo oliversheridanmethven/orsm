@@ -6,6 +6,7 @@ add_subdirectory(cli)
 add_subdirectory(binding)
 add_subdirectory(baz)
 add_subdirectory(common)
+add_subdirectory(error_codes)
 
 add_library(fox MODULE fox.c)
 install_python_target(fox src)

@@ -12,6 +12,8 @@ static PyMethodDef binding_methods[] = {
          "Prints an arg and kwarg argument."},
         {"fatal_failure", PyFunc(_fatal_failure), METH_VARARGS | METH_KEYWORDS,
          "Fails and calls exit()."},
+        {"non_fatal_failure", PyFunc(_non_fatal_failure), METH_VARARGS | METH_KEYWORDS,
+         "Fails in a way Python can catch."},
         {"set_at_exit", PyFunc(_set_at_exit), METH_VARARGS | METH_KEYWORDS,
          "Sets functionality to execute on exiting."},
         {NULL, NULL, 0, NULL} /* Sentinel */
@@ -27,5 +29,12 @@ static struct PyModuleDef binding_module = {
 PyMODINIT_FUNC
 PyInit_binding(void)
 {
-    return PyModule_Create(&binding_module);
+    PyObject *module = PyModule_Create(&binding_module);
+    if (!module)
+    {
+        fprintf(stderr, "Unable to create the binding module.");
+        return nullptr;
+    }
+
+    return module;
 }

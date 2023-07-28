@@ -22,6 +22,12 @@ class Bindings(unittest.TestCase):
         ps.join()
         self.assertNotEqual(ps.exitcode, 0, "The exit code from the failing process should not be 0.")
 
+    def test_non_fatal_failure(self):
+        try:
+            binding.non_fatal_failure()
+        except Exception as e:
+            print(f"We were successfully able to catch an exception: {e}")
+
 
 if __name__ == '__main__':
     unittest.main()

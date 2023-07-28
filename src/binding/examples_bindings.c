@@ -3,6 +3,7 @@
 #include <Python.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 /* Python bindings */
 
 PyObject *_hello_world(PyObject *self, PyObject *args, PyObject *kwargs)
@@ -51,4 +52,11 @@ PyObject *_fatal_failure(PyObject *self, PyObject *args, PyObject *kwargs)
 {
     fatal_failure();
     Py_RETURN_NONE;
+}
+
+PyObject *_non_fatal_failure(PyObject *self, PyObject *args, PyObject *kwargs)
+{
+    fprintf(stderr, "A non-fatal error from C in our Python binding.\n");
+    PyErr_Format(PyExc_Exception, "Raising a non-fatal error from C in our Python binding up to Python.\n");
+    return nullptr;
 }

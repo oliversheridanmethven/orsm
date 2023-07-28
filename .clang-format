@@ -37,7 +37,7 @@ ColumnLimit: 0
 CompactNamespaces: false
 ContinuationIndentWidth: 8
 IndentCaseLabels: true
-IndentPPDirectives: None
+IndentPPDirectives: BeforeHash
 IndentWidth: 4
 KeepEmptyLinesAtTheStartOfBlocks: true
 MaxEmptyLinesToKeep: 1
@@ -64,3 +64,6 @@ SpacesInParentheses: false
 SpacesInSquareBrackets: false
 TabWidth: 4
 UseTab: Never
+SeparateDefinitionBlocks: Always
+EmptyLineBeforeAccessModifier: Always
+

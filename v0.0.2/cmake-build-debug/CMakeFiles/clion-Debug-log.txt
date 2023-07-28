@@ -1,0 +1,9 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -DCMAKE_C_COMPILER=/usr/local/Cellar/gcc/13.1.0/bin/gcc-13 -DCMAKE_CXX_COMPILER=/usr/local/Cellar/gcc/13.1.0/bin/g++-13 -G Ninja -S /Users/oliver/ClionProjects/testing -B /Users/oliver/ClionProjects/testing/cmake-build-debug
+-- Compiler gcc-13 appears to have C2X support.
+-- Could not find scikit-build for building.
+-- Trying to add the python tests from: basic_python.py (/Users/oliver/ClionProjects/testing/src/testing/tests/basic_python.py)
+-- Trying to add the python tests from: basic_python_again.py (/Users/oliver/ClionProjects/testing/src/testing/tests/basic_python_again.py)
+-- Trying to add the python tests from: binding_import.py (/Users/oliver/ClionProjects/testing/src/binding/tests/binding_import.py)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/oliver/ClionProjects/testing/cmake-build-debug

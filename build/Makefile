@@ -127,6 +127,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named fox
+
+# Build rule for target.
+fox: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fox
+.PHONY : fox
+
+# fast build rule for target.
+fox/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/fox.dir/build.make src/CMakeFiles/fox.dir/build
+.PHONY : fox/fast
+
+#=============================================================================
 # Target rules for targets named hello_world
 
 # Build rule for target.
@@ -217,6 +230,84 @@ cli_arguments_version/fast:
 	$(MAKE) $(MAKESILENT) -f src/cli/tests/CMakeFiles/cli_arguments_version.dir/build.make src/cli/tests/CMakeFiles/cli_arguments_version.dir/build
 .PHONY : cli_arguments_version/fast
 
+#=============================================================================
+# Target rules for targets named binding
+
+# Build rule for target.
+binding: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 binding
+.PHONY : binding
+
+# fast build rule for target.
+binding/fast:
+	$(MAKE) $(MAKESILENT) -f src/binding/CMakeFiles/binding.dir/build.make src/binding/CMakeFiles/binding.dir/build
+.PHONY : binding/fast
+
+#=============================================================================
+# Target rules for targets named baz
+
+# Build rule for target.
+baz: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 baz
+.PHONY : baz
+
+# fast build rule for target.
+baz/fast:
+	$(MAKE) $(MAKESILENT) -f src/baz/CMakeFiles/baz.dir/build.make src/baz/CMakeFiles/baz.dir/build
+.PHONY : baz/fast
+
+#=============================================================================
+# Target rules for targets named error_codes
+
+# Build rule for target.
+error_codes: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 error_codes
+.PHONY : error_codes
+
+# fast build rule for target.
+error_codes/fast:
+	$(MAKE) $(MAKESILENT) -f src/error_codes/CMakeFiles/error_codes.dir/build.make src/error_codes/CMakeFiles/error_codes.dir/build
+.PHONY : error_codes/fast
+
+#=============================================================================
+# Target rules for targets named _error_codes
+
+# Build rule for target.
+_error_codes: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _error_codes
+.PHONY : _error_codes
+
+# fast build rule for target.
+_error_codes/fast:
+	$(MAKE) $(MAKESILENT) -f src/error_codes/tests/CMakeFiles/_error_codes.dir/build.make src/error_codes/tests/CMakeFiles/_error_codes.dir/build
+.PHONY : _error_codes/fast
+
+#=============================================================================
+# Target rules for targets named foo
+
+# Build rule for target.
+foo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 foo
+.PHONY : foo
+
+# fast build rule for target.
+foo/fast:
+	$(MAKE) $(MAKESILENT) -f foo/CMakeFiles/foo.dir/build.make foo/CMakeFiles/foo.dir/build
+.PHONY : foo/fast
+
+#=============================================================================
+# Target rules for targets named hello
+
+# Build rule for target.
+hello: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello
+.PHONY : hello
+
+# fast build rule for target.
+hello/fast:
+	$(MAKE) $(MAKESILENT) -f hello/CMakeFiles/hello.dir/build.make hello/CMakeFiles/hello.dir/build
+.PHONY : hello/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -227,9 +318,16 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... repo_version"
+	@echo "... _error_codes"
+	@echo "... baz"
+	@echo "... binding"
 	@echo "... cli_arguments_0"
 	@echo "... cli_arguments_version"
+	@echo "... error_codes"
 	@echo "... example"
+	@echo "... foo"
+	@echo "... fox"
+	@echo "... hello"
 	@echo "... hello_world"
 	@echo "... logging_test"
 	@echo "... version_example"

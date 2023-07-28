@@ -83,7 +83,7 @@ CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 CMAKE_DLLTOOL:FILEPATH=CMAKE_DLLTOOL-NOTFOUND
 
 //Flags used by the linker during all build types.
-CMAKE_EXE_LINKER_FLAGS:STRING=
+CMAKE_EXE_LINKER_FLAGS:STRING=-L/usr/local/opt/llvm/lib
 
 //Flags used by the linker during DEBUG builds.
 CMAKE_EXE_LINKER_FLAGS_DEBUG:STRING=
@@ -117,7 +117,7 @@ CMAKE_MAKE_PROGRAM:UNINITIALIZED=/Applications/CLion.app/Contents/bin/ninja/mac/
 
 //Flags used by the linker during the creation of modules during
 // all build types.
-CMAKE_MODULE_LINKER_FLAGS:STRING=
+CMAKE_MODULE_LINKER_FLAGS:STRING=-L/usr/local/opt/llvm/lib
 
 //Flags used by the linker during the creation of modules during
 // DEBUG builds.
@@ -149,11 +149,11 @@ CMAKE_OSX_ARCHITECTURES:STRING=
 
 //Minimum OS X version to target for deployment (at runtime); newer
 // APIs weak linked. Set to empty string for default value.
-CMAKE_OSX_DEPLOYMENT_TARGET:STRING=12.6
+CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
 
 //The product will be built against the headers and libraries located
 // inside the indicated SDK.
-CMAKE_OSX_SYSROOT:PATH=/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk
+CMAKE_OSX_SYSROOT:PATH=/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
 
 //Value Computed by CMake
 CMAKE_PROJECT_DESCRIPTION:STATIC=
@@ -172,7 +172,7 @@ CMAKE_READELF:FILEPATH=CMAKE_READELF-NOTFOUND
 
 //Flags used by the linker during the creation of shared libraries
 // during all build types.
-CMAKE_SHARED_LINKER_FLAGS:STRING=
+CMAKE_SHARED_LINKER_FLAGS:STRING=-L/usr/local/opt/llvm/lib
 
 //Flags used by the linker during the creation of shared libraries
 // during DEBUG builds.
@@ -240,6 +240,15 @@ PKG_CONFIG_ARGN:STRING=
 
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/local/bin/pkg-config
+
+//Path to a file.
+PYTHON_INCLUDE_DIR:PATH=/Library/Frameworks/Python.framework/Versions/3.11/include/python3.11
+
+//Path to a library.
+PYTHON_LIBRARY:FILEPATH=/Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
+
+//Path to a library.
+PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
 
 //Path to a library.
 pkgcfg_lib_GLIB_glib-2.0:FILEPATH=/usr/local/Cellar/glib/2.76.4/lib/libglib-2.0.dylib
@@ -357,7 +366,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=19
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -412,6 +421,10 @@ FIND_PACKAGE_MESSAGE_DETAILS_Criterion:INTERNAL=[/usr/local/lib/libcriterion.dyl
 FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[/usr/local/bin/git][v2.28.0()]
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/local/bin/pkg-config][v0.29.2()]
+//Details about finding Python
+FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11][cfound components: Interpreter ][v3.11.4()]
+//Details about finding PythonLibs
+FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib][/Library/Frameworks/Python.framework/Versions/3.11/include/python3.11][v3.11.4()]
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 GLIB_CFLAGS:INTERNAL=-I/usr/local/Cellar/glib/2.76.4/include/glib-2.0;-I/usr/local/Cellar/glib/2.76.4/lib/glib-2.0/include;-I/usr/local/opt/gettext/include;-I/usr/local/Cellar/pcre2/10.42/include
@@ -453,6 +466,25 @@ GLIB_glib-2.0_VERSION:INTERNAL=
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PYTHON_INCLUDE_DIR
+PYTHON_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PYTHON_LIBRARY
+PYTHON_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: PYTHON_LIBRARY_DEBUG
+PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//Compiler reason failure
+_Python_Compiler_REASON_FAILURE:INTERNAL=
+//Development reason failure
+_Python_Development_REASON_FAILURE:INTERNAL=
+//Path to a program.
+_Python_EXECUTABLE:INTERNAL=/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11
+//Python Properties
+_Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;4;64;;cpython-311-darwin;/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11;/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11;/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages;/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages
+_Python_INTERPRETER_SIGNATURE:INTERNAL=3c97c57b8547b5d225a4131cf48fc285
+//Interpreter reason failure
+_Python_Interpreter_REASON_FAILURE:INTERNAL=
+//NumPy reason failure
+_Python_NumPy_REASON_FAILURE:INTERNAL=
 __pkg_config_checked_GLIB:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_GLIB_glib-2.0
 pkgcfg_lib_GLIB_glib-2.0-ADVANCED:INTERNAL=1

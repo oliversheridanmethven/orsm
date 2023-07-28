@@ -18,3 +18,8 @@ Test(example, test_fail)
     cr_assert(eq(int, 2, 1 + 1), "This should pass.");
     cr_assert(not(eq(int, 1, 2)), "This should pass.");
 }
+
+Test(logging, test_exit, .exit_code = 1)
+{
+    exit(1);
+}

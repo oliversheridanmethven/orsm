@@ -73,15 +73,15 @@ src/version/tests/CMakeFiles/version_example.dir/version.c.o: src/version/tests/
 src/version/tests/CMakeFiles/version_example.dir/version.c.o: /Users/oliver/ClionProjects/testing/src/version/tests/version.c
 src/version/tests/CMakeFiles/version_example.dir/version.c.o: src/version/tests/CMakeFiles/version_example.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/version/tests/CMakeFiles/version_example.dir/version.c.o"
-	cd /Users/oliver/ClionProjects/testing/build/src/version/tests && /usr/local/Cellar/gcc/13.1.0/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/version/tests/CMakeFiles/version_example.dir/version.c.o -MF CMakeFiles/version_example.dir/version.c.o.d -o CMakeFiles/version_example.dir/version.c.o -c /Users/oliver/ClionProjects/testing/src/version/tests/version.c
+	cd /Users/oliver/ClionProjects/testing/build/src/version/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/version/tests/CMakeFiles/version_example.dir/version.c.o -MF CMakeFiles/version_example.dir/version.c.o.d -o CMakeFiles/version_example.dir/version.c.o -c /Users/oliver/ClionProjects/testing/src/version/tests/version.c
 
 src/version/tests/CMakeFiles/version_example.dir/version.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/version_example.dir/version.c.i"
-	cd /Users/oliver/ClionProjects/testing/build/src/version/tests && /usr/local/Cellar/gcc/13.1.0/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/version/tests/version.c > CMakeFiles/version_example.dir/version.c.i
+	cd /Users/oliver/ClionProjects/testing/build/src/version/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/version/tests/version.c > CMakeFiles/version_example.dir/version.c.i
 
 src/version/tests/CMakeFiles/version_example.dir/version.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/version_example.dir/version.c.s"
-	cd /Users/oliver/ClionProjects/testing/build/src/version/tests && /usr/local/Cellar/gcc/13.1.0/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/version/tests/version.c -o CMakeFiles/version_example.dir/version.c.s
+	cd /Users/oliver/ClionProjects/testing/build/src/version/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/version/tests/version.c -o CMakeFiles/version_example.dir/version.c.s
 
 # Object files for target version_example
 version_example_OBJECTS = \
@@ -92,6 +92,7 @@ version_example_EXTERNAL_OBJECTS =
 
 src/version/tests/version_example: src/version/tests/CMakeFiles/version_example.dir/version.c.o
 src/version/tests/version_example: src/version/tests/CMakeFiles/version_example.dir/build.make
+src/version/tests/version_example: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
 src/version/tests/version_example: src/version/tests/CMakeFiles/version_example.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable version_example"
 	cd /Users/oliver/ClionProjects/testing/build/src/version/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/version_example.dir/link.txt --verbose=$(VERBOSE)

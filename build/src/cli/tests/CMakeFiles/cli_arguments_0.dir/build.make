@@ -73,15 +73,15 @@ src/cli/tests/CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.o: src/cli/tests/
 src/cli/tests/CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.o: /Users/oliver/ClionProjects/testing/src/cli/tests/cli_arguments_0.c
 src/cli/tests/CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.o: src/cli/tests/CMakeFiles/cli_arguments_0.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/cli/tests/CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.o"
-	cd /Users/oliver/ClionProjects/testing/build/src/cli/tests && /usr/local/Cellar/gcc/13.1.0/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/cli/tests/CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.o -MF CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.o.d -o CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.o -c /Users/oliver/ClionProjects/testing/src/cli/tests/cli_arguments_0.c
+	cd /Users/oliver/ClionProjects/testing/build/src/cli/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/cli/tests/CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.o -MF CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.o.d -o CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.o -c /Users/oliver/ClionProjects/testing/src/cli/tests/cli_arguments_0.c
 
 src/cli/tests/CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.i"
-	cd /Users/oliver/ClionProjects/testing/build/src/cli/tests && /usr/local/Cellar/gcc/13.1.0/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/cli/tests/cli_arguments_0.c > CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.i
+	cd /Users/oliver/ClionProjects/testing/build/src/cli/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/cli/tests/cli_arguments_0.c > CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.i
 
 src/cli/tests/CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.s"
-	cd /Users/oliver/ClionProjects/testing/build/src/cli/tests && /usr/local/Cellar/gcc/13.1.0/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/cli/tests/cli_arguments_0.c -o CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.s
+	cd /Users/oliver/ClionProjects/testing/build/src/cli/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/cli/tests/cli_arguments_0.c -o CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.s
 
 # Object files for target cli_arguments_0
 cli_arguments_0_OBJECTS = \
@@ -92,6 +92,7 @@ cli_arguments_0_EXTERNAL_OBJECTS =
 
 src/cli/tests/cli_arguments_0: src/cli/tests/CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.o
 src/cli/tests/cli_arguments_0: src/cli/tests/CMakeFiles/cli_arguments_0.dir/build.make
+src/cli/tests/cli_arguments_0: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
 src/cli/tests/cli_arguments_0: src/cli/tests/CMakeFiles/cli_arguments_0.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable cli_arguments_0"
 	cd /Users/oliver/ClionProjects/testing/build/src/cli/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cli_arguments_0.dir/link.txt --verbose=$(VERBOSE)

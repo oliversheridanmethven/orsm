@@ -64,25 +64,66 @@ CMAKE_BINARY_DIR = /Users/oliver/ClionProjects/testing/build
 
 # The main recursive "all" target.
 all: src/all
+all: foo/all
+all: hello/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: src/preinstall
+preinstall: foo/preinstall
+preinstall: hello/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: src/clean
+clean: foo/clean
+clean: hello/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory foo
+
+# Recursive "all" directory target.
+foo/all: foo/CMakeFiles/foo.dir/all
+.PHONY : foo/all
+
+# Recursive "preinstall" directory target.
+foo/preinstall:
+.PHONY : foo/preinstall
+
+# Recursive "clean" directory target.
+foo/clean: foo/CMakeFiles/foo.dir/clean
+.PHONY : foo/clean
+
+#=============================================================================
+# Directory level rules for directory hello
+
+# Recursive "all" directory target.
+hello/all: hello/CMakeFiles/hello.dir/all
+.PHONY : hello/all
+
+# Recursive "preinstall" directory target.
+hello/preinstall:
+.PHONY : hello/preinstall
+
+# Recursive "clean" directory target.
+hello/clean: hello/CMakeFiles/hello.dir/clean
+.PHONY : hello/clean
 
 #=============================================================================
 # Directory level rules for directory src
 
 # Recursive "all" directory target.
+src/all: src/CMakeFiles/fox.dir/all
 src/all: src/hello_world/all
 src/all: src/logging/all
 src/all: src/testing/all
 src/all: src/version/all
 src/all: src/cli/all
+src/all: src/binding/all
+src/all: src/baz/all
+src/all: src/common/all
+src/all: src/error_codes/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
@@ -91,15 +132,71 @@ src/preinstall: src/logging/preinstall
 src/preinstall: src/testing/preinstall
 src/preinstall: src/version/preinstall
 src/preinstall: src/cli/preinstall
+src/preinstall: src/binding/preinstall
+src/preinstall: src/baz/preinstall
+src/preinstall: src/common/preinstall
+src/preinstall: src/error_codes/preinstall
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
+src/clean: src/CMakeFiles/fox.dir/clean
 src/clean: src/hello_world/clean
 src/clean: src/logging/clean
 src/clean: src/testing/clean
 src/clean: src/version/clean
 src/clean: src/cli/clean
+src/clean: src/binding/clean
+src/clean: src/baz/clean
+src/clean: src/common/clean
+src/clean: src/error_codes/clean
 .PHONY : src/clean
+
+#=============================================================================
+# Directory level rules for directory src/baz
+
+# Recursive "all" directory target.
+src/baz/all: src/baz/CMakeFiles/baz.dir/all
+.PHONY : src/baz/all
+
+# Recursive "preinstall" directory target.
+src/baz/preinstall:
+.PHONY : src/baz/preinstall
+
+# Recursive "clean" directory target.
+src/baz/clean: src/baz/CMakeFiles/baz.dir/clean
+.PHONY : src/baz/clean
+
+#=============================================================================
+# Directory level rules for directory src/binding
+
+# Recursive "all" directory target.
+src/binding/all: src/binding/CMakeFiles/binding.dir/all
+src/binding/all: src/binding/tests/all
+.PHONY : src/binding/all
+
+# Recursive "preinstall" directory target.
+src/binding/preinstall: src/binding/tests/preinstall
+.PHONY : src/binding/preinstall
+
+# Recursive "clean" directory target.
+src/binding/clean: src/binding/CMakeFiles/binding.dir/clean
+src/binding/clean: src/binding/tests/clean
+.PHONY : src/binding/clean
+
+#=============================================================================
+# Directory level rules for directory src/binding/tests
+
+# Recursive "all" directory target.
+src/binding/tests/all:
+.PHONY : src/binding/tests/all
+
+# Recursive "preinstall" directory target.
+src/binding/tests/preinstall:
+.PHONY : src/binding/tests/preinstall
+
+# Recursive "clean" directory target.
+src/binding/tests/clean:
+.PHONY : src/binding/tests/clean
 
 #=============================================================================
 # Directory level rules for directory src/cli
@@ -132,6 +229,53 @@ src/cli/tests/preinstall:
 src/cli/tests/clean: src/cli/tests/CMakeFiles/cli_arguments_0.dir/clean
 src/cli/tests/clean: src/cli/tests/CMakeFiles/cli_arguments_version.dir/clean
 .PHONY : src/cli/tests/clean
+
+#=============================================================================
+# Directory level rules for directory src/common
+
+# Recursive "all" directory target.
+src/common/all:
+.PHONY : src/common/all
+
+# Recursive "preinstall" directory target.
+src/common/preinstall:
+.PHONY : src/common/preinstall
+
+# Recursive "clean" directory target.
+src/common/clean:
+.PHONY : src/common/clean
+
+#=============================================================================
+# Directory level rules for directory src/error_codes
+
+# Recursive "all" directory target.
+src/error_codes/all: src/error_codes/CMakeFiles/error_codes.dir/all
+src/error_codes/all: src/error_codes/tests/all
+.PHONY : src/error_codes/all
+
+# Recursive "preinstall" directory target.
+src/error_codes/preinstall: src/error_codes/tests/preinstall
+.PHONY : src/error_codes/preinstall
+
+# Recursive "clean" directory target.
+src/error_codes/clean: src/error_codes/CMakeFiles/error_codes.dir/clean
+src/error_codes/clean: src/error_codes/tests/clean
+.PHONY : src/error_codes/clean
+
+#=============================================================================
+# Directory level rules for directory src/error_codes/tests
+
+# Recursive "all" directory target.
+src/error_codes/tests/all: src/error_codes/tests/CMakeFiles/_error_codes.dir/all
+.PHONY : src/error_codes/tests/all
+
+# Recursive "preinstall" directory target.
+src/error_codes/tests/preinstall:
+.PHONY : src/error_codes/tests/preinstall
+
+# Recursive "clean" directory target.
+src/error_codes/tests/clean: src/error_codes/tests/CMakeFiles/_error_codes.dir/clean
+.PHONY : src/error_codes/tests/clean
 
 #=============================================================================
 # Directory level rules for directory src/hello_world
@@ -240,13 +384,39 @@ src/version/tests/clean: src/version/tests/CMakeFiles/version_example.dir/clean
 .PHONY : src/version/tests/clean
 
 #=============================================================================
+# Target rules for target src/CMakeFiles/fox.dir
+
+# All Build rule for target.
+src/CMakeFiles/fox.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/fox.dir/build.make src/CMakeFiles/fox.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/fox.dir/build.make src/CMakeFiles/fox.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=19,20 "Built target fox"
+.PHONY : src/CMakeFiles/fox.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/fox.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/fox.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/fox.dir/rule
+
+# Convenience name for target.
+fox: src/CMakeFiles/fox.dir/rule
+.PHONY : fox
+
+# clean rule for target.
+src/CMakeFiles/fox.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/fox.dir/build.make src/CMakeFiles/fox.dir/clean
+.PHONY : src/CMakeFiles/fox.dir/clean
+
+#=============================================================================
 # Target rules for target src/hello_world/CMakeFiles/hello_world.dir
 
 # All Build rule for target.
 src/hello_world/CMakeFiles/hello_world.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world.dir/build.make src/hello_world/CMakeFiles/hello_world.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world.dir/build.make src/hello_world/CMakeFiles/hello_world.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=7,8 "Built target hello_world"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=23,24 "Built target hello_world"
 .PHONY : src/hello_world/CMakeFiles/hello_world.dir/all
 
 # Build rule for subdir invocation for target.
@@ -272,7 +442,7 @@ src/hello_world/CMakeFiles/hello_world.dir/clean:
 src/logging/tests/CMakeFiles/logging_test.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test.dir/build.make src/logging/tests/CMakeFiles/logging_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test.dir/build.make src/logging/tests/CMakeFiles/logging_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=9,10 "Built target logging_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=25,26 "Built target logging_test"
 .PHONY : src/logging/tests/CMakeFiles/logging_test.dir/all
 
 # Build rule for subdir invocation for target.
@@ -298,7 +468,7 @@ src/logging/tests/CMakeFiles/logging_test.dir/clean:
 src/testing/tests/CMakeFiles/example.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/example.dir/build.make src/testing/tests/CMakeFiles/example.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/example.dir/build.make src/testing/tests/CMakeFiles/example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=5,6 "Built target example"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=15,16 "Built target example"
 .PHONY : src/testing/tests/CMakeFiles/example.dir/all
 
 # Build rule for subdir invocation for target.
@@ -350,7 +520,7 @@ src/version/CMakeFiles/repo_version.dir/clean:
 src/version/tests/CMakeFiles/version_example.dir/all: src/version/CMakeFiles/repo_version.dir/all
 	$(MAKE) $(MAKESILENT) -f src/version/tests/CMakeFiles/version_example.dir/build.make src/version/tests/CMakeFiles/version_example.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/version/tests/CMakeFiles/version_example.dir/build.make src/version/tests/CMakeFiles/version_example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=11,12 "Built target version_example"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=27,28 "Built target version_example"
 .PHONY : src/version/tests/CMakeFiles/version_example.dir/all
 
 # Build rule for subdir invocation for target.
@@ -376,7 +546,7 @@ src/version/tests/CMakeFiles/version_example.dir/clean:
 src/cli/tests/CMakeFiles/cli_arguments_0.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/cli/tests/CMakeFiles/cli_arguments_0.dir/build.make src/cli/tests/CMakeFiles/cli_arguments_0.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/cli/tests/CMakeFiles/cli_arguments_0.dir/build.make src/cli/tests/CMakeFiles/cli_arguments_0.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=1,2 "Built target cli_arguments_0"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=9,10 "Built target cli_arguments_0"
 .PHONY : src/cli/tests/CMakeFiles/cli_arguments_0.dir/all
 
 # Build rule for subdir invocation for target.
@@ -402,7 +572,7 @@ src/cli/tests/CMakeFiles/cli_arguments_0.dir/clean:
 src/cli/tests/CMakeFiles/cli_arguments_version.dir/all: src/version/CMakeFiles/repo_version.dir/all
 	$(MAKE) $(MAKESILENT) -f src/cli/tests/CMakeFiles/cli_arguments_version.dir/build.make src/cli/tests/CMakeFiles/cli_arguments_version.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/cli/tests/CMakeFiles/cli_arguments_version.dir/build.make src/cli/tests/CMakeFiles/cli_arguments_version.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=3,4 "Built target cli_arguments_version"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=11,12 "Built target cli_arguments_version"
 .PHONY : src/cli/tests/CMakeFiles/cli_arguments_version.dir/all
 
 # Build rule for subdir invocation for target.
@@ -420,6 +590,162 @@ cli_arguments_version: src/cli/tests/CMakeFiles/cli_arguments_version.dir/rule
 src/cli/tests/CMakeFiles/cli_arguments_version.dir/clean:
 	$(MAKE) $(MAKESILENT) -f src/cli/tests/CMakeFiles/cli_arguments_version.dir/build.make src/cli/tests/CMakeFiles/cli_arguments_version.dir/clean
 .PHONY : src/cli/tests/CMakeFiles/cli_arguments_version.dir/clean
+
+#=============================================================================
+# Target rules for target src/binding/CMakeFiles/binding.dir
+
+# All Build rule for target.
+src/binding/CMakeFiles/binding.dir/all: src/error_codes/CMakeFiles/error_codes.dir/all
+	$(MAKE) $(MAKESILENT) -f src/binding/CMakeFiles/binding.dir/build.make src/binding/CMakeFiles/binding.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/binding/CMakeFiles/binding.dir/build.make src/binding/CMakeFiles/binding.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=5,6,7,8 "Built target binding"
+.PHONY : src/binding/CMakeFiles/binding.dir/all
+
+# Build rule for subdir invocation for target.
+src/binding/CMakeFiles/binding.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/binding/CMakeFiles/binding.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/build/CMakeFiles 0
+.PHONY : src/binding/CMakeFiles/binding.dir/rule
+
+# Convenience name for target.
+binding: src/binding/CMakeFiles/binding.dir/rule
+.PHONY : binding
+
+# clean rule for target.
+src/binding/CMakeFiles/binding.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/binding/CMakeFiles/binding.dir/build.make src/binding/CMakeFiles/binding.dir/clean
+.PHONY : src/binding/CMakeFiles/binding.dir/clean
+
+#=============================================================================
+# Target rules for target src/baz/CMakeFiles/baz.dir
+
+# All Build rule for target.
+src/baz/CMakeFiles/baz.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/baz/CMakeFiles/baz.dir/build.make src/baz/CMakeFiles/baz.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/baz/CMakeFiles/baz.dir/build.make src/baz/CMakeFiles/baz.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=3,4 "Built target baz"
+.PHONY : src/baz/CMakeFiles/baz.dir/all
+
+# Build rule for subdir invocation for target.
+src/baz/CMakeFiles/baz.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/baz/CMakeFiles/baz.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/build/CMakeFiles 0
+.PHONY : src/baz/CMakeFiles/baz.dir/rule
+
+# Convenience name for target.
+baz: src/baz/CMakeFiles/baz.dir/rule
+.PHONY : baz
+
+# clean rule for target.
+src/baz/CMakeFiles/baz.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/baz/CMakeFiles/baz.dir/build.make src/baz/CMakeFiles/baz.dir/clean
+.PHONY : src/baz/CMakeFiles/baz.dir/clean
+
+#=============================================================================
+# Target rules for target src/error_codes/CMakeFiles/error_codes.dir
+
+# All Build rule for target.
+src/error_codes/CMakeFiles/error_codes.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/error_codes/CMakeFiles/error_codes.dir/build.make src/error_codes/CMakeFiles/error_codes.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/error_codes/CMakeFiles/error_codes.dir/build.make src/error_codes/CMakeFiles/error_codes.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=13,14 "Built target error_codes"
+.PHONY : src/error_codes/CMakeFiles/error_codes.dir/all
+
+# Build rule for subdir invocation for target.
+src/error_codes/CMakeFiles/error_codes.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/error_codes/CMakeFiles/error_codes.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/build/CMakeFiles 0
+.PHONY : src/error_codes/CMakeFiles/error_codes.dir/rule
+
+# Convenience name for target.
+error_codes: src/error_codes/CMakeFiles/error_codes.dir/rule
+.PHONY : error_codes
+
+# clean rule for target.
+src/error_codes/CMakeFiles/error_codes.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/error_codes/CMakeFiles/error_codes.dir/build.make src/error_codes/CMakeFiles/error_codes.dir/clean
+.PHONY : src/error_codes/CMakeFiles/error_codes.dir/clean
+
+#=============================================================================
+# Target rules for target src/error_codes/tests/CMakeFiles/_error_codes.dir
+
+# All Build rule for target.
+src/error_codes/tests/CMakeFiles/_error_codes.dir/all: src/error_codes/CMakeFiles/error_codes.dir/all
+	$(MAKE) $(MAKESILENT) -f src/error_codes/tests/CMakeFiles/_error_codes.dir/build.make src/error_codes/tests/CMakeFiles/_error_codes.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/error_codes/tests/CMakeFiles/_error_codes.dir/build.make src/error_codes/tests/CMakeFiles/_error_codes.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=1,2 "Built target _error_codes"
+.PHONY : src/error_codes/tests/CMakeFiles/_error_codes.dir/all
+
+# Build rule for subdir invocation for target.
+src/error_codes/tests/CMakeFiles/_error_codes.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/error_codes/tests/CMakeFiles/_error_codes.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/build/CMakeFiles 0
+.PHONY : src/error_codes/tests/CMakeFiles/_error_codes.dir/rule
+
+# Convenience name for target.
+_error_codes: src/error_codes/tests/CMakeFiles/_error_codes.dir/rule
+.PHONY : _error_codes
+
+# clean rule for target.
+src/error_codes/tests/CMakeFiles/_error_codes.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/error_codes/tests/CMakeFiles/_error_codes.dir/build.make src/error_codes/tests/CMakeFiles/_error_codes.dir/clean
+.PHONY : src/error_codes/tests/CMakeFiles/_error_codes.dir/clean
+
+#=============================================================================
+# Target rules for target foo/CMakeFiles/foo.dir
+
+# All Build rule for target.
+foo/CMakeFiles/foo.dir/all:
+	$(MAKE) $(MAKESILENT) -f foo/CMakeFiles/foo.dir/build.make foo/CMakeFiles/foo.dir/depend
+	$(MAKE) $(MAKESILENT) -f foo/CMakeFiles/foo.dir/build.make foo/CMakeFiles/foo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=17,18 "Built target foo"
+.PHONY : foo/CMakeFiles/foo.dir/all
+
+# Build rule for subdir invocation for target.
+foo/CMakeFiles/foo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 foo/CMakeFiles/foo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/build/CMakeFiles 0
+.PHONY : foo/CMakeFiles/foo.dir/rule
+
+# Convenience name for target.
+foo: foo/CMakeFiles/foo.dir/rule
+.PHONY : foo
+
+# clean rule for target.
+foo/CMakeFiles/foo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f foo/CMakeFiles/foo.dir/build.make foo/CMakeFiles/foo.dir/clean
+.PHONY : foo/CMakeFiles/foo.dir/clean
+
+#=============================================================================
+# Target rules for target hello/CMakeFiles/hello.dir
+
+# All Build rule for target.
+hello/CMakeFiles/hello.dir/all:
+	$(MAKE) $(MAKESILENT) -f hello/CMakeFiles/hello.dir/build.make hello/CMakeFiles/hello.dir/depend
+	$(MAKE) $(MAKESILENT) -f hello/CMakeFiles/hello.dir/build.make hello/CMakeFiles/hello.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=21,22 "Built target hello"
+.PHONY : hello/CMakeFiles/hello.dir/all
+
+# Build rule for subdir invocation for target.
+hello/CMakeFiles/hello.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello/CMakeFiles/hello.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/build/CMakeFiles 0
+.PHONY : hello/CMakeFiles/hello.dir/rule
+
+# Convenience name for target.
+hello: hello/CMakeFiles/hello.dir/rule
+.PHONY : hello
+
+# clean rule for target.
+hello/CMakeFiles/hello.dir/clean:
+	$(MAKE) $(MAKESILENT) -f hello/CMakeFiles/hello.dir/build.make hello/CMakeFiles/hello.dir/clean
+.PHONY : hello/CMakeFiles/hello.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

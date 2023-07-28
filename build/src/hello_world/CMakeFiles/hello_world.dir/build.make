@@ -73,15 +73,15 @@ src/hello_world/CMakeFiles/hello_world.dir/hello_world.c.o: src/hello_world/CMak
 src/hello_world/CMakeFiles/hello_world.dir/hello_world.c.o: /Users/oliver/ClionProjects/testing/src/hello_world/hello_world.c
 src/hello_world/CMakeFiles/hello_world.dir/hello_world.c.o: src/hello_world/CMakeFiles/hello_world.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/hello_world/CMakeFiles/hello_world.dir/hello_world.c.o"
-	cd /Users/oliver/ClionProjects/testing/build/src/hello_world && /usr/local/Cellar/gcc/13.1.0/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/hello_world/CMakeFiles/hello_world.dir/hello_world.c.o -MF CMakeFiles/hello_world.dir/hello_world.c.o.d -o CMakeFiles/hello_world.dir/hello_world.c.o -c /Users/oliver/ClionProjects/testing/src/hello_world/hello_world.c
+	cd /Users/oliver/ClionProjects/testing/build/src/hello_world && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/hello_world/CMakeFiles/hello_world.dir/hello_world.c.o -MF CMakeFiles/hello_world.dir/hello_world.c.o.d -o CMakeFiles/hello_world.dir/hello_world.c.o -c /Users/oliver/ClionProjects/testing/src/hello_world/hello_world.c
 
 src/hello_world/CMakeFiles/hello_world.dir/hello_world.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/hello_world.dir/hello_world.c.i"
-	cd /Users/oliver/ClionProjects/testing/build/src/hello_world && /usr/local/Cellar/gcc/13.1.0/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/hello_world/hello_world.c > CMakeFiles/hello_world.dir/hello_world.c.i
+	cd /Users/oliver/ClionProjects/testing/build/src/hello_world && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/hello_world/hello_world.c > CMakeFiles/hello_world.dir/hello_world.c.i
 
 src/hello_world/CMakeFiles/hello_world.dir/hello_world.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/hello_world.dir/hello_world.c.s"
-	cd /Users/oliver/ClionProjects/testing/build/src/hello_world && /usr/local/Cellar/gcc/13.1.0/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/hello_world/hello_world.c -o CMakeFiles/hello_world.dir/hello_world.c.s
+	cd /Users/oliver/ClionProjects/testing/build/src/hello_world && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/hello_world/hello_world.c -o CMakeFiles/hello_world.dir/hello_world.c.s
 
 # Object files for target hello_world
 hello_world_OBJECTS = \
@@ -92,6 +92,7 @@ hello_world_EXTERNAL_OBJECTS =
 
 src/hello_world/hello_world: src/hello_world/CMakeFiles/hello_world.dir/hello_world.c.o
 src/hello_world/hello_world: src/hello_world/CMakeFiles/hello_world.dir/build.make
+src/hello_world/hello_world: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
 src/hello_world/hello_world: src/hello_world/CMakeFiles/hello_world.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable hello_world"
 	cd /Users/oliver/ClionProjects/testing/build/src/hello_world && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hello_world.dir/link.txt --verbose=$(VERBOSE)

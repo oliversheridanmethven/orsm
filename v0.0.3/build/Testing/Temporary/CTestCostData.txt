@@ -1,0 +1,18 @@
+test_example 83 0.000898803
+logging_test 117 0.00180565
+version_test 44 0.00500068
+cli_arguments_0 78 0.00289208
+cli_arguments_version 58 0.00309142
+example 48 0.00380452
+basic_python_test 6 0.0105848
+basic_python_test_again 3 0.0211947
+binding_import 7 0.0435238
+basic_python 6 0.010753
+basic_python.py 12 0.00952901
+basic_python_again.py 11 0.0058933
+binding_import.py 5 0
+test_basic_python_again 1 0.067741
+test_binding_import 0 0
+basic_python_again 5 0.012879
+error_codes 3 0.0683368
+---

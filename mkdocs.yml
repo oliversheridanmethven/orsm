@@ -34,7 +34,7 @@ theme:
     primary: custom
 
 extra_css:
-  - docs/extra.css
+  - docs/colour_scheme.css
 
 
 extra:
@@ -58,8 +58,8 @@ plugins:
         - "*LICENSE.html"
         - _skbuild/*
   - same-dir # Allows us to operate from the root directory.
-#  - awesome-pages:
-#      collapse_single_pages: true
+  - awesome-pages:
+      collapse_single_pages: true
   - git-revision-date-localized:
       enable_creation_date: true
 #  - git-committers:

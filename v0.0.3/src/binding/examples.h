@@ -1,0 +1,11 @@
+#ifndef TESTING_EXAMPLES_H
+#define TESTING_EXAMPLES_H
+#include "error_codes/error_codes.h"
+
+error_code hello_world(void);
+
+error_code foo(int a, char *b);
+
+void fatal_failure(void);
+
+#endif//TESTING_EXAMPLES_H

@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: testing
-Version: 1.2.3
-Summary: a minimal example package (cpp version)
-Author: The scikit-build team
-License: MIT
-Requires-Python: >=3.7

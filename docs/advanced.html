@@ -6,7 +6,13 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="The testing suite.">
       
+      
+        <meta name="author" content="Dr Oliver Sheridan-Methven">
+      
+      
+        <link rel="canonical" href="https://oliversheridanmethven.github.io/testing/docs/advanced.html">
       
       
         <link rel="prev" href="../data/videos/index.html">
@@ -55,9 +61,9 @@
       
         <meta  property="og:title"  content="Advanced - Testing" >
       
-        <meta  property="og:description"  content="None" >
+        <meta  property="og:description"  content="The testing suite." >
       
-        <meta  property="og:image"  content="./assets/images/social/docs/advanced.png" >
+        <meta  property="og:image"  content="https://oliversheridanmethven.github.io/testing/assets/images/social/docs/advanced.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -65,15 +71,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="None" >
+        <meta  property="og:url"  content="https://oliversheridanmethven.github.io/testing/docs/advanced.html" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
         <meta  name="twitter:title"  content="Advanced - Testing" >
       
-        <meta  name="twitter:description"  content="None" >
+        <meta  name="twitter:description"  content="The testing suite." >
       
-        <meta  name="twitter:image"  content="./assets/images/social/docs/advanced.png" >
+        <meta  name="twitter:image"  content="https://oliversheridanmethven.github.io/testing/assets/images/social/docs/advanced.png" >
       
     
     
@@ -621,6 +627,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#updating-the-git-versions-and-releases" class="md-nav__link">
+    Updating the git versions and releases
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#updating-the-remote-documentation" class="md-nav__link">
@@ -1194,6 +1207,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#updating-the-git-versions-and-releases" class="md-nav__link">
+    Updating the git versions and releases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#updating-the-remote-documentation" class="md-nav__link">
     Updating the remote documentation.
   </a>
@@ -1219,6 +1239,16 @@
 
 
 <h1 id="advanced">Advanced</h1>
+<h2 id="updating-the-git-versions-and-releases">Updating the git versions and releases</h2>
+<p>To list the git version tags: </p>
+<pre><code class="language-bash">git tag -l
+</code></pre>
+<p>To add a tag use:</p>
+<pre><code class="language-bash">git tag -a &lt;vX.Y.Z&gt; -m &quot;&lt;SOME BRIEF MESSAGE&gt;&quot;
+</code></pre>
+<p>To set a release with a tag:</p>
+<pre><code class="language-bash">gh release create $(git describe --tags --abbrev=0)
+</code></pre>
 <h2 id="updating-the-remote-documentation">Updating the remote documentation.</h2>
 <p>To update the documentation hosted remotely (e.g. on GitHub Pages), 
 then on <code>master</code> we need to redeploy the documents after 
@@ -1226,7 +1256,7 @@ the most relevant commit by calling:</p>
 <pre><code class="language-bash">mkdocs gh-deploy --clean
 </code></pre>
 <p>Additionally, to tage the appropriate version, run:</p>
-<pre><code class="language-bash">mike deploy --push --update-aliases &lt;TAG&gt; latest
+<pre><code class="language-bash">mike deploy --push --update-aliases $(git describe --tags --abbrev=0) latest
 </code></pre>
 
   <hr>

@@ -1,6 +1,6 @@
 # TODO
 
-[TOC]
+
 
 There are various things I would like to add to this repo, including:
 

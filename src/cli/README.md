@@ -1,6 +1,6 @@
 # Command line interface
 
-[TOC]
+
 
 This library demonstrates how to use a 
 command line interface. The tool underlying this

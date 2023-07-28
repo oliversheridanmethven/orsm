@@ -9,12 +9,46 @@ use_directory_urls: false
 # the `index.md` convention, this ensures hyperlinks resolve
 # correctly.
 
-theme: readthedocs
-markdown_extensions:
-  - admonition # Gives nice highlight fields.
+#theme:
+#  name: material
+#  features:
+#    - toc.integrate
+#
+##theme: readthedocs
+#markdown_extensions:
+#  - admonition # Gives nice highlight fields.
+#  - toc:
+#      permalink: true
+#  - toc:
+#      title: Contents
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tabs.sticky
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - navigation.footer
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/oliversheridanmethven/testing
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/oliver-sheridan-methven/
+    - icon: fontawesome/solid/envelope
+      link: mailto:oliver.sheridan-methven@hotmail.co.uk
 
 plugins:
   - search
+  - social
   - exclude:
       glob:
         - venv/*

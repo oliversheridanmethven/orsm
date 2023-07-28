@@ -1,4 +1,6 @@
 nav:
     - README.md
     - docs
+    - build
+    - src
     - ...

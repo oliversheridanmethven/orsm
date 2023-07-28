@@ -1,9 +1,5 @@
 # Getting started
 
-Here we outline how to get started.
-
-[TOC]
-
 ## Downloading the repo
 
 To download the repo run

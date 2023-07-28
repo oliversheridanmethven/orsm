@@ -1,6 +1,6 @@
 # Advanced
 
-[TOC]
+
 
 ## Updating the remote documentation. 
 

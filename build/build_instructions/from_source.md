@@ -1,6 +1,6 @@
 # Building from source
 
-[TOC]
+
 
 ## Out-of-source builds 
 

@@ -1,7 +1,5 @@
 # Dependencies
 
-[TOC]
-
 ## List of dependencies
 
 The project relies on a few dependencies, the most notable of
@@ -25,6 +23,7 @@ which include:
     - mkdocs-same-dir.
     - mkdocs-awesome-pages-plugin.
     - mkdocs-exclude
+    - pillow cairosvg
 
 ## Installation
 

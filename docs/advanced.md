@@ -1,7 +1,5 @@
 # Advanced
 
-
-
 ## Updating the remote documentation. 
 
 To update the documentation hosted remotely (e.g. on GitHub Pages), 
@@ -11,6 +9,8 @@ the most relevant commit by calling:
 mkdocs gh-deploy --clean
 ```
 
-!!! note "TODO: Git hooks"
-    I should automate this by turning this into a git hook
-    or a github action. 
+Additionally, to tage the appropriate version, run:
+```bash
+mike deploy --push --update-aliases <TAG> latest
+```
+

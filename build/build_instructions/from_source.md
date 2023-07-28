@@ -17,7 +17,7 @@ make test
 ctest 
 ```
 !!! note
-`make test` and `ctest` are synonymous.
+    `make test` and `ctest` are synonymous.
 
 ### Modern C23 compilers
 

@@ -24,6 +24,9 @@ which include:
     - mkdocs-awesome-pages-plugin.
     - mkdocs-exclude
     - pillow cairosvg
+    - mkdocs-git-revision-date-localized-plugin
+    - mkdocs-git-committers-plugin-2
+    - mike
 
 ## Installation
 

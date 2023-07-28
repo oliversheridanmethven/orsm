@@ -15,7 +15,6 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${ERROR_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ERROR_FLAGS}")
 
 
-
 include(CheckCCompilerFlag)
 CHECK_C_COMPILER_FLAG("-std=c2x" COMPILER_SUPPORTS_C2X)
 if(COMPILER_SUPPORTS_C2X)
@@ -33,12 +32,16 @@ enable_testing()
 # ^ This must be before any calls to add_subdirectory to ensure it is enabled recursively.
 # cf. https://stackoverflow.com/questions/54550939/ctest-add-tests-in-subdirectories#comment109191766_55835742
 
-
-
-
-
-# Some C++ examples.
-#add_executable(main main.cpp my_stacks.hpp my_queues.hpp my_minimum.hpp) # my_sort.hpp my_sort.cpp)
+# We use scikit-build to build our CMake project and setup our python wrappers.
+if(SKBUILD)
+    MESSAGE(STATUS "Trying to build using scikit-build")
+    EXECUTE_PROCESS(COMMAND ${PYTHON_EXECUTABLE} -c "import importlib.resources; print(importlib.resources.files('skbuild').joinpath('resources/cmake'), end='')" OUTPUT_VARIABLE PYTHON_SKLIB_CMAKE_DIR)
+    MESSAGE(STATUS "The Python scikit-build CMake directory is: ${PYTHON_SKLIB_CMAKE_DIR}")
+    set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PYTHON_SKLIB_CMAKE_DIR}/")
+    #    find_package(PythonExtensions REQUIRED)
+else()
+    MESSAGE(STATUS "Could not find scikit-build for building.")
+endif()
 
 # We get the python libraries for our wrappers.
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/")
@@ -47,6 +50,18 @@ find_package(PythonLibs REQUIRED)
 include_directories(${PYTHON_INCLUDE_DIRS})
 link_libraries(${PYTHON_LIBRARIES})
 
+function(add_python_tests)
+    foreach(python_file IN LISTS ARGN)
+        add_python_test(${python_file})
+    endforeach()
+endfunction()
+
+function(add_python_test python_file)
+    find_package(Python COMPONENTS Interpreter REQUIRED)
+    STRING(REGEX REPLACE "\.py$" "" test_name ${python_file})
+    message(STATUS "Trying to add the python tests from: ${python_file} (${CMAKE_CURRENT_SOURCE_DIR}/${python_file})")
+    add_test(NAME ${test_name} COMMAND ${Python_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/${python_file})
+endfunction()
 
 function(install_python_target target destination)
     if(SKBUILD)
@@ -58,25 +73,9 @@ function(install_python_target target destination)
     endif()
 endfunction()
 
-function(add_python_test python_file)
-    find_package(Python COMPONENTS Interpreter REQUIRED)
-    STRING(REGEX REPLACE "^test_" "" python_file_without_prefix ${python_file})
-    add_test(NAME ${python_file_without_prefix} COMMAND ${Python_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/${python_file})
-endfunction()
-# We use scikit-build to our python wrappers.
-if(SKBUILD)
-    MESSAGE(STATUS "Trying to build using scikit-build")
-    EXECUTE_PROCESS(COMMAND ${PYTHON_EXECUTABLE} -c "import importlib.resources; print(importlib.resources.files('skbuild').joinpath('resources/cmake'), end='')" OUTPUT_VARIABLE PYTHON_SKLIB_CMAKE_DIR)
-    MESSAGE(STATUS "The Python scikit-build CMake directory is: ${PYTHON_SKLIB_CMAKE_DIR}")
-    set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PYTHON_SKLIB_CMAKE_DIR}/")
-#    find_package(PythonExtensions REQUIRED)
-else()
-    MESSAGE(STATUS "Could not find scikit-build for building.")
-endif()
-
-add_subdirectory(foo)
-add_subdirectory(hello)
 # Where we find the source files for our builds.
 add_subdirectory(src)
 
-
+# Some less important and miscellaneous directories we sometimes track.
+add_subdirectory(foo)
+add_subdirectory(hello)

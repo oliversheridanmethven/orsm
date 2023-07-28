@@ -1,4 +1,4 @@
-add_subdirectory(test)
+add_subdirectory(tests)
 
 
 # So we can add versioning to our repo

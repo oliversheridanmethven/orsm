@@ -47,8 +47,8 @@ PyObject *_set_at_exit(PyObject *self, PyObject *args, PyObject *kwargs)
     Py_RETURN_NONE;
 }
 
-PyObject *_fail(PyObject *self, PyObject *args, PyObject *kwargs)
+PyObject *_fatal_failure(PyObject *self, PyObject *args, PyObject *kwargs)
 {
-    fail();
+    fatal_failure();
     Py_RETURN_NONE;
 }

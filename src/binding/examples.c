@@ -20,8 +20,14 @@ void foo(int a, char *b)
     }
 }
 
-void fail(void)
+void fatal_failure(void)
 {
-    fprintf(stderr, "We are failing now.\n");
+    fprintf(stderr, "We are fatally failing now.\n");
+    exit(1);
+}
+
+void non_fatal_failure(void)
+{
+    fprintf(stderr, "We are non-fatally failing now.\n");
     exit(1);
 }

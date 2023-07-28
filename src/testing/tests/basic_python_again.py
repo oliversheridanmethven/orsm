@@ -1,8 +1,8 @@
 import unittest
 
-class TestBasicUnitTests(unittest.TestCase):
+class Basic(unittest.TestCase):
     def test_pass(self):
-        self.assertEqual(True, True)
+        self.assertTrue(True)
 
 
 if __name__ == '__main__':

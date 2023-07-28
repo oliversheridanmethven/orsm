@@ -1,16 +1,16 @@
 #include "examples_bindings.h"
 
-#define PyFunc(func)                                                                                     \
+#define PyFunc(function)                                                                                 \
     /* An awkward cast necessary for functions of the form def foo(*args, **kwargs) */                   \
     /* https://docs.python.org/3/extending/extending.html#keyword-parameters-for-extension-functions/ */ \
-    ((PyCFunction) (void (*)(void)) func)
+    ((PyCFunction) (void (*)(void)) function)
 
 static PyMethodDef binding_methods[] = {
         {"hello_world", PyFunc(_hello_world), METH_VARARGS | METH_KEYWORDS,
          "Says hello world."},
         {"foo", PyFunc(_foo), METH_VARARGS | METH_KEYWORDS,
          "Prints an arg and kwarg argument."},
-        {"fail", PyFunc(_fail), METH_VARARGS | METH_KEYWORDS,
+        {"fatal_failure", PyFunc(_fatal_failure), METH_VARARGS | METH_KEYWORDS,
          "Fails and calls exit()."},
         {"set_at_exit", PyFunc(_set_at_exit), METH_VARARGS | METH_KEYWORDS,
          "Sets functionality to execute on exiting."},

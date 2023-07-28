@@ -5,6 +5,6 @@ void hello_world(void);
 
 void foo(int a, char *b);
 
-void fail(void);
+void fatal_failure(void);
 
 #endif//TESTING_EXAMPLES_H

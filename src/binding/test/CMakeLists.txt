@@ -1,1 +1,0 @@
-add_python_test(test_binding_import.py)

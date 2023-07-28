@@ -21,5 +21,5 @@ Test(example, test_fail)
 
 Test(logging, test_exit, .exit_code = 1)
 {
-    exit(1);// This terminates the program.
+    exit(1);
 }

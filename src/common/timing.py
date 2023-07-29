@@ -3,7 +3,7 @@ Timing functionality.
 """
 
 import time
-from .output import Supressor
+from common.output import Supressor
 
 
 def time_function(*args, name=None, function, iter_limit=None, time_limit=None, suppress_output=False, **kwargs):

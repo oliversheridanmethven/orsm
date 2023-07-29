@@ -4,3 +4,4 @@ target_link_libraries(binding error_codes)
 install_python_target(binding src/binding)
 
 add_subdirectory(tests)
+add_subdirectory(benchmarks)

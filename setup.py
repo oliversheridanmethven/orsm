@@ -2,25 +2,20 @@ from skbuild import setup
 
 setup(
     name="testing",
-    version="1.2.3",
     description="a minimal example package (cpp version)",
-    author="The scikit-build team",
-    license="MIT",
+    author="Dr Oliver Sheridan-Methven",
+    # license="MIT",
+    setuptools_git_versioning={"enabled": True},
+    setup_requires=["setuptools-git-versioning<2"],
     packages=[
-        "hello",
-        "foo",
-        "fox",
-        "baz",
         "binding",
-        "common"
+        "common",
+        "media"
     ],
     package_dir={
-        "hello": "",
-        "foo": ".",
-        "fox": "src",
-        "baz": "src/baz",
         "binding": "src/binding",
-        "common": "src/common"
+        "common": "src/common",
+        "media": "src/media"
     },
-    python_requires=">=3.7",
+    python_requires=">=3.10",
 )

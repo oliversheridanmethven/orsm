@@ -4,5 +4,3 @@ add_test(NAME example COMMAND example)
 
 add_python_tests(basic_python.py basic_python_again.py)
 
-#add_python_test(basic_python.py)
-#add_python_test(basic_python_again.py)

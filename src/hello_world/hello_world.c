@@ -1,6 +1,7 @@
+#include "hello_world.h"
 #include <stdio.h>
 
-int main(int argc, char **argv)
+void hello_world(void)
 {
-    printf("Hello world.\n");
+    printf("Hello world.");
 }

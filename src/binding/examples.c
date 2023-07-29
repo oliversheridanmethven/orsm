@@ -4,7 +4,7 @@
 
 error_code hello_world(void)
 {
-    int rc = puts("Hello world from within C.\n");
+    int rc = puts("Hello world from within C.");
     return (rc == EOF || rc < 0) ? EC_FAILURE : EC_SUCCESS;
 }
 

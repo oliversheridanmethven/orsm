@@ -10,7 +10,7 @@ setup(
     packages=[
         "binding",
         "common",
-        "media"
+        "media",
     ],
     package_dir={
         "binding": "src/binding",

@@ -43,6 +43,9 @@ else()
     MESSAGE(STATUS "Could not find scikit-build for building.")
 endif()
 
+
+FIND_PACKAGE(Python3)
+
 # We get the python libraries for our wrappers.
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/")
 find_package(PythonLibs REQUIRED)

@@ -4,9 +4,24 @@ Handling arguments.
 """
 
 import itertools
-from .variables import variable_names_and_objects
+from common.variables import variable_names_and_objects
 
-def selection_optional(iterable, *, min_length=None, max_length=None):
+
+def all_combinations(iterable, *, min_length=None, max_length=None):
+    """
+    Determines the possible combinations that can be formed from an iterable,
+    where 0 items are selected, 1 item is selected, 2 items are selected, ...,
+    until all the items are selected.
+    e.g. [a,b,c] produces:
+    [(),
+     ('a',),
+     ('b',),
+     ('c',),
+     ('a', 'b'),
+     ('a', 'c'),
+     ('b', 'c'),
+     ('a', 'b', 'c')]
+    """
     for variable, value in variable_names_and_objects(max_length, min_length):
         if value is not None:
             assert isinstance(value, int) and value >= 0, f"The {variable = } needs to be a positive integer, not {value = }"
@@ -24,7 +39,8 @@ def selection_optional(iterable, *, min_length=None, max_length=None):
             yield from itertools.combinations(iterable, size)
         size += 1
 
-def all_kwarg_combinations(*, keys, values):
+
+def all_kwarg_combinations(*, keys, values, min_length=None, max_length=None):
     """
     For a list of keys [a, b] and values [1, 2] it produces
     all the unique combinations of key-value pairings:
@@ -42,7 +58,5 @@ def all_kwarg_combinations(*, keys, values):
     arguments.
     """
     individual_pairings = [list(itertools.product([key], values)) for key in keys]
-    selections = selection_optional(individual_pairings)
-    yield from (dict(kwarg) for selection in selections for kwarg in itertools.product(*selection))
-
-# list(all_kwarg_combinations(keys=["foo", "bar"], values=["aaa","bbb"]))
+    combinations = all_combinations(individual_pairings, min_length=min_length, max_length=max_length)
+    yield from (dict(kwarg) for combination in combinations for kwarg in itertools.product(*combination))

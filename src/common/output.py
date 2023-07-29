@@ -2,7 +2,7 @@
 Handling output.
 """
 
-from common import suppressing_start, suppressing_stop
+from common.suppressor import suppressing_start, suppressing_stop
 import py
 
 

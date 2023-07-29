@@ -8,7 +8,7 @@ import time
 from common.output import Suppressor
 
 
-def time_function(*args, name=None, function, iter_limit=None, time_limit=None, suppress_output=False, **kwargs):
+def time_function(*args, name=None, function, iter_limit=None, time_limit=None, suppress_output=False, verbose=True, **kwargs):
     """A basic function timer."""
     name = name if name else function.__name__
     total_iterations = 0
@@ -28,5 +28,7 @@ def time_function(*args, name=None, function, iter_limit=None, time_limit=None, 
             seconds += end - start
             total_iterations += remaining_iterations
             iterations *= 2
-
-    print(f"The function {name} took {seconds} seconds over {total_iterations} iterations, averaging {seconds / total_iterations} seconds per function call.")
+    average = seconds / total_iterations
+    if verbose:
+        print(f"The function {name} took {seconds} seconds over {total_iterations} iterations, averaging {average} seconds per function call.")
+    return {"name": name, "seconds": seconds, "total_iterations": total_iterations, "average": average}

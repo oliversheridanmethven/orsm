@@ -23,22 +23,21 @@ class timeout:
         if error_message is None:
             error_message = 'Timed out after {} seconds.'.format(limit)
         if limit is not None:
-            assert isinstance(limit, (int, float)) and 0 <= limit <= self.max_limit, f"The timeout {limit = } is not valid."
+            assert isinstance(limit, (int, float)) and 0 < limit <= self.max_limit, f"The timeout {limit = } is not valid."
         self.limit = limit
-        self.is_limit = bool(limit) or limit == 0
         self.error_message = error_message
 
     def handle_timeout(self, signum, frame):
         raise TimeoutError(self.error_message)
 
     def __enter__(self):
-        if self.is_limit:
+        if self.limit:
             signal.signal(signal.SIGALRM, self.handle_timeout)
             signal.alarm(self.limit)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        if self.is_limit:
-            signal.alarm(0 if self.limit != 0 else 1)
+        if self.limit:
+            signal.alarm(0)
 
 
 class TimeoutError(Exception):
@@ -64,6 +63,8 @@ def time_function(*args, name=None, function, iter_limit=None, time_limit=None, 
             while (time_limit and seconds < time_limit) or (iter_limit and total_iterations < iter_limit):
                 remaining_iterations = iterations if not iter_limit else min(iterations, iter_limit - total_iterations)
                 start = time.time()  # We include the for loop in our timing, hoping it is negligible.
+                if not remaining_iterations:
+                    break
                 for i in range(remaining_iterations):
                     function(*args, **kwargs)
                 end = time.time()

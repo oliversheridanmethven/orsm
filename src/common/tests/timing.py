@@ -16,13 +16,8 @@ class TimeoutHandler(unittest.TestCase):
             with timeout(limit=1):
                 time.sleep(2)
 
-    def test_raises_zero_error(self):
-        with self.assertRaises(TimeoutError):
-            with timeout(limit=0):
-                pass
-
     def test_bad_values(self):
-        for value in [-1, timeout.max_limit + 1]:
+        for value in [-1, 0, timeout.max_limit + 1]:
             with self.assertRaises(AssertionError):
                 timeout(limit=value)
 

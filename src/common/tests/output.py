@@ -8,14 +8,11 @@ think I have perfectly understood how to do this. One of the
 difficulties is also with C extensions.
 """
 
-import sys
-
-print(sys.path)
-
 import unittest
 
 from common.output import Suppressor
 import io
+import sys
 import contextlib
 from binding.examples import hello_world as hello_world_c_extension
 

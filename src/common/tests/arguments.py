@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import unittest
-from common.arguments import *
+from common.arguments import all_combinations, all_kwarg_combinations
 
 
 class Combinations(unittest.TestCase):

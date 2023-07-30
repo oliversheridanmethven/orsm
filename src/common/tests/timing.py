@@ -33,7 +33,7 @@ class TimingFunction(unittest.TestCase):
     def setUp(self):
         self.function = time.sleep
         self.name = "sleep test"
-        self.duration = 0.1
+        self.duration = 0.3
         self.iter_limit = 3
         self.time_limit = 5
         self.expected = {"name": self.name, "seconds": 3, "total_iterations": 3, "average": self.duration}

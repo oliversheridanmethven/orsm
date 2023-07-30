@@ -6,6 +6,7 @@ Timing functionality.
 
 import time
 from common.output import Suppressor
+from common.variables import variable_names_and_objects
 import signal
 
 
@@ -23,7 +24,7 @@ class timeout:
         if error_message is None:
             error_message = 'Timed out after {} seconds.'.format(limit)
         if limit is not None:
-            assert isinstance(limit, (int, float)) and 0 < limit <= self.max_limit, f"The timeout {limit = } is not valid."
+            assert isinstance(limit, int) and 0 < limit <= self.max_limit, f"The timeout {limit = } is not valid."
         self.limit = limit
         self.error_message = error_message
 
@@ -51,11 +52,15 @@ def time_function(*args, name=None, function, iter_limit=None, time_limit=None, 
     iterations = 1
     seconds = 0
 
+    for variable, value in variable_names_and_objects(iter_limit, time_limit, max_time_limit):
+        if value:
+            assert isinstance(value, int) and 1 <= value, f"The {variable = } has an invalid {value = }"
+
     if not iter_limit and not time_limit:
-        time_limit = 0.1
+        time_limit = max_time_limit if max_time_limit else 0.1
 
     iteration_growth_factor = 2
-    if not max_time_limit:
+    if not max_time_limit and time_limit:
         max_time_limit = 2 * iteration_growth_factor * time_limit
 
     with timeout(limit=max_time_limit):

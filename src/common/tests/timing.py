@@ -7,6 +7,7 @@ print(sys.path)
 import unittest
 import time
 from common.timing import time_function, timeout, TimeoutError
+from arguments import all_kwarg_combinations
 
 
 class TimeoutHandler(unittest.TestCase):
@@ -31,15 +32,29 @@ class TimingFunction(unittest.TestCase):
 
     def setUp(self):
         self.function = time.sleep
+        self.name = "sleep test"
+        self.duration = 0.1
+        self.iter_limit = 3
+        self.time_limit = 5
+        self.expected = {"name": self.name, "seconds": 3, "total_iterations": 3, "average": self.duration}
 
     def test_return_type(self):
         with timeout(limit=10):
-            name = "sleep test"
-            duration = 0.1
-            results = time_function(duration, name=name, function=self.function, iter_limit=5, time_limit=5, suppress_output=False)
-            expected = {"name": name, "seconds": 3, "total_iterations": 3, "average": 1}
+            results = time_function(self.duration, name=self.name, function=self.function, iter_limit=self.iter_limit, time_limit=self.time_limit)
             for key, value in results.items():
-                self.assertIn(key, expected.keys())
+                self.assertIn(key, self.expected.keys())
+
+    def test_return_values_seem_sensible(self):
+        with timeout(limit=10):
+            results = time_function(self.duration, name=self.name, function=self.function, iter_limit=self.iter_limit, time_limit=self.time_limit)
+            self.assertEqual(results["name"], self.expected["name"])
+            self.assertEqual(results["total_iterations"], self.expected["total_iterations"])
+            self.assertAlmostEqual(results["average"], self.expected["average"], 1)
+
+    def test_assertions(self):
+        for kwargs in all_kwarg_combinations(keys=["iter_limit", "time_limit"], values=[0, -1]):
+            with self.assertRaises(AssertionError, msg=f"The failing arguments are {kwargs = }"):
+                time_function(self.duration, name=self.name, function=self.function, **kwargs)
 
 
 if __name__ == '__main__':

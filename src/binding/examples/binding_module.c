@@ -1,7 +1,7 @@
 #include "examples_bindings.h"
 #include "wrappers.h"
 
-static PyMethodDef binding_methods[] = {
+static PyMethodDef examples_methods[] = {
         {"hello_world",       PyFunc(_hello_world),       METH_VARARGS | METH_KEYWORDS,
                                        "Says hello world."},
         {"foo",               PyFunc(_foo),               METH_VARARGS | METH_KEYWORDS,
@@ -15,18 +15,18 @@ static PyMethodDef binding_methods[] = {
         {NULL,                NULL, 0, NULL} /* Sentinel */
 };
 
-static struct PyModuleDef binding_module = {
+static struct PyModuleDef examples_module = {
         PyModuleDef_HEAD_INIT,
-        "binding",
-        "A simple module to demonstrate C bindings.",
+        "examples",
+        "A simple module giving examples to demonstrate C bindings.",
         -1,
-        binding_methods};
+        examples_methods};
 
 PyMODINIT_FUNC
-PyInit_binding(void) {
-    PyObject *module = PyModule_Create(&binding_module);
+PyInit_examples_bindings(void) {
+    PyObject *module = PyModule_Create(&examples_module);
     if (!module) {
-        fprintf(stderr, "Unable to create the binding module.");
+        fprintf(stderr, "Unable to create the examples module.");
         return nullptr;
     }
 

@@ -1,6 +1,6 @@
 #include <Python.h>
 #include "suppressor.h"
-#include "binding/wrappers.h"
+#include "binding/examples/wrappers.h"
 
 PyObject *_suppressing_start(PyObject *self, PyObject *args, PyObject *kwargs) {
     suppressing_start();
@@ -28,7 +28,7 @@ static struct PyModuleDef suppressor_module = {
         suppressor_methods};
 
 PyMODINIT_FUNC
-PyInit_suppressor(void) {
+PyInit_suppressor_bindings(void) {
     PyObject *module = PyModule_Create(&suppressor_module);
     if (!module) {
         fprintf(stderr, "Unable to create the suppressor module.");

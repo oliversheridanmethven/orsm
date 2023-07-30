@@ -6,7 +6,7 @@ without relying on nested Python capturing for
 a C hello world extension library.
 """
 
-from binding import hello_world as hello_world_c_extension
+from binding.examples import hello_world as hello_world_c_extension
 import argparse
 from common.output import Suppressor
 

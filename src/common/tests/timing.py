@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+import sys
+
+print(sys.path)
+
 import unittest
 import time
 from common.timing import time_function

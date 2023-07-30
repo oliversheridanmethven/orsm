@@ -80,3 +80,9 @@ One of the reasons we split the functionality into two libraries,
 proceedure typically produces bundles, whereas our 
 C libraries are typically producing dynamic libraries. This can 
 lead to linking errors. 
+
+### Putting module libraries in their own directory
+
+To keep a nice modular structure where the C extensions match 
+the style of Python modules, put any C extensions in their own
+subdirectory which would be the equivalent of a single python file.

@@ -17,7 +17,7 @@ import unittest
 from common.output import Suppressor
 import io
 import contextlib
-from binding import hello_world as hello_world_c_extension
+from binding.examples import hello_world as hello_world_c_extension
 
 
 class SuppressorTest(unittest.TestCase):

@@ -5,7 +5,7 @@ An example script to benchmark the performance of doing something in pure
 Python versus using a C binding.
 """
 
-from binding import foo as foo_pure_c
+from binding.examples import foo as foo_pure_c
 from binding.example import foo as foo_pure_python
 from common.variables import variable_names_and_objects
 from common.timing import time_function

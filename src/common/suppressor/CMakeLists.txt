@@ -1,3 +1,10 @@
-add_library(suppressor MODULE suppressor_bindings.c suppressor.c)
+add_subdirectory(tests)
+
+add_library(suppressor suppressor.c)
 target_link_libraries(suppressor error_codes)
-install_python_target(suppressor src/common/suppressor)
+target_include_directories(suppressor INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/..)
+
+
+add_library(suppressor_bindings suppressor_bindings.c)
+target_link_libraries(suppressor_bindings suppressor)
+install_python_target(suppressor_bindings src/common/suppressor)

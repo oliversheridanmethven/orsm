@@ -4,7 +4,6 @@ A simple hello world example showing how to bind our C code
 for use in Python. 
  
 
-
 ## Conventions
 
 For simplicity (and ease of consistency) we will adopt the following
@@ -67,3 +66,17 @@ way..." (we may try and also do this gracefully
 where possible). In C this will generally mean an immediate
 call to `exit`.
 
+## Splitting into two libraries
+
+We follow the convention that for some library, we split this into
+its core functionality, which contains all the core C functionality
+and no Python, and a second library which only implements the Python
+interface. 
+
+### Failing to link to Python C extension libraries on Mac OSX
+
+One of the reasons we split the functionality into two libraries,
+(aside from a more modularity), is because the Python build 
+proceedure typically produces bundles, whereas our 
+C libraries are typically producing dynamic libraries. This can 
+lead to linking errors. 

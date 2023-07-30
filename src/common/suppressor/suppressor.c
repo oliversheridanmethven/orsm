@@ -13,12 +13,19 @@ error_code suppressing_start(void) {
         fprintf(stderr, "Could not flush stdout.\n");
         return EC_FAILURE;
     }
-    setbuf(stdout, NULL);
+    if (setvbuf(stdout, NULL, _IONBF, 0)) {
+        fprintf(stderr, "Could not change the buffering of stdout.\n");
+        return EC_FAILURE;
+    }
+
     if (fflush(stderr)) {
         fprintf(stderr, "Could not flush stderr.\n");
         return EC_FAILURE;
     }
-    setbuf(stdout, NULL);
+    if (setvbuf(stderr, NULL, _IONBF, 0)) {
+        fprintf(stderr, "Could not change the buffering of stderr.\n");
+        return EC_FAILURE;
+    }
 
     save_out = dup(STDOUT_FILENO);
     if (save_out == -1) {
@@ -43,7 +50,7 @@ error_code suppressing_start(void) {
         return EC_FAILURE;
     }
 
-    if (dup2(dev_null, STDOUT_FILENO) == -1) {
+    if (dup2(dev_null, STDERR_FILENO) == -1) {
         fprintf(stderr, "Error in replacing (dup2) stderr.\n");
         return EC_FAILURE;
     }
@@ -54,17 +61,17 @@ error_code suppressing_start(void) {
 error_code suppressing_stop(void) {
 
     if (dup2(save_out, STDOUT_FILENO) == -1) {
-        fprintf(stderr, "Failed to swap back (dup2) the original stdout.");
+        fprintf(stderr, "Failed to swap back (dup2) the original stdout.\n");
         return EC_FAILURE;
     }
 
     if (dup2(save_err, STDERR_FILENO) == -1) {
-        fprintf(stderr, "Failed to swap back (dup2) the original stderr.");
+        fprintf(stderr, "Failed to swap back (dup2) the original stderr.\n");
         return EC_FAILURE;
     }
 
     if (close(dev_null) == -1) {
-        fprintf(stderr, "Failed to close dev_null.");
+        fprintf(stderr, "Failed to close dev_null.\n");
         return EC_FAILURE;
     }
 

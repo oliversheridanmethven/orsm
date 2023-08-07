@@ -1,0 +1,23 @@
+hello_world_test 20 0.000942708
+error_codes 20 0.00512903
+binding_import 20 0.00668505
+example 20 0.00337571
+basic_python 19 0.00514596
+basic_python_again 19 0.00474877
+logging_test 20 0.00392996
+version_test 20 0.00504864
+cli_arguments_0 20 0.00577234
+cli_arguments_version 20 0.00330035
+arguments 9 0
+output 7 0
+output_suppressor_c_extension 7 0
+timing 7 0
+variables 19 0.00441024
+output_suppression 4 0
+suppressor 20 0.00304885
+---
+arguments
+output
+output_suppressor_c_extension
+timing
+output_suppression

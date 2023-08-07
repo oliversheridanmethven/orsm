@@ -9,7 +9,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/oliver/ClionProjects/testing/src/binding/binding_module.c" "src/binding/CMakeFiles/binding.dir/binding_module.c.o" "gcc" "src/binding/CMakeFiles/binding.dir/binding_module.c.o.d"
-  "/Users/oliver/ClionProjects/testing/src/binding/examples.c" "src/binding/CMakeFiles/binding.dir/examples.c.o" "gcc" "src/binding/CMakeFiles/binding.dir/examples.c.o.d"
   "/Users/oliver/ClionProjects/testing/src/binding/examples_bindings.c" "src/binding/CMakeFiles/binding.dir/examples_bindings.c.o" "gcc" "src/binding/CMakeFiles/binding.dir/examples_bindings.c.o.d"
   )
 

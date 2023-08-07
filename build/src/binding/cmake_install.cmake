@@ -42,3 +42,13 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/Users/oliver/ClionProjects/testing/build/src/binding/tests/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/oliver/ClionProjects/testing/build/src/binding/benchmarks/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/Users/oliver/ClionProjects/testing/build/src/binding/examples/cmake_install.cmake")
+endif()
+

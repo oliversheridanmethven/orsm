@@ -5,11 +5,11 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("hello_world")
-subdirs("logging")
+subdirs("error_codes")
+subdirs("binding")
 subdirs("testing")
+subdirs("logging")
 subdirs("version")
 subdirs("cli")
-subdirs("binding")
-subdirs("baz")
 subdirs("common")
-subdirs("error_codes")
+subdirs("media")

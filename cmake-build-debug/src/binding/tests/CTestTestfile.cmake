@@ -4,5 +4,5 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-add_test([=[binding_import]=] "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/binding/tests/binding_import.py")
-set_tests_properties([=[binding_import]=] PROPERTIES  _BACKTRACE_TRIPLES "/Users/oliver/ClionProjects/testing/CMakeLists.txt;63;add_test;/Users/oliver/ClionProjects/testing/CMakeLists.txt;55;add_python_test;/Users/oliver/ClionProjects/testing/src/binding/tests/CMakeLists.txt;1;add_python_tests;/Users/oliver/ClionProjects/testing/src/binding/tests/CMakeLists.txt;0;")
+add_test([=[binding_import]=] "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/binding/tests/binding_import.py")
+set_tests_properties([=[binding_import]=] PROPERTIES  ENVIRONMENT "PYTHONPATH=/Users/oliver/ClionProjects/testing/src:" _BACKTRACE_TRIPLES "/Users/oliver/ClionProjects/testing/CMakeLists.txt;92;add_test;/Users/oliver/ClionProjects/testing/CMakeLists.txt;84;add_python_test;/Users/oliver/ClionProjects/testing/CMakeLists.txt;79;add_python_tests;/Users/oliver/ClionProjects/testing/src/binding/tests/CMakeLists.txt;1;add_all_python_tests;/Users/oliver/ClionProjects/testing/src/binding/tests/CMakeLists.txt;0;")

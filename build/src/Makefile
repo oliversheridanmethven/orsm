@@ -126,44 +126,6 @@ depend:
 	cd /Users/oliver/ClionProjects/testing/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-src/CMakeFiles/fox.dir/rule:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/fox.dir/rule
-.PHONY : src/CMakeFiles/fox.dir/rule
-
-# Convenience name for target.
-fox: src/CMakeFiles/fox.dir/rule
-.PHONY : fox
-
-# fast build rule for target.
-fox/fast:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/fox.dir/build.make src/CMakeFiles/fox.dir/build
-.PHONY : fox/fast
-
-fox.o: fox.c.o
-.PHONY : fox.o
-
-# target to build an object file
-fox.c.o:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/fox.dir/build.make src/CMakeFiles/fox.dir/fox.c.o
-.PHONY : fox.c.o
-
-fox.i: fox.c.i
-.PHONY : fox.i
-
-# target to preprocess a source file
-fox.c.i:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/fox.dir/build.make src/CMakeFiles/fox.dir/fox.c.i
-.PHONY : fox.c.i
-
-fox.s: fox.c.s
-.PHONY : fox.s
-
-# target to generate assembly for a file
-fox.c.s:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/fox.dir/build.make src/CMakeFiles/fox.dir/fox.c.s
-.PHONY : fox.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -173,10 +135,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... fox"
-	@echo "... fox.o"
-	@echo "... fox.i"
-	@echo "... fox.s"
 .PHONY : help
 
 

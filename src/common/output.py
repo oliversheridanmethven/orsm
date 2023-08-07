@@ -2,17 +2,30 @@
 Handling output.
 """
 
+from common.suppressor import suppressing_start, suppressing_stop
 import py
 
-class Supressor(object):
+
+class Suppressor(object):
     """A class to suppress printing output."""
-    def __init__(self, suppress_output=False):
+
+    def __init__(self, *, suppress_output=True):
         self.suppress_output = suppress_output
 
     def __enter__(self):
         if self.suppress_output:
-            self.capture = py.io.StdCaptureFD()  # This seems to be the best way to capture, including for C extension modules.
-        return self.capture
+            """
+            The only method I have found which can 
+            suppress all output from Python and C
+            extensions is to have the a C extension
+            do all the redirection of stdout/stderr.
+            
+            It is the C extensions which case all the problems!
+            """
+            self.capture = py.io.StdCaptureFD()  # Captures everything from Python
+            suppressing_start()  # Captures everything from C.
 
     def __exit__(self, *args):
-        self.capture.reset()
+        if self.suppress_output:
+            suppressing_stop()
+            self.capture.reset()

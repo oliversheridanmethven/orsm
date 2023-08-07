@@ -1,6 +1,5 @@
 import unittest
 
-
 class Basic(unittest.TestCase):
     def test_pass(self):
         self.assertEqual(True, True)

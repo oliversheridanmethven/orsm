@@ -32,4 +32,4 @@ def variable_names_and_objects(*variables):
     the __name__ of baz is still bar, and this function resolves that.
     """
     names = argname('variables')
-    return dict(zip(names, variables))
+    return dict(zip(names, variables)).items()

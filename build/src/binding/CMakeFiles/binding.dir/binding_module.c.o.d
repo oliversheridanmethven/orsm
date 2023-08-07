@@ -255,4 +255,5 @@ src/binding/CMakeFiles/binding.dir/binding_module.c.o: \
  /Library/Frameworks/Python.framework/Versions/3.11/include/python3.11/fileutils.h \
  /Library/Frameworks/Python.framework/Versions/3.11/include/python3.11/cpython/fileutils.h \
  /Library/Frameworks/Python.framework/Versions/3.11/include/python3.11/cpython/pyfpe.h \
- /Library/Frameworks/Python.framework/Versions/3.11/include/python3.11/tracemalloc.h
+ /Library/Frameworks/Python.framework/Versions/3.11/include/python3.11/tracemalloc.h \
+ /Users/oliver/ClionProjects/testing/src/binding/wrappers.h

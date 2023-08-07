@@ -1,1 +1,1 @@
-add_python_tests(binding_import.py)
+add_all_python_tests()

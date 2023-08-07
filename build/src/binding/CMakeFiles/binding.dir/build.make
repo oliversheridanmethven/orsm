@@ -83,24 +83,10 @@ src/binding/CMakeFiles/binding.dir/examples_bindings.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/binding.dir/examples_bindings.c.s"
 	cd /Users/oliver/ClionProjects/testing/build/src/binding && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/binding/examples_bindings.c -o CMakeFiles/binding.dir/examples_bindings.c.s
 
-src/binding/CMakeFiles/binding.dir/examples.c.o: src/binding/CMakeFiles/binding.dir/flags.make
-src/binding/CMakeFiles/binding.dir/examples.c.o: /Users/oliver/ClionProjects/testing/src/binding/examples.c
-src/binding/CMakeFiles/binding.dir/examples.c.o: src/binding/CMakeFiles/binding.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/binding/CMakeFiles/binding.dir/examples.c.o"
-	cd /Users/oliver/ClionProjects/testing/build/src/binding && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/binding/CMakeFiles/binding.dir/examples.c.o -MF CMakeFiles/binding.dir/examples.c.o.d -o CMakeFiles/binding.dir/examples.c.o -c /Users/oliver/ClionProjects/testing/src/binding/examples.c
-
-src/binding/CMakeFiles/binding.dir/examples.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/binding.dir/examples.c.i"
-	cd /Users/oliver/ClionProjects/testing/build/src/binding && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/binding/examples.c > CMakeFiles/binding.dir/examples.c.i
-
-src/binding/CMakeFiles/binding.dir/examples.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/binding.dir/examples.c.s"
-	cd /Users/oliver/ClionProjects/testing/build/src/binding && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/binding/examples.c -o CMakeFiles/binding.dir/examples.c.s
-
 src/binding/CMakeFiles/binding.dir/binding_module.c.o: src/binding/CMakeFiles/binding.dir/flags.make
 src/binding/CMakeFiles/binding.dir/binding_module.c.o: /Users/oliver/ClionProjects/testing/src/binding/binding_module.c
 src/binding/CMakeFiles/binding.dir/binding_module.c.o: src/binding/CMakeFiles/binding.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object src/binding/CMakeFiles/binding.dir/binding_module.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/binding/CMakeFiles/binding.dir/binding_module.c.o"
 	cd /Users/oliver/ClionProjects/testing/build/src/binding && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/binding/CMakeFiles/binding.dir/binding_module.c.o -MF CMakeFiles/binding.dir/binding_module.c.o.d -o CMakeFiles/binding.dir/binding_module.c.o -c /Users/oliver/ClionProjects/testing/src/binding/binding_module.c
 
 src/binding/CMakeFiles/binding.dir/binding_module.c.i: cmake_force
@@ -114,21 +100,20 @@ src/binding/CMakeFiles/binding.dir/binding_module.c.s: cmake_force
 # Object files for target binding
 binding_OBJECTS = \
 "CMakeFiles/binding.dir/examples_bindings.c.o" \
-"CMakeFiles/binding.dir/examples.c.o" \
 "CMakeFiles/binding.dir/binding_module.c.o"
 
 # External object files for target binding
 binding_EXTERNAL_OBJECTS =
 
 src/binding/libbinding.so: src/binding/CMakeFiles/binding.dir/examples_bindings.c.o
-src/binding/libbinding.so: src/binding/CMakeFiles/binding.dir/examples.c.o
 src/binding/libbinding.so: src/binding/CMakeFiles/binding.dir/binding_module.c.o
 src/binding/libbinding.so: src/binding/CMakeFiles/binding.dir/build.make
 src/binding/libbinding.so: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
+src/binding/libbinding.so: src/binding/libexamples.a
 src/binding/libbinding.so: src/error_codes/liberror_codes.a
 src/binding/libbinding.so: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
 src/binding/libbinding.so: src/binding/CMakeFiles/binding.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C shared module libbinding.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C shared module libbinding.so"
 	cd /Users/oliver/ClionProjects/testing/build/src/binding && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/binding.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

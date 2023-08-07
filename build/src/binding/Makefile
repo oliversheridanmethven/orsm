@@ -126,92 +126,6 @@ depend:
 	cd /Users/oliver/ClionProjects/testing/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-src/binding/CMakeFiles/binding.dir/rule:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/binding/CMakeFiles/binding.dir/rule
-.PHONY : src/binding/CMakeFiles/binding.dir/rule
-
-# Convenience name for target.
-binding: src/binding/CMakeFiles/binding.dir/rule
-.PHONY : binding
-
-# fast build rule for target.
-binding/fast:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/binding/CMakeFiles/binding.dir/build.make src/binding/CMakeFiles/binding.dir/build
-.PHONY : binding/fast
-
-binding_module.o: binding_module.c.o
-.PHONY : binding_module.o
-
-# target to build an object file
-binding_module.c.o:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/binding/CMakeFiles/binding.dir/build.make src/binding/CMakeFiles/binding.dir/binding_module.c.o
-.PHONY : binding_module.c.o
-
-binding_module.i: binding_module.c.i
-.PHONY : binding_module.i
-
-# target to preprocess a source file
-binding_module.c.i:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/binding/CMakeFiles/binding.dir/build.make src/binding/CMakeFiles/binding.dir/binding_module.c.i
-.PHONY : binding_module.c.i
-
-binding_module.s: binding_module.c.s
-.PHONY : binding_module.s
-
-# target to generate assembly for a file
-binding_module.c.s:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/binding/CMakeFiles/binding.dir/build.make src/binding/CMakeFiles/binding.dir/binding_module.c.s
-.PHONY : binding_module.c.s
-
-examples.o: examples.c.o
-.PHONY : examples.o
-
-# target to build an object file
-examples.c.o:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/binding/CMakeFiles/binding.dir/build.make src/binding/CMakeFiles/binding.dir/examples.c.o
-.PHONY : examples.c.o
-
-examples.i: examples.c.i
-.PHONY : examples.i
-
-# target to preprocess a source file
-examples.c.i:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/binding/CMakeFiles/binding.dir/build.make src/binding/CMakeFiles/binding.dir/examples.c.i
-.PHONY : examples.c.i
-
-examples.s: examples.c.s
-.PHONY : examples.s
-
-# target to generate assembly for a file
-examples.c.s:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/binding/CMakeFiles/binding.dir/build.make src/binding/CMakeFiles/binding.dir/examples.c.s
-.PHONY : examples.c.s
-
-examples_bindings.o: examples_bindings.c.o
-.PHONY : examples_bindings.o
-
-# target to build an object file
-examples_bindings.c.o:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/binding/CMakeFiles/binding.dir/build.make src/binding/CMakeFiles/binding.dir/examples_bindings.c.o
-.PHONY : examples_bindings.c.o
-
-examples_bindings.i: examples_bindings.c.i
-.PHONY : examples_bindings.i
-
-# target to preprocess a source file
-examples_bindings.c.i:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/binding/CMakeFiles/binding.dir/build.make src/binding/CMakeFiles/binding.dir/examples_bindings.c.i
-.PHONY : examples_bindings.c.i
-
-examples_bindings.s: examples_bindings.c.s
-.PHONY : examples_bindings.s
-
-# target to generate assembly for a file
-examples_bindings.c.s:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/binding/CMakeFiles/binding.dir/build.make src/binding/CMakeFiles/binding.dir/examples_bindings.c.s
-.PHONY : examples_bindings.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -221,16 +135,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... binding"
-	@echo "... binding_module.o"
-	@echo "... binding_module.i"
-	@echo "... binding_module.s"
-	@echo "... examples.o"
-	@echo "... examples.i"
-	@echo "... examples.s"
-	@echo "... examples_bindings.o"
-	@echo "... examples_bindings.i"
-	@echo "... examples_bindings.s"
 .PHONY : help
 
 

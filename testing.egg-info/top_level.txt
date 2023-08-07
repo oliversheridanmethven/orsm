@@ -1,6 +1,3 @@
-baz
 binding
 common
-foo
-fox
-hello
+media

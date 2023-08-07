@@ -127,19 +127,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named fox
-
-# Build rule for target.
-fox: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fox
-.PHONY : fox
-
-# fast build rule for target.
-fox/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/fox.dir/build.make src/CMakeFiles/fox.dir/build
-.PHONY : fox/fast
-
-#=============================================================================
 # Target rules for targets named hello_world
 
 # Build rule for target.
@@ -153,17 +140,82 @@ hello_world/fast:
 .PHONY : hello_world/fast
 
 #=============================================================================
-# Target rules for targets named logging_test
+# Target rules for targets named hello_world_example
 
 # Build rule for target.
-logging_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 logging_test
-.PHONY : logging_test
+hello_world_example: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello_world_example
+.PHONY : hello_world_example
 
 # fast build rule for target.
-logging_test/fast:
-	$(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test.dir/build.make src/logging/tests/CMakeFiles/logging_test.dir/build
-.PHONY : logging_test/fast
+hello_world_example/fast:
+	$(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_example.dir/build.make src/hello_world/CMakeFiles/hello_world_example.dir/build
+.PHONY : hello_world_example/fast
+
+#=============================================================================
+# Target rules for targets named hello_world_test
+
+# Build rule for target.
+hello_world_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello_world_test
+.PHONY : hello_world_test
+
+# fast build rule for target.
+hello_world_test/fast:
+	$(MAKE) $(MAKESILENT) -f src/hello_world/tests/CMakeFiles/hello_world_test.dir/build.make src/hello_world/tests/CMakeFiles/hello_world_test.dir/build
+.PHONY : hello_world_test/fast
+
+#=============================================================================
+# Target rules for targets named error_codes
+
+# Build rule for target.
+error_codes: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 error_codes
+.PHONY : error_codes
+
+# fast build rule for target.
+error_codes/fast:
+	$(MAKE) $(MAKESILENT) -f src/error_codes/CMakeFiles/error_codes.dir/build.make src/error_codes/CMakeFiles/error_codes.dir/build
+.PHONY : error_codes/fast
+
+#=============================================================================
+# Target rules for targets named _error_codes
+
+# Build rule for target.
+_error_codes: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _error_codes
+.PHONY : _error_codes
+
+# fast build rule for target.
+_error_codes/fast:
+	$(MAKE) $(MAKESILENT) -f src/error_codes/tests/CMakeFiles/_error_codes.dir/build.make src/error_codes/tests/CMakeFiles/_error_codes.dir/build
+.PHONY : _error_codes/fast
+
+#=============================================================================
+# Target rules for targets named examples
+
+# Build rule for target.
+examples: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples
+.PHONY : examples
+
+# fast build rule for target.
+examples/fast:
+	$(MAKE) $(MAKESILENT) -f src/binding/examples/CMakeFiles/examples.dir/build.make src/binding/examples/CMakeFiles/examples.dir/build
+.PHONY : examples/fast
+
+#=============================================================================
+# Target rules for targets named examples_bindings
+
+# Build rule for target.
+examples_bindings: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 examples_bindings
+.PHONY : examples_bindings
+
+# fast build rule for target.
+examples_bindings/fast:
+	$(MAKE) $(MAKESILENT) -f src/binding/examples/CMakeFiles/examples_bindings.dir/build.make src/binding/examples/CMakeFiles/examples_bindings.dir/build
+.PHONY : examples_bindings/fast
 
 #=============================================================================
 # Target rules for targets named example
@@ -177,6 +229,19 @@ example: cmake_check_build_system
 example/fast:
 	$(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/example.dir/build.make src/testing/tests/CMakeFiles/example.dir/build
 .PHONY : example/fast
+
+#=============================================================================
+# Target rules for targets named logging_test
+
+# Build rule for target.
+logging_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 logging_test
+.PHONY : logging_test
+
+# fast build rule for target.
+logging_test/fast:
+	$(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test.dir/build.make src/logging/tests/CMakeFiles/logging_test.dir/build
+.PHONY : logging_test/fast
 
 #=============================================================================
 # Target rules for targets named repo_version
@@ -231,82 +296,43 @@ cli_arguments_version/fast:
 .PHONY : cli_arguments_version/fast
 
 #=============================================================================
-# Target rules for targets named binding
+# Target rules for targets named suppressor
 
 # Build rule for target.
-binding: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 binding
-.PHONY : binding
+suppressor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 suppressor
+.PHONY : suppressor
 
 # fast build rule for target.
-binding/fast:
-	$(MAKE) $(MAKESILENT) -f src/binding/CMakeFiles/binding.dir/build.make src/binding/CMakeFiles/binding.dir/build
-.PHONY : binding/fast
+suppressor/fast:
+	$(MAKE) $(MAKESILENT) -f src/common/suppressor/CMakeFiles/suppressor.dir/build.make src/common/suppressor/CMakeFiles/suppressor.dir/build
+.PHONY : suppressor/fast
 
 #=============================================================================
-# Target rules for targets named baz
+# Target rules for targets named suppressor_bindings
 
 # Build rule for target.
-baz: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 baz
-.PHONY : baz
+suppressor_bindings: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 suppressor_bindings
+.PHONY : suppressor_bindings
 
 # fast build rule for target.
-baz/fast:
-	$(MAKE) $(MAKESILENT) -f src/baz/CMakeFiles/baz.dir/build.make src/baz/CMakeFiles/baz.dir/build
-.PHONY : baz/fast
+suppressor_bindings/fast:
+	$(MAKE) $(MAKESILENT) -f src/common/suppressor/CMakeFiles/suppressor_bindings.dir/build.make src/common/suppressor/CMakeFiles/suppressor_bindings.dir/build
+.PHONY : suppressor_bindings/fast
 
 #=============================================================================
-# Target rules for targets named error_codes
+# Target rules for targets named _suppressor
 
 # Build rule for target.
-error_codes: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 error_codes
-.PHONY : error_codes
+_suppressor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _suppressor
+.PHONY : _suppressor
 
 # fast build rule for target.
-error_codes/fast:
-	$(MAKE) $(MAKESILENT) -f src/error_codes/CMakeFiles/error_codes.dir/build.make src/error_codes/CMakeFiles/error_codes.dir/build
-.PHONY : error_codes/fast
-
-#=============================================================================
-# Target rules for targets named _error_codes
-
-# Build rule for target.
-_error_codes: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _error_codes
-.PHONY : _error_codes
-
-# fast build rule for target.
-_error_codes/fast:
-	$(MAKE) $(MAKESILENT) -f src/error_codes/tests/CMakeFiles/_error_codes.dir/build.make src/error_codes/tests/CMakeFiles/_error_codes.dir/build
-.PHONY : _error_codes/fast
-
-#=============================================================================
-# Target rules for targets named foo
-
-# Build rule for target.
-foo: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 foo
-.PHONY : foo
-
-# fast build rule for target.
-foo/fast:
-	$(MAKE) $(MAKESILENT) -f foo/CMakeFiles/foo.dir/build.make foo/CMakeFiles/foo.dir/build
-.PHONY : foo/fast
-
-#=============================================================================
-# Target rules for targets named hello
-
-# Build rule for target.
-hello: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello
-.PHONY : hello
-
-# fast build rule for target.
-hello/fast:
-	$(MAKE) $(MAKESILENT) -f hello/CMakeFiles/hello.dir/build.make hello/CMakeFiles/hello.dir/build
-.PHONY : hello/fast
+_suppressor/fast:
+	$(MAKE) $(MAKESILENT) -f src/common/suppressor/tests/CMakeFiles/_suppressor.dir/build.make src/common/suppressor/tests/CMakeFiles/_suppressor.dir/build
+.PHONY : _suppressor/fast
 
 # Help Target
 help:
@@ -319,17 +345,19 @@ help:
 	@echo "... test"
 	@echo "... repo_version"
 	@echo "... _error_codes"
-	@echo "... baz"
-	@echo "... binding"
+	@echo "... _suppressor"
 	@echo "... cli_arguments_0"
 	@echo "... cli_arguments_version"
 	@echo "... error_codes"
 	@echo "... example"
-	@echo "... foo"
-	@echo "... fox"
-	@echo "... hello"
+	@echo "... examples"
+	@echo "... examples_bindings"
 	@echo "... hello_world"
+	@echo "... hello_world_example"
+	@echo "... hello_world_test"
 	@echo "... logging_test"
+	@echo "... suppressor"
+	@echo "... suppressor_bindings"
 	@echo "... version_example"
 .PHONY : help
 

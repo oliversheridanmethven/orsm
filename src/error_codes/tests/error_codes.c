@@ -31,13 +31,13 @@ Test(error_messages, set_unset)
     cr_expect_null(get_error_message());
 }
 
-Test(error_messages, printed_message)
+Test(error_messages, printed_message, .init = redirect_all_stdout)
 {
 #define FIRST "Something"
 #define SECOND "Something else"
     set_error_message(FIRST);
-    cr_redirect_stderr();
     print_error_message();
     set_error_message(SECOND);
     cr_assert_stderr_eq_str(FIRST);
+    cr_assert_stderr_neq_str(SECOND);
 }

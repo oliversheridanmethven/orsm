@@ -20,3 +20,4 @@ lib/
 src/version/version.h
 misc.*
 Testing/
+install_manifest.txt

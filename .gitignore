@@ -19,3 +19,4 @@ bin/
 lib/
 src/version/version.h
 misc.*
+Testing/

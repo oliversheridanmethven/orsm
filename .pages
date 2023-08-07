@@ -1,6 +1,6 @@
 nav:
-    - README.md
-    - docs
-    - build
-    - src
+    - Home: README.md
+    - Documentation: docs
+    - Source: src
+    - Building: build
     - ...

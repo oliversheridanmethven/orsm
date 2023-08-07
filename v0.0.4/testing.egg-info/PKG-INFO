@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: testing
+Version: 0.0.3.post16+git.73cc8bc4.dirty
+Summary: a minimal example package (cpp version)
+Author: Dr Oliver Sheridan-Methven
+Requires-Python: >=3.10

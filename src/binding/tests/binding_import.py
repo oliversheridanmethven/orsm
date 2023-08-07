@@ -2,6 +2,9 @@
 """
 Testing the binding module.
 """
+import sys
+
+print(sys.path)
 
 import unittest
 from binding.examples import foo, hello_world, fatal_failure, non_fatal_failure

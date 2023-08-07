@@ -18,3 +18,4 @@ CMakeCache.txt
 bin/
 lib/
 src/version/version.h
+misc.*

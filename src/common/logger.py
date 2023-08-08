@@ -61,11 +61,35 @@ class MyFormatter(logging.Formatter):
         return result
 
 
-fmt = MyFormatter()
-hdlr = logging.StreamHandler(sys.stdout)
+# fmt = MyFormatter()
+# stdout_handler = logging.StreamHandler(sys.stdout)
+# stdout_handler.setFormatter(fmt)
+# logging.root.addHandler(stdout_handler)
+# stderr_handler = logging.StreamHandler(sys.stderr)
+# stderr_handler.setFormatter(fmt)
+# logging.root.addHandler(stderr_handler)
 
-hdlr.setFormatter(fmt)
-logging.root.addHandler(hdlr)
+
+class StdOutFilter(logging.Filter):
+    def filter(self, rec):
+        return rec.levelno <= logging.PRINT
+
+
+class StdErrFilter(logging.Filter):
+    def filter(self, rec):
+        stdout_filter = StdOutFilter()
+        return not stdout_filter.filter(rec)
+
+
+fmt = MyFormatter()
+stdout_handler = logging.StreamHandler(sys.stdout)
+stdout_handler.setFormatter(fmt)
+stdout_handler.addFilter(StdOutFilter())
+logging.root.addHandler(stdout_handler)
+stderr_handler = logging.StreamHandler(sys.stderr)
+stderr_handler.setFormatter(fmt)
+stderr_handler.addFilter(StdErrFilter())
+logging.root.addHandler(stderr_handler)
 
 log = logging
 

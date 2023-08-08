@@ -13,4 +13,4 @@ space.
 
 ## Documentation 
 
-The full documenation can be found here [Documentation](https://oliversheridanmethven.github.io/testing/).
+The full documentation can be found here: [Documentation](https://oliversheridanmethven.github.io/testing/).

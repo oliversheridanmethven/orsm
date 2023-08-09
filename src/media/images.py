@@ -5,23 +5,37 @@ Tools for parsing images.
 import argparse
 import logging
 import os
+
 from PIL import Image, ImageOps
 from common.variables import variable_names_and_objects
 from more_itertools import chunked
+import numpy as np
 
 
 class ImageParser:
     """Parses images."""
     supported_file_types = ['.png']
     max_image_length = 10_000
-    greyscale_char_map = "$$$$$$$$$$$$$$$$$$$$$$@B%8&WM#********oahkbdpqwmZO0000QLCJUYXzcvunxrjft/\|()1{}[]?-_+++++~<>i!lI;::::::::::,\"^`'........          "
+    greyscale_char_map = '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,"^`\'. '
 
-    def __init__(self, *args, file_path, **kwargs):
-        self.file_path = file_path
-        self.file_root, self.file_extension = os.path.splitext(file_path)
-        self.file_basename = os.path.basename(self.file_root)
-        assert self.file_extension in self.supported_file_types, f"We do not support the file extension: {self.file_extension} "
-        self.image = Image.open(self.file_path)
+    def __init__(self, *args, file_path=None, image=None, **kwargs):
+        constructor_variables = variable_names_and_objects(file_path, image)
+        assert sum([value is not None for variable, value in constructor_variables]) == 1, f"Only one keyword argument can be used to construct the {type(self).__name__}, input were: {constructor_variables}"
+        if file_path is not None:
+            self.file_path = file_path
+            self.file_root, self.file_extension = os.path.splitext(file_path)
+            self.file_basename = os.path.basename(self.file_root)
+            assert self.file_extension in self.supported_file_types, f"We do not support the file extension: {self.file_extension} "
+            self.image = Image.open(self.file_path)
+        elif image is not None:
+            if isinstance(image, np.ndarray):
+                self.image = Image.fromarray(image)
+            elif isinstance(image, Image.Image):
+                self.image = image
+            else:
+                raise NotImplementedError(f"We don't know how to construct an {type(self).__name__} with in input image of type: {type(image)}")
+        else:
+            raise NotImplementedError(f"We don't know how to construct an {type(self).__name__} with the provided inputs.")
 
     def get_size(self):
         """Returns the size of an image."""
@@ -72,7 +86,7 @@ class ImageParser:
         self.image = self.image.resize(size=(new_size["width"], new_size["height"]))
 
     @staticmethod
-    def add_border(*, ascii_image, border=None, **kwargs):
+    def add_border(*args, ascii_image, border=None, **kwargs):
         """Adds a border padding to an image."""
         if border is None:
             return ascii_image
@@ -86,17 +100,42 @@ class ImageParser:
         lines.append(hline)
         return "\n".join(lines)
 
-    def as_ascii(self, *args, **kwargs):
+    def as_ascii(self, *args, invert=None, threshold_dense_as_blank=None, threshold_sparse_as_blank=None, **kwargs):
         """Tries to turn an image into an ASCII representation."""
         greyscale = ImageOps.grayscale(self.image)
         ascii_character_aspect_ratio_correction = 0.55
-        ascii_height, ascii_width = greyscale.size
+        ascii_width, ascii_height = greyscale.size
         ascii_height = int(ascii_height * ascii_character_aspect_ratio_correction)
         greyscale = greyscale.resize(size=(ascii_width, ascii_height))
         pixels = greyscale.getdata()
-        new_pixels = ''.join([self.greyscale_char_map[(pixel * len(self.greyscale_char_map)) // (max(pixels) + 1)] for pixel in pixels])
+        colour_map = self.greyscale_char_map
+        if threshold_dense_as_blank is not None:
+            colour_map = " " * threshold_dense_as_blank + colour_map
+        if threshold_sparse_as_blank is not None:
+            colour_map = colour_map + " " * threshold_sparse_as_blank
+        if invert:
+            colour_map = colour_map[::-1]
+        new_pixels = greyscale_to_ascii(pixels=pixels, colour_map=colour_map)
         ascii_image = '\n'.join(''.join(line) for line in chunked(new_pixels, self.get_size()["width"]))
         return self.add_border(ascii_image=ascii_image, **kwargs)
+
+
+def greyscale_to_ascii(*args, pixels, colour_map, **kwargs):
+    """
+    A multi-stage greyscale to ascii converter.
+
+    This is implemented in several stages to assist in profiling,
+    as we found it was a bottle neck in the naive one liner method.
+    Instead we have converted much of this to use numpy arrays to
+    speed up performance.
+    """
+    normalisation = (max(pixels) + 1)
+    colour_map_scale = len(colour_map)
+    pixels = np.array(pixels)
+    colour_map = np.array(list(colour_map))
+    pixels_colour_indices = pixels * colour_map_scale // normalisation
+    ascii_pixels = colour_map[pixels_colour_indices]
+    return ''.join(ascii_pixels)
 
 
 def main(*args, output=None, **kwargs):
@@ -118,5 +157,8 @@ if __name__ == "__main__":
     parser.add_argument("--scale", type=float, metavar="SCALE", help="The scale of the image.")
     parser.add_argument("--border", type=str, metavar="CHAR", help="What to pad the border with.", default=" ")
     parser.add_argument("--output", type=str, metavar="PATH", help="The path to save the output image.")
+    parser.add_argument("--invert", help="Whether to invert the image (useful for differing light or dark terminal themes).", action="store_true")
+    parser.add_argument("--threshold_dense_as_blank", type=int, metavar="AMOUNT", help="Whether to threshold the most dense values with blank characters (useful for removing extremely light or dark backgrounds).")
+    parser.add_argument("--threshold_sparse_as_blank", type=int, metavar="AMOUNT", help="Whether to threshold the most sparse values with blank characters (useful for removing extremely light or dark backgrounds).")
     kwargs = vars(parser.parse_args())
     main(**kwargs)

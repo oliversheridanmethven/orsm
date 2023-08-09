@@ -12,7 +12,7 @@ setup(
     # license="MIT",
     setuptools_git_versioning={"enabled": True},
     setup_requires=["setuptools-git-versioning<2"],
-    install_requires=["py", "varname", "more-itertools", "haggis", "termcolor", "testfixtures"],
+    install_requires=["py", "varname", "more-itertools", "haggis", "termcolor", "testfixtures", "opencv-python"],
     packages=package_dirs.keys(),
     package_dir=package_dirs,
     python_requires=">=3.10",

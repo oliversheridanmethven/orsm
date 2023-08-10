@@ -22,3 +22,4 @@ misc.*
 Testing/
 install_manifest.txt
 .cmake/
+*.log

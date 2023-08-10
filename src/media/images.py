@@ -149,9 +149,7 @@ def main(*args, output=None, **kwargs):
         print(ascii_image)
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)
-    parser.add_argument("file_path", type=str, metavar="PATH", help="The path to the image.")
+def add_parser_optional_arguments(*args, parser, **kwargs):
     parser.add_argument("--abs_height", type=int, metavar="HEIGHT", help="The absolute height of the image.")
     parser.add_argument("--abs_width", type=int, metavar="WIDTH", help="The absolute width of the image.")
     parser.add_argument("--scale", type=float, metavar="SCALE", help="The scale of the image.")
@@ -160,5 +158,11 @@ if __name__ == "__main__":
     parser.add_argument("--invert", help="Whether to invert the image (useful for differing light or dark terminal themes).", action="store_true")
     parser.add_argument("--threshold_dense_as_blank", type=int, metavar="AMOUNT", help="Whether to threshold the most dense values with blank characters (useful for removing extremely light or dark backgrounds).")
     parser.add_argument("--threshold_sparse_as_blank", type=int, metavar="AMOUNT", help="Whether to threshold the most sparse values with blank characters (useful for removing extremely light or dark backgrounds).")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)
+    parser.add_argument("file_path", type=str, metavar="PATH", help="The path to the image.")
+    add_parser_optional_arguments(parser)
     kwargs = vars(parser.parse_args())
     main(**kwargs)

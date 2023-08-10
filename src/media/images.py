@@ -163,6 +163,6 @@ def add_parser_optional_arguments(*args, parser, **kwargs):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__, allow_abbrev=False)
     parser.add_argument("file_path", type=str, metavar="PATH", help="The path to the image.")
-    add_parser_optional_arguments(parser)
+    add_parser_optional_arguments(parser=parser)
     kwargs = vars(parser.parse_args())
     main(**kwargs)

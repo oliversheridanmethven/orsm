@@ -8,7 +8,6 @@ from time import sleep
 
 
 def main(**kwargs):
-    set_logging_level(level=log.TRACE)
     for name, logger in variable_names_and_objects(log.trace, log.debug, log.info, log.print, log.warning, log.error, log.critical):
         sleep(0.01)  # So we can see the timestamp increments more clearly.
         logger(f"A message from {name}")

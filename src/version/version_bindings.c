@@ -2,12 +2,18 @@
 #include "version.h"
 
 
-PyObject *_name(PyObject *self, PyObject *args, PyObject *kwargs) {
-    
+PyObject *_repo_name(PyObject *self, PyObject *args, PyObject *kwargs) {
+    return PyUnicode_FromString(repo_name());
 }
 
-PyObject *_version(PyObject *self, PyObject *args, PyObject *kwargs);
+PyObject *_repo_version(PyObject *self, PyObject *args, PyObject *kwargs) {
+    return PyUnicode_FromString(repo_version());
+}
 
-PyObject *_author(PyObject *self, PyObject *args, PyObject *kwargs);
+PyObject *_repo_author(PyObject *self, PyObject *args, PyObject *kwargs) {
+    return PyUnicode_FromString(repo_author());
+}
 
-PyObject *_email(PyObject *self, PyObject *args, PyObject *kwargs);
+PyObject *_repo_email(PyObject *self, PyObject *args, PyObject *kwargs) {
+    return PyUnicode_FromString(repo_email());
+}

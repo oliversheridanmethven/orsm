@@ -73,11 +73,8 @@ class StdErrFilter(logging.Filter):
         return not stdout_filter.filter(rec)
 
 
-log = logging
-
-
 def set_logging_level(*, level):
-    log.root.setLevel(level)
+    logging.root.setLevel(level)
 
 
 def redirect_logging_to_file(*args, filename=None, **kwargs):
@@ -85,11 +82,11 @@ def redirect_logging_to_file(*args, filename=None, **kwargs):
         filename = ""
     assert isinstance(filename, str) and " " not in filename, f"A nice filename is required, not: {filename = }"
     fmt = MyFormatter()
-    stdout_handler = logging.FileHandler(f"{filename}.stdout.log")
+    stdout_handler = logging.FileHandler(f"{filename}.stdout.log", 'w+')
     stdout_handler.setFormatter(fmt)
     stdout_handler.addFilter(StdOutFilter())
     logging.root.addHandler(stdout_handler)
-    stderr_handler = logging.FileHandler(f"{filename}.stderr.log")
+    stderr_handler = logging.FileHandler(f"{filename}.stderr.log", 'w+')
     stderr_handler.setFormatter(fmt)
     stderr_handler.addFilter(StdErrFilter())
     logging.root.addHandler(stderr_handler)
@@ -107,6 +104,12 @@ def setup_console_output():
     logging.root.addHandler(stderr_handler)
 
 
+def remove_console_output():
+    if len(logging.root.handlers) >= 2:
+        # We assume the console handlers are the first two.
+        del logging.root.handlers[:2]
+
+
 def suppress_console_output():
     fmt = MyFormatter()
     null = open(os.devnull, 'w')
@@ -121,6 +124,10 @@ def suppress_console_output():
 
 
 set_logging_level(level=logging.PRINT)
+setup_console_output()  # A nice default setup.
+logging.DEFAULT_LEVEL = logging.PRINT
+
+log = logging
 
 if __name__ == "__main__":
     # A very small demo.

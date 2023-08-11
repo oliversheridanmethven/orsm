@@ -77,16 +77,20 @@ def set_logging_level(*, level):
     logging.root.setLevel(level)
 
 
+log_file_extensions = {"stdout": ".stdout.log",
+                       "stderr": ".stderr.log"}
+
+
 def redirect_logging_to_file(*args, filename=None, **kwargs):
     if filename is None:
         filename = ""
     assert isinstance(filename, str) and " " not in filename, f"A nice filename is required, not: {filename = }"
     fmt = MyFormatter()
-    stdout_handler = logging.FileHandler(f"{filename}.stdout.log", 'w+')
+    stdout_handler = logging.FileHandler(f"{filename}{log_file_extensions['stdout']}", 'w+')
     stdout_handler.setFormatter(fmt)
     stdout_handler.addFilter(StdOutFilter())
     logging.root.addHandler(stdout_handler)
-    stderr_handler = logging.FileHandler(f"{filename}.stderr.log", 'w+')
+    stderr_handler = logging.FileHandler(f"{filename}{log_file_extensions['stderr']}", 'w+')
     stderr_handler.setFormatter(fmt)
     stderr_handler.addFilter(StdErrFilter())
     logging.root.addHandler(stderr_handler)

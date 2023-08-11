@@ -3,6 +3,7 @@
 
 #include "logging/logging.h"
 #include "testing/testing.h"
+#include "version/version.h"
 #include <argp.h>
 #include <stdio.h>
 #include <wordexp.h>
@@ -10,8 +11,7 @@
 wordexp_t words;
 
 struct arguments {
-    enum
-    {
+    enum {
         CHARACTER_MODE,
         WORD_MODE,
         LINE_MODE
@@ -25,21 +25,35 @@ struct params {
     struct arguments arguments;
 } params;
 
-void initialise_params(char *args)
-{
+/* GNU argp required these be const, which we might remove occasionally. */
+const char *argp_program_version = nullptr;
+const char *argp_program_bug_address = nullptr;
+char **restrict _argp_program_version;
+char **restrict _argp_program_bug_address;
+
+void setup_program_details(void) {
+    asprintf(&argp_program_version, "%s %s", repo_name(), repo_version());
+    asprintf(&argp_program_bug_address, "%s <%s>", repo_author(), repo_email());
+}
+
+void clean_program_details(void) {
+    free((char *) argp_program_version);
+    free((char *) argp_program_bug_address);
+}
+
+
+void initialise_params(char *args) {
     LOG_INFO("Parsing the input string: %s", args);
     char *command_prefix = "command ";
     char *merged = malloc(strlen(command_prefix) + strlen(args) + 1);
-    if (!merged)
-    {
+    if (!merged) {
         LOG_ERROR("Couldn't allocate enough space for the command string.");
     }
     strcpy(merged, command_prefix);
     strcat(merged, args);
     args = merged;
 
-    switch (wordexp(args, &words, 0))
-    {
+    switch (wordexp(args, &words, 0)) {
         case 0:
             LOG_INFO("Successfully parsed the input string: %s", args);
             break;
@@ -53,11 +67,20 @@ void initialise_params(char *args)
     params.arguments.isCaseInsensitive = false;
 }
 
-void finalise_params(void)
-{
+void finalise_params(void) {
     wordfree(&words);
 }
 
-TestSuite(cli, .init = show_all_logging, .fini = finalise_params);
+void init_cli(void) {
+    show_all_logging();
+    setup_program_details();
+}
+
+void fini_cli(void) {
+    finalise_params();
+//    clean_program_details();
+}
+
+TestSuite(cli, .init = init_cli, .fini = fini_cli);
 
 #endif /*CLI_TESTING_H_*/

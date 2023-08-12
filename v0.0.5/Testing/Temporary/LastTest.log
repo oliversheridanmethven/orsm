@@ -1,0 +1,455 @@
+Start testing: Aug 12 15:19 CEST
+----------------------------------------------------------
+21/22 Testing: __init__
+21/22 Test: __init__
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/media/tests/__init__.py"
+Directory: /Users/oliver/ClionProjects/testing/src/media/tests
+"__init__" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+/Library/Frameworks/Python.framework/Versions/3.11/Resources/Python.app/Contents/MacOS/Python: can't open file '/Users/oliver/ClionProjects/testing/src/media/tests/__init__.py': [Errno 2] No such file or directory
+<end of output>
+Test time =   0.06 sec
+----------------------------------------------------------
+Test Failed.
+"__init__" end time: Aug 12 15:19 CEST
+"__init__" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/22 Testing: cli_arguments_version
+11/22 Test: cli_arguments_version
+Command: "/Users/oliver/ClionProjects/testing/bin/cli_arguments_version"
+Directory: /Users/oliver/ClionProjects/testing/src/cli/tests
+"cli_arguments_version" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+** INFO: 15:19:19.502: Parsing the input string: --version
+** INFO: 15:19:19.501: Parsing the input string: --version
+** INFO: 15:19:19.518: Successfully parsed the input string: command --version
+testing v0.0.4-10-g14c9cca-dirty
+** INFO: 15:19:19.518: Successfully parsed the input string: command --version
+testing v0.0.4-10-g14c9cca-dirty
+[====] Synthesis: Tested: 2 | Passing: 2 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.15 sec
+----------------------------------------------------------
+Test Passed.
+"cli_arguments_version" end time: Aug 12 15:19 CEST
+"cli_arguments_version" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/22 Testing: version_bindings
+9/22 Test: version_bindings
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/version/tests/version_bindings.py"
+Directory: /Users/oliver/ClionProjects/testing/src/version/tests
+"version_bindings" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.006s
+
+OK
+<end of output>
+Test time =   0.21 sec
+----------------------------------------------------------
+Test Passed.
+"version_bindings" end time: Aug 12 15:19 CEST
+"version_bindings" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/22 Testing: version_test
+8/22 Test: version_test
+Command: "/Users/oliver/ClionProjects/testing/bin/version_example"
+Directory: /Users/oliver/ClionProjects/testing/src/version/tests
+"version_test" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+Version: v0.0.4-10-g14c9cca-dirty
+[====] Synthesis: Tested: 5 | Passing: 5 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.17 sec
+----------------------------------------------------------
+Test Passed.
+"version_test" end time: Aug 12 15:19 CEST
+"version_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/22 Testing: arguments
+12/22 Test: arguments
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/arguments.py"
+Directory: /Users/oliver/ClionProjects/testing/src/common/tests
+"arguments" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.031s
+
+OK
+['/Users/oliver/ClionProjects/testing/src/common/tests', '/Users/oliver/ClionProjects/testing/src', '/Users/oliver/ClionProjects/testing/src/common/tests', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python311.zip', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload', '/Users/oliver/ClionProjects/testing/venv/lib/python3.11/site-packages']
+<end of output>
+Test time =   0.24 sec
+----------------------------------------------------------
+Test Passed.
+"arguments" end time: Aug 12 15:19 CEST
+"arguments" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/22 Testing: example
+4/22 Test: example
+Command: "/Users/oliver/ClionProjects/testing/bin/example"
+Directory: /Users/oliver/ClionProjects/testing/src/testing/tests
+"example" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+[====] Synthesis: Tested: 3 | Passing: 3 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.09 sec
+----------------------------------------------------------
+Test Passed.
+"example" end time: Aug 12 15:19 CEST
+"example" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/22 Testing: cli_print_logs
+13/22 Test: cli_print_logs
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/cli_print_logs.py"
+Directory: /Users/oliver/ClionProjects/testing/src/common/tests
+"cli_print_logs" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+A message from print
+[2023-08-12 15:19:19,592]: WARNING: (/Users/oliver/ClionProjects/testing/src/common/tests/cli_print_logs.py:13) A message from warning
+[2023-08-12 15:19:19,603]: ERROR: (/Users/oliver/ClionProjects/testing/src/common/tests/cli_print_logs.py:13) A message from error
+[2023-08-12 15:19:19,615]: CRITICAL:  (/Users/oliver/ClionProjects/testing/src/common/tests/cli_print_logs.py:13) A message from critical
+<end of output>
+Test time =   0.28 sec
+----------------------------------------------------------
+Test Passed.
+"cli_print_logs" end time: Aug 12 15:19 CEST
+"cli_print_logs" time elapsed: 00:00:00
+----------------------------------------------------------
+
+1/22 Testing: hello_world_test
+1/22 Test: hello_world_test
+Command: "/Users/oliver/ClionProjects/testing/bin/hello_world_test"
+Directory: /Users/oliver/ClionProjects/testing/src/hello_world/tests
+"hello_world_test" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+[====] Synthesis: Tested: 1 | Passing: 1 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"hello_world_test" end time: Aug 12 15:19 CEST
+"hello_world_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/22 Testing: suppressor
+20/22 Test: suppressor
+Command: "/Users/oliver/ClionProjects/testing/bin/_suppressor"
+Directory: /Users/oliver/ClionProjects/testing/src/common/suppressor/tests
+"suppressor" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+[====] Synthesis: Tested: 3 | Passing: 3 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.09 sec
+----------------------------------------------------------
+Test Passed.
+"suppressor" end time: Aug 12 15:19 CEST
+"suppressor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/22 Testing: output
+15/22 Test: output
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/output.py"
+Directory: /Users/oliver/ClionProjects/testing/src/common/tests
+"output" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.011s
+
+OK
+<end of output>
+Test time =   0.17 sec
+----------------------------------------------------------
+Test Passed.
+"output" end time: Aug 12 15:19 CEST
+"output" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/22 Testing: logging_test
+7/22 Test: logging_test
+Command: "/Users/oliver/ClionProjects/testing/bin/logging_test"
+Directory: /Users/oliver/ClionProjects/testing/src/logging/tests
+"logging_test" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+** INFO: 15:19:19.746: some info
+** Message: 15:19:19.748: some message
+some print
+some print error
+** (process:47020): DEBUG: 15:19:19.748: some debug
+
+** (process:47020): WARNING **: 15:19:19.748: some warning
+some info, some string 10
+
+** (process:47017): ERROR **: 15:19:19.747: some error
+[====] Synthesis: Tested: 3 | Passing: 3 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"logging_test" end time: Aug 12 15:19 CEST
+"logging_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/22 Testing: binding_import
+3/22 Test: binding_import
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/binding/tests/binding_import.py"
+Directory: /Users/oliver/ClionProjects/testing/src/binding/tests
+"binding_import" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+.['/Users/oliver/ClionProjects/testing/src/binding/tests', '/Users/oliver/ClionProjects/testing/src', '/Users/oliver/ClionProjects/testing/src/binding/tests', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python311.zip', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload', '/Users/oliver/ClionProjects/testing/venv/lib/python3.11/site-packages']
+We are fatally failing now.
+Hello world from within C.
+The input values are: a = 1 and b = foo
+.A non-fatal error from C in our Python binding.
+.
+----------------------------------------------------------------------
+Ran 3 tests in 0.021s
+
+OK
+We were successfully able to catch an exception: Raising a non-fatal error from C in our Python binding up to Python.
+
+Hello world from within C.
+The input values are: a = 1 and b = foo
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Passed.
+"binding_import" end time: Aug 12 15:19 CEST
+"binding_import" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/22 Testing: error_codes
+2/22 Test: error_codes
+Command: "/Users/oliver/ClionProjects/testing/bin/_error_codes"
+Directory: /Users/oliver/ClionProjects/testing/src/error_codes/tests
+"error_codes" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+[====] Synthesis: Tested: 5 | Passing: 5 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"error_codes" end time: Aug 12 15:19 CEST
+"error_codes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/22 Testing: cli_arguments_0
+10/22 Test: cli_arguments_0
+Command: "/Users/oliver/ClionProjects/testing/bin/cli_arguments_0"
+Directory: /Users/oliver/ClionProjects/testing/src/cli/tests
+"cli_arguments_0" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+** INFO: 15:19:19.804: Parsing the input string: --foo
+** INFO: 15:19:19.804: Parsing the input string: --Help
+** INFO: 15:19:19.804: Parsing the input string: --help
+** INFO: 15:19:19.804: Parsing the input string: 
+** INFO: 15:19:19.805: Parsing the input string: --usage
+** INFO: 15:19:19.821: Successfully parsed the input string: command --foo
+command: unrecognized option `--foo'
+Try `command --help' or `command --usage' for more information.
+** INFO: 15:19:19.821: Successfully parsed the input string: command 
+** INFO: 15:19:19.821: Successfully parsed the input string: command --usage
+Usage: command [-?V] [--help] [--usage] [--version]
+** INFO: 15:19:19.822: Successfully parsed the input string: command --Help
+command: unrecognized option `--Help'
+Try `command --help' or `command --usage' for more information.
+** INFO: 15:19:19.822: Successfully parsed the input string: command --help
+Usage: command [OPTION...]
+
+  -?, --help                 Give this help list
+      --usage                Give a short usage message
+  -V, --version              Print program version
+
+Report bugs to Dr Oliver Sheridan-Methven
+<oliver.sheridan-methven@hotmail.co.uk>.
+[====] Synthesis: Tested: 5 | Passing: 5 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.18 sec
+----------------------------------------------------------
+Test Passed.
+"cli_arguments_0" end time: Aug 12 15:19 CEST
+"cli_arguments_0" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/22 Testing: basic_python
+5/22 Test: basic_python
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/testing/tests/basic_python.py"
+Directory: /Users/oliver/ClionProjects/testing/src/testing/tests
+"basic_python" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"basic_python" end time: Aug 12 15:19 CEST
+"basic_python" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/22 Testing: output_suppressor_c_extension
+16/22 Test: output_suppressor_c_extension
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/output_suppressor_c_extension.py"
+Directory: /Users/oliver/ClionProjects/testing/src/common/tests
+"output_suppressor_c_extension" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+Hello world from within C.
+<end of output>
+Test time =   0.09 sec
+----------------------------------------------------------
+Test Passed.
+"output_suppressor_c_extension" end time: Aug 12 15:19 CEST
+"output_suppressor_c_extension" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/22 Testing: variables
+18/22 Test: variables
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/variables.py"
+Directory: /Users/oliver/ClionProjects/testing/src/common/tests
+"variables" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+<end of output>
+Test time =   0.15 sec
+----------------------------------------------------------
+Test Passed.
+"variables" end time: Aug 12 15:19 CEST
+"variables" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/22 Testing: output_suppression
+19/22 Test: output_suppression
+Command: "/Users/oliver/ClionProjects/testing/src/common/tests/output_suppressor_c_extension.sh" "/Users/oliver/ClionProjects/testing/src/common/tests/output_suppressor_c_extension.py" "--suppress_output"
+Directory: /Users/oliver/ClionProjects/testing/src/common/tests
+"output_suppression" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+Testing suppression:
+script: /Users/oliver/ClionProjects/testing/src/common/tests/output_suppressor_c_extension.py
+args: --suppress_output
+The suppressor worked and no output was detected. Output = ""
+<end of output>
+Test time =   0.11 sec
+----------------------------------------------------------
+Test Passed.
+"output_suppression" end time: Aug 12 15:19 CEST
+"output_suppression" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/22 Testing: basic_python_again
+6/22 Test: basic_python_again
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/testing/tests/basic_python_again.py"
+Directory: /Users/oliver/ClionProjects/testing/src/testing/tests
+"basic_python_again" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+<end of output>
+Test time =   0.12 sec
+----------------------------------------------------------
+Test Passed.
+"basic_python_again" end time: Aug 12 15:19 CEST
+"basic_python_again" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/22 Testing: images
+22/22 Test: images
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/media/tests/images.py"
+Directory: /Users/oliver/ClionProjects/testing/src/media/tests
+"images" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.377s
+
+OK
+<end of output>
+Test time =   0.97 sec
+----------------------------------------------------------
+Test Passed.
+"images" end time: Aug 12 15:19 CEST
+"images" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/22 Testing: logger
+14/22 Test: logger
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/logger.py"
+Directory: /Users/oliver/ClionProjects/testing/src/common/tests
+"logger" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+......
+----------------------------------------------------------------------
+Ran 6 tests in 1.742s
+
+OK
+<end of output>
+Test time =   2.09 sec
+----------------------------------------------------------
+Test Passed.
+"logger" end time: Aug 12 15:19 CEST
+"logger" time elapsed: 00:00:02
+----------------------------------------------------------
+
+17/22 Testing: timing
+17/22 Test: timing
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/timing.py"
+Directory: /Users/oliver/ClionProjects/testing/src/common/tests
+"timing" start time: Aug 12 15:19 CEST
+Output:
+----------------------------------------------------------
+......
+----------------------------------------------------------------------
+Ran 6 tests in 2.838s
+
+OK
+['/Users/oliver/ClionProjects/testing/src/common/tests', '/Users/oliver/ClionProjects/testing/src', '/Users/oliver/ClionProjects/testing/src/common/tests', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python311.zip', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload', '/Users/oliver/ClionProjects/testing/venv/lib/python3.11/site-packages']
+['/Users/oliver/ClionProjects/testing/src/common/tests', '/Users/oliver/ClionProjects/testing/src', '/Users/oliver/ClionProjects/testing/src/common/tests', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python311.zip', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload', '/Users/oliver/ClionProjects/testing/venv/lib/python3.11/site-packages']
+The function sleep test took 0.9105279445648193 seconds over 3 iterations, averaging 0.30350931485493976 seconds per function call.
+The function sleep test took 0.9078569412231445 seconds over 3 iterations, averaging 0.30261898040771484 seconds per function call.
+<end of output>
+Test time =   3.04 sec
+----------------------------------------------------------
+Test Passed.
+"timing" end time: Aug 12 15:19 CEST
+"timing" time elapsed: 00:00:03
+----------------------------------------------------------
+
+End testing: Aug 12 15:19 CEST

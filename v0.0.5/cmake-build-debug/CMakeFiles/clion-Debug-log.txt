@@ -1,0 +1,14 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/local/Cellar/gcc/13.1.0/bin/gcc-13 -DCMAKE_CXX_COMPILER=/usr/local/Cellar/gcc/13.1.0/bin/g++-13 -G "Unix Makefiles" -DPYTHON_EXECUTABLE:FILEPATH=/Users/oliver/ClionProjects/testing/venv/bin/python3 -DCMAKE_OSX_SYSROOT:PATH= -DINSOURCE_BUILD=TRUE -S /Users/oliver/ClionProjects/testing -B /Users/oliver/ClionProjects/testing/cmake-build-debug
+-- We think we have 8 cores on this machine.
+-- Trying to set the build and tests to use parallel cores.
+-- Our default make tool is: /usr/bin/make
+-- Using an in source python path.
+-- Compiler gcc-13 appears to have C2X support.
+-- Could not find scikit-build for building.
+-- Looking for the python libraries.
+-- Installing the Python target examples_bindings in source at destination: /Users/oliver/ClionProjects/testing/src/binding/examples.
+-- Installing the Python target version_bindings in source at destination: /Users/oliver/ClionProjects/testing/src/version.
+-- Installing the Python target suppressor_bindings in source at destination: /Users/oliver/ClionProjects/testing/src/common/suppressor.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/oliver/ClionProjects/testing/cmake-build-debug

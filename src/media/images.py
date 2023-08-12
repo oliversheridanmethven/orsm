@@ -5,7 +5,7 @@ Tools for parsing images.
 import argparse
 import logging
 import os
-
+from common.logger import log
 from PIL import Image, ImageOps
 from common.variables import variable_names_and_objects
 from more_itertools import chunked
@@ -53,7 +53,13 @@ class ImageParser:
     def new_size(cls, *, width, height, abs_width=None, abs_height=None, scale=None, **kwargs):
         """Determines the new size of an image."""
         cls.check_size(width=width, height=height)
-        assert 1 <= sum([kwarg is None for kwarg in [abs_width, abs_height, scale]]) <= 2, f"Inconsistent number of resizing parameters have been specified: {abs_width = }, {abs_height = }, {scale = }"
+        scaling_kwargs = [abs_width, abs_height, scale]
+        scaling_kwargs_specified = sum([kwarg is not None for kwarg in scaling_kwargs])
+        if scaling_kwargs_specified == 0:
+            log.info("No image scaling has been requested.")
+            return {"width": width, "height": height}
+
+        assert 1 <= scaling_kwargs_specified <= 2, f"Inconsistent number of resizing parameters have been specified: {abs_width = }, {abs_height = }, {scale = }"
         if scale is not None:
             assert abs_width is None and abs_height is None, f"{scale = } has been specified alongside absolute resizing parameters."
         if any([kwarg is not None for kwarg in [abs_width, abs_height]]):

@@ -5,7 +5,6 @@ A small curses window to display images and ascii videos.
 Because this is a curses application, any output and logs will
 be written to files rather than shown to the screen.
 """
-import time
 
 from media.images import ImageParser
 from media.images import add_parser_optional_arguments as add_image_parser_arguments
@@ -38,21 +37,17 @@ def ascii_from_camera(*args, camera, retries=0, **kwargs):
     return parser.as_ascii(*args, **kwargs)
 
 
-def stream_from_webcam(*args, timeout=None, **kwargs):
+def stream_from_camera(*args, camera, timeout=None, **kwargs):
     """
     Generate a stream of ASCII images from the webcam.
     """
-    default_camera_index = 0
-    camera = VideoCapture(default_camera_index)
     if not camera:
         error_message = f"Unable to capture the video from the webcam."
         log.warning(error_message)
         raise RuntimeError(error_message)
     sleep(0.1)  # The webcam take a small time interval to warm up, else it returns black images.
     try:
-        retries = 3
         start = dt.datetime.now()
-        # for i in range(3):
         while (timeout is None or dt.datetime.now() - start < dt.timedelta(seconds=timeout)):
             ascii_string = ascii_from_camera(*args, camera=camera, **kwargs)
             yield ascii_string
@@ -95,7 +90,9 @@ def curses_main(stdscr, *args, abs_width=None, border=None, **kwargs):
         message = f"The desired image width {abs_width} is invalid. ({max_width = })."
         log.debug(message)
 
-    webcam_streamer = stream_from_webcam(*args, abs_width=abs_width, border=border, **kwargs)
+    default_camera_index = 0
+    camera = VideoCapture(default_camera_index)
+    webcam_streamer = stream_from_camera(*args, camera=camera, abs_width=abs_width, border=border, **kwargs)
     test_ascii_fits = True
     while True:
         user_char = stdscr.get_wch()
@@ -130,7 +127,6 @@ def curses_main(stdscr, *args, abs_width=None, border=None, **kwargs):
         for line in range(warning_start, warning_end):
             stdscr.move(line, 0)
             stdscr.clrtoeol()
-        break
     return 0
 
 

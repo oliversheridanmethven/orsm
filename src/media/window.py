@@ -6,12 +6,12 @@ Because this is a curses application, any output and logs will
 be written to files rather than shown to the screen.
 """
 
+from common.logger import log, redirect_logging_to_file, suppress_console_output, set_logging_level, remove_console_output
 from media.images import ImageParser
 from media.images import add_parser_optional_arguments as add_image_parser_arguments
 from cv2 import VideoCapture
 from time import sleep
 import datetime as dt
-from common.logger import log, redirect_logging_to_file, suppress_console_output, set_logging_level
 import curses
 from textwrap import dedent
 from common.cli import setup_standard_parser
@@ -86,7 +86,7 @@ def curses_main(stdscr, *args, abs_width=None, border=None, **kwargs):
         abs_width = max_width
     if border is not None:
         abs_width -= 2 * border_padding
-    if 0 < abs_width <= max_width:
+    if 0 >= abs_width or abs_width > max_width:
         message = f"The desired image width {abs_width} is invalid. ({max_width = })."
         log.debug(message)
 
@@ -94,39 +94,43 @@ def curses_main(stdscr, *args, abs_width=None, border=None, **kwargs):
     camera = VideoCapture(default_camera_index)
     webcam_streamer = stream_from_camera(*args, camera=camera, abs_width=abs_width, border=border, **kwargs)
     test_ascii_fits = True
-    while True:
-        user_char = stdscr.get_wch()
-        if user_char == " ":
-            log.info("The user is starting the webcam.")
-            for ascii_image in webcam_streamer:
-                if test_ascii_fits:
-                    lines = len(ascii_image.split("\n"))
-                    line = ascii_image.split("\n")[0]
-                    log.debug(f"The number of lines in our image is: {lines} and our {max_lines = }")
-                    log.debug(f"The number of columns in our image is: {len(line)} and our {max_width = }")
-                    user_warning = ""
-                    if lines > max_lines:
-                        user_warning = f"The image is too tall for the window. The image contains {lines = } but can only fit {max_lines = }. Consider using a taller or thinner window."
-                        display_warning(user_warning)
-                    elif len(line) > max_width:
-                        user_warning = f"The image is too wide for the window. The image contains {len(line) = } but can only fit {max_width = }. Consider using a shorter or fatter window."
-                        display_warning(user_warning)
+    try:
+        while True:
+            user_char = stdscr.get_wch()
+            for line in range(warning_start, warning_end):
+                stdscr.move(line, 0)
+                stdscr.clrtoeol()
+            if user_char == " ":
+                log.info("The user is starting the webcam.")
+                for ascii_image in webcam_streamer:
+                    if test_ascii_fits:
+                        lines = len(ascii_image.split("\n"))
+                        line = ascii_image.split("\n")[0]
+                        log.debug(f"The number of lines in our image is: {lines} and our {max_lines = }")
+                        log.debug(f"The number of columns in our image is: {len(line)} and our {max_width = }")
+                        user_warning = ""
+                        if lines > max_lines:
+                            user_warning = f"The image is too tall for the window. The image contains {lines = } but can only fit {max_lines = }. Consider using a taller or thinner window."
+                            display_warning(user_warning)
+                        elif len(line) > max_width:
+                            user_warning = f"The image is too wide for the window. The image contains {len(line) = } but can only fit {max_width = }. Consider using a shorter or fatter window."
+                            display_warning(user_warning)
 
-                    if user_warning:
-                        stdscr.addstr(*stdscr.getyx(), f"Press any key to continue and we will exit the program.")
-                        stdscr.get_wch()
-                        raise RuntimeError(user_warning)
+                        if user_warning:
+                            stdscr.addstr(*stdscr.getyx(), f"Press any key to continue and we will exit the program.")
+                            stdscr.get_wch()
+                            raise RuntimeError(user_warning)
 
-                    test_ascii_fits = False
-                stdscr.addstr(webcam_start, 0, ascii_image)
-                stdscr.refresh()
-        else:
-            display_warning(f"Warning: The user provided an unknown key pattern character {user_char = }.")
-            stdscr.addstr(*stdscr.getyx(), f"Please try again.")
-            continue
-        for line in range(warning_start, warning_end):
-            stdscr.move(line, 0)
-            stdscr.clrtoeol()
+                        test_ascii_fits = False
+                    stdscr.addstr(webcam_start, 0, ascii_image)
+                    stdscr.refresh()
+            else:
+                display_warning(f"Warning: The user provided an unknown key pattern character {user_char = }.")
+                stdscr.addstr(*stdscr.getyx(), f"Please try again.")
+                continue
+    except KeyboardInterrupt as e:
+        log.info(f"The user has interrupted the program, so we are quitting.")
+        return 0
     return 0
 
 
@@ -135,9 +139,10 @@ def main():
     parser.add_argument("--timeout", type=int, metavar="SECONDS", help="Whether to timeout streaming from the webcam")
     add_image_parser_arguments(parser=parser)
     kwargs = vars(parser.parse_args())
-    set_logging_level(level=log.TRACE)
+    # For our curses application we want non-default logging behaviour
+    # to avoid clobbering the screen.
+    remove_console_output()
     redirect_logging_to_file()
-    suppress_console_output()
     return curses.wrapper(curses_main, **kwargs)
 
 

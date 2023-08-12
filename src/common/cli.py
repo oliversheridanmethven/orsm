@@ -53,9 +53,15 @@ class ShowVersion(argparse.Action):
 
 def setup_standard_parser(*args, **kwargs):
     epilogue = dedent(f"""
-    Version: {version.repo_name()} {version.repo_version()}
-    Author: {version.repo_author()}
-    Maintained by: {version.repo_author()} <{version.repo_email()}>
+    Version: 
+        {version.repo_name()} {version.repo_version()}
+        
+    Author: 
+        {version.repo_author()}
+        
+    Maintained by: 
+        {version.repo_author()}
+        <{version.repo_email()}>
     """)
     parser = argparse.ArgumentParser(*args, **kwargs, formatter_class=HelpFormatter, allow_abbrev=False, epilog=epilogue)
     parser.add_argument("--version", help="Show the version of this program.", action=ShowVersion, nargs=0)

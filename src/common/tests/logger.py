@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
 
-import io
 import unittest
-from contextlib import redirect_stdout
 from common.logger import log, set_logging_level, log_file_extensions
 from common.variables import variable_names_and_objects
-import logging
 import sys
 from subprocess import Popen, PIPE
 import cli_print_logs
 from testfixtures import LogCapture
-import subprocess
 import shlex
 from tempfile import TemporaryDirectory
 import os
@@ -42,10 +38,11 @@ class Logger(unittest.TestCase):
 class LoggerVerbosity(unittest.TestCase):
 
     def test_output_from_cli_regular(self):
-        p = Popen(["python", f"{cli_print_logs.__file__}"], stdin=PIPE, stdout=PIPE, stderr=PIPE)
+        command = shlex.split(f"{sys.executable} {cli_print_logs.__file__}")
+        p = Popen(command, stdin=PIPE, stdout=PIPE, stderr=PIPE)
         output, err = p.communicate(b"")
         rc = p.returncode
-        self.assertEqual(rc, 0, f"We were unable to run the subprocess, encountering\noutput:\n{output=}\nerror:\n{err}")
+        self.assertEqual(rc, 0, f"We were unable to run the subprocess {command = }, encountering\noutput:\n{output=}\nerror:\n{err}")
         for name, logger in variable_names_and_objects(log.trace, log.debug, log.info, log.print, log.warning, log.error, log.critical):
             message = f"A message from {name}"
             if log.getLevelNamesMapping()[name.upper()] > log.DEFAULT_LEVEL:
@@ -63,10 +60,11 @@ class LoggerVerbosity(unittest.TestCase):
                             "--quiet": log.WARNING,
                             "--silent": log.ERROR}
         for flag, level in flags_and_levels.items():
-            p = Popen(["python", f"{cli_print_logs.__file__}", *shlex.split(flag)], stdin=PIPE, stdout=PIPE, stderr=PIPE)
+            command = shlex.split(f"{sys.executable} {cli_print_logs.__file__} {flag}")
+            p = Popen(command, stdin=PIPE, stdout=PIPE, stderr=PIPE)
             output, err = p.communicate(b"")
             rc = p.returncode
-            self.assertEqual(rc, 0, f"We were unable to run the subprocess with {flag = }, encountering\noutput:\n{output=}\nerror:\n{err}")
+            self.assertEqual(rc, 0, f"We were unable to run the subprocess {command = } with {flag = }, encountering\noutput:\n{output=}\nerror:\n{err}")
             all_output = "".join([i.decode() for i in [output, err]])
             for name, logger in variable_names_and_objects(log.trace, log.debug, log.info, log.print, log.warning, log.error, log.critical):
                 message = f"A message from {name}"
@@ -76,10 +74,11 @@ class LoggerVerbosity(unittest.TestCase):
                     self.assertNotIn(message, all_output)
 
     def test_no_output_when_suppressed(self):
-        p = Popen(["python", f"{cli_print_logs.__file__}", *shlex.split("--suppress_console_output")], stdin=PIPE, stdout=PIPE, stderr=PIPE)
+        command = shlex.split(f"{sys.executable} {cli_print_logs.__file__} --suppress_console_output")
+        p = Popen(command, stdin=PIPE, stdout=PIPE, stderr=PIPE)
         output, err = p.communicate(b"")
         rc = p.returncode
-        self.assertEqual(rc, 0, f"We were unable to run the subprocess, encountering\noutput:\n{output=}\nerror:\n{err}")
+        self.assertEqual(rc, 0, f"We were unable to run the subprocess {command = }, encountering\noutput:\n{output=}\nerror:\n{err}")
         self.assertFalse(output)
         self.assertFalse(err)
 
@@ -87,16 +86,15 @@ class LoggerVerbosity(unittest.TestCase):
         file_names = ["", "foo"]
         for file_name in file_names:
             with TemporaryDirectory() as temp_directory:
-                os.chdir(temp_directory)
-                expected_files = [f"{file_name}{extension}" for extension in log_file_extensions.values()]
-                p = Popen(["python", f"{cli_print_logs.__file__}", *shlex.split(f"--trace --log_files {file_name}")], stdin=PIPE, stdout=PIPE, stderr=PIPE, cwd=temp_directory)
+                expected_files = [pathlib.Path(f"{os.path.join(temp_directory, file_name)}{extension}") for extension in log_file_extensions.values()]
+                command = shlex.split(f"{sys.executable} {cli_print_logs.__file__} --trace --log_files {file_name}")
+                p = Popen(command, stdin=PIPE, stdout=PIPE, stderr=PIPE, cwd=temp_directory)
                 output, err = p.communicate(b"")
                 rc = p.returncode
-                self.assertEqual(rc, 0, f"We were unable to run the subprocess, encountering\noutput:\n{output=}\nerror:\n{err}")
-                for expected_file in expected_files:
-                    file_path = pathlib.Path(expected_file)
-                    self.assertTrue(file_path.is_file(), f"We cant find the file: {file_path}")
-                    self.assertGreater(os.path.getsize(file_path), 0, f"The {file_path = } is expected to be non-empty.")
+                self.assertEqual(rc, 0, f"We were unable to run the subprocess {command = }, encountering\noutput:\n{output=}\nerror:\n{err}")
+                for file in expected_files:
+                    self.assertTrue(file.is_file(), f"We cant find the file: {file}")
+                    self.assertGreater(os.path.getsize(file), 0, f"The {file = } is expected to be non-empty.")
 
 
 if __name__ == '__main__':

@@ -20,4 +20,12 @@ def profile(func):
 
 
 if __name__ == "__main__":
-    pass
+    @profile
+    def some_example():
+        import time
+        for i in range(5):
+            time.sleep(0.1)
+
+
+    some_example()
+    profiler.print_stats()

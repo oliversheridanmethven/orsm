@@ -3,7 +3,7 @@ add_subdirectory(tests)
 
 # So we can add versioning to our repo
 find_package(Git)
-set(generated_version_source "${CMAKE_CURRENT_BINARY_DIR}/version.c")
+set(generated_version_source "${CMAKE_CURRENT_SOURCE_DIR}/version.c")
 add_custom_command(
         OUTPUT ${generated_version_source}
         COMMAND ${CMAKE_COMMAND} -D SRC=${CMAKE_CURRENT_SOURCE_DIR}/version.c.in

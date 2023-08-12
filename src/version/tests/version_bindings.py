@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 import unittest
-import version
 from common.variables import variable_names_and_objects
-import common
-import sys
+import version
 
 
 class VersionInfo(unittest.TestCase):

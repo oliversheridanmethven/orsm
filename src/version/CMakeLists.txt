@@ -18,7 +18,6 @@ add_custom_command(
 add_library(version ${generated_version_source})
 target_include_directories(version INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/..)
 
-
 add_library(version_bindings MODULE version_bindings.c version_module.c)
 target_link_libraries(version_bindings binding version)
 install_python_target(version_bindings src/version)

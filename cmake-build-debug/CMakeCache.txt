@@ -149,7 +149,7 @@ CMAKE_OSX_ARCHITECTURES:STRING=
 
 //Minimum OS X version to target for deployment (at runtime); newer
 // APIs weak linked. Set to empty string for default value.
-CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
+CMAKE_OSX_DEPLOYMENT_TARGET:STRING=12.6
 
 //No help, variable specified on the command line.
 CMAKE_OSX_SYSROOT:PATH=
@@ -245,15 +245,6 @@ PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/local/bin/pkg-config
 
 //No help, variable specified on the command line.
 PYTHON_EXECUTABLE:FILEPATH=/Users/oliver/ClionProjects/testing/venv/bin/python3
-
-//Path to a file.
-PYTHON_INCLUDE_DIR:PATH=/Library/Frameworks/Python.framework/Versions/3.11/include/python3.11
-
-//Path to a library.
-PYTHON_LIBRARY:FILEPATH=/Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
-
-//Path to a library.
-PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
 
 //Path to a library.
 pkgcfg_lib_GLIB_glib-2.0:FILEPATH=/usr/local/Cellar/glib/2.76.4/lib/libglib-2.0.dylib
@@ -373,7 +364,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=23
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=24
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -431,9 +422,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/local/bin/pkg-config][v0.2
 //Details about finding Python
 FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/Users/oliver/ClionProjects/testing/venv/bin/python3.11][cfound components: Interpreter ][v3.11.4()]
 //Details about finding Python3
-FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11][cfound components: Interpreter ][v3.11.4()]
-//Details about finding PythonLibs
-FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs:INTERNAL=[/Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib][/Library/Frameworks/Python.framework/Versions/3.11/include/python3.11][v3.11.4()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/Users/oliver/ClionProjects/testing/venv/bin/python3.11][/Library/Frameworks/Python.framework/Versions/3.11/include/python3.11][/Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib][cfound components: Interpreter Development Development.Module Development.Embed ][v3.11.4()]
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 GLIB_CFLAGS:INTERNAL=-I/usr/local/Cellar/glib/2.76.4/include/glib-2.0;-I/usr/local/Cellar/glib/2.76.4/lib/glib-2.0/include;-I/usr/local/opt/gettext/include;-I/usr/local/Cellar/pcre2/10.42/include
@@ -475,21 +464,21 @@ GLIB_glib-2.0_VERSION:INTERNAL=
 PKG_CONFIG_ARGN-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PYTHON_INCLUDE_DIR
-PYTHON_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PYTHON_LIBRARY
-PYTHON_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: PYTHON_LIBRARY_DEBUG
-PYTHON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //Compiler reason failure
 _Python3_Compiler_REASON_FAILURE:INTERNAL=
-//Development reason failure
-_Python3_Development_REASON_FAILURE:INTERNAL=
+_Python3_DEVELOPMENT_EMBED_SIGNATURE:INTERNAL=8f6bd8ac84892a090c44f2bc8bfc8453
+_Python3_DEVELOPMENT_MODULE_SIGNATURE:INTERNAL=c73d3d6cbafa16a8e61db685dc41b6f0
 //Path to a program.
-_Python3_EXECUTABLE:INTERNAL=/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11
+_Python3_EXECUTABLE:INTERNAL=/Users/oliver/ClionProjects/testing/venv/bin/python3.11
+//Path to a file.
+_Python3_INCLUDE_DIR:INTERNAL=/Library/Frameworks/Python.framework/Versions/3.11/include/python3.11
 //Python3 Properties
-_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;4;64;;cpython-311-darwin;/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11;/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11;/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages;/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages
-_Python3_INTERPRETER_SIGNATURE:INTERNAL=3c97c57b8547b5d225a4131cf48fc285
+_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;4;64;;cpython-311-darwin;/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11;/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11;/Users/oliver/ClionProjects/testing/venv/lib/python3.11/site-packages;/Users/oliver/ClionProjects/testing/venv/lib/python3.11/site-packages
+_Python3_INTERPRETER_SIGNATURE:INTERNAL=3fe76279d2b42b5aba4e6d3673d839a3
+//Interpreter reason failure
+_Python3_Interpreter_REASON_FAILURE:INTERNAL=
+//Path to a library.
+_Python3_LIBRARY_RELEASE:INTERNAL=/Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
 //Path to a program.

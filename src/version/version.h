@@ -1,13 +1,12 @@
 #ifndef REPO_VERSION_H_
 #define REPO_VERSION_H_
 
-/* These I will read from git and cmake. */
-#define REPO_NAME "testing"
-#define REPO_VERSION "v0.0.3-16-g73cc8bc-dirty"
+char *repo_name(void);
 
-/* I could change the following to use git, but then contributors
- * might get listed also, which I don't want for now. */
-#define REPO_AUTHOR "Dr Oliver Sheridan-Methven"
-#define REPO_EMAIL "oliver.sheridan-methven@hotmail.co.uk"
+char *repo_version(void);
+
+char *repo_author(void);
+
+char *repo_email(void);
 
 #endif  /* REPO_VERSION_H_ */

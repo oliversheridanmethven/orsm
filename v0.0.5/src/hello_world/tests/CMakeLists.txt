@@ -1,3 +1,0 @@
-add_executable(hello_world_test hello_world.c)
-target_link_libraries(hello_world_test testing hello_world)
-add_test(NAME hello_world_test COMMAND hello_world_test)

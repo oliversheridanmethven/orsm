@@ -93,6 +93,8 @@ cli_arguments_0_EXTERNAL_OBJECTS =
 src/cli/tests/cli_arguments_0: src/cli/tests/CMakeFiles/cli_arguments_0.dir/cli_arguments_0.c.o
 src/cli/tests/cli_arguments_0: src/cli/tests/CMakeFiles/cli_arguments_0.dir/build.make
 src/cli/tests/cli_arguments_0: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
+src/cli/tests/cli_arguments_0: src/version/libversion.a
+src/cli/tests/cli_arguments_0: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
 src/cli/tests/cli_arguments_0: src/cli/tests/CMakeFiles/cli_arguments_0.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable cli_arguments_0"
 	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/cli/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cli_arguments_0.dir/link.txt --verbose=$(VERBOSE)

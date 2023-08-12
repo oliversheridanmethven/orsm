@@ -10,15 +10,20 @@ _skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/binding/examples/__init__.py
 _skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/binding/examples/examples_bindings.cpython-311-darwin.so
 _skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/common/__init__.py
 _skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/common/arguments.py
+_skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/common/cli.py
+_skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/common/logger.py
 _skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/common/output.py
+_skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/common/profiling.py
 _skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/common/timing.py
 _skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/common/variables.py
 _skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/common/suppressor/__init__.py
 _skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/common/suppressor/suppressor_bindings.cpython-311-darwin.so
 _skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/media/__init__.py
 _skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/media/images.py
+_skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/media/window.py
 _skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/media/tests/__init__.py
 _skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/media/tests/images.py
+_skbuild/macosx-12.0-x86_64-3.11/cmake-install/src/version/version_bindings.cpython-311-darwin.so
 src/__init__.py
 src/binding/__init__.py
 src/binding/example.py
@@ -30,4 +35,5 @@ testing.egg-info/PKG-INFO
 testing.egg-info/SOURCES.txt
 testing.egg-info/dependency_links.txt
 testing.egg-info/not-zip-safe
+testing.egg-info/requires.txt
 testing.egg-info/top_level.txt

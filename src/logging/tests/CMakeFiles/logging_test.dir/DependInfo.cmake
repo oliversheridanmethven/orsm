@@ -11,8 +11,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/oliver/ClionProjects/testing/src/logging/tests/logging.c" "src/logging/tests/CMakeFiles/logging_test.dir/logging.c.o" "gcc" "src/logging/tests/CMakeFiles/logging_test.dir/logging.c.o.d"
   )
 
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

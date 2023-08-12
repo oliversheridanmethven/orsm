@@ -631,23 +631,37 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../src/media/index.html" class="md-nav__link">
+        Media
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
           Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3_7">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
           <span class="md-nav__icon md-icon"></span>
           Testing
         </label>
@@ -1065,13 +1079,22 @@ separate dedicated build directory.</p>
 <pre><code class="language-bash">make clean
 ./cmake_uninstall.sh
 </code></pre>
+<h3 id="adjusting-your-pythonpath">Adjusting your <code>PYTHONPATH</code></h3>
+<p>If you plan on testing out the code using the source code in 
+the repository, such as for use in a terminal setting or an 
+IDE, then it might be useful to add the contents of <code>src/</code> to
+your <code>PYTHONPATH</code> environment variable. To do just this we
+have the script <code>add_src_to_python_path.sh</code> which can be run 
+from the project's root directory by calling:</p>
+<pre><code class="language-bash">source add_src_to_python_path.sh
+</code></pre>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 7, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 10, 2023</span>
       
         <br>
         Created:

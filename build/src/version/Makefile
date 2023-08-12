@@ -127,18 +127,104 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/version/CMakeFiles/repo_version.dir/rule:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/version/CMakeFiles/repo_version.dir/rule
-.PHONY : src/version/CMakeFiles/repo_version.dir/rule
+src/version/CMakeFiles/version.dir/rule:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/version/CMakeFiles/version.dir/rule
+.PHONY : src/version/CMakeFiles/version.dir/rule
 
 # Convenience name for target.
-repo_version: src/version/CMakeFiles/repo_version.dir/rule
-.PHONY : repo_version
+version: src/version/CMakeFiles/version.dir/rule
+.PHONY : version
 
 # fast build rule for target.
-repo_version/fast:
-	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/version/CMakeFiles/repo_version.dir/build.make src/version/CMakeFiles/repo_version.dir/build
-.PHONY : repo_version/fast
+version/fast:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/version/CMakeFiles/version.dir/build.make src/version/CMakeFiles/version.dir/build
+.PHONY : version/fast
+
+# Convenience name for target.
+src/version/CMakeFiles/version_bindings.dir/rule:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/version/CMakeFiles/version_bindings.dir/rule
+.PHONY : src/version/CMakeFiles/version_bindings.dir/rule
+
+# Convenience name for target.
+version_bindings: src/version/CMakeFiles/version_bindings.dir/rule
+.PHONY : version_bindings
+
+# fast build rule for target.
+version_bindings/fast:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/version/CMakeFiles/version_bindings.dir/build.make src/version/CMakeFiles/version_bindings.dir/build
+.PHONY : version_bindings/fast
+
+version.o: version.c.o
+.PHONY : version.o
+
+# target to build an object file
+version.c.o:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/version/CMakeFiles/version.dir/build.make src/version/CMakeFiles/version.dir/version.c.o
+.PHONY : version.c.o
+
+version.i: version.c.i
+.PHONY : version.i
+
+# target to preprocess a source file
+version.c.i:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/version/CMakeFiles/version.dir/build.make src/version/CMakeFiles/version.dir/version.c.i
+.PHONY : version.c.i
+
+version.s: version.c.s
+.PHONY : version.s
+
+# target to generate assembly for a file
+version.c.s:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/version/CMakeFiles/version.dir/build.make src/version/CMakeFiles/version.dir/version.c.s
+.PHONY : version.c.s
+
+version_bindings.o: version_bindings.c.o
+.PHONY : version_bindings.o
+
+# target to build an object file
+version_bindings.c.o:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/version/CMakeFiles/version_bindings.dir/build.make src/version/CMakeFiles/version_bindings.dir/version_bindings.c.o
+.PHONY : version_bindings.c.o
+
+version_bindings.i: version_bindings.c.i
+.PHONY : version_bindings.i
+
+# target to preprocess a source file
+version_bindings.c.i:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/version/CMakeFiles/version_bindings.dir/build.make src/version/CMakeFiles/version_bindings.dir/version_bindings.c.i
+.PHONY : version_bindings.c.i
+
+version_bindings.s: version_bindings.c.s
+.PHONY : version_bindings.s
+
+# target to generate assembly for a file
+version_bindings.c.s:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/version/CMakeFiles/version_bindings.dir/build.make src/version/CMakeFiles/version_bindings.dir/version_bindings.c.s
+.PHONY : version_bindings.c.s
+
+version_module.o: version_module.c.o
+.PHONY : version_module.o
+
+# target to build an object file
+version_module.c.o:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/version/CMakeFiles/version_bindings.dir/build.make src/version/CMakeFiles/version_bindings.dir/version_module.c.o
+.PHONY : version_module.c.o
+
+version_module.i: version_module.c.i
+.PHONY : version_module.i
+
+# target to preprocess a source file
+version_module.c.i:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/version/CMakeFiles/version_bindings.dir/build.make src/version/CMakeFiles/version_bindings.dir/version_module.c.i
+.PHONY : version_module.c.i
+
+version_module.s: version_module.c.s
+.PHONY : version_module.s
+
+# target to generate assembly for a file
+version_module.c.s:
+	cd /Users/oliver/ClionProjects/testing/build && $(MAKE) $(MAKESILENT) -f src/version/CMakeFiles/version_bindings.dir/build.make src/version/CMakeFiles/version_bindings.dir/version_module.c.s
+.PHONY : version_module.c.s
 
 # Help Target
 help:
@@ -149,7 +235,17 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... repo_version"
+	@echo "... version"
+	@echo "... version_bindings"
+	@echo "... version.o"
+	@echo "... version.i"
+	@echo "... version.s"
+	@echo "... version_bindings.o"
+	@echo "... version_bindings.i"
+	@echo "... version_bindings.s"
+	@echo "... version_module.o"
+	@echo "... version_module.i"
+	@echo "... version_module.s"
 .PHONY : help
 
 

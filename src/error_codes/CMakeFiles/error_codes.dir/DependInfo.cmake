@@ -11,8 +11,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/oliver/ClionProjects/testing/src/error_codes/error_codes.c" "src/error_codes/CMakeFiles/error_codes.dir/error_codes.c.o" "gcc" "src/error_codes/CMakeFiles/error_codes.dir/error_codes.c.o.d"
   )
 
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

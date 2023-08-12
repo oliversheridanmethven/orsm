@@ -257,4 +257,4 @@ src/common/suppressor/CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.o
  /Library/Frameworks/Python.framework/Versions/3.11/include/python3.11/tracemalloc.h \
  /Users/oliver/ClionProjects/testing/src/common/suppressor/suppressor.h \
  /Users/oliver/ClionProjects/testing/src/error_codes/../error_codes/error_codes.h \
- /Users/oliver/ClionProjects/testing/src/error_codes/../binding/examples/wrappers.h
+ /Users/oliver/ClionProjects/testing/src/error_codes/../binding/wrappers.h

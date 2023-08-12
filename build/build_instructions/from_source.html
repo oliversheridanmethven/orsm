@@ -631,23 +631,37 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../src/media/index.html" class="md-nav__link">
+        Media
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
           Testing
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3_7">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_8">
           <span class="md-nav__icon md-icon"></span>
           Testing
         </label>
@@ -1085,13 +1099,24 @@ This directory exists only for manual building and testing with <code>cmake</cod
 <pre><code class="language-bash">cd build
 cmake .. 
 make 
-make test
+pip3 install .. 
 ctest 
 </code></pre>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code>make test</code> and <code>ctest</code> are synonymous.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Running things in parallel</p>
+<p><code>cmake</code>, <code>ctest</code>, and <code>make</code> can all use multiple cores, 
+to speed things up, typically by adding a <code>-j &lt;N&gt;</code> or 
+<code>--parallel &lt;N&gt;</code> flag. </p>
+</div>
+<p>The reason we install the Python package is because many of our
+tests are Python based as well, including several 
+C extensions and various Python modules we have created. 
+Hence, without this step, the various Python imports won't work
+correctly and many of the tests can be expected to fail. </p>
 <h3 id="modern-c23-compilers">Modern C23 compilers</h3>
 <p>We are trying to use a very modern C standard
 (C23 is brand new at the time of writing), and compiler
@@ -1106,14 +1131,14 @@ can be debugged further by running</p>
 <pre><code class="language-bash">ctest --rerun-failed --output-on-failure
 </code></pre>
 <h2 id="demo">Demo</h2>
-<p><img alt="testing_demo" src="https://user-images.githubusercontent.com/13259221/255421785-e2c496a2-b824-462a-8d8e-df8ba762b838.gif" /></p>
+<p><img alt="testing_demo" src="https://user-images.githubusercontent.com/13259221/260237951-233a3b89-cbf5-4551-a646-2d7344e21882.gif" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 28, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 12, 2023</span>
       
         <br>
         Created:

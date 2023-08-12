@@ -244,17 +244,30 @@ logging_test/fast:
 .PHONY : logging_test/fast
 
 #=============================================================================
-# Target rules for targets named repo_version
+# Target rules for targets named version
 
 # Build rule for target.
-repo_version: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 repo_version
-.PHONY : repo_version
+version: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 version
+.PHONY : version
 
 # fast build rule for target.
-repo_version/fast:
-	$(MAKE) $(MAKESILENT) -f src/version/CMakeFiles/repo_version.dir/build.make src/version/CMakeFiles/repo_version.dir/build
-.PHONY : repo_version/fast
+version/fast:
+	$(MAKE) $(MAKESILENT) -f src/version/CMakeFiles/version.dir/build.make src/version/CMakeFiles/version.dir/build
+.PHONY : version/fast
+
+#=============================================================================
+# Target rules for targets named version_bindings
+
+# Build rule for target.
+version_bindings: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 version_bindings
+.PHONY : version_bindings
+
+# fast build rule for target.
+version_bindings/fast:
+	$(MAKE) $(MAKESILENT) -f src/version/CMakeFiles/version_bindings.dir/build.make src/version/CMakeFiles/version_bindings.dir/build
+.PHONY : version_bindings/fast
 
 #=============================================================================
 # Target rules for targets named version_example
@@ -343,7 +356,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... repo_version"
 	@echo "... _error_codes"
 	@echo "... _suppressor"
 	@echo "... cli_arguments_0"
@@ -358,6 +370,8 @@ help:
 	@echo "... logging_test"
 	@echo "... suppressor"
 	@echo "... suppressor_bindings"
+	@echo "... version"
+	@echo "... version_bindings"
 	@echo "... version_example"
 .PHONY : help
 

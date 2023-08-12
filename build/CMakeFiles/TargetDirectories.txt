@@ -49,7 +49,8 @@
 /Users/oliver/ClionProjects/testing/build/src/logging/tests/CMakeFiles/test.dir
 /Users/oliver/ClionProjects/testing/build/src/logging/tests/CMakeFiles/edit_cache.dir
 /Users/oliver/ClionProjects/testing/build/src/logging/tests/CMakeFiles/rebuild_cache.dir
-/Users/oliver/ClionProjects/testing/build/src/version/CMakeFiles/repo_version.dir
+/Users/oliver/ClionProjects/testing/build/src/version/CMakeFiles/version.dir
+/Users/oliver/ClionProjects/testing/build/src/version/CMakeFiles/version_bindings.dir
 /Users/oliver/ClionProjects/testing/build/src/version/CMakeFiles/test.dir
 /Users/oliver/ClionProjects/testing/build/src/version/CMakeFiles/edit_cache.dir
 /Users/oliver/ClionProjects/testing/build/src/version/CMakeFiles/rebuild_cache.dir
@@ -83,3 +84,6 @@
 /Users/oliver/ClionProjects/testing/build/src/media/CMakeFiles/test.dir
 /Users/oliver/ClionProjects/testing/build/src/media/CMakeFiles/edit_cache.dir
 /Users/oliver/ClionProjects/testing/build/src/media/CMakeFiles/rebuild_cache.dir
+/Users/oliver/ClionProjects/testing/build/src/media/tests/CMakeFiles/test.dir
+/Users/oliver/ClionProjects/testing/build/src/media/tests/CMakeFiles/edit_cache.dir
+/Users/oliver/ClionProjects/testing/build/src/media/tests/CMakeFiles/rebuild_cache.dir

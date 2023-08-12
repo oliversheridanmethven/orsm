@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../lib/libexamples.a CMakeFiles/examples.dir/examples.c.o
-/usr/bin/ranlib ../../../lib/libexamples.a

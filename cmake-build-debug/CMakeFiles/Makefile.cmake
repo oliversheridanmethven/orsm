@@ -26,8 +26,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/FindPackageHandleStandardArgs.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/FindPackageMessage.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/FindPkgConfig.cmake"
-  "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/FindPython.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/FindPython/Support.cmake"
+  "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/FindPython3.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Internal/CheckCompilerFlag.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Internal/CheckFlagCommonConfig.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.25/Modules/Internal/CheckSourceCompiles.cmake"
@@ -59,6 +59,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Users/oliver/ClionProjects/testing/src/logging/CMakeLists.txt"
   "/Users/oliver/ClionProjects/testing/src/logging/tests/CMakeLists.txt"
   "/Users/oliver/ClionProjects/testing/src/media/CMakeLists.txt"
+  "/Users/oliver/ClionProjects/testing/src/media/tests/CMakeLists.txt"
   "/Users/oliver/ClionProjects/testing/src/testing/CMakeLists.txt"
   "/Users/oliver/ClionProjects/testing/src/testing/FindCriterion.cmake"
   "/Users/oliver/ClionProjects/testing/src/testing/tests/CMakeLists.txt"
@@ -97,6 +98,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/common/suppressor/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/common/suppressor/tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/media/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/media/tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -110,7 +112,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/binding/examples/CMakeFiles/examples_bindings.dir/DependInfo.cmake"
   "src/testing/tests/CMakeFiles/example.dir/DependInfo.cmake"
   "src/logging/tests/CMakeFiles/logging_test.dir/DependInfo.cmake"
-  "src/version/CMakeFiles/repo_version.dir/DependInfo.cmake"
+  "src/version/CMakeFiles/version.dir/DependInfo.cmake"
+  "src/version/CMakeFiles/version_bindings.dir/DependInfo.cmake"
   "src/version/tests/CMakeFiles/version_example.dir/DependInfo.cmake"
   "src/cli/tests/CMakeFiles/cli_arguments_0.dir/DependInfo.cmake"
   "src/cli/tests/CMakeFiles/cli_arguments_version.dir/DependInfo.cmake"

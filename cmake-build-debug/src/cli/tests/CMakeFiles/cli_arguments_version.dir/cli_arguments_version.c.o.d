@@ -292,6 +292,6 @@ src/cli/tests/CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.o: \
  /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include-fixed/math.h \
  /usr/local/include/criterion/redirect.h \
  /usr/local/include/criterion/internal/redirect.h \
+ /Users/oliver/ClionProjects/testing/src/testing/../version/version.h \
  /usr/local/include/argp.h \
- /Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/wordexp.h \
- /Users/oliver/ClionProjects/testing/src/testing/../version/version.h
+ /Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/wordexp.h

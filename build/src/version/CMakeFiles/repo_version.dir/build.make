@@ -67,7 +67,7 @@ include src/version/CMakeFiles/repo_version.dir/compiler_depend.make
 include src/version/CMakeFiles/repo_version.dir/progress.make
 
 src/version/CMakeFiles/repo_version:
-	cd /Users/oliver/ClionProjects/testing/build/src/version && /usr/local/Cellar/cmake/3.27.0/bin/cmake -D SRC=/Users/oliver/ClionProjects/testing/src/version/version.h.in -D DST=/Users/oliver/ClionProjects/testing/build/src/version/version.h -D GIT_EXECUTABLE=/usr/local/bin/git -D CMAKE_PROJECT_NAME=testing -P /Users/oliver/ClionProjects/testing/src/version/GenerateVersionHeader.cmake
+	cd /Users/oliver/ClionProjects/testing/build/src/version && /usr/local/Cellar/cmake/3.27.0/bin/cmake -D SRC=/Users/oliver/ClionProjects/testing/src/version/version.c.in -D DST=/Users/oliver/ClionProjects/testing/src/version/version.c -D GIT_EXECUTABLE=/usr/local/bin/git -D CMAKE_PROJECT_NAME=testing -P /Users/oliver/ClionProjects/testing/src/version/GenerateVersionHeader.cmake
 
 repo_version: src/version/CMakeFiles/repo_version
 repo_version: src/version/CMakeFiles/repo_version.dir/build.make

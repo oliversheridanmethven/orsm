@@ -34,11 +34,29 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/usr/bin/objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/Users/oliver/ClionProjects/testing/src/version/tests/cmake_install.cmake")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/Users/oliver/ClionProjects/testing/src/version/version_bindings.so")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/Users/oliver/ClionProjects/testing/src/version" TYPE MODULE FILES "/Users/oliver/ClionProjects/testing/lib/version_bindings.so")
+  if(EXISTS "$ENV{DESTDIR}/Users/oliver/ClionProjects/testing/src/version/version_bindings.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/Users/oliver/ClionProjects/testing/src/version/version_bindings.so")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" -x "$ENV{DESTDIR}/Users/oliver/ClionProjects/testing/src/version/version_bindings.so")
+    endif()
+  endif()
 endif()
 

@@ -93,6 +93,8 @@ version_example_EXTERNAL_OBJECTS =
 src/version/tests/version_example: src/version/tests/CMakeFiles/version_example.dir/version.c.o
 src/version/tests/version_example: src/version/tests/CMakeFiles/version_example.dir/build.make
 src/version/tests/version_example: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
+src/version/tests/version_example: src/version/libversion.a
+src/version/tests/version_example: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
 src/version/tests/version_example: src/version/tests/CMakeFiles/version_example.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/oliver/ClionProjects/testing/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable version_example"
 	cd /Users/oliver/ClionProjects/testing/build/src/version/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/version_example.dir/link.txt --verbose=$(VERBOSE)

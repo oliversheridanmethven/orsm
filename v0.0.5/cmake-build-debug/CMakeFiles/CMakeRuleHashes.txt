@@ -1,2 +1,0 @@
-# Hashes of file build rules.
-d42bc2d9c2d665a3cb63a730145f79b4 /Users/oliver/ClionProjects/testing/src/version/version.c

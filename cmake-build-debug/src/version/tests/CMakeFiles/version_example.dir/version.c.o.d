@@ -1,7 +1,7 @@
 src/version/tests/CMakeFiles/version_example.dir/version.c.o: \
  /Users/oliver/ClionProjects/testing/src/version/tests/version.c \
- /Users/oliver/ClionProjects/testing/cmake-build-debug/src/version/../version/version.h \
- /Users/oliver/ClionProjects/testing/src/testing/../logging/logging.h \
+ /Users/oliver/ClionProjects/testing/src/version/../version/version.h \
+ /Users/oliver/ClionProjects/testing/src/version/../logging/logging.h \
  /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib.h \
  /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/galloca.h \
  /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/gtypes.h \
@@ -222,7 +222,7 @@ src/version/tests/CMakeFiles/version_example.dir/version.c.o: \
  /Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include/sys/_types/_mach_port_t.h \
  /usr/local/Cellar/glib/2.76.4/include/glib-2.0/glib/glib-autocleanups.h \
  /usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include/iso646.h \
- /Users/oliver/ClionProjects/testing/src/testing/../testing/testing.h \
+ /Users/oliver/ClionProjects/testing/src/version/../testing/testing.h \
  /usr/local/include/criterion/criterion.h \
  /usr/local/include/criterion/types.h \
  /usr/local/include/criterion/alloc.h \

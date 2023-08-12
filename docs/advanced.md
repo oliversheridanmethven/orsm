@@ -26,8 +26,3 @@ the most relevant commit by calling:
 mkdocs gh-deploy --clean
 ```
 
-Additionally, to tag the appropriate version, run:
-```bash
-mike deploy --push --update-aliases $(git describe --tags --abbrev=0) latest
-```
-

@@ -26,7 +26,6 @@ which include:
     - pillow cairosvg
     - mkdocs-git-revision-date-localized-plugin
     - mkdocs-git-committers-plugin-2
-    - mike
 - github command line tools `gh`
 
 ## Installation

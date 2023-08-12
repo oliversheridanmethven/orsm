@@ -13,11 +13,22 @@ To build the project:
 cd build
 cmake .. 
 make 
-make test
+pip3 install .. 
 ctest 
 ```
 !!! note
     `make test` and `ctest` are synonymous.
+
+!!! note "Running things in parallel"
+    `cmake`, `ctest`, and `make` can all use multiple cores, 
+    to speed things up, typically by adding a `-j <N>` or 
+    `--parallel <N>` flag. 
+
+The reason we install the Python package is because many of our
+tests are Python based as well, including several 
+C extensions and various Python modules we have created. 
+Hence, without this step, the various Python imports won't work
+correctly and many of the tests can be expected to fail. 
 
 ### Modern C23 compilers
 
@@ -41,4 +52,4 @@ ctest --rerun-failed --output-on-failure
 
 ## Demo
 
-![testing_demo](https://user-images.githubusercontent.com/13259221/255421785-e2c496a2-b824-462a-8d8e-df8ba762b838.gif)
+![testing_demo](https://user-images.githubusercontent.com/13259221/260237951-233a3b89-cbf5-4551-a646-2d7344e21882.gif)

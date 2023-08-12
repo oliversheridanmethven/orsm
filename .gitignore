@@ -17,8 +17,9 @@ CMakeCache.txt
 *.a
 bin/
 lib/
-src/version/version.h
 misc.*
 Testing/
 install_manifest.txt
 .cmake/
+*.log
+/src/version/version.c

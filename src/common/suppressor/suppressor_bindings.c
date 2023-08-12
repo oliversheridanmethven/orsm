@@ -1,6 +1,6 @@
 #include <Python.h>
 #include "suppressor.h"
-#include "binding/examples/wrappers.h"
+#include "binding/wrappers.h"
 
 PyObject *_suppressing_start(PyObject *self, PyObject *args, PyObject *kwargs) {
     suppressing_start();

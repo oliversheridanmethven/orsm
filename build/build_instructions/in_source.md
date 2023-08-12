@@ -35,3 +35,15 @@ To clean everything up, run
 make clean
 ./cmake_uninstall.sh
 ```
+
+### Adjusting your `PYTHONPATH`
+
+If you plan on testing out the code using the source code in 
+the repository, such as for use in a terminal setting or an 
+IDE, then it might be useful to add the contents of `src/` to
+your `PYTHONPATH` environment variable. To do just this we
+have the script `add_src_to_python_path.sh` which can be run 
+from the project's root directory by calling:
+```bash
+source add_src_to_python_path.sh
+```

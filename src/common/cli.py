@@ -74,3 +74,8 @@ def setup_standard_parser(*args, **kwargs):
     parser.add_argument("--log_files", type=str, metavar="FILENAME", help="Store log output to files. Split into regular output and error output.", action=SetLogFileAction, nargs="?")
     parser.add_argument("--suppress_console_output", help="Whether to suppress output to the console.", action=SetConsoleSuppression, nargs=0)
     return parser
+
+
+def standard_parse(*args, **kwargs):
+    parser = setup_standard_parser(*args, **kwargs)
+    parser.parse_args()

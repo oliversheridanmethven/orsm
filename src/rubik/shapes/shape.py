@@ -24,7 +24,7 @@ class Shape:
         for face in self.faces:
             for tiles in face:
                 for tile in tiles:
-                    s += f"{self.colours(tile).colour('X')} "
+                    s += f"{self.colours(tile).colour(tile)} "
                 s += "\n"
             s += "\n"
         return s

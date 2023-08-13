@@ -14,6 +14,7 @@ error_code foo(int a, char *b)
     return (rc >= 0) ? EC_SUCCESS : EC_FAILURE;
 }
 
+
 [[noreturn]] void fatal_failure(void)
 {
     fprintf(stderr, "We are fatally failing now.\n");

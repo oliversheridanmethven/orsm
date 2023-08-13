@@ -3,8 +3,10 @@ cmake_minimum_required(VERSION 3.25)  # Use the latest and greatest.
 # Declaring the project and it's languages also sets the,
 # compilers, so we set our paths to the compilers first.
 
-find_program(CMAKE_C_COMPILER NAMES $ENV{CC} clang-16 PATHS ENV PATH NO_DEFAULT_PATH)
-#find_program(CMAKE_C_COMPILER NAMES $ENV{CC} gcc-13 PATHS ENV PATH NO_DEFAULT_PATH)
+#find_program(CMAKE_C_COMPILER NAMES $ENV{CC} clang-16 PATHS ENV PATH NO_DEFAULT_PATH)
+#find_program(CMAKE_CXX_COMPILER NAMES $ENV{CC} clang-16 PATHS ENV PATH NO_DEFAULT_PATH)
+find_program(CMAKE_C_COMPILER NAMES $ENV{CC} gcc-13 PATHS ENV PATH NO_DEFAULT_PATH)
+find_program(CMAKE_CXX_COMPILER NAMES $ENV{CXX} g++-13 PATHS ENV PATH NO_DEFAULT_PATH)
 
 project(testing C CXX) # We use a mix of C and C++.
 
@@ -18,13 +20,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(CC ${CMAKE_C_COMPILER})
-set(CXX ${CMAKE_C_COMPILER})
+set(CXX ${CMAKE_CXX_COMPILER})
 message(STATUS "We think we are using the C compiler: ${CMAKE_C_COMPILER_ID} ${CMAKE_C_COMPILER_VERSION}")
 message(STATUS "We think we are using the C++ compiler: ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
 
 set(CMAKE_GENERATOR "Unix Makefiles")
 
-set(ERROR_FLAGS "-Wall -Wextra -Werror -pedantic")
+set(ERROR_FLAGS "-Wall -Wextra -Werror -Wattributes -Wunused-result -Wpedantic -pedantic")
 if (CMAKE_C_COMPILER_ID STREQUAL "Clang")
     message(STATUS "Setting some extra Clang specific flags.")
     set(ERROR_FLAGS "${ERROR_FLAGS} -Wreserved-identifier")

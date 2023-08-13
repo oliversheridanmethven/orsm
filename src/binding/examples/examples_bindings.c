@@ -8,16 +8,15 @@
 /* Python bindings */
 
 PyObject *hello_world_(PyObject *self, PyObject *args, PyObject *kwargs) {
-    hello_world();
+    if (hello_world()) {
+        return nullptr;
+    }
     Py_RETURN_NONE;
 }
 
 PyObject *foo_(PyObject *self, PyObject *args, PyObject *kwargs) {
     /* This is the python equivalent of: def foo(a, b="default", **kwargs): ...  */
     static char *keywords[] = {"a", "b", NULL};
-    //    PyObject *_a;
-    /* Integers in Python are stored as a long, whereas in C I want an int. Hence we might need
-     * to do some error checking or handling if we permit very long ints to be entered. */
     int a;
     char *b = "default";
 
@@ -25,8 +24,10 @@ PyObject *foo_(PyObject *self, PyObject *args, PyObject *kwargs) {
         /* The arguments passed don't correspond to the signature described. */
         return NULL;
     }
-    //    a = PyLong_AsLong(_a);
-    foo(a, b);
+
+    if (foo(a, b)) {
+        return nullptr;
+    }
     return PyLong_FromLong(a);
 }
 

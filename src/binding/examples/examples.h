@@ -2,8 +2,10 @@
 #define TESTING_EXAMPLES_H
 #include "error_codes/error_codes.h"
 
+[[nodiscard]]
 error_code hello_world(void);
 
+[[nodiscard]]
 error_code foo(int a, char *b);
 
 void fatal_failure(void);

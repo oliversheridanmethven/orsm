@@ -3,14 +3,14 @@
 
 #include <Python.h>
 
-PyObject *_hello_world(PyObject *self, PyObject *args, PyObject *kwargs);
+PyObject *hello_world_(PyObject *self, PyObject *args, PyObject *kwargs);
 
-PyObject *_foo(PyObject *self, PyObject *args, PyObject *kwargs);
+PyObject *foo_(PyObject *self, PyObject *args, PyObject *kwargs);
 
-PyObject *_fatal_failure(PyObject *self, PyObject *args, PyObject *kwargs);
+PyObject *fatal_failure_(PyObject *self, PyObject *args, PyObject *kwargs);
 
-PyObject *_non_fatal_failure(PyObject *self, PyObject *args, PyObject *kwargs);
+PyObject *non_fatal_failure_(PyObject *self, PyObject *args, PyObject *kwargs);
 
-PyObject *_set_at_exit(PyObject *self, PyObject *args, PyObject *kwargs);
+PyObject *set_at_exit_(PyObject *self, PyObject *args, PyObject *kwargs);
 
 #endif//TESTING_EXAMPLES_BINDINGS_H

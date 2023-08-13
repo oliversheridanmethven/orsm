@@ -1,17 +1,38 @@
 cmake_minimum_required(VERSION 3.25)  # Use the latest and greatest.
+
+# Declaring the project and it's languages also sets the,
+# compilers, so we set our paths to the compilers first.
+
+find_program(CMAKE_C_COMPILER NAMES $ENV{CC} clang-16 PATHS ENV PATH NO_DEFAULT_PATH)
+#find_program(CMAKE_C_COMPILER NAMES $ENV{CC} gcc-13 PATHS ENV PATH NO_DEFAULT_PATH)
+
 project(testing C CXX) # We use a mix of C and C++.
 
 # We want to use the latest standards.
+# Only some of the latest and greatest compilers offer the appropriate level of support.
 set(CMAKE_C_STANDARD 23)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
-# Only some of the latest and greatest compilers offer the appropriate level of support.
-set(CMAKE_C_COMPILER "gcc-13")
-set(CMAKE_GENERATOR "Unix Makefiles")
-set(CC ${CMAKE_C_COMPILER})
-#set(CMAKE_C_COMPILER "clang-16")
 set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+set(CC ${CMAKE_C_COMPILER})
+set(CXX ${CMAKE_C_COMPILER})
+message(STATUS "We think we are using the C compiler: ${CMAKE_C_COMPILER_ID} ${CMAKE_C_COMPILER_VERSION}")
+message(STATUS "We think we are using the C++ compiler: ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
+
+set(CMAKE_GENERATOR "Unix Makefiles")
+
 set(ERROR_FLAGS "-Wall -Wextra -Werror -pedantic")
+if (CMAKE_C_COMPILER_ID STREQUAL "Clang")
+    message(STATUS "Setting some extra Clang specific flags.")
+    set(ERROR_FLAGS "${ERROR_FLAGS} -Wreserved-identifier")
+elseif (CMAKE_C_COMPILER_ID STREQUAL "GNU")
+    message(STATUS "Setting some extra GNU specific flags.")
+    set(ERROR_FLAGS "${ERROR_FLAGS}")
+endif()
+
 set(IGNORE_ERROR_FLAGS "-Wno-int-conversion -Wno-missing-field-initializers -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-incompatible-pointer-types")
 set(ERROR_FLAGS "${ERROR_FLAGS} ${IGNORE_ERROR_FLAGS}")
 message(DEBUG "The C compiler flags are: ${CMAKE_C_FLAGS}")
@@ -110,7 +131,7 @@ endfunction()
 function(install_python_target target destination)
     if(SKBUILD)
         MESSAGE(STATUS "Installing the Python target ${target} at destination: ${destination}.")
-        include_directories(${Python3_INCLUDE_DIRS})
+        include_directories(SYSTEM ${Python3_INCLUDE_DIRS})
         target_link_libraries(${target} ${Python3_LIBRARIES})
         find_package(PythonExtensions REQUIRED)
         python_extension_module(${target})
@@ -118,7 +139,7 @@ function(install_python_target target destination)
     elseif (INSOURCE_BUILD)
         set(destination "${CMAKE_CURRENT_SOURCE_DIR}")
         MESSAGE(STATUS "Installing the Python target ${target} in source at destination: ${destination}.")
-        include_directories(${Python3_INCLUDE_DIRS})
+        include_directories(SYSTEM ${Python3_INCLUDE_DIRS})
         target_link_libraries(${target} ${Python3_LIBRARIES})
         set_target_properties(${target} PROPERTIES PREFIX "") # Avoid the lib prefix which is required for python finding the module.
         install(TARGETS ${target} LIBRARY DESTINATION ${destination})

@@ -3,12 +3,12 @@
 
 #include <Python.h>
 
-PyObject *_repo_name(PyObject *self, PyObject *args, PyObject *kwargs);
+PyObject *repo_name_(PyObject *self, PyObject *args, PyObject *kwargs);
 
-PyObject *_repo_version(PyObject *self, PyObject *args, PyObject *kwargs);
+PyObject *repo_version_(PyObject *self, PyObject *args, PyObject *kwargs);
 
-PyObject *_repo_author(PyObject *self, PyObject *args, PyObject *kwargs);
+PyObject *repo_author_(PyObject *self, PyObject *args, PyObject *kwargs);
 
-PyObject *_repo_email(PyObject *self, PyObject *args, PyObject *kwargs);
+PyObject *repo_email_(PyObject *self, PyObject *args, PyObject *kwargs);
 
 #endif //TESTING_VERSION_BINDINGS_H

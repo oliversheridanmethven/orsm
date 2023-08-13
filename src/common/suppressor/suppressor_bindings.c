@@ -3,12 +3,16 @@
 #include "binding/wrappers.h"
 
 PyObject *suppressing_start_(PyObject *self, PyObject *args, PyObject *kwargs) {
-    suppressing_start();
+    if (suppressing_start()) {
+        return nullptr;
+    }
     Py_RETURN_NONE;
 }
 
 PyObject *suppressing_stop_(PyObject *self, PyObject *args, PyObject *kwargs) {
-    suppressing_stop();
+    if (suppressing_stop()) {
+        return nullptr;
+    }
     Py_RETURN_NONE;
 }
 

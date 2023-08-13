@@ -20,7 +20,7 @@ class Shape:
         return f"{type(self).__name__}(root={self.faces})"
 
     def __str__(self):
-        s = ""
+        s = "\n"
         for face in self.faces:
             for tiles in face:
                 for tile in tiles:
@@ -28,6 +28,19 @@ class Shape:
                 s += "\n"
             s += "\n"
         return s
+
+    @classmethod
+    def clean_config(cls, *args, **kwargs):
+        """What a clean configuration is classified as."""
+        return cls(*args, **kwargs)
+
+    @classmethod
+    def solved_config(cls, *args, **kwargs):
+        """What a solved configuration is classified as."""
+        return cls.clean_config(*args, **kwargs).faces
+
+    def __eq__(self, other):
+        return self.faces == other.faces
 
 
 class Tile(Shape):

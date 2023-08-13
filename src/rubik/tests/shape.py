@@ -10,6 +10,7 @@ class Printing(unittest.TestCase):
     def test_shape(self):
         """Should print a nicely coloured shape."""
         kwargs = {"N": 3, "M": 4}
+        args = []
         for name, variable in variable_names_and_objects(Shape.Tile,
                                                          Shape.Domino,
                                                          Shape.Strip,
@@ -22,10 +23,12 @@ class Printing(unittest.TestCase):
                                                          Shape.Tetrahedron,
                                                          ):
             print(f"\nTrying to print a {name}")
-            shape = variable(**kwargs)
+            shape = variable(*args, **kwargs)
             print(f"{shape!r}")
             print(f"{shape}")
             print(f"{shape = }")
+            print(f"The solved configuration is: {shape.solved_config(*args, **kwargs)}, and should look like {shape.clean_config(*args, **kwargs)}")
+            self.assertEqual(shape, shape.clean_config(*args, **kwargs), "Shapes must always start in a clean configuration.")
 
 
 if __name__ == '__main__':

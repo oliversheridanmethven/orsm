@@ -4,6 +4,7 @@ Tools for constructing the CLI
 """
 
 import argparse
+import os
 import sys
 
 from common.logger import log, set_logging_level, redirect_logging_to_file, suppress_console_output, remove_console_output
@@ -78,4 +79,16 @@ def setup_standard_parser(*args, **kwargs):
 
 def standard_parse(*args, **kwargs):
     parser = setup_standard_parser(*args, **kwargs)
-    parser.parse_args()
+    return parser.parse_args()
+
+
+def unit_test_parse(*args, **kwargs):
+    """
+    To allow our command line arguments to be parsed ahead of running unit tests. Useful for logging.
+    Taken from: https://stackoverflow.com/a/44248445/5134817
+    """
+    import sys
+    import unittest
+    parser = setup_standard_parser(*args, **kwargs)
+    ns, args = parser.parse_known_args(namespace=unittest)
+    sys.argv[:] = sys.argv[:1] + args

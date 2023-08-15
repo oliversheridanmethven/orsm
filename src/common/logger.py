@@ -129,6 +129,7 @@ def suppress_console_output():
 
 set_logging_level(level=logging.PRINT)
 setup_console_output()  # A nice default setup.
+# NB: I don't think this needs the python equivalent of a header guard: https://stackoverflow.com/a/2950584/5134817
 logging.DEFAULT_LEVEL = logging.PRINT
 
 log = logging

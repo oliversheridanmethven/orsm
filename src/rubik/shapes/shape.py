@@ -8,6 +8,7 @@ from rubik.colours.default_colours import Colours
 import numpy as np
 from abc import ABC, abstractmethod
 from copy import deepcopy
+from common.cli import standard_parse
 
 
 class Move(ABC):
@@ -385,6 +386,48 @@ class Volume(Shape):
 
     """
 
+    def show(self):
+        """Try to show the cub in a very pictorial way."""
+        'front 0  back 1  right 2  left 3  top 4  bottom 5'
+        top = self.faces[4]
+        front = self.faces[0]
+        right = self.faces[2]
+        left = self.faces[3]
+        back = self.faces[1]
+        bottom = self.faces[5]
+        s = "\n"
+        indent = 5
+        indenting = indent + 3
+        for row in top:
+            s += ' ' * indenting
+            for tile in row:
+                s += f"{self.colours(tile).colour(tile)} "
+            s += '\n'
+            indenting -= 1
+        bars = '-' * len(row) * 2
+        s += ' ' * indent + '/' + bars + '/'
+        for left_row, front_row, right_row, back_row in zip(left, front, right, back):
+            s += "\n"
+            for tile in left_row:
+                s += f"{self.colours(tile).colour(tile)} "
+            s += ': '
+            for tile in front_row:
+                s += f"{self.colours(tile).colour(tile)} "
+            s += ': '
+            for tile in right_row:
+                s += f"{self.colours(tile).colour(tile)} "
+            s += ': '
+            for tile in back_row:
+                s += f"{self.colours(tile).colour(tile)} "
+        s += "\n" + ' ' * indent + "\\" + bars + "\\"
+        for row in bottom:
+            s += '\n'
+            indenting += 1
+            s += ' ' * indenting
+            for tile in row:
+                s += f"{self.colours(tile).colour(tile)} "
+        return s
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if not self.faces:
@@ -419,27 +462,14 @@ class Volume(Shape):
             faces = deepcopy(shape.faces)
             if not reverse:
                 # Moving the row.
-                tmp = faces[0][0][1]  # This will go in [4][1][1]
-                faces[0][0][1] = faces[0][1][1]
-                faces[0][1][1] = faces[5][0][1]
-                faces[5][0][1] = faces[5][1][1]
-                faces[5][1][1] = faces[1][1][0]
-                faces[1][1][0] = faces[1][0][0]
-                faces[1][0][0] = faces[4][0][1]
-                faces[4][0][1] = faces[4][1][1]
-                faces[4][1][1] = tmp
+                faces[0][0][1], faces[0][1][1], faces[5][0][1], faces[5][1][1], faces[1][1][0], faces[1][0][0], faces[4][0][1], faces[4][1][1] = \
+                    faces[5][0][1], faces[5][1][1], faces[1][1][0], faces[1][0][0], faces[4][0][1], faces[4][1][1], faces[0][0][1], faces[0][1][1],
                 # Moving the face.
                 faces[2][0][0], faces[2][0][1], faces[2][1][1], faces[2][1][0] = faces[2][1][0], faces[2][0][0], faces[2][0][1], faces[2][1][1]
             else:
-                tmp = faces[4][1][1]
-                faces[4][1][1] = faces[4][0][1]
-                faces[4][0][1] = faces[1][0][0]
-                faces[1][0][0] = faces[1][1][0]
-                faces[1][1][0] = faces[5][1][1]
-                faces[5][1][1] = faces[5][0][1]
-                faces[5][0][1] = faces[0][1][1]
-                faces[0][1][1] = faces[0][0][1]
-                faces[0][0][1] = tmp
+                # Moving the row.
+                faces[5][0][1], faces[5][1][1], faces[1][1][0], faces[1][0][0], faces[4][0][1], faces[4][1][1], faces[0][0][1], faces[0][1][1] = \
+                    faces[0][0][1], faces[0][1][1], faces[5][0][1], faces[5][1][1], faces[1][1][0], faces[1][0][0], faces[4][0][1], faces[4][1][1]
                 # Moving the face.
                 faces[2][1][0], faces[2][0][0], faces[2][0][1], faces[2][1][1] = faces[2][0][0], faces[2][0][1], faces[2][1][1], faces[2][1][0]
 
@@ -453,28 +483,14 @@ class Volume(Shape):
             faces = deepcopy(shape.faces)
             if not reverse:
                 # Moving the row.
-                tmp = faces[4][0][0]
-                faces[4][0][0] = faces[4][0][1]
-                faces[4][0][1] = faces[2][0][1]
-                faces[2][0][1] = faces[2][1][1]
-                faces[2][1][1] = faces[5][1][1]
-                faces[5][1][1] = faces[5][1][0]
-                faces[5][1][0] = faces[3][1][0]
-                faces[3][1][0] = faces[3][0][0]
-                faces[3][0][0] = tmp
+                faces[4][0][0], faces[4][0][1], faces[2][0][1], faces[2][1][1], faces[5][1][1], faces[5][1][0], faces[3][1][0], faces[3][0][0] = \
+                    faces[2][0][1], faces[2][1][1], faces[5][1][1], faces[5][1][0], faces[3][1][0], faces[3][0][0], faces[4][0][0], faces[4][0][1]
                 # Moving the face.
                 faces[1][0][0], faces[1][0][1], faces[1][1][1], faces[1][1][0] = faces[1][1][0], faces[1][0][0], faces[1][0][1], faces[1][1][1]
             else:
                 # Moving the row.
-                tmp = faces[3][0][0]
-                faces[3][0][0] = faces[3][1][0]
-                faces[3][1][0] = faces[5][1][0]
-                faces[5][1][0] = faces[5][1][1]
-                faces[5][1][1] = faces[2][1][1]
-                faces[2][1][1] = faces[2][0][1]
-                faces[2][0][1] = faces[4][0][1]
-                faces[4][0][1] = faces[4][0][0]
-                faces[4][0][0] = tmp
+                faces[2][0][1], faces[2][1][1], faces[5][1][1], faces[5][1][0], faces[3][1][0], faces[3][0][0], faces[4][0][0], faces[4][0][1] = \
+                    faces[4][0][0], faces[4][0][1], faces[2][0][1], faces[2][1][1], faces[5][1][1], faces[5][1][0], faces[3][1][0], faces[3][0][0]
                 # Moving the face.
                 faces[1][1][0], faces[1][0][0], faces[1][0][1], faces[1][1][1] = faces[1][0][0], faces[1][0][1], faces[1][1][1], faces[1][1][0]
             assert shape.faces != faces, f"The faces should have changed and should be different."
@@ -519,4 +535,9 @@ class Cube(Shape):
 
 
 if __name__ == "__main__":
-    pass
+    standard_parse(description=__doc__)
+    shape = Volume()
+    for move in shape.moves():
+        log.info(f"Original: {shape.show()}")
+        log.info(f"{move.__doc__}: {shape.move(move).show()}")
+        log.info(f"{move.__doc__} (reversed): {shape.move(move, reverse=True).show()}\n\n")

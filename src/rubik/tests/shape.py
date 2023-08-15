@@ -134,11 +134,11 @@ class Moves(unittest.TestCase):
             shuffled, path = shape.shuffle(turns=turns)
             log.info(f"The target shuffled cube is: {shuffled}")
             log.debug(f"Obtained by:")
-            for turn, (move, reverse) in enumerate(zip(path['moves'], path['reverses'])):
+            for turn, (move, reverse) in enumerate(zip(path.moves, path.reverses)):
                 log.debug(f"{turn = }: {move} {'in reverse' if reverse else ''}")
             moved = shape
             log.info(f"The starting configuration is: {moved}")
-            for turn, (move, reverse) in enumerate(zip(path["moves"], path["reverses"])):
+            for turn, (move, reverse) in enumerate(zip(path.moves, path.reverses)):
                 log.debug(f"{turn = }: {move} {'in reverse' if reverse else ''}")
                 moved = moved.move(move, reverse=reverse)
                 log.debug(f"The moved configuration is: {moved}")
@@ -146,7 +146,7 @@ class Moves(unittest.TestCase):
             log.info(f"The target configuration is: {shuffled}")
             self.assertEqual(moved, shuffled, f"We should have recovered our target configuration.")
             reverted = moved
-            for turn, (move, reverse) in reversed(list(enumerate(zip(path["moves"], path["reverses"])))):
+            for turn, (move, reverse) in reversed(list(enumerate(zip(path.moves, path.reverses)))):
                 other_direction = not reverse
                 log.debug(f"{turn = }: {move} {'in reverse' if other_direction else ''}")
                 reverted = reverted.move(move, reverse=other_direction)
@@ -168,15 +168,15 @@ class Moves(unittest.TestCase):
         shape_2 = Shape.Volume()
         for seed in [False, 0]:
             while True:
-                shuffle_1, moves_1 = shape_1.shuffle(seed=seed)
-                shuffle_2, moves_2 = shape_2.shuffle(seed=seed)
+                shuffle_1, path_1 = shape_1.shuffle(seed=seed)
+                shuffle_2, path_2 = shape_2.shuffle(seed=seed)
                 if shuffle_1 != shape_1 and shuffle_2 != shape_2:
                     break
             if seed or (isinstance(seed, int) and type(seed) != bool):
-                self.assertEqual(moves_1, moves_2)
+                self.assertEqual(path_1, path_2)
                 self.assertEqual(shuffle_1, shuffle_2)
             else:
-                self.assertNotEqual(moves_1, moves_2)
+                self.assertNotEqual(path_1, path_2)
 
 
 if __name__ == '__main__':

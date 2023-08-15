@@ -12,6 +12,37 @@ import itertools
 import random
 
 
+class Path:
+    """Stores a path of moves."""
+
+    def __init__(self, shape, *args, **kwargs):
+        self.moves = []
+        self.reverses = []
+        self.shape = shape
+        self._set_path()
+
+    def _set_path(self):
+        self.path = {"moves": self.moves, "reverses": self.reverses}
+
+    def append(self, *args, move, reverse, **kwargs):
+        self.moves.append(move)
+        self.reverses.append(reverse)
+
+    def __eq__(self, other):
+        return self.path == other.path
+
+    def __len__(self):
+        return len(self.moves)
+
+    def add(self, *, move, reverse, **kwargs):
+        new = type(self)(self.shape)
+        new.moves = deepcopy(self.moves)
+        new.reverses = deepcopy(self.reverses)
+        new._set_path()
+        new.append(move=move, reverse=reverse)
+        return new
+
+
 class Move(ABC):
 
     def __init__(self, *args, shape, **kwargs):
@@ -61,6 +92,9 @@ class Shape(ABC):
     def __eq__(self, other):
         return self.faces == other.faces
 
+    def __hash__(self):
+        return hash(self.__repr__())
+
     @classmethod
     def clean_config(cls, *args, **kwargs):
         """What a clean configuration is classified as."""
@@ -87,7 +121,7 @@ class Shape(ABC):
     def shuffle(self, *args, turns=100, seed=False, **kwargs):
         """Produces a shuffled cube, and lists how it got there."""
         assert isinstance(turns, int) and turns >= 0, f"Invalid amount of {turns = } specified."
-        path = {"moves": [], "reverses": []}
+        path = Path(self)
         shuffled = type(self)(faces=self.faces, **kwargs)
         if turns == 0:
             return shuffled, path
@@ -100,8 +134,7 @@ class Shape(ABC):
         for turn, (move, reverse) in enumerate(random.choices(list(itertools.product(self.moves(), [True, False])), k=turns)):
             log.debug(f"{turn = } shuffling with {move = } {reverse = }")
             shuffled = shuffled.move(move, reverse=reverse)
-            path["moves"].append(move)
-            path["reverses"].append(reverse)
+            path.append(move=move, reverse=reverse)
 
         return shuffled, path
 
@@ -593,12 +626,12 @@ if __name__ == "__main__":
         shuffled, path = shape.shuffle(turns=turns)
         log.info(f"The target shuffled cube is: {shuffled}")
         log.info(f"Obtained by:")
-        for turn, (move, reverse) in enumerate(zip(path['moves'], path['reverses'])):
+        for turn, (move, reverse) in enumerate(zip(path.moves, path.reverses)):
             log.info(f"{turn = }: {move} {'in reverse' if reverse else ''}")
 
         moved = shape
         log.info(f"The starting configuration is: {moved}")
-        for turn, (move, reverse) in enumerate(zip(path["moves"], path["reverses"])):
+        for turn, (move, reverse) in enumerate(zip(path.moves, path.reverses)):
             log.info(f"{turn = }: {move} {'in reverse' if reverse else ''}")
             moved = moved.move(move, reverse=reverse)
             log.info(f"The moved configuration is: {moved}")

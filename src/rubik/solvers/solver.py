@@ -6,7 +6,7 @@ from common.logger import log
 from abc import ABC, abstractmethod
 from rubik.shapes.shape import Path, Shape
 from common.variables import variable_names_and_objects
-from tqdm import tqdm as progressbar
+from common.logger import progressbar
 
 
 # TODO: move the progress bar into my logger tool so it respects the verbosity level...

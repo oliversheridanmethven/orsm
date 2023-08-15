@@ -134,6 +134,11 @@ logging.DEFAULT_LEVEL = logging.PRINT
 
 log = logging
 
+from tqdm import tqdm
+from functools import partial
+
+progressbar = partial(tqdm, leave=False)
+
 if __name__ == "__main__":
     # A very small demo.
     from time import sleep

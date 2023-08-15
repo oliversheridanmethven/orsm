@@ -97,20 +97,31 @@ class Moves(unittest.TestCase):
 
     def test_double_moves_volume(self):
         shape = Shape.Volume()
-        for move_1, move_2 in itertools.product(*[shape.moves() for i in range(2)]):
-            shape_moved_once = shape.move(move_1)
-            shape_moved_twice = shape_moved_once.move(move_2)
-            self.assertNotEqual(shape_moved_twice, shape.solved_config())
-            self.assertNotEqual(shape_moved_twice, shape_moved_once)
-            shape_moved_twice_reverted = shape_moved_twice.move(move_2, reverse=True)
-            self.assertEqual(shape_moved_twice_reverted, shape_moved_once)
-            shape_reverted_in_order = shape_moved_twice.move(move_2, move_1, reverse=True)
-            self.assertEqual(shape_reverted_in_order, shape)
-            shape_reverted_out_of_order = shape_moved_twice.move(move_1, move_2, reverse=True)
-            if move_1 == move_2:
-                self.assertEqual(shape_reverted_out_of_order, shape)
-            else:
-                self.assertNotEqual(shape_reverted_out_of_order, shape)
+        for direction in [True, False]:
+            other_direction = not direction
+            for move_1, move_2 in itertools.product(*[shape.moves() for i in range(2)]):
+                shape_moved_once = shape.move(move_1, reverse=direction)
+                shape_moved_twice = shape_moved_once.move(move_2, reverse=direction)
+                self.assertNotEqual(shape_moved_twice, shape.solved_config())
+                self.assertNotEqual(shape_moved_twice, shape_moved_once)
+                shape_moved_twice_reverted = shape_moved_twice.move(move_2, reverse=other_direction)
+                self.assertEqual(shape_moved_twice_reverted, shape_moved_once)
+                shape_reverted_in_order = shape_moved_twice.move(move_2, move_1, reverse=other_direction)
+                self.assertEqual(shape_reverted_in_order, shape)
+                shape_reverted_out_of_order = shape_moved_twice.move(move_1, move_2, reverse=other_direction)
+                if move_1 == move_2:
+                    self.assertEqual(shape_reverted_out_of_order, shape)
+                else:
+                    self.assertNotEqual(shape_reverted_out_of_order, shape)
+
+    def test_rotational_symmetry(self):
+        shape = Shape.Volume()
+        for direction in [True, False]:
+            other_direction = not direction
+            for move in shape.moves():
+                moved = shape.moves(move, move, reverse=direction)
+                moved_reverse = shape.moves(move, move, reverse=other_direction)
+                self.assertEqual(moved, moved_reverse)
 
 
 if __name__ == '__main__':

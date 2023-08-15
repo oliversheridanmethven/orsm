@@ -10,6 +10,7 @@ from abc import ABC, abstractmethod
 from copy import deepcopy
 import itertools
 import random
+from common.profiling import profiler, profile
 
 
 class Path:
@@ -34,6 +35,17 @@ class Path:
     def __len__(self):
         return len(self.moves)
 
+    def __str__(self):
+        s = ""
+        for move, reverse in zip(self.moves, self.reverses):
+            s += f"\n{move} {'in reverse' if reverse else ''}"
+        if not s:
+            s = "Empty Path"
+        else:
+            s += "\n"
+        return s
+
+    @profile
     def add(self, *, move, reverse, **kwargs):
         new = type(self)(self.shape)
         new.moves = deepcopy(self.moves)
@@ -92,6 +104,7 @@ class Shape(ABC):
     def __eq__(self, other):
         return self.faces == other.faces
 
+    @profile
     def __hash__(self):
         return hash(self.__repr__())
 

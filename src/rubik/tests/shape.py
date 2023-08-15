@@ -145,6 +145,12 @@ class Moves(unittest.TestCase):
             log.info(f"The final moved configuration is: {moved}")
             log.info(f"The target configuration is: {shuffled}")
             self.assertEqual(moved, shuffled, f"We should have recovered our target configuration.")
+            reverted = moved
+            for turn, (move, reverse) in reversed(list(enumerate(zip(path["moves"], path["reverses"])))):
+                other_direction = not reverse
+                log.debug(f"{turn = }: {move} {'in reverse' if other_direction else ''}")
+                reverted = reverted.move(move, reverse=other_direction)
+            self.assertEqual(reverted, shape)
 
     def test_moves_give_new_objects(self):
         shape = Shape.Volume()

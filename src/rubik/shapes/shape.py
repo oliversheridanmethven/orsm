@@ -8,7 +8,6 @@ from rubik.colours.default_colours import Colours
 import numpy as np
 from abc import ABC, abstractmethod
 from copy import deepcopy
-from common.cli import standard_parse
 
 
 class Move(ABC):
@@ -535,9 +534,24 @@ class Cube(Shape):
 
 
 if __name__ == "__main__":
-    standard_parse(description=__doc__)
+    from common.cli import setup_standard_parser
+    from itertools import product
+
+    parser = setup_standard_parser(description=__doc__)
+    parser.add_argument("--single", help="Show single move combinations.", action="store_true")
+    parser.add_argument("--double", help="Show double move combinations.", action="store_true")
+    kwargs = vars(parser.parse_args())
     shape = Volume()
-    for move in shape.moves():
-        log.info(f"Original: {shape.show()}")
-        log.info(f"{move.__doc__}: {shape.move(move).show()}")
-        log.info(f"{move.__doc__} (reversed): {shape.move(move, reverse=True).show()}\n\n")
+    if kwargs["single"]:
+        for move in shape.moves():
+            log.print(f"Original: {shape.show()}")
+            log.print(f"{move.__doc__}: {shape.move(move).show()}")
+            log.print(f"{move.__doc__} (reversed): {shape.move(move, reverse=True).show()}\n\n")
+    if kwargs["double"]:
+        for move_1, move_2 in product(*[shape.moves() for i in range(2)]):
+            log.print(f"Original: {shape.show()}")
+            moved = shape
+            for step, move in enumerate([move_1, move_2]):
+                log.print(f"{step = } {move.__doc__}")
+                moved = moved.move(move)
+                log.print(f"{moved.show()}")

@@ -8,6 +8,8 @@ from rubik.colours.default_colours import Colours
 import numpy as np
 from abc import ABC, abstractmethod
 from copy import deepcopy
+import random
+import itertools
 
 
 class Move(ABC):
@@ -25,6 +27,9 @@ class Move(ABC):
         # for the types to compare equal, hence when defined they should
         # done so outside of any local scope.
         return isinstance(other, type(self)) and other.shape == self.shape
+
+    def __str__(self):
+        return self.__doc__
 
 
 class Shape(ABC):
@@ -67,8 +72,9 @@ class Shape(ABC):
         return cls.clean_config(*args, **kwargs)
 
     def move(self, *moves, **kwargs):
-        assert moves, f"There are no moves specified for {self.__name__}"
-        moved = self
+        if not moves:
+            log.info(f"There are no moves specified for {type(self).__name__}")
+        moved = type(self)(faces=self.faces, **kwargs)
         for move in moves:
             assert isinstance(move, Move)
             moved = move(shape=moved, **kwargs)
@@ -77,6 +83,22 @@ class Shape(ABC):
     @abstractmethod
     def moves(self, **kwargs):
         ...
+
+    def shuffle(self, *args, turns=100, **kwargs):
+        """Produces a shuffled cube, and lists how it got there."""
+        assert isinstance(turns, int) and turns >= 0, f"Invalid amount of {turns = } specified."
+        path = {"moves": [], "reverses": []}
+        shuffled = type(self)(faces=self.faces, **kwargs)
+        if turns == 0:
+            return shuffled, path
+
+        for turn, (move, reverse) in enumerate(random.choices(list(itertools.product(self.moves(), [True, False])), k=turns)):
+            log.debug(f"{turn = } shuffling with {move = } {reverse = }")
+            shuffled = shuffled.move(move, reverse=reverse)
+            path["moves"].append(move)
+            path["reverses"].append(reverse)
+
+        return shuffled, path
 
 
 class A(ABC):
@@ -142,19 +164,20 @@ class Domino(Shape):
         for face in self.faces:
             assert np.shape(face) == (2, 1), f"A {type(self).__name__} face must only contain 2 tiles."
 
-    def moves(self, *args, **kwargs):
-        class move_1(Move):
-            def __call__(self, *args, shape, reverse=False, **kwargs):
-                faces = deepcopy(shape.faces)
-                log.debug(f"The original {shape.faces = }")
-                # This is the same whether we are in reverse or not...
-                faces[1][1][0], faces[0][1][0] = faces[0][1][0], faces[1][1][0]
-                log.debug(f"After swapping {faces = }")
-                log.debug(f"The input face after the swapping {shape.faces = }")
-                assert shape.faces != faces, f"The faces should have changed and should be different."
-                return type(self.shape)(*args, faces=faces, **kwargs)
+    class move_1(Move):
+        def __call__(self, *args, shape, reverse=False, **kwargs):
+            faces = deepcopy(shape.faces)
+            log.debug(f"The original {shape.faces = }")
+            # This is the same whether we are in reverse or not...
+            faces[1][1][0], faces[0][1][0] = faces[0][1][0], faces[1][1][0]
+            log.debug(f"After swapping {faces = }")
+            log.debug(f"The input face after the swapping {shape.faces = }")
+            assert shape.faces != faces, f"The faces should have changed and should be different."
+            return type(self.shape)(*args, faces=faces, **kwargs)
 
-        return [move_1(*args, shape=self, **kwargs)]
+    def moves(self, *args, **kwargs):
+
+        return [self.move_1(*args, shape=self, **kwargs)]
 
 
 class Strip(Shape):
@@ -427,6 +450,9 @@ class Volume(Shape):
                 s += f"{self.colours(tile).colour(tile)} "
         return s
 
+    def __str__(self):
+        return self.show()
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if not self.faces:
@@ -540,18 +566,37 @@ if __name__ == "__main__":
     parser = setup_standard_parser(description=__doc__)
     parser.add_argument("--single", help="Show single move combinations.", action="store_true")
     parser.add_argument("--double", help="Show double move combinations.", action="store_true")
+    parser.add_argument("--shuffle", type=int, metavar="TURNS", help="Show some shuffles.")
+
     kwargs = vars(parser.parse_args())
     shape = Volume()
     if kwargs["single"]:
         for move in shape.moves():
-            log.print(f"Original: {shape.show()}")
-            log.print(f"{move.__doc__}: {shape.move(move).show()}")
-            log.print(f"{move.__doc__} (reversed): {shape.move(move, reverse=True).show()}\n\n")
+            log.info(f"Original: {shape.show()}")
+            log.info(f"{move}: {shape.move(move).show()}")
+            log.info(f"{move} (reversed): {shape.move(move, reverse=True).show()}\n\n")
     if kwargs["double"]:
         for move_1, move_2 in product(*[shape.moves() for i in range(2)]):
-            log.print(f"Original: {shape.show()}")
+            log.info(f"Original: {shape.show()}")
             moved = shape
             for step, move in enumerate([move_1, move_2]):
-                log.print(f"{step = } {move.__doc__}")
+                log.info(f"{step = } {move}")
                 moved = moved.move(move)
-                log.print(f"{moved.show()}")
+                log.info(f"{moved.show()}")
+    turns = kwargs["shuffle"]
+    if turns:
+        shuffled, path = shape.shuffle(turns=turns)
+        log.info(f"The target shuffled cube is: {shuffled}")
+        log.info(f"Obtained by:")
+        for turn, (move, reverse) in enumerate(zip(path['moves'], path['reverses'])):
+            log.info(f"{turn = }: {move} {'in reverse' if reverse else ''}")
+
+        moved = shape
+        log.info(f"The starting configuration is: {moved}")
+        for turn, (move, reverse) in enumerate(zip(path["moves"], path["reverses"])):
+            log.info(f"{turn = }: {move} {'in reverse' if reverse else ''}")
+            moved = moved.move(move, reverse=reverse)
+            log.info(f"The moved configuration is: {moved}")
+        log.info(f"The final moved configuration is: {moved}")
+        log.info(f"The target configuration is: {shuffled}")
+        assert moved == shuffled, f"We should have recovered our target configuration."

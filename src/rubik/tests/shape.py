@@ -6,6 +6,7 @@ from rubik.colours.default_colours import Colours
 from common.variables import variable_names_and_objects
 import itertools
 from common.cli import log, unit_test_parse
+from common.arguments import all_combinations
 
 
 class BasicProperties(unittest.TestCase):
@@ -119,9 +120,42 @@ class Moves(unittest.TestCase):
         for direction in [True, False]:
             other_direction = not direction
             for move in shape.moves():
-                moved = shape.moves(move, move, reverse=direction)
-                moved_reverse = shape.moves(move, move, reverse=other_direction)
+                # The two-fold symmetry
+                moved = shape.move(move, move, reverse=direction)
+                moved_reverse = shape.move(move, move, reverse=other_direction)
                 self.assertEqual(moved, moved_reverse)
+                # The four-fold symmetry
+                moved_fully = shape.move(move, move, move, move, reverse=direction)
+                self.assertEqual(shape, moved_fully)
+
+    def test_shuffle(self):
+        for turns in range(10):
+            shape = Shape.Volume()
+            shuffled, path = shape.shuffle(turns=turns)
+            log.info(f"The target shuffled cube is: {shuffled}")
+            log.debug(f"Obtained by:")
+            for turn, (move, reverse) in enumerate(zip(path['moves'], path['reverses'])):
+                log.debug(f"{turn = }: {move} {'in reverse' if reverse else ''}")
+            moved = shape
+            log.info(f"The starting configuration is: {moved}")
+            for turn, (move, reverse) in enumerate(zip(path["moves"], path["reverses"])):
+                log.debug(f"{turn = }: {move} {'in reverse' if reverse else ''}")
+                moved = moved.move(move, reverse=reverse)
+                log.debug(f"The moved configuration is: {moved}")
+            log.info(f"The final moved configuration is: {moved}")
+            log.info(f"The target configuration is: {shuffled}")
+            self.assertEqual(moved, shuffled, f"We should have recovered our target configuration.")
+
+    def test_moves_give_new_objects(self):
+        shape = Shape.Volume()
+        for moves in all_combinations(shape.moves()):
+            for reverse in [True, False]:
+                self.assertIsNot(shape, shape.move(*moves, reverse=reverse))
+
+    def test_shuffles_give_new_objects(self):
+        shape = Shape.Volume()
+        for turns in range(5):
+            self.assertIsNot(shape, shape.shuffle(turns))
 
 
 if __name__ == '__main__':

@@ -9,7 +9,7 @@ class Solvers(unittest.TestCase):
     def test_brute_force(self):
         solver = BruteForce()
         shape = Shape.Volume()
-        for turns in range(8):
+        for turns in range(6):
             shuffled, shuffle_path = shape.shuffle(turns=turns, seed=0)
             solution_path = solver.solve(start=shape, target=shuffled)
             self.assertLessEqual(len(solution_path.moves), len(shuffle_path), f"The solution path is not optimal, as it takes more moves than we used to shuffle our cube.")

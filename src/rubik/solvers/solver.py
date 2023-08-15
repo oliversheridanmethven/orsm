@@ -6,6 +6,10 @@ from common.logger import log
 from abc import ABC, abstractmethod
 from rubik.shapes.shape import Path, Shape
 from common.variables import variable_names_and_objects
+from tqdm import tqdm as progressbar
+
+
+# TODO: move the progress bar into my logger tool so it respects the verbosity level...
 
 
 class Solver(ABC):
@@ -34,10 +38,12 @@ class BruteForce(Solver):
 
         shapes_and_paths = {start: path}
 
+        turns = 1
         while True:
             shapes_and_paths_next = {}
             # We generate the next generation of shapes.
-            for shape, path in shapes_and_paths.items():
+            log.info(f"Exploring all combinations with {turns = }")
+            for shape, path in progressbar(shapes_and_paths.items()):
                 for reverse in [True, False]:
                     for move in shape.moves():
                         moved = shape.move(move, reverse=reverse)
@@ -50,7 +56,19 @@ class BruteForce(Solver):
                 return shapes_and_paths[target]
             except KeyError as e:
                 pass
+            turns += 1
 
 
 if __name__ == "__main__":
-    pass
+    from common.cli import setup_standard_parser
+    from rubik.shapes.shape import Volume
+
+    parser = setup_standard_parser(description=__doc__)
+    parser.add_argument("--brute_force", help="Demo the brute force solver.", action="store_true")
+    parser.add_argument("--shuffle", type=int, metavar="TURNS", help="The amount of turns to do.", default=10)
+    kwargs = vars(parser.parse_args())
+    if kwargs["brute_force"]:
+        shape = Volume()
+        solver = BruteForce()
+        shuffled, shuffle_path = shape.shuffle(turns=kwargs["shuffle"])
+        solution_path = solver.solve(start=shape, target=shuffled)

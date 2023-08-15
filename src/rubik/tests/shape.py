@@ -163,6 +163,21 @@ class Moves(unittest.TestCase):
         for turns in range(5):
             self.assertIsNot(shape, shape.shuffle(turns))
 
+    def test_shuffle_seeding(self):
+        shape_1 = Shape.Volume()
+        shape_2 = Shape.Volume()
+        for seed in [False, 0]:
+            while True:
+                shuffle_1, moves_1 = shape_1.shuffle(seed=seed)
+                shuffle_2, moves_2 = shape_2.shuffle(seed=seed)
+                if shuffle_1 != shape_1 and shuffle_2 != shape_2:
+                    break
+            if seed or (isinstance(seed, int) and type(seed) != bool):
+                self.assertEqual(moves_1, moves_2)
+                self.assertEqual(shuffle_1, shuffle_2)
+            else:
+                self.assertNotEqual(moves_1, moves_2)
+
 
 if __name__ == '__main__':
     unit_test_parse()

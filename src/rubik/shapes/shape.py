@@ -8,8 +8,8 @@ from rubik.colours.default_colours import Colours
 import numpy as np
 from abc import ABC, abstractmethod
 from copy import deepcopy
-import random
 import itertools
+import random
 
 
 class Move(ABC):
@@ -84,14 +84,19 @@ class Shape(ABC):
     def moves(self, **kwargs):
         ...
 
-    def shuffle(self, *args, turns=100, **kwargs):
+    def shuffle(self, *args, turns=100, seed=False, **kwargs):
         """Produces a shuffled cube, and lists how it got there."""
         assert isinstance(turns, int) and turns >= 0, f"Invalid amount of {turns = } specified."
         path = {"moves": [], "reverses": []}
         shuffled = type(self)(faces=self.faces, **kwargs)
         if turns == 0:
             return shuffled, path
-
+        if seed or (isinstance(seed, int) and type(seed) != bool):
+            log.debug(f"Seeding the random number with {seed = }")
+            assert isinstance(seed, int) and seed >= 0, f"Invalid {seed = }"
+            random.seed(seed)
+        else:
+            random.seed(None)
         for turn, (move, reverse) in enumerate(random.choices(list(itertools.product(self.moves(), [True, False])), k=turns)):
             log.debug(f"{turn = } shuffling with {move = } {reverse = }")
             shuffled = shuffled.move(move, reverse=reverse)

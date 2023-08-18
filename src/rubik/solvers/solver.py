@@ -71,14 +71,13 @@ def next_generation_of_moves(shapes_and_paths):
     for shape, path in progressbar(shapes_and_paths.items()):
         assert isinstance(shape, Shape)
         assert isinstance(path, Path)
-        # This is the performance bottleneck, and the hotspots are labelled.
         for reverse in [True, False]:
             for move in shape.moves():
-                moved = shape.move(move, reverse=reverse)  # 8-10%
-                moved_path = path.add(move=move, reverse=reverse)  # 25-30%
+                moved = shape.move(move, reverse=reverse)
+                moved_path = path.add(move=move, reverse=reverse)
                 assert moved_path != path, f"The path has not changed."
                 assert len(moved_path) == len(path) + 1, f"The path has not increased enough."
-                shapes_and_paths_next[moved] = moved_path  # 50-60%
+                shapes_and_paths_next[moved] = moved_path
     return shapes_and_paths_next
 
 

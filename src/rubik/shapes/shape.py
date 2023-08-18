@@ -129,7 +129,6 @@ class Shape(ABC):
     def __eq__(self, other):
         return self.faces == other.faces
 
-    @profile
     def __hash__(self):
         return hash(self.__repr__())
 

@@ -9,6 +9,8 @@ import sys
 from haggis.logs import add_logging_level
 from termcolor import colored
 import os
+from tqdm import tqdm
+from functools import partial
 
 add_logging_level('TRACE', logging.DEBUG - 5)
 add_logging_level('PRINT', logging.WARNING - 5)
@@ -134,10 +136,8 @@ logging.DEFAULT_LEVEL = logging.PRINT
 
 log = logging
 
-from tqdm import tqdm
-from functools import partial
-
 progressbar = partial(tqdm, leave=False)
+# We put this here as we may also want to log some of these results...
 
 if __name__ == "__main__":
     # A very small demo.

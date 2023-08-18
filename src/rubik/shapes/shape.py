@@ -25,9 +25,21 @@ class Path:
     def _set_path(self):
         self.path = {"moves": self.moves, "reverses": self.reverses}
 
-    def append(self, *args, move, reverse, **kwargs):
+    def _append(self, *args, move, reverse, **kwargs):
         self.moves.append(move)
         self.reverses.append(reverse)
+
+    def pop(self, index=0, /):
+        new = type(self)(self.shape)
+        new.add(move=self.moves.pop(), reverse=self.reverses.pop())
+        return new
+
+    def __add__(self, other):
+        new = self.__copy__()
+        for move, reverse in zip(other.moves, other.reverses):
+            new.moves.append(move)
+            new.reverses.append(reverse)
+        return new
 
     def __eq__(self, other):
         return self.path == other.path
@@ -45,13 +57,24 @@ class Path:
             s += "\n"
         return s
 
-    @profile
-    def add(self, *, move, reverse, **kwargs):
+    def __reversed__(self):
+        new = self.__copy__()
+        new.moves = new.moves[::-1]
+        new.reverses = [not reverse for reverse in new.reverses[::-1]]
+        new._set_path()
+        return new
+
+    def __copy__(self):
         new = type(self)(self.shape)
         new.moves = deepcopy(self.moves)
         new.reverses = deepcopy(self.reverses)
         new._set_path()
-        new.append(move=move, reverse=reverse)
+        return new
+
+    @profile
+    def add(self, *, move, reverse, **kwargs):
+        new = self.__copy__()
+        new._append(move=move, reverse=reverse)
         return new
 
 
@@ -71,6 +94,9 @@ class Move(ABC):
         # done so outside of any local scope.
         return isinstance(other, type(self)) and other.shape == self.shape
 
+    def __repr__(self):
+        return self.__str__()
+
     def __str__(self):
         return self.__doc__
 
@@ -88,7 +114,6 @@ class Shape(ABC):
 
     def __repr__(self):
         obj = f"{type(self).__name__}(faces={self.faces})"
-        log.debug(f"The {obj = }{self}")
         return obj
 
     def __str__(self):
@@ -144,10 +169,21 @@ class Shape(ABC):
             random.seed(seed)
         else:
             random.seed(None)
-        for turn, (move, reverse) in enumerate(random.choices(list(itertools.product(self.moves(), [True, False])), k=turns)):
+
+        last_shuffle = None
+        for turn in range(turns):
+            # We try and generate a new move (which is not the reverse of the preceding!).
+            while True:
+                move, reverse = random.choices(list(itertools.product(self.moves(), [True, False])))[0]
+                if last_shuffle == (move, not reverse):
+                    continue
+
+                last_shuffle = (move, reverse)
+                break
+
             log.debug(f"{turn = } shuffling with {move = } {reverse = }")
             shuffled = shuffled.move(move, reverse=reverse)
-            path.append(move=move, reverse=reverse)
+            path._append(move=move, reverse=reverse)
 
         return shuffled, path
 
@@ -459,8 +495,8 @@ class Volume(Shape):
 
     """
 
-    def show(self):
-        """Try to show the cub in a very pictorial way."""
+    def __str__(self):
+        """Try to show the cube in a very pictorial way."""
         'front 0  back 1  right 2  left 3  top 4  bottom 5'
         top = self.faces[4]
         front = self.faces[0]
@@ -468,7 +504,7 @@ class Volume(Shape):
         left = self.faces[3]
         back = self.faces[1]
         bottom = self.faces[5]
-        s = "\n"
+        s = "\n\n"
         indent = 5
         indenting = indent + 3
         for row in top:
@@ -499,10 +535,8 @@ class Volume(Shape):
             s += ' ' * indenting
             for tile in row:
                 s += f"{self.colours(tile).colour(tile)} "
+        s += "\n\n"
         return s
-
-    def __str__(self):
-        return self.show()
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

@@ -17,7 +17,7 @@ CMakeCache.txt
 *.a
 bin/
 lib/
-misc/misc.txt
+misc/
 Testing/
 install_manifest.txt
 .cmake/

@@ -19,3 +19,9 @@ We have a small command line tool which displays the webcam feed
 as an ASCII image. 
 
 ![ascii_video](https://user-images.githubusercontent.com/13259221/259823600-833373c4-7be0-40dc-bd93-cb167930be0a.gif)
+
+## Sixel
+
+!!! note "Try Sixel"
+    Sixel is a nice way to show graphics in the terminal window. It would
+    be very interesting to see if I can get my application to support this. 

@@ -28,11 +28,9 @@ class Colours(Enum):
                 matching_colours[name] = name
             else:
                 unmatched_colours[name] = None
-        log.debug(f"We have some unmatched colours: {unmatched_colours.keys()}")
         unused_colours = [name for name in termcolor.COLORS.keys() if name not in matching_colours]
         for name in unmatched_colours.keys():
             matching_colours[name] = unmatched_colours[name] = unused_colours.pop()
-            log.debug(f"We are matching {name} with {matching_colours[name]}")
         for name, colour in unmatched_colours.items():
             assert colour is not None, f"The colour {name} should have been matched."
             assert name in matching_colours.keys(), f"The colour {name} should be in our collection of matched colours."

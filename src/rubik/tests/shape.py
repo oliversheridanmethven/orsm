@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 import logging
 import unittest
+
+import numpy as np
+from numpy import testing
+
 from rubik import shapes
 from rubik.colours.default_colours import Colours
 from common.variables import variable_names_and_objects
@@ -177,6 +181,23 @@ class Moves(unittest.TestCase):
                 self.assertEqual(shuffle_1, shuffle_2)
             else:
                 self.assertNotEqual(path_1, path_2)
+
+
+class Casting(unittest.TestCase):
+
+    def test_array_casting(self):
+        shape = shapes.Volume()
+        faces_array = shape.to_array()
+        self.assertIsInstance(faces_array, np.ndarray)
+        self.assertEqual(len(faces_array.shape), 1, f"Our array must be one dimensional.")
+        self.assertGreaterEqual(faces_array.size, 1, f"Our array must contain some elements.")
+        shape_recovered = shape.from_array(array=faces_array)
+        self.assertIsNot(shape_recovered, shape, f"These should be separate objects.")
+        self.assertEqual(shape_recovered, shape, f"The shape recovered from the array conversion should match the original.")
+        testing.assert_array_equal(faces_array, shape.to_array())
+        faces_array[0] += 1
+        with testing.assert_raises(AssertionError):
+            testing.assert_array_equal(faces_array, shape.to_array(), f"Modifying the return should not change the original.")
 
 
 if __name__ == '__main__':

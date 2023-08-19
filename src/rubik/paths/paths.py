@@ -57,7 +57,7 @@ class Path:
         new._set_path()
         return new
 
-    @profile
+    # @profile
     def __copy__(self):
         new = type(self)(self.shape)
         new.moves = deepcopy(self.moves)
@@ -65,7 +65,7 @@ class Path:
         new._set_path()
         return new
 
-    @profile
+    # @profile
     def add(self, *, move, reverse, **kwargs):
         new = self.__copy__()
         new._append(move=move, reverse=reverse)

@@ -5,6 +5,7 @@ from common.logger import log
 from copy import deepcopy
 from rubik.paths.moves import Move
 import numpy as np
+from common.profiling import profile
 
 
 class Volume(Shape):
@@ -80,6 +81,7 @@ class Volume(Shape):
     class move_1(Move):
         """Move the bottom (front -> right)."""
 
+        @profile
         def __call__(self, *args, shape, reverse=False, **kwargs):
             faces = deepcopy(shape.faces)
             if not reverse:
@@ -96,6 +98,7 @@ class Volume(Shape):
     class move_2(Move):
         """Move the right (front -> top)."""
 
+        @profile
         def __call__(self, *args, shape, reverse=False, **kwargs):
             faces = deepcopy(shape.faces)
             if not reverse:
@@ -117,6 +120,7 @@ class Volume(Shape):
     class move_3(Move):
         """Move the back (top -> left)."""
 
+        @profile
         def __call__(self, *args, shape, reverse=False, **kwargs):
             faces = deepcopy(shape.faces)
             if not reverse:

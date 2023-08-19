@@ -54,6 +54,32 @@ class Shape(ABC):
         """What a solved configuration is classified as."""
         return cls.clean_config(*args, **kwargs)
 
+    def traverse_tiles(self, *args, function, **kwargs):
+        for face in self.faces:
+            for row in face:
+                for tile in row:
+                    yield function(tile)
+
+    def assign_tiles(self, *args, values, **kwargs):
+        get_values = (i for i in values)
+        for face in self.faces:
+            for row in face:
+                for i in range(len(row)):
+                    row[i] = next(get_values)
+
+    def to_array(self, *args, **kwargs):
+        def return_tile_value(tile):
+            return tile
+
+        return np.array(list(self.traverse_tiles(function=return_tile_value)))
+
+    @classmethod
+    def from_array(cls, *args, array, **kwargs):
+        array_values = (i for i in array)
+        new = cls()
+        new.assign_tiles(values=array_values)
+        return new
+
     def move(self, *moves, **kwargs):
         if not moves:
             log.info(f"There are no moves specified for {type(self).__name__}")

@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 import logging
 import unittest
-from rubik.shapes import shape as Shape
+
+import numpy as np
+from numpy import testing
+
+from rubik import shapes
 from rubik.colours.default_colours import Colours
 from common.variables import variable_names_and_objects
 import itertools
@@ -14,16 +18,16 @@ class BasicProperties(unittest.TestCase):
     def setUp(self):
         self.kwargs = {"N": 3, "M": 4}
         self.args = []
-        self.names_and_shapes_classes = variable_names_and_objects(Shape.Tile,
-                                                                   Shape.Domino,
-                                                                   Shape.Strip,
-                                                                   Shape.Square,
-                                                                   Shape.Grid,
-                                                                   Shape.Sheet,
-                                                                   Shape.Volume,
-                                                                   Shape.Cube,
-                                                                   Shape.Triangle,
-                                                                   Shape.Tetrahedron,
+        self.names_and_shapes_classes = variable_names_and_objects(shapes.Tile,
+                                                                   shapes.Domino,
+                                                                   shapes.Strip,
+                                                                   shapes.Square,
+                                                                   shapes.Grid,
+                                                                   shapes.Sheet,
+                                                                   shapes.Volume,
+                                                                   shapes.Cube,
+                                                                   shapes.Triangle,
+                                                                   shapes.Tetrahedron,
                                                                    )
 
     def test_printing(self):
@@ -55,14 +59,25 @@ class BasicProperties(unittest.TestCase):
 
         for name, shape_class in self.names_and_shapes_classes:
             shape = shape_class(*self.args, **self.kwargs)
-            ids = list(traverse_rows(shape.faces, id))
+            ids = list(traverse_rows(shape._faces, id))
             self.assertEqual(len(ids), len(set(ids)), f"There are duplicate memory locations used to store the tiles in {name}. Not suitable for swapping operations.")
 
 
 class Moves(unittest.TestCase):
 
     def test_single_moves_domino(self):
-        shape = Shape.Domino()
+        shape = shapes.Domino()
+        for move in shape.moves():
+            shape_moved = shape.move(move)
+            self.assertEqual(shape, shape.solved_config())
+            self.assertNotEqual(shape_moved, shape)
+            self.assertNotEqual(shape_moved, shape.solved_config())
+            shape_reverted = shape_moved.move(move, reverse=True)
+            self.assertEqual(shape_reverted, shape.solved_config())
+            self.assertEqual(shape_reverted, shape)
+
+    def test_single_moves_sheet(self):
+        shape = shapes.Sheet()
         for move in shape.moves():
             shape_moved = shape.move(move)
             self.assertEqual(shape, shape.solved_config())
@@ -73,7 +88,7 @@ class Moves(unittest.TestCase):
             self.assertEqual(shape_reverted, shape)
 
     def test_double_moves_domino(self):
-        shape = Shape.Domino()
+        shape = shapes.Domino()
         for move_1, move_2 in itertools.product(*[shape.moves() for i in range(2)]):
             shape_moved_once = shape.move(move_1)
             shape_moved_twice = shape_moved_once.move(move_2)
@@ -88,7 +103,7 @@ class Moves(unittest.TestCase):
             self.assertEqual(shape_reverted_out_of_order, shape)
 
     def test_same_moves_compare_equal(self):
-        shape = Shape.Volume()
+        shape = shapes.Volume()
         for id_1, move_1 in enumerate(shape.moves()):
             for id_2, move_2 in enumerate(shape.moves()):
                 if id_1 == id_2:
@@ -97,7 +112,7 @@ class Moves(unittest.TestCase):
                     self.assertNotEqual(move_1, move_2)
 
     def test_double_moves_volume(self):
-        shape = Shape.Volume()
+        shape = shapes.Volume()
         for direction in [True, False]:
             other_direction = not direction
             for move_1, move_2 in itertools.product(*[shape.moves() for i in range(2)]):
@@ -116,7 +131,7 @@ class Moves(unittest.TestCase):
                     self.assertNotEqual(shape_reverted_out_of_order, shape)
 
     def test_rotational_symmetry(self):
-        shape = Shape.Volume()
+        shape = shapes.Volume()
         for direction in [True, False]:
             other_direction = not direction
             for move in shape.moves():
@@ -130,7 +145,7 @@ class Moves(unittest.TestCase):
 
     def test_shuffle(self):
         for turns in range(10):
-            shape = Shape.Volume()
+            shape = shapes.Volume()
             shuffled, path = shape.shuffle(turns=turns)
             log.info(f"The target shuffled cube is: {shuffled}")
             log.debug(f"Obtained by:")
@@ -153,19 +168,19 @@ class Moves(unittest.TestCase):
             self.assertEqual(reverted, shape)
 
     def test_moves_give_new_objects(self):
-        shape = Shape.Volume()
+        shape = shapes.Volume()
         for moves in all_combinations(shape.moves()):
             for reverse in [True, False]:
                 self.assertIsNot(shape, shape.move(*moves, reverse=reverse))
 
     def test_shuffles_give_new_objects(self):
-        shape = Shape.Volume()
+        shape = shapes.Volume()
         for turns in range(5):
             self.assertIsNot(shape, shape.shuffle(turns))
 
     def test_shuffle_seeding(self):
-        shape_1 = Shape.Volume()
-        shape_2 = Shape.Volume()
+        shape_1 = shapes.Volume()
+        shape_2 = shapes.Volume()
         for seed in [False, 0]:
             while True:
                 shuffle_1, path_1 = shape_1.shuffle(seed=seed)
@@ -177,6 +192,23 @@ class Moves(unittest.TestCase):
                 self.assertEqual(shuffle_1, shuffle_2)
             else:
                 self.assertNotEqual(path_1, path_2)
+
+
+class Casting(unittest.TestCase):
+
+    def test_array_casting(self):
+        shape = shapes.Volume()
+        faces_array = shape.to_array()
+        self.assertIsInstance(faces_array, np.ndarray)
+        self.assertEqual(len(faces_array.shape), 1, f"Our array must be one dimensional.")
+        self.assertGreaterEqual(faces_array.size, 1, f"Our array must contain some elements.")
+        shape_recovered = shape.from_array(array=faces_array)
+        self.assertIsNot(shape_recovered, shape, f"These should be separate objects.")
+        self.assertEqual(shape_recovered, shape, f"The shape recovered from the array conversion should match the original.")
+        testing.assert_array_equal(faces_array, shape.to_array())
+        faces_array[0] += 1
+        with testing.assert_raises(AssertionError):
+            testing.assert_array_equal(faces_array, shape.to_array(), f"Modifying the return should not change the original.")
 
 
 if __name__ == '__main__':

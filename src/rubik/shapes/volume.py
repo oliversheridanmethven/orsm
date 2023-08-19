@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from .shape import Shape, _array_from_faces_at_end
+from .shape import Shape, _array_from_faces_at_end, _first_update_faces
 from common.logger import log
 from copy import deepcopy
 from rubik.paths.moves import Move
@@ -24,6 +24,7 @@ class Volume(Shape):
 
     """
 
+    @_first_update_faces
     def __str__(self):
         """Try to show the cube in a very pictorial way."""
         'front 0  back 1  right 2  left 3  top 4  bottom 5'

@@ -12,6 +12,11 @@ To add a tag use:
 git tag -a <vX.Y.Z> -m "<SOME BRIEF MESSAGE>"
 ```
 
+The tag then needs to be pushed:
+```bash
+git push --tags
+```
+
 To set a release with a tag:
 ```bash
 gh release create $(git describe --tags --abbrev=0)

@@ -657,9 +657,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Rubik
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="index.html" class="md-nav__link md-nav__link--active">
         Rubik
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#solving-the-2x2-rubik-cube" class="md-nav__link">
+    Solving the 2x2 Rubik Cube
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -986,6 +1017,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#solving-the-2x2-rubik-cube" class="md-nav__link">
+    Solving the 2x2 Rubik Cube
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1005,13 +1051,23 @@
 <h1 id="rubik">Rubik</h1>
 <p>Here we collect together some code which solves Rubik style
 puzzles. </p>
+<h2 id="solving-the-2x2-rubik-cube">Solving the 2x2 Rubik Cube</h2>
+<p>For the 2x2 Rubik cube (which we call a "<code>Volume</code>"), we can
+usually solve this in about 1-2 seconds, (it also depends how many
+checks and assertions our code has in its hot path):</p>
+<pre><code>(venv) oliver testing $ multitime -n 50  src/rubik/solvers/demo.py --meet_in_middle 
+===&gt; multitime results                                                                                                                                                                              
+1: src/rubik/solvers/demo.py --meet_in_middle
+            Mean                Std.Dev.    Min         Median      Max
+real        1.253+/-0.3383      0.929       0.222       0.713       3.965  
+</code></pre>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 19, 2023</span>
       
         <br>
         Created:

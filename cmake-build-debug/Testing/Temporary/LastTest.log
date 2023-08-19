@@ -1,3 +1,524 @@
-Start testing: Aug 15 20:05 CEST
+Start testing: Aug 19 21:41 CEST
 ----------------------------------------------------------
-End testing: Aug 15 20:05 CEST
+13/25 Testing: cli_print_logs
+13/25 Test: cli_print_logs
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/cli_print_logs.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/common/tests
+"cli_print_logs" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+A message from print
+[2023-08-19 21:41:46,367]: WARNING: (/Users/oliver/ClionProjects/testing/src/common/tests/cli_print_logs.py:13) A message from warning
+[2023-08-19 21:41:46,377]: ERROR: (/Users/oliver/ClionProjects/testing/src/common/tests/cli_print_logs.py:13) A message from error
+[2023-08-19 21:41:46,389]: CRITICAL:  (/Users/oliver/ClionProjects/testing/src/common/tests/cli_print_logs.py:13) A message from critical
+<end of output>
+Test time =   0.29 sec
+----------------------------------------------------------
+Test Passed.
+"cli_print_logs" end time: Aug 19 21:41 CEST
+"cli_print_logs" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/25 Testing: version_bindings
+9/25 Test: version_bindings
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/version/tests/version_bindings.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/version/tests
+"version_bindings" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.005s
+
+OK
+<end of output>
+Test time =   0.17 sec
+----------------------------------------------------------
+Test Passed.
+"version_bindings" end time: Aug 19 21:41 CEST
+"version_bindings" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/25 Testing: arguments
+12/25 Test: arguments
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/arguments.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/common/tests
+"arguments" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.027s
+
+OK
+['/Users/oliver/ClionProjects/testing/src/common/tests', '/Users/oliver/ClionProjects/testing/src', '/Users/oliver/ClionProjects/testing/cmake-build-debug/src/common/tests', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python311.zip', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload', '/Users/oliver/ClionProjects/testing/venv/lib/python3.11/site-packages']
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Passed.
+"arguments" end time: Aug 19 21:41 CEST
+"arguments" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/25 Testing: shapes
+23/25 Test: shapes
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/rubik/tests/shapes.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/tests
+"shapes" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 0.192s
+
+OK
+<end of output>
+Test time =   0.74 sec
+----------------------------------------------------------
+Test Passed.
+"shapes" end time: Aug 19 21:41 CEST
+"shapes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/25 Testing: cli_arguments_0
+10/25 Test: cli_arguments_0
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-debug/src/cli/tests/cli_arguments_0"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/cli/tests
+"cli_arguments_0" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+** INFO: 21:41:46.943: Parsing the input string: --foo
+** INFO: 21:41:46.944: Parsing the input string: --Help
+** INFO: 21:41:46.944: Parsing the input string: 
+** INFO: 21:41:46.946: Parsing the input string: --help
+** INFO: 21:41:46.946: Parsing the input string: --usage
+** INFO: 21:41:46.959: Successfully parsed the input string: command --foo
+command: unrecognized option `--foo'
+Try `command --help' or `command --usage' for more information.
+** INFO: 21:41:46.959: Successfully parsed the input string: command 
+** INFO: 21:41:46.959: Successfully parsed the input string: command --Help
+command: unrecognized option `--Help'
+Try `command --help' or `command --usage' for more information.
+** INFO: 21:41:46.961: Successfully parsed the input string: command --help
+Usage: command [OPTION...]
+
+  -?, --help                 Give this help list
+      --usage                Give a short usage message
+  -V, --version              Print program version
+
+Report bugs to Dr Oliver Sheridan-Methven
+<oliver.sheridan-methven@hotmail.co.uk>.
+** INFO: 21:41:46.961: Successfully parsed the input string: command --usage
+Usage: command [-?V] [--help] [--usage] [--version]
+[====] Synthesis: Tested: 5 | Passing: 5 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.18 sec
+----------------------------------------------------------
+Test Passed.
+"cli_arguments_0" end time: Aug 19 21:41 CEST
+"cli_arguments_0" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/25 Testing: binding_import
+3/25 Test: binding_import
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/binding/tests/binding_import.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/tests
+"binding_import" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+.['/Users/oliver/ClionProjects/testing/src/binding/tests', '/Users/oliver/ClionProjects/testing/src', '/Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/tests', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python311.zip', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload', '/Users/oliver/ClionProjects/testing/venv/lib/python3.11/site-packages']
+We are fatally failing now.
+Hello world from within C.
+The input values are: a = 1 and b = foo
+.A non-fatal error from C in our Python binding.
+.
+----------------------------------------------------------------------
+Ran 3 tests in 0.019s
+
+OK
+We were successfully able to catch an exception: Raising a non-fatal error from C in our Python binding up to Python.
+
+Hello world from within C.
+The input values are: a = 1 and b = foo
+<end of output>
+Test time =   0.18 sec
+----------------------------------------------------------
+Test Passed.
+"binding_import" end time: Aug 19 21:41 CEST
+"binding_import" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/25 Testing: version_test
+8/25 Test: version_test
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-debug/src/version/tests/version_example"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/version/tests
+"version_test" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+Version: v0.0.5-14-gc98e774-dirty
+[====] Synthesis: Tested: 5 | Passing: 5 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.17 sec
+----------------------------------------------------------
+Test Passed.
+"version_test" end time: Aug 19 21:41 CEST
+"version_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/25 Testing: output
+15/25 Test: output
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/output.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/common/tests
+"output" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.010s
+
+OK
+<end of output>
+Test time =   0.15 sec
+----------------------------------------------------------
+Test Passed.
+"output" end time: Aug 19 21:41 CEST
+"output" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/25 Testing: error_codes
+2/25 Test: error_codes
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-debug/src/error_codes/tests/_error_codes"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/error_codes/tests
+"error_codes" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+[====] Synthesis: Tested: 5 | Passing: 5 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"error_codes" end time: Aug 19 21:41 CEST
+"error_codes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/25 Testing: shuffles
+24/25 Test: shuffles
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/rubik/tests/shuffles.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/tests
+"shuffles" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                     .  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                     .  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/27 [00:00<?, ?it/s]                                        0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/27 [00:00<?, ?it/s]                                        0%|          | 0/120 [00:00<?, ?it/s] 56%|█████▌    | 67/120 [00:00<00:00, 646.15it/s]                                                 .  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                     .  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/2 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                     .s.
+----------------------------------------------------------------------
+Ran 7 tests in 0.598s
+
+OK (skipped=1)
+<end of output>
+Test time =   1.16 sec
+----------------------------------------------------------
+Test Passed.
+"shuffles" end time: Aug 19 21:41 CEST
+"shuffles" time elapsed: 00:00:01
+----------------------------------------------------------
+
+18/25 Testing: variables
+18/25 Test: variables
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/variables.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/common/tests
+"variables" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"variables" end time: Aug 19 21:41 CEST
+"variables" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/25 Testing: images
+21/25 Test: images
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/media/tests/images.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/media/tests
+"images" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.670s
+
+OK
+<end of output>
+Test time =   1.25 sec
+----------------------------------------------------------
+Test Passed.
+"images" end time: Aug 19 21:41 CEST
+"images" time elapsed: 00:00:01
+----------------------------------------------------------
+
+11/25 Testing: cli_arguments_version
+11/25 Test: cli_arguments_version
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-debug/src/cli/tests/cli_arguments_version"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/cli/tests
+"cli_arguments_version" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+** INFO: 21:41:47.380: Parsing the input string: --version
+** INFO: 21:41:47.381: Parsing the input string: --version
+** INFO: 21:41:47.392: Successfully parsed the input string: command --version
+testing v0.0.5-14-gc98e774-dirty
+** INFO: 21:41:47.393: Successfully parsed the input string: command --version
+testing v0.0.5-14-gc98e774-dirty
+[====] Synthesis: Tested: 2 | Passing: 2 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.11 sec
+----------------------------------------------------------
+Test Passed.
+"cli_arguments_version" end time: Aug 19 21:41 CEST
+"cli_arguments_version" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/25 Testing: basic_python
+5/25 Test: basic_python
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/testing/tests/basic_python.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/testing/tests
+"basic_python" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"basic_python" end time: Aug 19 21:41 CEST
+"basic_python" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/25 Testing: basic_python_again
+6/25 Test: basic_python_again
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/testing/tests/basic_python_again.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/testing/tests
+"basic_python_again" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+<end of output>
+Test time =   0.13 sec
+----------------------------------------------------------
+Test Passed.
+"basic_python_again" end time: Aug 19 21:41 CEST
+"basic_python_again" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/25 Testing: output_suppression
+19/25 Test: output_suppression
+Command: "/Users/oliver/ClionProjects/testing/src/common/tests/output_suppressor_c_extension.sh" "/Users/oliver/ClionProjects/testing/src/common/tests/output_suppressor_c_extension.py" "--suppress_output"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/common/tests
+"output_suppression" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+Testing suppression:
+script: /Users/oliver/ClionProjects/testing/src/common/tests/output_suppressor_c_extension.py
+args: --suppress_output
+The suppressor worked and no output was detected. Output = ""
+<end of output>
+Test time =   0.11 sec
+----------------------------------------------------------
+Test Passed.
+"output_suppression" end time: Aug 19 21:41 CEST
+"output_suppression" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/25 Testing: logging_test
+7/25 Test: logging_test
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-debug/src/logging/tests/logging_test"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/logging/tests
+"logging_test" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+
+** (process:56946): ERROR **: 21:41:47.492: some error
+some info, some string 10
+** INFO: 21:41:47.492: some info
+** Message: 21:41:47.494: some message
+some print
+some print error
+** (process:56948): DEBUG: 21:41:47.494: some debug
+
+** (process:56948): WARNING **: 21:41:47.494: some warning
+[====] Synthesis: Tested: 3 | Passing: 3 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"logging_test" end time: Aug 19 21:41 CEST
+"logging_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/25 Testing: suppressor
+20/25 Test: suppressor
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-debug/src/common/suppressor/tests/_suppressor"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/common/suppressor/tests
+"suppressor" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+[====] Synthesis: Tested: 3 | Passing: 3 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.09 sec
+----------------------------------------------------------
+Test Passed.
+"suppressor" end time: Aug 19 21:41 CEST
+"suppressor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+1/25 Testing: hello_world_test
+1/25 Test: hello_world_test
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-debug/src/hello_world/tests/hello_world_test"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/hello_world/tests
+"hello_world_test" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+[====] Synthesis: Tested: 1 | Passing: 1 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"hello_world_test" end time: Aug 19 21:41 CEST
+"hello_world_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/25 Testing: example
+4/25 Test: example
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-debug/src/testing/tests/example"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/testing/tests
+"example" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+[====] Synthesis: Tested: 3 | Passing: 3 | Failing: 0 | Crashing: 0 
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"example" end time: Aug 19 21:41 CEST
+"example" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/25 Testing: output_suppressor_c_extension
+16/25 Test: output_suppressor_c_extension
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/output_suppressor_c_extension.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/common/tests
+"output_suppressor_c_extension" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+Hello world from within C.
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Passed.
+"output_suppressor_c_extension" end time: Aug 19 21:41 CEST
+"output_suppressor_c_extension" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/25 Testing: window
+22/25 Test: window
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/media/tests/window.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/media/tests
+"window" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+[2023-08-19 21:41:47,012]: WARNING: (/Users/oliver/ClionProjects/testing/src/media/window.py:33) We have failed to read from the camera on attempt = 1
+.[2023-08-19 21:41:48,241]: WARNING: (/Users/oliver/ClionProjects/testing/src/media/window.py:33) We have failed to read from the camera on attempt = 1
+[2023-08-19 21:41:48,241]: WARNING: (/Users/oliver/ClionProjects/testing/src/media/window.py:55) We have failed to read from the camera too many times (retries = 0).
+.
+----------------------------------------------------------------------
+Ran 2 tests in 1.436s
+
+OK
+<end of output>
+Test time =   2.16 sec
+----------------------------------------------------------
+Test Passed.
+"window" end time: Aug 19 21:41 CEST
+"window" time elapsed: 00:00:02
+----------------------------------------------------------
+
+14/25 Testing: logger
+14/25 Test: logger
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/logger.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/common/tests
+"logger" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+......
+----------------------------------------------------------------------
+Ran 6 tests in 2.037s
+
+OK
+<end of output>
+Test time =   2.41 sec
+----------------------------------------------------------
+Test Passed.
+"logger" end time: Aug 19 21:41 CEST
+"logger" time elapsed: 00:00:02
+----------------------------------------------------------
+
+17/25 Testing: timing
+17/25 Test: timing
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/timing.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/common/tests
+"timing" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+......
+----------------------------------------------------------------------
+Ran 6 tests in 2.861s
+
+OK
+['/Users/oliver/ClionProjects/testing/src/common/tests', '/Users/oliver/ClionProjects/testing/src', '/Users/oliver/ClionProjects/testing/cmake-build-debug/src/common/tests', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python311.zip', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload', '/Users/oliver/ClionProjects/testing/venv/lib/python3.11/site-packages']
+['/Users/oliver/ClionProjects/testing/src/common/tests', '/Users/oliver/ClionProjects/testing/src', '/Users/oliver/ClionProjects/testing/cmake-build-debug/src/common/tests', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python311.zip', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload', '/Users/oliver/ClionProjects/testing/venv/lib/python3.11/site-packages']
+The function sleep test took 0.9123823642730713 seconds over 3 iterations, averaging 0.30412745475769043 seconds per function call.
+The function sleep test took 0.9074709415435791 seconds over 3 iterations, averaging 0.3024903138478597 seconds per function call.
+<end of output>
+Test time =   3.05 sec
+----------------------------------------------------------
+Test Passed.
+"timing" end time: Aug 19 21:41 CEST
+"timing" time elapsed: 00:00:03
+----------------------------------------------------------
+
+25/25 Testing: solvers
+25/25 Test: solvers
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/rubik/tests/solvers.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/tests
+"solvers" start time: Aug 19 21:41 CEST
+Output:
+----------------------------------------------------------
+/Users/oliver/ClionProjects/testing/src/common/profiling.py:15: UserWarning: Adding a function with a __wrapped__ attribute. You may want to profile the wrapped function by adding solve.__wrapped__ instead.
+  profiler.add_function(func)
+  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/27 [00:00<?, ?it/s]                                        0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/28 [00:00<?, ?it/s]100%|██████████| 28/28 [00:00<00:00, 272.83it/s]                                                  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/27 [00:00<?, ?it/s]                                        0%|          | 0/120 [00:00<?, ?it/s] 28%|██▊       | 34/120 [00:00<00:00, 335.36it/s] 74%|███████▍  | 89/120 [00:00<00:00, 458.77it/s]                                                   0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/28 [00:00<?, ?it/s]                                        0%|          | 0/126 [00:00<?, ?it/s] 52%|█████▏    | 65/126 [00:00<00:00, 640.72it/s]                                                   0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/27 [00:00<?, ?it/s]                                        0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/27 [00:00<?, ?it/s]                                        0%|          | 0/120 [00:00<?, ?it/s] 62%|██████▏   | 74/120 [00:00<00:00, 734.48it/s]                                                   0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                     .  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/28 [00:00<?, ?it/s]                                        0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/28 [00:00<?, ?it/s]                                        0%|          | 0/126 [00:00<?, ?it/s] 60%|█████▉    | 75/126 [00:00<00:00, 748.03it/s]                                                   0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                       0%|          | 0/6 [00:00<?, ?it/s]                                     .
+----------------------------------------------------------------------
+Ran 2 tests in 2.557s
+
+OK
+<end of output>
+Test time =   3.09 sec
+----------------------------------------------------------
+Test Passed.
+"solvers" end time: Aug 19 21:41 CEST
+"solvers" time elapsed: 00:00:03
+----------------------------------------------------------
+
+End testing: Aug 19 21:41 CEST

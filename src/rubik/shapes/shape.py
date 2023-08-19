@@ -101,45 +101,4 @@ class Shape(ABC):
 
 
 if __name__ == "__main__":
-    from common.cli import setup_standard_parser
-    from itertools import product
-
-    parser = setup_standard_parser(description=__doc__)
-    parser.add_argument("--single", help="Show single move combinations.", action="store_true")
-    parser.add_argument("--double", help="Show double move combinations.", action="store_true")
-    parser.add_argument("--shuffle", type=int, metavar="TURNS", help="Show some shuffles.")
-
-    kwargs = vars(parser.parse_args())
-    from volume import Volume
-
-    shape = Volume()
-    if kwargs["single"]:
-        for move in shape.moves():
-            log.info(f"Original: {shape.show()}")
-            log.info(f"{move}: {shape.move(move).show()}")
-            log.info(f"{move} (reversed): {shape.move(move, reverse=True).show()}\n\n")
-    if kwargs["double"]:
-        for move_1, move_2 in product(*[shape.moves() for i in range(2)]):
-            log.info(f"Original: {shape.show()}")
-            moved = shape
-            for step, move in enumerate([move_1, move_2]):
-                log.info(f"{step = } {move}")
-                moved = moved.move(move)
-                log.info(f"{moved.show()}")
-    turns = kwargs["shuffle"]
-    if turns:
-        shuffled, path = shape.shuffle(turns=turns)
-        log.info(f"The target shuffled cube is: {shuffled}")
-        log.info(f"Obtained by:")
-        for turn, (move, reverse) in enumerate(zip(path.moves, path.reverses)):
-            log.info(f"{turn = }: {move} {'in reverse' if reverse else ''}")
-
-        moved = shape
-        log.info(f"The starting configuration is: {moved}")
-        for turn, (move, reverse) in enumerate(zip(path.moves, path.reverses)):
-            log.info(f"{turn = }: {move} {'in reverse' if reverse else ''}")
-            moved = moved.move(move, reverse=reverse)
-            log.info(f"The moved configuration is: {moved}")
-        log.info(f"The final moved configuration is: {moved}")
-        log.info(f"The target configuration is: {shuffled}")
-        assert moved == shuffled, f"We should have recovered our target configuration."
+    pass

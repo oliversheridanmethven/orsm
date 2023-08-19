@@ -76,6 +76,17 @@ class Moves(unittest.TestCase):
             self.assertEqual(shape_reverted, shape.solved_config())
             self.assertEqual(shape_reverted, shape)
 
+    def test_single_moves_sheet(self):
+        shape = shapes.Sheet()
+        for move in shape.moves():
+            shape_moved = shape.move(move)
+            self.assertEqual(shape, shape.solved_config())
+            self.assertNotEqual(shape_moved, shape)
+            self.assertNotEqual(shape_moved, shape.solved_config())
+            shape_reverted = shape_moved.move(move, reverse=True)
+            self.assertEqual(shape_reverted, shape.solved_config())
+            self.assertEqual(shape_reverted, shape)
+
     def test_double_moves_domino(self):
         shape = shapes.Domino()
         for move_1, move_2 in itertools.product(*[shape.moves() for i in range(2)]):

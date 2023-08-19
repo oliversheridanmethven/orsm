@@ -78,9 +78,9 @@ class Volume(Shape):
                 self._faces.append([[colour.value for i in range(2)] for j in range(2)])
                 if len(self._faces) == 6:
                     break
-            assert len(self._faces) == 6, f"A {type(self).__name__} must have only 6 faces."
-            for face in self._faces:
-                assert np.shape(face) == (2, 2), f"A {type(self).__name__} face must only contain 4 tiles."
+        assert len(self._faces) == 6, f"A {type(self).__name__} must have only 6 faces."
+        for face in self._faces:
+            assert np.shape(face) == (2, 2), f"A {type(self).__name__} face must only contain 4 tiles."
 
     class move_1(Move):
         """Move the bottom (front -> right)."""

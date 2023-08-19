@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import unittest
 from rubik.shuffles.difficulty import specific, god
-from rubik.shapes import Domino, Volume, Square
+from rubik.shapes import Domino, Volume, Square, Sheet
 from common.variables import variable_names_and_objects
 from common.logger import log
 
@@ -46,9 +46,28 @@ class Shuffles(unittest.TestCase):
         self.assertNotEqual(shuffled, shape)
         self.assertEqual(len(shuffle_path), god_turns)
 
-    def test_moderate_god_shuffle(self):
+    ##########################################################
+    # Some of the following God numbers are my best guesses...
+    ##########################################################
+
+    def test_mild_god_shuffle(self):
         shape = Square()
         god_turns = 2
+        shuffled, shuffle_path = god(start=shape, seed=0)
+        self.assertNotEqual(shuffled, shape)
+        self.assertEqual(len(shuffle_path), god_turns)
+
+    def test_moderate_god_shuffle(self):
+        shape = Sheet()
+        god_turns = 3
+        shuffled, shuffle_path = god(start=shape, seed=0)
+        self.assertNotEqual(shuffled, shape)
+        self.assertEqual(len(shuffle_path), god_turns)
+
+    @unittest.skip("This takes too long to compute (e.g. O(30+ mins)).")
+    def test_moderate_god_shuffle(self):
+        shape = Volume()
+        god_turns = 14
         shuffled, shuffle_path = god(start=shape, seed=0)
         self.assertNotEqual(shuffled, shape)
         self.assertEqual(len(shuffle_path), god_turns)

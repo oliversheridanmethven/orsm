@@ -26,10 +26,11 @@ class Square(Shape):
         super().__init__(*args, **kwargs)
         if len(self._array):
             return
-        for colour in self._colours:
-            self._faces.append([[colour.value for j in range(2)] for i in range(2)])
-            if len(self._faces) == 2:
-                break
+        if not self._faces:
+            for colour in self._colours:
+                self._faces.append([[colour.value for j in range(2)] for i in range(2)])
+                if len(self._faces) == 2:
+                    break
         assert len(self._faces) == 2, f"A {type(self).__name__} must have only 2 faces."
         for face in self._faces:
             assert np.shape(face) == (2, 2), f"A {type(self).__name__} face must only contain 4 tiles."

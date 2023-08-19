@@ -12,6 +12,7 @@ import random
 from rubik.paths.paths import Path
 from rubik.paths.moves import Move
 from functools import wraps
+from copy import deepcopy
 
 
 def _array_from_faces_at_end(func):
@@ -62,9 +63,12 @@ class Shape(ABC):
         self._args = args
         self._kwargs = kwargs
 
-    @_first_update_faces
     def __repr__(self):
-        obj = f"{type(self).__name__}(faces={self._faces})"
+        # NB ^ Do not wrap this! (The debugger calls the repr at each breakpoint), so wrappers can't have side effects.
+        # because we can't wrap it, we do a poor man's wrapping of @_first_update_faces acting on a new object instead.
+        # This is definitely a code smell...
+        new = type(self)(*self._args, array=self._array, **self._kwargs)
+        obj = f"{type(self).__name__}(array={new._array})"
         return obj
 
     @_first_update_faces
@@ -102,10 +106,15 @@ class Shape(ABC):
 
     def assign_tiles(self, *args, values, **kwargs):
         get_values = (i for i in values)
-        for face in self._faces:
-            for row in face:
-                for i in range(len(row)):
-                    row[i] = next(get_values)
+        tmp_faces = deepcopy(self._faces)
+        for f, face in enumerate(tmp_faces):
+            for r, row in enumerate(face):
+                for t, tile in enumerate(row):
+                    tmp_faces[f][r][t] = next(get_values)
+        self._faces = None
+        assert self._faces is None
+        self._faces = tmp_faces
+        pass
 
     def to_array(self, *args, **kwargs):
         def return_tile_value(tile):
@@ -120,10 +129,16 @@ class Shape(ABC):
         new.assign_tiles(values=array_values)
         return new
 
-    def move(self, *moves, **kwargs):
+    def move(self, *moves, copy_faces=False, **kwargs):
         if not moves:
             log.info(f"There are no moves specified for {type(self).__name__}")
         moved = type(self)(array=self._array, **kwargs)
+        if copy_faces:
+            # This is helpful in tests and debugging where we might want to perform a move
+            # on a shape where the face values aren't colours. Examples would be where the face
+            # values are indices, in which case this makes finding the lists of permutation indices
+            # easier to find.
+            moved._faces = deepcopy(self._faces)
         for move in moves:
             assert isinstance(move, (Move, int)), f"{move = } is of the wrong type: {type(move) = }"
             if isinstance(move, int):

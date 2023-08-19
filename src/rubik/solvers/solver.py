@@ -37,7 +37,6 @@ def check_solver_inputs(func):
     return check_solver_inputs_wrapper
 
 
-@profile
 def next_generation_of_moves(shapes_and_paths):
     """
     Compute the next generation of shapes that can be achieved

@@ -29,12 +29,12 @@ class Cube(Shape):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        for colour in self.colours:
-            self.faces.append([[colour.value for i in range(3)] for j in range(3)])
-            if len(self.faces) == 6:
+        for colour in self._colours:
+            self._faces.append([[colour.value for i in range(3)] for j in range(3)])
+            if len(self._faces) == 6:
                 break
-        assert len(self.faces) == 6, f"A {type(self).__name__} must have only 6 faces."
-        for face in self.faces:
+        assert len(self._faces) == 6, f"A {type(self).__name__} must have only 6 faces."
+        for face in self._faces:
             assert np.shape(face) == (3, 3), f"A {type(self).__name__} face must only contain 9 tiles."
 
     def moves(self):

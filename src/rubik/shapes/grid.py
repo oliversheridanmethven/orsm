@@ -29,12 +29,12 @@ class Grid(Shape):
 
     def __init__(self, *args, N, M, **kwargs):
         super().__init__(*args, **kwargs)
-        for colour in self.colours:
-            self.faces.append([[colour.value for m in range(M)] for n in range(N)])
-            if len(self.faces) == 2:
+        for colour in self._colours:
+            self._faces.append([[colour.value for m in range(M)] for n in range(N)])
+            if len(self._faces) == 2:
                 break
-        assert len(self.faces) == 2, f"A {type(self).__name__} must have only 2 faces."
-        for face in self.faces:
+        assert len(self._faces) == 2, f"A {type(self).__name__} must have only 2 faces."
+        for face in self._faces:
             assert np.shape(face) == (N, M), f"A {type(self).__name__} face must only contain NxM tiles."
 
     def moves(self):

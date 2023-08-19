@@ -11,6 +11,20 @@ import itertools
 import random
 from rubik.paths.paths import Path
 from rubik.paths.moves import Move
+from functools import wraps
+
+
+def _array_from_faces(func):
+    """Set the underlying array from an initialisation using faces."""
+
+    @wraps(func)
+    def _array_from_faces_at_end(self, *args, **kwargs):
+        func(self, *args, **kwargs)
+        log.debug(f"Updating the array from the faces definition")
+        if not len(self._array):
+            self._update_array()
+
+    return _array_from_faces_at_end
 
 
 class Shape(ABC):
@@ -18,28 +32,33 @@ class Shape(ABC):
     A collection of tiles in the form of some shape.
     """
 
-    def __init__(self, *args, faces=None, colours=None, **kwargs):
-        self.faces = [] if faces is None else faces
+    def _update_array(self):
+        self._array = self.to_array()
+
+    # @_array_from_faces
+    def __init__(self, *args, array=None, faces=None, colours=None, **kwargs):
+        self._faces = [] if faces is None else faces
         # TODO: Rather than a list of lists, make the faces a single contiguous numpy array and then
         # add some other data type which says how this is nicely partitioned for printing.
-        self.colours = Colours if colours is None else colours
+        self._colours = Colours if colours is None else colours
+        self._array = np.array([]) if array is None else array
 
     def __repr__(self):
-        obj = f"{type(self).__name__}(faces={self.faces})"
+        obj = f"{type(self).__name__}(faces={self._faces})"
         return obj
 
     def __str__(self):
         s = "\n"
-        for face in self.faces:
+        for face in self._faces:
             for tiles in face:
                 for tile in tiles:
-                    s += f"{self.colours(tile).colour(tile)} "
+                    s += f"{self._colours(tile).colour(tile)} "
                 s += "\n"
             s += "\n"
         return s
 
     def __eq__(self, other):
-        return self.faces == other.faces
+        return all(self._array == other._array)
 
     def __hash__(self):
         return hash(self.__repr__())
@@ -55,14 +74,14 @@ class Shape(ABC):
         return cls.clean_config(*args, **kwargs)
 
     def traverse_tiles(self, *args, function, **kwargs):
-        for face in self.faces:
+        for face in self._faces:
             for row in face:
                 for tile in row:
                     yield function(tile)
 
     def assign_tiles(self, *args, values, **kwargs):
         get_values = (i for i in values)
-        for face in self.faces:
+        for face in self._faces:
             for row in face:
                 for i in range(len(row)):
                     row[i] = next(get_values)
@@ -83,7 +102,7 @@ class Shape(ABC):
     def move(self, *moves, **kwargs):
         if not moves:
             log.info(f"There are no moves specified for {type(self).__name__}")
-        moved = type(self)(faces=self.faces, **kwargs)
+        moved = type(self)(array=self._array, **kwargs)
         for move in moves:
             assert isinstance(move, (Move, int)), f"{move = } is of the wrong type: {type(move) = }"
             if isinstance(move, int):
@@ -100,7 +119,7 @@ class Shape(ABC):
         """Produces a shuffled cube, and lists how it got there."""
         assert isinstance(turns, int) and turns >= 0, f"Invalid amount of {turns = } specified."
         path = Path(self)
-        shuffled = type(self)(faces=self.faces, **kwargs)
+        shuffled = type(self)(faces=self._faces, **kwargs)
         if turns == 0:
             return shuffled, path
         if seed or (isinstance(seed, int) and type(seed) != bool):

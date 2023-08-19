@@ -3,7 +3,7 @@
 from common.logger import log
 from common.cli import setup_standard_parser
 from itertools import product
-from volume import Volume
+from rubik.shapes import Volume
 
 if __name__ == "__main__":
 

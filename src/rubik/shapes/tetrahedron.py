@@ -28,12 +28,12 @@ class Tetrahedron(Shape):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        for colour in self.colours:
-            self.faces.append([[colour.value], [colour.value for i in range(3)]])
-            if len(self.faces) == 4:
+        for colour in self._colours:
+            self._faces.append([[colour.value], [colour.value for i in range(3)]])
+            if len(self._faces) == 4:
                 break
-        assert len(self.faces) == 4, f"A {type(self).__name__} must have only 4 faces."
-        for face in self.faces:
+        assert len(self._faces) == 4, f"A {type(self).__name__} must have only 4 faces."
+        for face in self._faces:
             assert [len(row) for row in face] == [1, 3], f"A {type(self).__name__} face must only contain 16 tiles."
 
     def moves(self):

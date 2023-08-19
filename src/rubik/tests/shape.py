@@ -59,7 +59,7 @@ class BasicProperties(unittest.TestCase):
 
         for name, shape_class in self.names_and_shapes_classes:
             shape = shape_class(*self.args, **self.kwargs)
-            ids = list(traverse_rows(shape.faces, id))
+            ids = list(traverse_rows(shape._faces, id))
             self.assertEqual(len(ids), len(set(ids)), f"There are duplicate memory locations used to store the tiles in {name}. Not suitable for swapping operations.")
 
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from .shape import Shape
+from .shape import Shape, _array_from_faces
 from common.logger import log
 from copy import deepcopy
 from rubik.paths.moves import Move
@@ -27,19 +27,19 @@ class Volume(Shape):
     def __str__(self):
         """Try to show the cube in a very pictorial way."""
         'front 0  back 1  right 2  left 3  top 4  bottom 5'
-        top = self.faces[4]
-        front = self.faces[0]
-        right = self.faces[2]
-        left = self.faces[3]
-        back = self.faces[1]
-        bottom = self.faces[5]
+        top = self._faces[4]
+        front = self._faces[0]
+        right = self._faces[2]
+        left = self._faces[3]
+        back = self._faces[1]
+        bottom = self._faces[5]
         s = "\n\n"
         indent = 5
         indenting = indent + 3
         for row in top:
             s += ' ' * indenting
             for tile in row:
-                s += f"{self.colours(tile).colour(tile)} "
+                s += f"{self._colours(tile).colour(tile)} "
             s += '\n'
             indenting -= 1
         bars = '-' * len(row) * 2
@@ -47,102 +47,80 @@ class Volume(Shape):
         for left_row, front_row, right_row, back_row in zip(left, front, right, back):
             s += "\n"
             for tile in left_row:
-                s += f"{self.colours(tile).colour(tile)} "
+                s += f"{self._colours(tile).colour(tile)} "
             s += ': '
             for tile in front_row:
-                s += f"{self.colours(tile).colour(tile)} "
+                s += f"{self._colours(tile).colour(tile)} "
             s += ': '
             for tile in right_row:
-                s += f"{self.colours(tile).colour(tile)} "
+                s += f"{self._colours(tile).colour(tile)} "
             s += ': '
             for tile in back_row:
-                s += f"{self.colours(tile).colour(tile)} "
+                s += f"{self._colours(tile).colour(tile)} "
         s += "\n" + ' ' * indent + "\\" + bars + "\\"
         for row in bottom:
             s += '\n'
             indenting += 1
             s += ' ' * indenting
             for tile in row:
-                s += f"{self.colours(tile).colour(tile)} "
+                s += f"{self._colours(tile).colour(tile)} "
         s += "\n\n"
         return s
 
+    @_array_from_faces
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        if not self.faces:
-            for colour in self.colours:
-                self.faces.append([[colour.value for i in range(2)] for j in range(2)])
-                if len(self.faces) == 6:
+        if not self._faces:
+            for colour in self._colours:
+                self._faces.append([[colour.value for i in range(2)] for j in range(2)])
+                if len(self._faces) == 6:
                     break
-        assert len(self.faces) == 6, f"A {type(self).__name__} must have only 6 faces."
-        for face in self.faces:
-            assert np.shape(face) == (2, 2), f"A {type(self).__name__} face must only contain 4 tiles."
+            assert len(self._faces) == 6, f"A {type(self).__name__} must have only 6 faces."
+            for face in self._faces:
+                assert np.shape(face) == (2, 2), f"A {type(self).__name__} face must only contain 4 tiles."
 
     class move_1(Move):
         """Move the bottom (front -> right)."""
 
-        @profile
+        # @profile
         def __call__(self, *args, shape, reverse=False, **kwargs):
-            faces = deepcopy(shape.faces)
+            array = shape._array
             if not reverse:
-                # Moving the row.
-                faces[0][1], faces[2][1], faces[1][1], faces[3][1] = faces[3][1], faces[0][1], faces[2][1], faces[1][1]
-                # Moving the face.
-                faces[5][0][0], faces[5][0][1], faces[5][1][1], faces[5][1][0] = faces[5][1][0], faces[5][0][0], faces[5][0][1], faces[5][1][1]
+                array = array[[0, 1, 14, 15, 4, 5, 10, 11, 8, 9, 2, 3, 12, 13, 6, 7, 16, 17, 18, 19, 22, 20, 23, 21]]
             else:
-                faces[3][1], faces[0][1], faces[2][1], faces[1][1] = faces[0][1], faces[2][1], faces[1][1], faces[3][1]
-                faces[5][1][0], faces[5][0][0], faces[5][0][1], faces[5][1][1] = faces[5][0][0], faces[5][0][1], faces[5][1][1], faces[5][1][0]
-            assert shape.faces != faces, f"The faces should have changed and should be different."
-            return type(self.shape)(*args, faces=faces, **kwargs)
+                array = array[[0, 1, 10, 11, 4, 5, 14, 15, 8, 9, 6, 7, 12, 13, 2, 3, 16, 17, 18, 19, 21, 23, 20, 22]]
+            return type(shape)(array=array)
 
     class move_2(Move):
         """Move the right (front -> top)."""
 
-        @profile
+        # @profile
         def __call__(self, *args, shape, reverse=False, **kwargs):
-            faces = deepcopy(shape.faces)
+            array = shape._array
             if not reverse:
-                # Moving the row.
-                faces[0][0][1], faces[0][1][1], faces[5][0][1], faces[5][1][1], faces[1][1][0], faces[1][0][0], faces[4][0][1], faces[4][1][1] = \
-                    faces[5][0][1], faces[5][1][1], faces[1][1][0], faces[1][0][0], faces[4][0][1], faces[4][1][1], faces[0][0][1], faces[0][1][1],
-                # Moving the face.
-                faces[2][0][0], faces[2][0][1], faces[2][1][1], faces[2][1][0] = faces[2][1][0], faces[2][0][0], faces[2][0][1], faces[2][1][1]
+                array = array[[0, 21, 2, 23, 19, 5, 17, 7, 10, 8, 11, 9, 12, 13, 14, 15, 16, 1, 18, 3, 20, 6, 22, 4]]
             else:
-                # Moving the row.
-                faces[5][0][1], faces[5][1][1], faces[1][1][0], faces[1][0][0], faces[4][0][1], faces[4][1][1], faces[0][0][1], faces[0][1][1] = \
-                    faces[0][0][1], faces[0][1][1], faces[5][0][1], faces[5][1][1], faces[1][1][0], faces[1][0][0], faces[4][0][1], faces[4][1][1]
-                # Moving the face.
-                faces[2][1][0], faces[2][0][0], faces[2][0][1], faces[2][1][1] = faces[2][0][0], faces[2][0][1], faces[2][1][1], faces[2][1][0]
-
-            assert shape.faces != faces, f"The faces should have changed and should be different."
-            return type(self.shape)(*args, faces=faces, **kwargs)
+                array = array[[0, 17, 2, 19, 23, 5, 21, 7, 9, 11, 8, 10, 12, 13, 14, 15, 16, 6, 18, 4, 20, 1, 22, 3]]
+            return type(shape)(array=array)
 
     class move_3(Move):
         """Move the back (top -> left)."""
 
-        @profile
+        # @profile
         def __call__(self, *args, shape, reverse=False, **kwargs):
-            faces = deepcopy(shape.faces)
+            array = shape._array
             if not reverse:
-                # Moving the row.
-                faces[4][0][0], faces[4][0][1], faces[2][0][1], faces[2][1][1], faces[5][1][1], faces[5][1][0], faces[3][1][0], faces[3][0][0] = \
-                    faces[2][0][1], faces[2][1][1], faces[5][1][1], faces[5][1][0], faces[3][1][0], faces[3][0][0], faces[4][0][0], faces[4][0][1]
-                # Moving the face.
-                faces[1][0][0], faces[1][0][1], faces[1][1][1], faces[1][1][0] = faces[1][1][0], faces[1][0][0], faces[1][0][1], faces[1][1][1]
+                array = array[[0, 1, 2, 3, 6, 4, 7, 5, 8, 23, 10, 22, 17, 13, 16, 15, 9, 11, 18, 19, 20, 21, 12, 14]]
             else:
-                # Moving the row.
-                faces[2][0][1], faces[2][1][1], faces[5][1][1], faces[5][1][0], faces[3][1][0], faces[3][0][0], faces[4][0][0], faces[4][0][1] = \
-                    faces[4][0][0], faces[4][0][1], faces[2][0][1], faces[2][1][1], faces[5][1][1], faces[5][1][0], faces[3][1][0], faces[3][0][0]
-                # Moving the face.
-                faces[1][1][0], faces[1][0][0], faces[1][0][1], faces[1][1][1] = faces[1][0][0], faces[1][0][1], faces[1][1][1], faces[1][1][0]
-            assert shape.faces != faces, f"The faces should have changed and should be different."
-            return type(self.shape)(*args, faces=faces, **kwargs)
+                array = array[[0, 1, 2, 3, 5, 7, 4, 6, 8, 16, 10, 17, 22, 13, 23, 15, 14, 12, 18, 19, 20, 21, 11, 9]]
+            return type(shape)(array=array)
 
     _moves = {i: move for i, move in enumerate([move_1, move_2, move_3])}
 
     @classmethod
     def moves(cls, *args, **kwargs):
-        return [move for move in cls._moves]
+        # return [move for move in cls._moves]
+        return [move(shape=cls()) for move in cls._moves.values()]
 
 
 if __name__ == "__main__":

@@ -47,12 +47,12 @@ class Sheet(Shape):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         shapes = [(2, 2), (2, 2), (2, 1), (2, 1), (1, 2), (1, 2)]
-        for colour, shape in zip(self.colours, shapes):
-            self.faces.append([[colour.value for i in range(shape[1])] for j in range(shape[0])])
-            if len(self.faces) == 6:
+        for colour, shape in zip(self._colours, shapes):
+            self._faces.append([[colour.value for i in range(shape[1])] for j in range(shape[0])])
+            if len(self._faces) == 6:
                 break
-        assert len(self.faces) == 6, f"A {type(self).__name__} must have only 6 faces."
-        assert [np.shape(face) for face in self.faces] == shapes, f"A {type(self).__name__} face must only contain 16 tiles in the specific shape: {shapes}"
+        assert len(self._faces) == 6, f"A {type(self).__name__} must have only 6 faces."
+        assert [np.shape(face) for face in self._faces] == shapes, f"A {type(self).__name__} face must only contain 16 tiles in the specific shape: {shapes}"
 
     def moves(self):
         raise NotImplementedError

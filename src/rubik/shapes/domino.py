@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from .shape import Shape
+from .shape import Shape, _array_from_faces
 from common.logger import log
 from copy import deepcopy
 from rubik.paths.moves import Move
@@ -21,27 +21,24 @@ class Domino(Shape):
 
     """
 
+    @_array_from_faces
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        if not self.faces:
-            for colour in self.colours:
-                self.faces.append([[colour.value] for i in range(2)])
-                if len(self.faces) == 2:
+        if not self._faces:
+            for colour in self._colours:
+                self._faces.append([[colour.value] for i in range(2)])
+                if len(self._faces) == 2:
                     break
-        assert len(self.faces) == 2, f"A {type(self).__name__} must have only 2 faces."
-        for face in self.faces:
+        assert len(self._faces) == 2, f"A {type(self).__name__} must have only 2 faces."
+        for face in self._faces:
             assert np.shape(face) == (2, 1), f"A {type(self).__name__} face must only contain 2 tiles."
 
     class move_1(Move):
         def __call__(self, *args, shape, reverse=False, **kwargs):
-            faces = deepcopy(shape.faces)
-            log.debug(f"The original {shape.faces = }")
+            array = shape._array
             # This is the same whether we are in reverse or not...
-            faces[1][1][0], faces[0][1][0] = faces[0][1][0], faces[1][1][0]
-            log.debug(f"After swapping {faces = }")
-            log.debug(f"The input face after the swapping {shape.faces = }")
-            assert shape.faces != faces, f"The faces should have changed and should be different."
-            return type(self.shape)(*args, faces=faces, **kwargs)
+            array = array[[0, 3, 2, 1]]
+            return type(shape)(array=array)
 
     def moves(self, *args, **kwargs):
 

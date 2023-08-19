@@ -3,6 +3,7 @@
 from rubik.paths.paths import Path
 from rubik.solvers.solver import Solver, check_solver_inputs, next_generation_of_moves
 from common.logger import log
+from common.profiling import profile
 
 
 class MeetInMiddle(Solver):
@@ -11,6 +12,7 @@ class MeetInMiddle(Solver):
     """
 
     @check_solver_inputs
+    @profile
     def solve(self, *args, start, target, **kwargs):
 
         turns = 0

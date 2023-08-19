@@ -58,23 +58,4 @@ def next_generation_of_moves(shapes_and_paths):
 
 
 if __name__ == "__main__":
-    from common.cli import setup_standard_parser
-    from rubik.shapes.shape import Volume
-
-    parser = setup_standard_parser(description=__doc__)
-    parser.add_argument("--brute_force", help="Demo the brute force solver.", action="store_true")
-    parser.add_argument("--meet_in_middle", help="Demo the meet in the middle solver.", action="store_true")
-    parser.add_argument("--shuffle", type=int, metavar="TURNS", help="The amount of turns to do.", default=10)
-    parser.add_argument("--seed", type=int, metavar="INT", help="Seed the randomness.")
-    parser.add_argument("--profile", help="Enable profiling.", action="store_true")
-    kwargs = vars(parser.parse_args())
-    if kwargs["profile"]:
-        profiler.enable_by_count()
-    shape = Volume()
-    shuffled, shuffle_path = shape.shuffle(turns=kwargs["shuffle"], seed=kwargs["seed"])
-    if kwargs["brute_force"]:
-        solution_path = BruteForce().solve(start=shape, target=shuffled)
-    if kwargs["meet_in_middle"]:
-        solution_path = MeetInMiddle().solve(start=shape, target=shuffled)
-    if kwargs["profile"]:
-        profiler.print_stats()
+    pass

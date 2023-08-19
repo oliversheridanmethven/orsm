@@ -7,7 +7,6 @@ from common.logger import log
 from rubik.colours.default_colours import Colours
 import numpy as np
 from abc import ABC, abstractmethod
-from copy import deepcopy
 import itertools
 import random
 from rubik.paths.paths import Path
@@ -60,8 +59,11 @@ class Shape(ABC):
             log.info(f"There are no moves specified for {type(self).__name__}")
         moved = type(self)(faces=self.faces, **kwargs)
         for move in moves:
-            assert isinstance(move, Move)
+            assert isinstance(move, (Move, int)), f"{move = } is of the wrong type: {type(move) = }"
+            if isinstance(move, int):
+                move = self._moves[move](shape=self)
             moved = move(shape=moved, **kwargs)
+
         return moved
 
     @abstractmethod

@@ -134,8 +134,11 @@ class Volume(Shape):
             assert shape.faces != faces, f"The faces should have changed and should be different."
             return type(self.shape)(*args, faces=faces, **kwargs)
 
-    def moves(self, *args, **kwargs):
-        return [move(*args, shape=self, **kwargs) for move in [self.move_1, self.move_2, self.move_3]]
+    _moves = {i: move for i, move in enumerate([move_1, move_2, move_3])}
+
+    @classmethod
+    def moves(cls, *args, **kwargs):
+        return [move for move in cls._moves]
 
 
 if __name__ == "__main__":

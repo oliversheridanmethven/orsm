@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import logging
 import unittest
-from rubik.shapes import shape as Shape
+from rubik import shapes
 from rubik.colours.default_colours import Colours
 from common.variables import variable_names_and_objects
 import itertools
@@ -14,16 +14,16 @@ class BasicProperties(unittest.TestCase):
     def setUp(self):
         self.kwargs = {"N": 3, "M": 4}
         self.args = []
-        self.names_and_shapes_classes = variable_names_and_objects(Shape.Tile,
-                                                                   Shape.Domino,
-                                                                   Shape.Strip,
-                                                                   Shape.Square,
-                                                                   Shape.Grid,
-                                                                   Shape.Sheet,
-                                                                   Shape.Volume,
-                                                                   Shape.Cube,
-                                                                   Shape.Triangle,
-                                                                   Shape.Tetrahedron,
+        self.names_and_shapes_classes = variable_names_and_objects(shapes.Tile,
+                                                                   shapes.Domino,
+                                                                   shapes.Strip,
+                                                                   shapes.Square,
+                                                                   shapes.Grid,
+                                                                   shapes.Sheet,
+                                                                   shapes.Volume,
+                                                                   shapes.Cube,
+                                                                   shapes.Triangle,
+                                                                   shapes.Tetrahedron,
                                                                    )
 
     def test_printing(self):
@@ -62,7 +62,7 @@ class BasicProperties(unittest.TestCase):
 class Moves(unittest.TestCase):
 
     def test_single_moves_domino(self):
-        shape = Shape.Domino()
+        shape = shapes.Domino()
         for move in shape.moves():
             shape_moved = shape.move(move)
             self.assertEqual(shape, shape.solved_config())
@@ -73,7 +73,7 @@ class Moves(unittest.TestCase):
             self.assertEqual(shape_reverted, shape)
 
     def test_double_moves_domino(self):
-        shape = Shape.Domino()
+        shape = shapes.Domino()
         for move_1, move_2 in itertools.product(*[shape.moves() for i in range(2)]):
             shape_moved_once = shape.move(move_1)
             shape_moved_twice = shape_moved_once.move(move_2)
@@ -88,7 +88,7 @@ class Moves(unittest.TestCase):
             self.assertEqual(shape_reverted_out_of_order, shape)
 
     def test_same_moves_compare_equal(self):
-        shape = Shape.Volume()
+        shape = shapes.Volume()
         for id_1, move_1 in enumerate(shape.moves()):
             for id_2, move_2 in enumerate(shape.moves()):
                 if id_1 == id_2:
@@ -97,7 +97,7 @@ class Moves(unittest.TestCase):
                     self.assertNotEqual(move_1, move_2)
 
     def test_double_moves_volume(self):
-        shape = Shape.Volume()
+        shape = shapes.Volume()
         for direction in [True, False]:
             other_direction = not direction
             for move_1, move_2 in itertools.product(*[shape.moves() for i in range(2)]):
@@ -116,7 +116,7 @@ class Moves(unittest.TestCase):
                     self.assertNotEqual(shape_reverted_out_of_order, shape)
 
     def test_rotational_symmetry(self):
-        shape = Shape.Volume()
+        shape = shapes.Volume()
         for direction in [True, False]:
             other_direction = not direction
             for move in shape.moves():
@@ -130,7 +130,7 @@ class Moves(unittest.TestCase):
 
     def test_shuffle(self):
         for turns in range(10):
-            shape = Shape.Volume()
+            shape = shapes.Volume()
             shuffled, path = shape.shuffle(turns=turns)
             log.info(f"The target shuffled cube is: {shuffled}")
             log.debug(f"Obtained by:")
@@ -153,19 +153,19 @@ class Moves(unittest.TestCase):
             self.assertEqual(reverted, shape)
 
     def test_moves_give_new_objects(self):
-        shape = Shape.Volume()
+        shape = shapes.Volume()
         for moves in all_combinations(shape.moves()):
             for reverse in [True, False]:
                 self.assertIsNot(shape, shape.move(*moves, reverse=reverse))
 
     def test_shuffles_give_new_objects(self):
-        shape = Shape.Volume()
+        shape = shapes.Volume()
         for turns in range(5):
             self.assertIsNot(shape, shape.shuffle(turns))
 
     def test_shuffle_seeding(self):
-        shape_1 = Shape.Volume()
-        shape_2 = Shape.Volume()
+        shape_1 = shapes.Volume()
+        shape_2 = shapes.Volume()
         for seed in [False, 0]:
             while True:
                 shuffle_1, path_1 = shape_1.shuffle(seed=seed)

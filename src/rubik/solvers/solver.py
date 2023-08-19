@@ -37,30 +37,6 @@ def check_solver_inputs(func):
     return check_solver_inputs_wrapper
 
 
-class BruteForce(Solver):
-    """
-    A brute force solver.
-    """
-
-    @profile
-    @check_solver_inputs
-    def solve(self, *args, start, target, **kwargs):
-
-        path = Path(start)
-        shapes_and_paths = {start: path}
-
-        turns = 0
-        while True:
-            if target in shapes_and_paths:
-                path = shapes_and_paths[target]
-                log.info(f"Found the path {path}")
-                return path
-            # We generate the next generation of shapes.
-            log.info(f"Exploring all combinations with {turns = }")
-            shapes_and_paths = next_generation_of_moves(shapes_and_paths)
-            turns += 1
-
-
 def next_generation_of_moves(shapes_and_paths):
     """
     Compute the next generation of shapes that can be achieved
@@ -79,37 +55,6 @@ def next_generation_of_moves(shapes_and_paths):
                 assert len(moved_path) == len(path) + 1, f"The path has not increased enough."
                 shapes_and_paths_next[moved] = moved_path
     return shapes_and_paths_next
-
-
-class MeetInMiddle(Solver):
-    """
-    A "meet in the middle" solver.
-    """
-
-    @check_solver_inputs
-    def solve(self, *args, start, target, **kwargs):
-
-        turns = 0
-        shape_and_path_fronts = [{endpoint: Path(endpoint)} for endpoint in [target, start]]
-        while True:
-            shape_and_path_front_1, shape_and_path_front_2 = shape_and_path_fronts
-            if (overlaps := shape_and_path_front_1.keys() & shape_and_path_front_2.keys()):
-                log.info(f"We have found {len(overlaps)} solutions with {turns = }.")
-                break
-            shape_and_path_fronts = shape_and_path_fronts[::-1]
-            shape_and_path_fronts[0] = next_generation_of_moves(shape_and_path_fronts[0])
-            turns += 1
-
-        shape_and_path_fronts = shape_and_path_fronts if turns % 2 != 0 else reversed(shape_and_path_fronts)
-        overlap = overlaps.pop()
-        log.debug(f"The item that overlaps from both sets is {overlap = !s}")
-        starting_path, finishing_path = [front[overlap] for front in shape_and_path_fronts]
-        finishing_path = reversed(finishing_path)
-        total_path = starting_path + finishing_path
-        assert len(total_path) == turns, f"Our {total_path = } consists of more {turns = } than we have counted."
-        log.debug(f"The starting_path = \n{starting_path}\nand finishing_path = \n{finishing_path}")
-        log.info(f"The solution path we have found was: {total_path}")
-        return total_path
 
 
 if __name__ == "__main__":

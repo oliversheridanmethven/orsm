@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 import logging
 import unittest
-from rubik.shapes import shape as Shape
-from rubik.solvers.solver import BruteForce, MeetInMiddle
+from rubik import shapes
+from rubik.solvers.brute_force import BruteForce
+from rubik.solvers.meet_in_middle import MeetInMiddle
 from common.cli import unit_test_parse
 from common.variables import variable_names_and_objects
 from common.logger import log
@@ -12,7 +13,7 @@ class Solvers(unittest.TestCase):
     def test_solvers(self):
         for name, Solver in variable_names_and_objects(BruteForce, MeetInMiddle):
             solver = Solver()
-            shape = Shape.Volume()
+            shape = shapes.Volume()
             for turns in range(5):
                 shuffled, shuffle_path = shape.shuffle(turns=turns, seed=0)
                 solution_path = solver.solve(start=shape, target=shuffled)

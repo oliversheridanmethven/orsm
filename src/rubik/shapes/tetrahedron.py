@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from .shape import Shape
+from .shape import Shape, _array_from_faces_at_end
 from common.logger import log
 from copy import deepcopy
 from rubik.paths.moves import Move
@@ -26,6 +26,7 @@ class Tetrahedron(Shape):
     The face ordering is [front, right, left, bottom]
     """
 
+    @_array_from_faces_at_end
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for colour in self._colours:

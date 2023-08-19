@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from .shape import Shape, _array_from_faces
+from .shape import Shape, _array_from_faces_at_end
 from common.logger import log
 from copy import deepcopy
 from rubik.paths.moves import Move
@@ -67,7 +67,7 @@ class Volume(Shape):
         s += "\n\n"
         return s
 
-    @_array_from_faces
+    @_array_from_faces_at_end
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if not self._faces:

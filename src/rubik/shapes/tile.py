@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import numpy as np
-from .shape import Shape
+from .shape import Shape, _array_from_faces_at_end
 
 
 class Tile(Shape):
@@ -15,6 +15,7 @@ class Tile(Shape):
 
     """
 
+    @_array_from_faces_at_end
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if not self._faces:

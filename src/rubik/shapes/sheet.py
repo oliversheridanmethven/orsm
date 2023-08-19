@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from .shape import Shape
+from .shape import Shape, _array_from_faces_at_end
 from common.logger import log
 from copy import deepcopy
 from rubik.paths.moves import Move
@@ -44,6 +44,7 @@ class Sheet(Shape):
     where the upper left of each face is the (0,0) entry.
     """
 
+    @_array_from_faces_at_end
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         shapes = [(2, 2), (2, 2), (2, 1), (2, 1), (1, 2), (1, 2)]

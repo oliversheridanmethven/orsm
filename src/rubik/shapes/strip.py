@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from .shape import Shape
+from .shape import Shape, _array_from_faces_at_end
 from common.logger import log
 from copy import deepcopy
 from rubik.paths.moves import Move
@@ -29,8 +29,9 @@ class Strip(Shape):
 
     """
 
+    @_array_from_faces_at_end
     def __init__(self, *args, N, **kwargs):
-        super().__init__(*args, **kwargs)
+        super().__init__(*args, N=N, **kwargs)
         assert N >= 2, "A strip must be longer than 2."
         for colour in self._colours:
             self._faces.append([[colour.value] for i in range(N)])

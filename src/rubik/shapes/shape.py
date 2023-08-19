@@ -14,17 +14,28 @@ from rubik.paths.moves import Move
 from functools import wraps
 
 
-def _array_from_faces(func):
+def _array_from_faces_at_end(func):
     """Set the underlying array from an initialisation using faces."""
 
     @wraps(func)
-    def _array_from_faces_at_end(self, *args, **kwargs):
-        func(self, *args, **kwargs)
-        log.debug(f"Updating the array from the faces definition")
+    def _array_from_faces_at_end_wrapper(self, *args, **kwargs):
+        res = func(self, *args, **kwargs)
         if not len(self._array):
             self._update_array()
+        return res
 
-    return _array_from_faces_at_end
+    return _array_from_faces_at_end_wrapper
+
+
+def _first_update_faces(func):
+    """We ensure the faces are up to date before calling the function."""
+
+    @wraps(func)
+    def _first_update_faces_wrapper(self, *args, **kwargs):
+        self._update_faces()
+        return func(self, *args, **kwargs)
+
+    return _first_update_faces_wrapper
 
 
 class Shape(ABC):
@@ -35,18 +46,28 @@ class Shape(ABC):
     def _update_array(self):
         self._array = self.to_array()
 
+    def _update_faces(self):
+        new = self.clean_config(*self._args, **self._kwargs)
+        # The above ensures we have the correct set of nested lists.
+        values = (i for i in self._array)
+        new.assign_tiles(values=values)
+        self._faces = new._faces
+
     # @_array_from_faces
     def __init__(self, *args, array=None, faces=None, colours=None, **kwargs):
-        self._faces = [] if faces is None else faces
-        # TODO: Rather than a list of lists, make the faces a single contiguous numpy array and then
-        # add some other data type which says how this is nicely partitioned for printing.
-        self._colours = Colours if colours is None else colours
         self._array = np.array([]) if array is None else array
+        # The _array is our underlying invariant which will always be in a correct state.
+        self._colours = Colours if colours is None else colours
+        self._faces = [] if faces is None else faces
+        self._args = args
+        self._kwargs = kwargs
 
+    @_first_update_faces
     def __repr__(self):
         obj = f"{type(self).__name__}(faces={self._faces})"
         return obj
 
+    @_first_update_faces
     def __str__(self):
         s = "\n"
         for face in self._faces:

@@ -73,15 +73,15 @@ src/binding/examples/CMakeFiles/examples.dir/examples.c.o: src/binding/examples/
 src/binding/examples/CMakeFiles/examples.dir/examples.c.o: /Users/oliver/ClionProjects/testing/src/binding/examples/examples.c
 src/binding/examples/CMakeFiles/examples.dir/examples.c.o: src/binding/examples/CMakeFiles/examples.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/binding/examples/CMakeFiles/examples.dir/examples.c.o"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/binding/examples/CMakeFiles/examples.dir/examples.c.o -MF CMakeFiles/examples.dir/examples.c.o.d -o CMakeFiles/examples.dir/examples.c.o -c /Users/oliver/ClionProjects/testing/src/binding/examples/examples.c
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/binding/examples/CMakeFiles/examples.dir/examples.c.o -MF CMakeFiles/examples.dir/examples.c.o.d -o CMakeFiles/examples.dir/examples.c.o -c /Users/oliver/ClionProjects/testing/src/binding/examples/examples.c
 
 src/binding/examples/CMakeFiles/examples.dir/examples.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/examples.dir/examples.c.i"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/binding/examples/examples.c > CMakeFiles/examples.dir/examples.c.i
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/binding/examples/examples.c > CMakeFiles/examples.dir/examples.c.i
 
 src/binding/examples/CMakeFiles/examples.dir/examples.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/examples.dir/examples.c.s"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/binding/examples/examples.c -o CMakeFiles/examples.dir/examples.c.s
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/binding/examples/examples.c -o CMakeFiles/examples.dir/examples.c.s
 
 # Object files for target examples
 examples_OBJECTS = \

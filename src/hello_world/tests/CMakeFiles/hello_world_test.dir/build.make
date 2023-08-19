@@ -73,15 +73,15 @@ src/hello_world/tests/CMakeFiles/hello_world_test.dir/hello_world.c.o: src/hello
 src/hello_world/tests/CMakeFiles/hello_world_test.dir/hello_world.c.o: src/hello_world/tests/hello_world.c
 src/hello_world/tests/CMakeFiles/hello_world_test.dir/hello_world.c.o: src/hello_world/tests/CMakeFiles/hello_world_test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oliver/ClionProjects/testing/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/hello_world/tests/CMakeFiles/hello_world_test.dir/hello_world.c.o"
-	cd /Users/oliver/ClionProjects/testing/src/hello_world/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/hello_world/tests/CMakeFiles/hello_world_test.dir/hello_world.c.o -MF CMakeFiles/hello_world_test.dir/hello_world.c.o.d -o CMakeFiles/hello_world_test.dir/hello_world.c.o -c /Users/oliver/ClionProjects/testing/src/hello_world/tests/hello_world.c
+	cd /Users/oliver/ClionProjects/testing/src/hello_world/tests && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/hello_world/tests/CMakeFiles/hello_world_test.dir/hello_world.c.o -MF CMakeFiles/hello_world_test.dir/hello_world.c.o.d -o CMakeFiles/hello_world_test.dir/hello_world.c.o -c /Users/oliver/ClionProjects/testing/src/hello_world/tests/hello_world.c
 
 src/hello_world/tests/CMakeFiles/hello_world_test.dir/hello_world.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hello_world_test.dir/hello_world.c.i"
-	cd /Users/oliver/ClionProjects/testing/src/hello_world/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/hello_world/tests/hello_world.c > CMakeFiles/hello_world_test.dir/hello_world.c.i
+	cd /Users/oliver/ClionProjects/testing/src/hello_world/tests && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/hello_world/tests/hello_world.c > CMakeFiles/hello_world_test.dir/hello_world.c.i
 
 src/hello_world/tests/CMakeFiles/hello_world_test.dir/hello_world.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hello_world_test.dir/hello_world.c.s"
-	cd /Users/oliver/ClionProjects/testing/src/hello_world/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/hello_world/tests/hello_world.c -o CMakeFiles/hello_world_test.dir/hello_world.c.s
+	cd /Users/oliver/ClionProjects/testing/src/hello_world/tests && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/hello_world/tests/hello_world.c -o CMakeFiles/hello_world_test.dir/hello_world.c.s
 
 # Object files for target hello_world_test
 hello_world_test_OBJECTS = \

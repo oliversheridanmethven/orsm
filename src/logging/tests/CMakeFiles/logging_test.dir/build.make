@@ -73,15 +73,15 @@ src/logging/tests/CMakeFiles/logging_test.dir/logging.c.o: src/logging/tests/CMa
 src/logging/tests/CMakeFiles/logging_test.dir/logging.c.o: src/logging/tests/logging.c
 src/logging/tests/CMakeFiles/logging_test.dir/logging.c.o: src/logging/tests/CMakeFiles/logging_test.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oliver/ClionProjects/testing/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/logging/tests/CMakeFiles/logging_test.dir/logging.c.o"
-	cd /Users/oliver/ClionProjects/testing/src/logging/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/logging/tests/CMakeFiles/logging_test.dir/logging.c.o -MF CMakeFiles/logging_test.dir/logging.c.o.d -o CMakeFiles/logging_test.dir/logging.c.o -c /Users/oliver/ClionProjects/testing/src/logging/tests/logging.c
+	cd /Users/oliver/ClionProjects/testing/src/logging/tests && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/logging/tests/CMakeFiles/logging_test.dir/logging.c.o -MF CMakeFiles/logging_test.dir/logging.c.o.d -o CMakeFiles/logging_test.dir/logging.c.o -c /Users/oliver/ClionProjects/testing/src/logging/tests/logging.c
 
 src/logging/tests/CMakeFiles/logging_test.dir/logging.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/logging_test.dir/logging.c.i"
-	cd /Users/oliver/ClionProjects/testing/src/logging/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/logging/tests/logging.c > CMakeFiles/logging_test.dir/logging.c.i
+	cd /Users/oliver/ClionProjects/testing/src/logging/tests && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/logging/tests/logging.c > CMakeFiles/logging_test.dir/logging.c.i
 
 src/logging/tests/CMakeFiles/logging_test.dir/logging.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/logging_test.dir/logging.c.s"
-	cd /Users/oliver/ClionProjects/testing/src/logging/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/logging/tests/logging.c -o CMakeFiles/logging_test.dir/logging.c.s
+	cd /Users/oliver/ClionProjects/testing/src/logging/tests && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/logging/tests/logging.c -o CMakeFiles/logging_test.dir/logging.c.s
 
 # Object files for target logging_test
 logging_test_OBJECTS = \

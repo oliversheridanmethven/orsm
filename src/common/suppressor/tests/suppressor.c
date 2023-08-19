@@ -7,12 +7,11 @@ char *some_string;
 void initialise_suppressor(void) {
     redirect_all_stdout();
     some_string = "Something";
-    suppressing_start();
-
+    cr_assert_not(suppressing_start());
 }
 
 void finalise_suppressor(void) {
-    suppressing_stop();
+    cr_assert_not(suppressing_stop());
 }
 
 TestSuite(suppressor, .init=initialise_suppressor, .fini=finalise_suppressor);

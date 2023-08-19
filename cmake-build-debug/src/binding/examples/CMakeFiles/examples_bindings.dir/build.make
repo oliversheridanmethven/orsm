@@ -73,29 +73,29 @@ src/binding/examples/CMakeFiles/examples_bindings.dir/examples_bindings.c.o: src
 src/binding/examples/CMakeFiles/examples_bindings.dir/examples_bindings.c.o: /Users/oliver/ClionProjects/testing/src/binding/examples/examples_bindings.c
 src/binding/examples/CMakeFiles/examples_bindings.dir/examples_bindings.c.o: src/binding/examples/CMakeFiles/examples_bindings.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/binding/examples/CMakeFiles/examples_bindings.dir/examples_bindings.c.o"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/binding/examples/CMakeFiles/examples_bindings.dir/examples_bindings.c.o -MF CMakeFiles/examples_bindings.dir/examples_bindings.c.o.d -o CMakeFiles/examples_bindings.dir/examples_bindings.c.o -c /Users/oliver/ClionProjects/testing/src/binding/examples/examples_bindings.c
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/binding/examples/CMakeFiles/examples_bindings.dir/examples_bindings.c.o -MF CMakeFiles/examples_bindings.dir/examples_bindings.c.o.d -o CMakeFiles/examples_bindings.dir/examples_bindings.c.o -c /Users/oliver/ClionProjects/testing/src/binding/examples/examples_bindings.c
 
 src/binding/examples/CMakeFiles/examples_bindings.dir/examples_bindings.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/examples_bindings.dir/examples_bindings.c.i"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/binding/examples/examples_bindings.c > CMakeFiles/examples_bindings.dir/examples_bindings.c.i
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/binding/examples/examples_bindings.c > CMakeFiles/examples_bindings.dir/examples_bindings.c.i
 
 src/binding/examples/CMakeFiles/examples_bindings.dir/examples_bindings.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/examples_bindings.dir/examples_bindings.c.s"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/binding/examples/examples_bindings.c -o CMakeFiles/examples_bindings.dir/examples_bindings.c.s
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/binding/examples/examples_bindings.c -o CMakeFiles/examples_bindings.dir/examples_bindings.c.s
 
 src/binding/examples/CMakeFiles/examples_bindings.dir/binding_module.c.o: src/binding/examples/CMakeFiles/examples_bindings.dir/flags.make
 src/binding/examples/CMakeFiles/examples_bindings.dir/binding_module.c.o: /Users/oliver/ClionProjects/testing/src/binding/examples/binding_module.c
 src/binding/examples/CMakeFiles/examples_bindings.dir/binding_module.c.o: src/binding/examples/CMakeFiles/examples_bindings.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/binding/examples/CMakeFiles/examples_bindings.dir/binding_module.c.o"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/binding/examples/CMakeFiles/examples_bindings.dir/binding_module.c.o -MF CMakeFiles/examples_bindings.dir/binding_module.c.o.d -o CMakeFiles/examples_bindings.dir/binding_module.c.o -c /Users/oliver/ClionProjects/testing/src/binding/examples/binding_module.c
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/binding/examples/CMakeFiles/examples_bindings.dir/binding_module.c.o -MF CMakeFiles/examples_bindings.dir/binding_module.c.o.d -o CMakeFiles/examples_bindings.dir/binding_module.c.o -c /Users/oliver/ClionProjects/testing/src/binding/examples/binding_module.c
 
 src/binding/examples/CMakeFiles/examples_bindings.dir/binding_module.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/examples_bindings.dir/binding_module.c.i"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/binding/examples/binding_module.c > CMakeFiles/examples_bindings.dir/binding_module.c.i
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/binding/examples/binding_module.c > CMakeFiles/examples_bindings.dir/binding_module.c.i
 
 src/binding/examples/CMakeFiles/examples_bindings.dir/binding_module.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/examples_bindings.dir/binding_module.c.s"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/binding/examples/binding_module.c -o CMakeFiles/examples_bindings.dir/binding_module.c.s
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/binding/examples && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/binding/examples/binding_module.c -o CMakeFiles/examples_bindings.dir/binding_module.c.s
 
 # Object files for target examples_bindings
 examples_bindings_OBJECTS = \

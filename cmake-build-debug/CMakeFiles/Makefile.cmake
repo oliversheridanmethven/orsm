@@ -60,6 +60,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Users/oliver/ClionProjects/testing/src/logging/tests/CMakeLists.txt"
   "/Users/oliver/ClionProjects/testing/src/media/CMakeLists.txt"
   "/Users/oliver/ClionProjects/testing/src/media/tests/CMakeLists.txt"
+  "/Users/oliver/ClionProjects/testing/src/rubik/CMakeLists.txt"
+  "/Users/oliver/ClionProjects/testing/src/rubik/tests/CMakeLists.txt"
   "/Users/oliver/ClionProjects/testing/src/testing/CMakeLists.txt"
   "/Users/oliver/ClionProjects/testing/src/testing/FindCriterion.cmake"
   "/Users/oliver/ClionProjects/testing/src/testing/tests/CMakeLists.txt"
@@ -99,6 +101,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/common/suppressor/tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/media/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/media/tests/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/rubik/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/rubik/tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:

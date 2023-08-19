@@ -8,8 +8,10 @@
 
 #include "error_codes/error_codes.h"
 
+[[nodiscard]]
 error_code suppressing_start(void);
 
+[[nodiscard]]
 error_code suppressing_stop(void);
 
 #endif //TESTING_SUPPRESSOR_H

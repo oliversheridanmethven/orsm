@@ -73,15 +73,15 @@ src/cli/tests/CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.o: sr
 src/cli/tests/CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.o: src/cli/tests/cli_arguments_version.c
 src/cli/tests/CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.o: src/cli/tests/CMakeFiles/cli_arguments_version.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oliver/ClionProjects/testing/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/cli/tests/CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.o"
-	cd /Users/oliver/ClionProjects/testing/src/cli/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/cli/tests/CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.o -MF CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.o.d -o CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.o -c /Users/oliver/ClionProjects/testing/src/cli/tests/cli_arguments_version.c
+	cd /Users/oliver/ClionProjects/testing/src/cli/tests && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/cli/tests/CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.o -MF CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.o.d -o CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.o -c /Users/oliver/ClionProjects/testing/src/cli/tests/cli_arguments_version.c
 
 src/cli/tests/CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.i"
-	cd /Users/oliver/ClionProjects/testing/src/cli/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/cli/tests/cli_arguments_version.c > CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.i
+	cd /Users/oliver/ClionProjects/testing/src/cli/tests && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/cli/tests/cli_arguments_version.c > CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.i
 
 src/cli/tests/CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.s"
-	cd /Users/oliver/ClionProjects/testing/src/cli/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/cli/tests/cli_arguments_version.c -o CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.s
+	cd /Users/oliver/ClionProjects/testing/src/cli/tests && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/cli/tests/cli_arguments_version.c -o CMakeFiles/cli_arguments_version.dir/cli_arguments_version.c.s
 
 # Object files for target cli_arguments_version
 cli_arguments_version_OBJECTS = \

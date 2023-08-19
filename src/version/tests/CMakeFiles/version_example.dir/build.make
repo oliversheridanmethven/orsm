@@ -73,15 +73,15 @@ src/version/tests/CMakeFiles/version_example.dir/version.c.o: src/version/tests/
 src/version/tests/CMakeFiles/version_example.dir/version.c.o: src/version/tests/version.c
 src/version/tests/CMakeFiles/version_example.dir/version.c.o: src/version/tests/CMakeFiles/version_example.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oliver/ClionProjects/testing/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/version/tests/CMakeFiles/version_example.dir/version.c.o"
-	cd /Users/oliver/ClionProjects/testing/src/version/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/version/tests/CMakeFiles/version_example.dir/version.c.o -MF CMakeFiles/version_example.dir/version.c.o.d -o CMakeFiles/version_example.dir/version.c.o -c /Users/oliver/ClionProjects/testing/src/version/tests/version.c
+	cd /Users/oliver/ClionProjects/testing/src/version/tests && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/version/tests/CMakeFiles/version_example.dir/version.c.o -MF CMakeFiles/version_example.dir/version.c.o.d -o CMakeFiles/version_example.dir/version.c.o -c /Users/oliver/ClionProjects/testing/src/version/tests/version.c
 
 src/version/tests/CMakeFiles/version_example.dir/version.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/version_example.dir/version.c.i"
-	cd /Users/oliver/ClionProjects/testing/src/version/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/version/tests/version.c > CMakeFiles/version_example.dir/version.c.i
+	cd /Users/oliver/ClionProjects/testing/src/version/tests && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/version/tests/version.c > CMakeFiles/version_example.dir/version.c.i
 
 src/version/tests/CMakeFiles/version_example.dir/version.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/version_example.dir/version.c.s"
-	cd /Users/oliver/ClionProjects/testing/src/version/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/version/tests/version.c -o CMakeFiles/version_example.dir/version.c.s
+	cd /Users/oliver/ClionProjects/testing/src/version/tests && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/version/tests/version.c -o CMakeFiles/version_example.dir/version.c.s
 
 # Object files for target version_example
 version_example_OBJECTS = \

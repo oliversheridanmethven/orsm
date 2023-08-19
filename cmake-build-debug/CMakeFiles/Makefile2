@@ -87,6 +87,7 @@ src/all: src/version/all
 src/all: src/cli/all
 src/all: src/common/all
 src/all: src/media/all
+src/all: src/rubik/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
@@ -99,6 +100,7 @@ src/preinstall: src/version/preinstall
 src/preinstall: src/cli/preinstall
 src/preinstall: src/common/preinstall
 src/preinstall: src/media/preinstall
+src/preinstall: src/rubik/preinstall
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
@@ -111,6 +113,7 @@ src/clean: src/version/clean
 src/clean: src/cli/clean
 src/clean: src/common/clean
 src/clean: src/media/clean
+src/clean: src/rubik/clean
 .PHONY : src/clean
 
 #=============================================================================
@@ -405,6 +408,36 @@ src/media/tests/preinstall:
 # Recursive "clean" directory target.
 src/media/tests/clean:
 .PHONY : src/media/tests/clean
+
+#=============================================================================
+# Directory level rules for directory src/rubik
+
+# Recursive "all" directory target.
+src/rubik/all: src/rubik/tests/all
+.PHONY : src/rubik/all
+
+# Recursive "preinstall" directory target.
+src/rubik/preinstall: src/rubik/tests/preinstall
+.PHONY : src/rubik/preinstall
+
+# Recursive "clean" directory target.
+src/rubik/clean: src/rubik/tests/clean
+.PHONY : src/rubik/clean
+
+#=============================================================================
+# Directory level rules for directory src/rubik/tests
+
+# Recursive "all" directory target.
+src/rubik/tests/all:
+.PHONY : src/rubik/tests/all
+
+# Recursive "preinstall" directory target.
+src/rubik/tests/preinstall:
+.PHONY : src/rubik/tests/preinstall
+
+# Recursive "clean" directory target.
+src/rubik/tests/clean:
+.PHONY : src/rubik/tests/clean
 
 #=============================================================================
 # Directory level rules for directory src/testing

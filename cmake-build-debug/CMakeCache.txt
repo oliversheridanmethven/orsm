@@ -27,16 +27,16 @@ CMAKE_BUILD_TYPE:STRING=Debug
 //Enable colored diagnostics throughout.
 CMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 
-//No help, variable specified on the command line.
-CMAKE_CXX_COMPILER:UNINITIALIZED=/usr/local/Cellar/gcc/13.1.0/bin/g++-13
+//CXX compiler
+CMAKE_CXX_COMPILER:STRING=/usr/local/bin/g++-13
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_AR:FILEPATH=/usr/local/Cellar/gcc/13.1.0/bin/gcc-ar-13
+CMAKE_CXX_COMPILER_AR:FILEPATH=/usr/local/bin/gcc-ar-13
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/usr/local/Cellar/gcc/13.1.0/bin/gcc-ranlib-13
+CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/usr/local/bin/gcc-ranlib-13
 
 //Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=
@@ -53,16 +53,16 @@ CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
-//No help, variable specified on the command line.
-CMAKE_C_COMPILER:UNINITIALIZED=/usr/local/Cellar/gcc/13.1.0/bin/gcc-13
+//C compiler
+CMAKE_C_COMPILER:STRING=/usr/local/bin/gcc-13
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_C_COMPILER_AR:FILEPATH=/usr/local/Cellar/gcc/13.1.0/bin/gcc-ar-13
+CMAKE_C_COMPILER_AR:FILEPATH=/usr/local/bin/gcc-ar-13
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_C_COMPILER_RANLIB:FILEPATH=/usr/local/Cellar/gcc/13.1.0/bin/gcc-ranlib-13
+CMAKE_C_COMPILER_RANLIB:FILEPATH=/usr/local/bin/gcc-ranlib-13
 
 //Flags used by the C compiler during all build types.
 CMAKE_C_FLAGS:STRING=
@@ -364,7 +364,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=24
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=26
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -419,8 +419,6 @@ FIND_PACKAGE_MESSAGE_DETAILS_Criterion:INTERNAL=[/usr/local/lib/libcriterion.dyl
 FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[/usr/local/bin/git][v2.28.0()]
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/local/bin/pkg-config][v0.29.2()]
-//Details about finding Python
-FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/Users/oliver/ClionProjects/testing/venv/bin/python3.11][cfound components: Interpreter ][v3.11.4()]
 //Details about finding Python3
 FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/Users/oliver/ClionProjects/testing/venv/bin/python3.11][/Library/Frameworks/Python.framework/Versions/3.11/include/python3.11][/Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib][cfound components: Interpreter Development Development.Module Development.Embed ][v3.11.4()]
 //ADVANCED property for variable: GIT_EXECUTABLE
@@ -481,26 +479,6 @@ _Python3_Interpreter_REASON_FAILURE:INTERNAL=
 _Python3_LIBRARY_RELEASE:INTERNAL=/Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
 //NumPy reason failure
 _Python3_NumPy_REASON_FAILURE:INTERNAL=
-//Path to a program.
-_Python_CONFIG:INTERNAL=/Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11-config
-//Compiler reason failure
-_Python_Compiler_REASON_FAILURE:INTERNAL=
-_Python_DEVELOPMENT_EMBED_SIGNATURE:INTERNAL=6cc16fe8739ac73e1473a08552426b39
-_Python_DEVELOPMENT_MODULE_SIGNATURE:INTERNAL=0b85ff39c5c9e6d8a0ebf24e3e80fa27
-//Development reason failure
-_Python_Development_REASON_FAILURE:INTERNAL=
-_Python_EXECUTABLE:INTERNAL=/Users/oliver/ClionProjects/testing/venv/bin/python3.11
-//Path to a file.
-_Python_INCLUDE_DIR:INTERNAL=/Library/Frameworks/Python.framework/Versions/3.11/include/python3.11
-//Python Properties
-_Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;4;64;;cpython-311-darwin;/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11;/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11;/Users/oliver/ClionProjects/testing/venv/lib/python3.11/site-packages;/Users/oliver/ClionProjects/testing/venv/lib/python3.11/site-packages
-_Python_INTERPRETER_SIGNATURE:INTERNAL=2caab2e3cc4d83078ddb65cc54d89371
-//Interpreter reason failure
-_Python_Interpreter_REASON_FAILURE:INTERNAL=
-//Path to a library.
-_Python_LIBRARY_RELEASE:INTERNAL=/Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
-//NumPy reason failure
-_Python_NumPy_REASON_FAILURE:INTERNAL=
 __pkg_config_checked_GLIB:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_GLIB_glib-2.0
 pkgcfg_lib_GLIB_glib-2.0-ADVANCED:INTERNAL=1

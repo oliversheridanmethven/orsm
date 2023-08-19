@@ -28,8 +28,6 @@ struct params {
 /* GNU argp required these be const, which we might remove occasionally. */
 const char *argp_program_version = nullptr;
 const char *argp_program_bug_address = nullptr;
-char **restrict _argp_program_version;
-char **restrict _argp_program_bug_address;
 
 void setup_program_details(void) {
     asprintf(&argp_program_version, "%s %s", repo_name(), repo_version());

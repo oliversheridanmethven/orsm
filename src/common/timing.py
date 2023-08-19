@@ -14,6 +14,7 @@ class timeout:
     """
     A nice timeout handler for with statements.
     Taken from: https://stackoverflow.com/a/49567288/5134817
+    also cf: https://www.youtube.com/watch?v=vGWSdp9dyhI
 
     TODO: Make this into a nice decorator...
     """
@@ -33,12 +34,13 @@ class timeout:
 
     def __enter__(self):
         if self.limit:
-            signal.signal(signal.SIGALRM, self.handle_timeout)
+            self.orig_handler = signal.signal(signal.SIGALRM, self.handle_timeout)
             signal.alarm(self.limit)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         if self.limit:
             signal.alarm(0)
+            signal.signal(signal.SIGALRM, self.orig_handler)
 
 
 class TimeoutError(Exception):

@@ -183,3 +183,17 @@
 /Users/oliver/ClionProjects/testing/cmake-build-debug/src/media/tests/CMakeFiles/install.dir
 /Users/oliver/ClionProjects/testing/cmake-build-debug/src/media/tests/CMakeFiles/install/local.dir
 /Users/oliver/ClionProjects/testing/cmake-build-debug/src/media/tests/CMakeFiles/install/strip.dir
+/Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/CMakeFiles/test.dir
+/Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/CMakeFiles/edit_cache.dir
+/Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/CMakeFiles/rebuild_cache.dir
+/Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/CMakeFiles/list_install_components.dir
+/Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/CMakeFiles/install.dir
+/Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/CMakeFiles/install/local.dir
+/Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/CMakeFiles/install/strip.dir
+/Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/tests/CMakeFiles/test.dir
+/Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/tests/CMakeFiles/edit_cache.dir
+/Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/tests/CMakeFiles/rebuild_cache.dir
+/Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/tests/CMakeFiles/list_install_components.dir
+/Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/tests/CMakeFiles/install.dir
+/Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/tests/CMakeFiles/install/local.dir
+/Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/tests/CMakeFiles/install/strip.dir

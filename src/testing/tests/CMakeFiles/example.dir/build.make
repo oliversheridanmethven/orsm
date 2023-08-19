@@ -73,15 +73,15 @@ src/testing/tests/CMakeFiles/example.dir/example.c.o: src/testing/tests/CMakeFil
 src/testing/tests/CMakeFiles/example.dir/example.c.o: src/testing/tests/example.c
 src/testing/tests/CMakeFiles/example.dir/example.c.o: src/testing/tests/CMakeFiles/example.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oliver/ClionProjects/testing/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/testing/tests/CMakeFiles/example.dir/example.c.o"
-	cd /Users/oliver/ClionProjects/testing/src/testing/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/testing/tests/CMakeFiles/example.dir/example.c.o -MF CMakeFiles/example.dir/example.c.o.d -o CMakeFiles/example.dir/example.c.o -c /Users/oliver/ClionProjects/testing/src/testing/tests/example.c
+	cd /Users/oliver/ClionProjects/testing/src/testing/tests && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/testing/tests/CMakeFiles/example.dir/example.c.o -MF CMakeFiles/example.dir/example.c.o.d -o CMakeFiles/example.dir/example.c.o -c /Users/oliver/ClionProjects/testing/src/testing/tests/example.c
 
 src/testing/tests/CMakeFiles/example.dir/example.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/example.dir/example.c.i"
-	cd /Users/oliver/ClionProjects/testing/src/testing/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/testing/tests/example.c > CMakeFiles/example.dir/example.c.i
+	cd /Users/oliver/ClionProjects/testing/src/testing/tests && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/testing/tests/example.c > CMakeFiles/example.dir/example.c.i
 
 src/testing/tests/CMakeFiles/example.dir/example.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/example.dir/example.c.s"
-	cd /Users/oliver/ClionProjects/testing/src/testing/tests && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/testing/tests/example.c -o CMakeFiles/example.dir/example.c.s
+	cd /Users/oliver/ClionProjects/testing/src/testing/tests && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/testing/tests/example.c -o CMakeFiles/example.dir/example.c.s
 
 # Object files for target example
 example_OBJECTS = \

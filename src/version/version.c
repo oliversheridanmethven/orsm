@@ -6,7 +6,7 @@ char *repo_name(void) {
 }
 
 char *repo_version(void) {
-    return "v0.0.4-14-g2ef59f6-dirty";
+    return "v0.0.5-14-gc98e774-dirty";
 }
 
 

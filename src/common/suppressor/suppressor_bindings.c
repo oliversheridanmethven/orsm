@@ -2,20 +2,24 @@
 #include "suppressor.h"
 #include "binding/wrappers.h"
 
-PyObject *_suppressing_start(PyObject *self, PyObject *args, PyObject *kwargs) {
-    suppressing_start();
+PyObject *suppressing_start_(PyObject *self, PyObject *args, PyObject *kwargs) {
+    if (suppressing_start()) {
+        return nullptr;
+    }
     Py_RETURN_NONE;
 }
 
-PyObject *_suppressing_stop(PyObject *self, PyObject *args, PyObject *kwargs) {
-    suppressing_stop();
+PyObject *suppressing_stop_(PyObject *self, PyObject *args, PyObject *kwargs) {
+    if (suppressing_stop()) {
+        return nullptr;
+    }
     Py_RETURN_NONE;
 }
 
 static PyMethodDef suppressor_methods[] = {
-        {"suppressing_start", PyFunc(_suppressing_start), METH_VARARGS | METH_KEYWORDS,
+        {"suppressing_start", PyFunc(suppressing_start_), METH_VARARGS | METH_KEYWORDS,
                                        "Start suppressing standard output."},
-        {"suppressing_stop",  PyFunc(_suppressing_stop),  METH_VARARGS | METH_KEYWORDS,
+        {"suppressing_stop",  PyFunc(suppressing_stop_),  METH_VARARGS | METH_KEYWORDS,
                                        "stop suppressing standard output."},
         {NULL,                NULL, 0, NULL} /* Sentinel */
 };

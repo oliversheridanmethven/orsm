@@ -77,15 +77,15 @@ src/version/CMakeFiles/version.dir/version.c.o: src/version/CMakeFiles/version.d
 src/version/CMakeFiles/version.dir/version.c.o: /Users/oliver/ClionProjects/testing/src/version/version.c
 src/version/CMakeFiles/version.dir/version.c.o: src/version/CMakeFiles/version.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/version/CMakeFiles/version.dir/version.c.o"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/version && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/version/CMakeFiles/version.dir/version.c.o -MF CMakeFiles/version.dir/version.c.o.d -o CMakeFiles/version.dir/version.c.o -c /Users/oliver/ClionProjects/testing/src/version/version.c
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/version && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/version/CMakeFiles/version.dir/version.c.o -MF CMakeFiles/version.dir/version.c.o.d -o CMakeFiles/version.dir/version.c.o -c /Users/oliver/ClionProjects/testing/src/version/version.c
 
 src/version/CMakeFiles/version.dir/version.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/version.dir/version.c.i"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/version && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/version/version.c > CMakeFiles/version.dir/version.c.i
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/version && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/version/version.c > CMakeFiles/version.dir/version.c.i
 
 src/version/CMakeFiles/version.dir/version.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/version.dir/version.c.s"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/version && gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/version/version.c -o CMakeFiles/version.dir/version.c.s
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/version && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/version/version.c -o CMakeFiles/version.dir/version.c.s
 
 # Object files for target version
 version_OBJECTS = \

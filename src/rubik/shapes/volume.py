@@ -71,6 +71,8 @@ class Volume(Shape):
     @_array_from_faces_at_end
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        if len(self._array):
+            return
         if not self._faces:
             for colour in self._colours:
                 self._faces.append([[colour.value for i in range(2)] for j in range(2)])
@@ -120,8 +122,9 @@ class Volume(Shape):
 
     @classmethod
     def moves(cls, *args, **kwargs):
-        # return [move for move in cls._moves]
-        return [move(shape=cls()) for move in cls._moves.values()]
+        # Working with moves as indices makes the path constructions generally much quicker.
+        return [move for move in cls._moves]
+        # return [move(shape=cls()) for move in cls._moves.values()]
 
 
 if __name__ == "__main__":

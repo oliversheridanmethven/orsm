@@ -165,7 +165,8 @@ class Shape(ABC):
     @classmethod
     def moves(cls, *args, **kwargs):
         # Working with moves as indices makes the path constructions generally much quicker.
-        return cls._moves.keys()
+        # But not as nice for printing though...
+        return list(cls._moves.keys())
 
     @classmethod
     def reverse_of(cls, move_id, **kwargs):
@@ -196,16 +197,16 @@ class Shape(ABC):
         for turn in range(turns):
             # We try and generate a new move (which is not the reverse of the preceding!).
             while True:
-                move, reverse = random.choices(list(itertools.product(self.moves(), [True, False])))[0]
-                if last_shuffle == (move, not reverse):
+                move = random.choices(self.moves())[0]
+                if last_shuffle is not None and self.commutative(move, last_shuffle):
                     continue
 
-                last_shuffle = (move, reverse)
+                last_shuffle = move
                 break
 
-            log.debug(f"{turn = } shuffling with {move = } {reverse = }")
-            shuffled = shuffled.move(move, reverse=reverse)
-            path._append(move=move, reverse=reverse)
+            log.debug(f"{turn = } shuffling with {move = }")
+            shuffled = shuffled.move(move)
+            path._append(move=move, reverse=False)
 
         return shuffled, path
 

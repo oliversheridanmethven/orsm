@@ -118,7 +118,7 @@ class Sheet(Shape):
             array = array[[0, 6, 2, 4, 3, 5, 1, 7, 9, 8, 10, 11, 12, 15, 14, 13]]
             return type(shape)(array=array)
 
-    _moves = {i: move for i, move in enumerate([move_1, move_2])}
+    _moves = [move_1, move_2]
 
     _reverse_moves = NotImplementedError
     _commutative_moves = NotImplementedError

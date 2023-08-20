@@ -25,6 +25,10 @@ class Move(ABC):
     def __str__(self):
         return self.__doc__
 
+    def __hash__(self):
+        # The description should be unique.
+        return hash(repr(self))
+
 
 if __name__ == "__main__":
     pass

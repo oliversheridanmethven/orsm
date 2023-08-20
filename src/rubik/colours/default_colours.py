@@ -11,12 +11,12 @@ from common.cli import standard_parse
 
 # class syntax
 class Colours(Enum):
-    white = 0
-    red = 1
-    green = 2
-    blue = 3
-    yellow = 4
-    orange = 5
+    red = 0
+    orange = 1
+    blue = 2
+    green = 3
+    white = 4
+    yellow = 5
 
     @classmethod
     def colour_to_term_colour(cls, desired_name):

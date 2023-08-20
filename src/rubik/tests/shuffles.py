@@ -4,6 +4,7 @@ from rubik.shuffles.difficulty import specific, god
 from rubik.shapes import Domino, Volume, Square, Sheet
 from common.variables import variable_names_and_objects
 from common.logger import log
+from common.timing import Timeout
 
 
 class Shuffles(unittest.TestCase):
@@ -29,9 +30,10 @@ class Shuffles(unittest.TestCase):
     def test_feasible_moderate_difficulty(self):
         shape = Volume()
         for turns in range(1, 5):
-            shuffled, shuffle_path = specific(start=shape, turns=turns, seed=0)
-            self.assertNotEqual(shuffled, shape)
-            self.assertEqual(len(shuffle_path), turns)
+            with Timeout(5):
+                shuffled, shuffle_path = specific(start=shape, turns=turns, seed=0)
+                self.assertNotEqual(shuffled, shape)
+                self.assertEqual(len(shuffle_path), turns)
 
     def test_infeasible_moderate_difficulty(self):
         shape = Domino()
@@ -42,9 +44,10 @@ class Shuffles(unittest.TestCase):
     def test_easy_god_shuffle(self):
         shape = Domino()
         god_turns = 1
-        shuffled, shuffle_path = god(start=shape, seed=0)
-        self.assertNotEqual(shuffled, shape)
-        self.assertEqual(len(shuffle_path), god_turns)
+        with Timeout(5):
+            shuffled, shuffle_path = god(start=shape, seed=0)
+            self.assertNotEqual(shuffled, shape)
+            self.assertEqual(len(shuffle_path), god_turns)
 
     ##########################################################
     # Some of the following God numbers are my best guesses...
@@ -53,24 +56,27 @@ class Shuffles(unittest.TestCase):
     def test_mild_god_shuffle(self):
         shape = Square()
         god_turns = 2
-        shuffled, shuffle_path = god(start=shape, seed=0)
-        self.assertNotEqual(shuffled, shape)
-        self.assertEqual(len(shuffle_path), god_turns)
+        with Timeout(5):
+            shuffled, shuffle_path = god(start=shape, seed=0)
+            self.assertNotEqual(shuffled, shape)
+            self.assertEqual(len(shuffle_path), god_turns)
 
     def test_moderate_god_shuffle(self):
         shape = Sheet()
         god_turns = 3
-        shuffled, shuffle_path = god(start=shape, seed=0)
-        self.assertNotEqual(shuffled, shape)
-        self.assertEqual(len(shuffle_path), god_turns)
+        with Timeout(5):
+            shuffled, shuffle_path = god(start=shape, seed=0)
+            self.assertNotEqual(shuffled, shape)
+            self.assertEqual(len(shuffle_path), god_turns)
 
     @unittest.skip("This takes too long to compute (e.g. O(30+ mins)).")
     def test_moderate_god_shuffle(self):
         shape = Volume()
         god_turns = 11  # cf: https://ruwix.com/the-rubiks-cube/gods-number/
-        shuffled, shuffle_path = god(start=shape, seed=0)
-        self.assertNotEqual(shuffled, shape)
-        self.assertEqual(len(shuffle_path), god_turns)
+        with Timeout(10):
+            shuffled, shuffle_path = god(start=shape, seed=0)
+            self.assertNotEqual(shuffled, shape)
+            self.assertEqual(len(shuffle_path), god_turns)
 
 
 if __name__ == '__main__':

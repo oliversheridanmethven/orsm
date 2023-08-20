@@ -10,35 +10,35 @@ from common.variables import variable_names_and_objects
 import signal
 
 
-class timeout:
+class Timeout:
     """
     A nice timeout handler for with statements.
     Taken from: https://stackoverflow.com/a/49567288/5134817
     also cf: https://www.youtube.com/watch?v=vGWSdp9dyhI
 
-    TODO: Make this into a nice decorator...
+    TODO: Make this into a nice decorator perhaps...
     """
 
     max_limit = 60  # Anything more than this is a ridiculous code smell.
 
-    def __init__(self, *, limit=None, error_message=None):
+    def __init__(self, timeout=None, *, error_message=None):
         if error_message is None:
-            error_message = 'Timed out after {} seconds.'.format(limit)
-        if limit is not None:
-            assert isinstance(limit, int) and 0 < limit <= self.max_limit, f"The timeout {limit = } is not valid."
-        self.limit = limit
+            error_message = 'Timed out after {} seconds.'.format(timeout)
+        if timeout is not None:
+            assert isinstance(timeout, int) and 0 < timeout <= self.max_limit, f"The timeout {timeout = } is not valid."
+        self.timeout = timeout
         self.error_message = error_message
 
     def handle_timeout(self, signum, frame):
         raise TimeoutError(self.error_message)
 
     def __enter__(self):
-        if self.limit:
+        if self.timeout:
             self.orig_handler = signal.signal(signal.SIGALRM, self.handle_timeout)
-            signal.alarm(self.limit)
+            signal.alarm(self.timeout)
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        if self.limit:
+        if self.timeout:
             signal.alarm(0)
             signal.signal(signal.SIGALRM, self.orig_handler)
 
@@ -65,7 +65,7 @@ def time_function(*args, name=None, function, iter_limit=None, time_limit=None, 
     if not max_time_limit and time_limit:
         max_time_limit = 2 * iteration_growth_factor * time_limit
 
-    with timeout(limit=max_time_limit):
+    with Timeout(timeout=max_time_limit):
         with Suppressor(suppress_output=suppress_output):
             while (time_limit and seconds < time_limit) or (iter_limit and total_iterations < iter_limit):
                 remaining_iterations = iterations if not iter_limit else min(iterations, iter_limit - total_iterations)

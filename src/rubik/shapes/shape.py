@@ -164,20 +164,28 @@ class Shape(ABC):
 
     @classmethod
     def moves(cls, *args, **kwargs):
-        # Working with moves as indices makes the path constructions generally much quicker.
+        # Working with moves as indices can make the path constructions generally much quicker.
         # But not as nice for printing though...
-        return list(cls._moves.keys())
+        return [move(*args, shape=cls(), **kwargs) for move in cls._moves]
+        # return cls._moves
 
     @classmethod
-    def reverse_of(cls, move_id, **kwargs):
-        reverse_move_id = cls._reverse_moves[cls._moves[move_id]]
-        reverse_move = next(move for move in cls._moves if cls._moves[move] == reverse_move_id)
-        assert type(reverse_move) == type(move_id), f"We are returning the wrong type."
+    def _reverse_moves_mapping(cls, *args, **kwargs):
+        return {move(*args, shape=cls(), **kwargs): reverse_move(*args, shape=cls(), **kwargs) for move, reverse_move in cls._reverse_moves.items()}
+
+    @classmethod
+    def reverse_of(cls, move, **kwargs):
+        moves_mapping = cls._reverse_moves_mapping()
+        reverse_move = moves_mapping[move]
+        assert isinstance(reverse_move, Move), f"We are returning the wrong type."
         return reverse_move
 
     @classmethod
-    def commutative(self, move_1_id, move_2_id):
-        return next(self._moves[move_2_id] in moves for moves in self._commutative_moves if self._moves[move_1_id] in moves)
+    def commutative(cls, move_1, move_2, *args, **kwargs):
+        commutative_moves = [[move(*args, shape=cls(), **kwargs) for move in moves] for moves in cls._commutative_moves]
+        results = [move_2 in moves for moves in commutative_moves if move_1 in moves]
+        assert len(results) == 1
+        return results[0]
 
     def shuffle(self, *args, turns=100, seed=False, **kwargs):
         """Produces a shuffled cube, and lists how it got there."""

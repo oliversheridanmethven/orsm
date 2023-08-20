@@ -66,7 +66,7 @@ class Square(Shape):
             array = array[[0, 4, 2, 6, 1, 5, 3, 7]]
             return type(shape)(array=array)
 
-    _moves = {i: move for i, move in enumerate([move_1, move_2])}
+    _moves = [move_1, move_2]
 
     _reverse_moves = NotImplemented
     _commutative_moves = NotImplementedError

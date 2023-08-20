@@ -181,7 +181,7 @@ class Volume(Shape):
                 array = array[[0, 1, 2, 3, 6, 4, 7, 5, 8, 23, 10, 22, 17, 13, 16, 15, 9, 11, 18, 19, 20, 21, 12, 14]]
             return type(shape)(array=array)
 
-    _moves = {i: move for i, move in enumerate([move_1, move_2, move_3, move_4, move_5, move_6, move_7, move_8, move_9])}
+    _moves = [move_1, move_2, move_3, move_4, move_5, move_6, move_7, move_8, move_9]
     _reverse_moves = {move: reverse_move for move, reverse_move in [(move_1, move_3),
                                                                     (move_2, move_2),
                                                                     (move_3, move_1),

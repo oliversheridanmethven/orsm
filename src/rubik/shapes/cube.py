@@ -38,8 +38,9 @@ class Cube(Shape):
         for face in self._faces:
             assert np.shape(face) == (3, 3), f"A {type(self).__name__} face must only contain 9 tiles."
 
-    def moves(self):
-        raise NotImplementedError
+    _moves = NotImplementedError
+    _reverse_moves = NotImplementedError
+    _commutative_moves = NotImplementedError
 
 
 if __name__ == "__main__":

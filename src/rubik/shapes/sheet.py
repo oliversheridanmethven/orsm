@@ -120,9 +120,8 @@ class Sheet(Shape):
 
     _moves = {i: move for i, move in enumerate([move_1, move_2])}
 
-    @classmethod
-    def moves(cls):
-        return [move for move in cls._moves]
+    _reverse_moves = NotImplementedError
+    _commutative_moves = NotImplementedError
 
 
 if __name__ == "__main__":

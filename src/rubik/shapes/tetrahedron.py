@@ -37,8 +37,9 @@ class Tetrahedron(Shape):
         for face in self._faces:
             assert [len(row) for row in face] == [1, 3], f"A {type(self).__name__} face must only contain 16 tiles."
 
-    def moves(self):
-        raise NotImplementedError
+    _moves = NotImplemented
+    _reverse_moves = NotImplemented
+    _commutative_moves = NotImplementedError
 
 
 if __name__ == "__main__":

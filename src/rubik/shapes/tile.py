@@ -27,8 +27,9 @@ class Tile(Shape):
         for face in self._faces:
             assert np.shape(face) == (1, 1), f"A {type(self).__name__} face must only contain 1 tiles"
 
-    def moves(self):
-        raise NotImplementedError
+    _moves = NotImplemented
+    _reverse_moves = NotImplemented
+    _commutative_moves = NotImplementedError
 
 
 if __name__ == "__main__":

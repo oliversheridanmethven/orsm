@@ -54,7 +54,7 @@ class Shape(ABC):
         new.assign_tiles(values=values)
         self._faces = new._faces
 
-    # @_array_from_faces
+    # @_array_from_faces_at_end
     def __init__(self, *args, array=None, faces=None, colours=None, **kwargs):
         self._array = np.array([]) if array is None else array
         # The _array is our underlying invariant which will always be in a correct state.
@@ -148,8 +148,35 @@ class Shape(ABC):
         return moved
 
     @abstractmethod
-    def moves(self, **kwargs):
+    def _moves(self):
+        """A container to hold the moves."""
         ...
+
+    @abstractmethod
+    def _reverse_moves(self):
+        """A container to hold the mappings between the moves and the reverse moves."""
+        ...
+
+    @abstractmethod
+    def _commutative_moves(self):
+        """A container to hold the mappings between the moves which commute."""
+        ...
+
+    @classmethod
+    def moves(cls, *args, **kwargs):
+        # Working with moves as indices makes the path constructions generally much quicker.
+        return cls._moves.keys()
+
+    @classmethod
+    def reverse_of(cls, move_id, **kwargs):
+        reverse_move_id = cls._reverse_moves[cls._moves[move_id]]
+        reverse_move = next(move for move in cls._moves if cls._moves[move] == reverse_move_id)
+        assert type(reverse_move) == type(move_id), f"We are returning the wrong type."
+        return reverse_move
+
+    @classmethod
+    def commutative(self, move_1_id, move_2_id):
+        return next(self._moves[move_2_id] in moves for moves in self._commutative_moves if self._moves[move_1_id] in moves)
 
     def shuffle(self, *args, turns=100, seed=False, **kwargs):
         """Produces a shuffled cube, and lists how it got there."""

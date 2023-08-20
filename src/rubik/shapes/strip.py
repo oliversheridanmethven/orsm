@@ -41,8 +41,9 @@ class Strip(Shape):
         for face in self._faces:
             assert np.shape(face) == (N, 1), f"A {type(self).__name__} face must only contain 2 tiles."
 
-    def moves(self):
-        raise NotImplementedError
+    _moves = NotImplemented
+    _reverse_moves = NotImplemented
+    _commutative_moves = NotImplementedError
 
 
 if __name__ == "__main__":

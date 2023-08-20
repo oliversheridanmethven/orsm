@@ -40,9 +40,9 @@ class Domino(Shape):
             array = array[[0, 3, 2, 1]]
             return type(shape)(array=array)
 
-    def moves(self, *args, **kwargs):
-
-        return [self.move_1(*args, shape=self, **kwargs)]
+    _moves = {i: move for i, move in enumerate([move_1])}
+    _reverse_moves = NotImplementedError
+    _commutative_moves = NotImplementedError
 
 
 if __name__ == "__main__":

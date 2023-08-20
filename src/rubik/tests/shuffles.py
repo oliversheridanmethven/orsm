@@ -67,7 +67,7 @@ class Shuffles(unittest.TestCase):
     @unittest.skip("This takes too long to compute (e.g. O(30+ mins)).")
     def test_moderate_god_shuffle(self):
         shape = Volume()
-        god_turns = 14
+        god_turns = 11  # cf: https://ruwix.com/the-rubiks-cube/gods-number/
         shuffled, shuffle_path = god(start=shape, seed=0)
         self.assertNotEqual(shuffled, shape)
         self.assertEqual(len(shuffle_path), god_turns)

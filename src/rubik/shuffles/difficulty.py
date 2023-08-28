@@ -3,7 +3,7 @@
 Generate shuffles of certain difficulty.
 """
 
-from rubik.solvers.solver import next_generation_of_moves
+from rubik.solvers.solver import next_generation_of_shapes_with_paths
 from rubik.paths.paths import Path
 from common.logger import log
 from common.timing import Timeout
@@ -21,7 +21,7 @@ def specific(*args, start, turns, seed=None, timeout=None, **kwargs):
             log.debug(f"{generation = }, we have encountered {len(shapes_and_paths_encountered)} shapes previously")
             shapes_and_paths_encountered = {**shapes_and_paths_encountered, **shapes_and_paths_new}
             shapes_and_paths_new_previous = shapes_and_paths_new
-            shapes_and_paths_next_gen = next_generation_of_moves(shapes_and_paths_new)
+            shapes_and_paths_next_gen = next_generation_of_shapes_with_paths(shapes_and_paths_new)
             shapes_and_paths_new = {shape: path for shape, path in shapes_and_paths_next_gen.items() if shape not in shapes_and_paths_encountered}
             if not shapes_and_paths_new:
                 if turns == "god":

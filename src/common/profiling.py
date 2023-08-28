@@ -6,17 +6,19 @@ This is largely copied from: https://medium.com/uncountable-engineering/pythons-
 """
 
 from line_profiler import LineProfiler
+from functools import wraps
 
 profiler = LineProfiler()
 
 
 def profile(func):
-    def inner(*args, **kwargs):
+    @wraps(func)
+    def profiled_function(*args, **kwargs):
         profiler.add_function(func)
         profiler.enable_by_count()
         return func(*args, **kwargs)
 
-    return inner
+    return profiled_function
 
 
 if __name__ == "__main__":

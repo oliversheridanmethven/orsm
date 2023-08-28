@@ -40,10 +40,10 @@ class Path:
 
     def __str__(self):
         s = ""
-        for move, reverse in zip(self.moves, self.reverses):
+        for turn, (move, reverse) in enumerate(zip(self.moves, self.reverses)):
             if isinstance(move, int):
                 move = self.shape._moves[move](shape=self.shape)
-            s += f"\n{move} {'in reverse' if reverse else ''}"
+            s += f"\n{turn = } {move} {'in reverse' if reverse else ''}"
         if not s:
             s = "Empty Path"
         else:

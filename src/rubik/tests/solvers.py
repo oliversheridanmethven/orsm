@@ -2,8 +2,7 @@
 import logging
 import unittest
 from rubik import shapes
-from rubik.solvers.brute_force import BruteForce
-from rubik.solvers.meet_in_middle import MeetInMiddle
+from rubik.solvers import BruteForce, MeetInMiddle, MeetInMiddleRecursive
 from common.cli import unit_test_parse
 from common.variables import variable_names_and_objects
 from common.logger import log
@@ -11,6 +10,9 @@ from common.timing import Timeout
 
 
 class Solvers(unittest.TestCase):
+
+    def setUp(self):
+        self.names_and_solvers = variable_names_and_objects(BruteForce, MeetInMiddle, MeetInMiddleRecursive)
 
     def _check_solution_recovers_shuffled(self, *args, original, shuffled, solution_path, shuffle_path, solver_name, **kwargs):
         solution = original
@@ -25,7 +27,7 @@ class Solvers(unittest.TestCase):
         self.assertEqual(solution, original, f"Using {solver_name} we do not arrive at the start using the solution moves in reverse.")
 
     def test_solvers(self):
-        for name, Solver in variable_names_and_objects(BruteForce, MeetInMiddle):
+        for name, Solver in self.names_and_solvers:
             solver = Solver()
             shape = shapes.Volume()
             for turns in range(4):
@@ -36,7 +38,7 @@ class Solvers(unittest.TestCase):
                     self._check_solution_recovers_shuffled(original=shape, shuffled=shuffled, solution_path=solution_path, shuffle_path=shuffle_path, solver_name=name)
 
     def test_solver_at_specific_difficulty(self):
-        for name, Solver in variable_names_and_objects(BruteForce, MeetInMiddle):
+        for name, Solver in self.names_and_solvers:
             solver = Solver()
             shape = shapes.Volume()
             from rubik.shuffles.difficulty import specific

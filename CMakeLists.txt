@@ -3,10 +3,10 @@ cmake_minimum_required(VERSION 3.25)  # Use the latest and greatest.
 # Declaring the project and it's languages also sets the,
 # compilers, so we set our paths to the compilers first.
 
-#find_program(CMAKE_C_COMPILER NAMES $ENV{CC} clang-16 PATHS ENV PATH NO_DEFAULT_PATH)
-#find_program(CMAKE_CXX_COMPILER NAMES $ENV{CC} clang-16 PATHS ENV PATH NO_DEFAULT_PATH)
-find_program(CMAKE_C_COMPILER NAMES $ENV{CC} gcc-13 PATHS ENV PATH NO_DEFAULT_PATH)
-find_program(CMAKE_CXX_COMPILER NAMES $ENV{CXX} g++-13 PATHS ENV PATH NO_DEFAULT_PATH)
+find_program(CMAKE_C_COMPILER NAMES $ENV{CC} clang-16 PATHS ENV PATH NO_DEFAULT_PATH)
+find_program(CMAKE_CXX_COMPILER NAMES $ENV{CXX} clang++ PATHS ENV PATH NO_DEFAULT_PATH)
+#find_program(CMAKE_C_COMPILER NAMES $ENV{CC} gcc-13 PATHS ENV PATH NO_DEFAULT_PATH)
+#find_program(CMAKE_CXX_COMPILER NAMES $ENV{CXX} g++-13 PATHS ENV PATH NO_DEFAULT_PATH)
 
 project(testing C CXX) # We use a mix of C and C++.
 
@@ -36,10 +36,21 @@ elseif (CMAKE_C_COMPILER_ID STREQUAL "GNU")
 endif()
 
 set(IGNORE_ERROR_FLAGS "-Wno-int-conversion -Wno-missing-field-initializers -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-incompatible-pointer-types")
-set(ERROR_FLAGS "${ERROR_FLAGS} ${IGNORE_ERROR_FLAGS}")
+set(IGNORE_ERROR_FLAGS_C ${IGNORE_ERROR_FLAGS})
+set(IGNORE_ERROR_FLAGS_CXX ${IGNORE_ERROR_FLAGS})
+# Not all flags exist for both languages, so we possibly filter some out or add some in.
+message(DEBUG "The CXX error flags before filtering: ${IGNORE_ERROR_FLAGS_CXX}")
+set(C_ONLY_FLAGS "-Wno-int-conversion;-Wno-incompatible-pointer-types")
+foreach(C_ONLY_FLAG ${C_ONLY_FLAGS})
+string(REPLACE "${C_ONLY_FLAG}" "" IGNORE_ERROR_FLAGS_CXX ${IGNORE_ERROR_FLAGS_CXX})
+endforeach ()
+message(DEBUG "The CXX error flags after filtering: ${IGNORE_ERROR_FLAGS_CXX}")
+
+set(ERROR_FLAGS_C "${ERROR_FLAGS} ${IGNORE_ERROR_FLAGS_C}")
+set(ERROR_FLAGS_CXX "${ERROR_FLAGS} ${IGNORE_ERROR_FLAGS_CXX}")
 message(DEBUG "The C compiler flags are: ${CMAKE_C_FLAGS}")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${ERROR_FLAGS}")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ERROR_FLAGS}")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${ERROR_FLAGS_C}")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ERROR_FLAGS_CXX}")
 
 cmake_host_system_information(RESULT N_CORES QUERY NUMBER_OF_LOGICAL_CORES)
 message(STATUS "We think we have ${N_CORES} cores on this machine.")
@@ -105,8 +116,10 @@ endif()
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/")
 MESSAGE(STATUS "Looking for the python libraries.")
 # We will include and link to all the targets henceforth.
-include_directories(${Python3_INCLUDE_DIRS})
+include_directories(SYSTEM ${Python3_INCLUDE_DIRS})
 link_libraries(${Python3_LIBRARIES})
+
+
 
 function(add_all_python_tests)
     file(GLOB_RECURSE python_files *.py)
@@ -133,7 +146,6 @@ endfunction()
 function(install_python_target target destination)
     if(SKBUILD)
         MESSAGE(STATUS "Installing the Python target ${target} at destination: ${destination}.")
-        include_directories(SYSTEM ${Python3_INCLUDE_DIRS})
         target_link_libraries(${target} ${Python3_LIBRARIES})
         find_package(PythonExtensions REQUIRED)
         python_extension_module(${target})
@@ -141,7 +153,6 @@ function(install_python_target target destination)
     elseif (INSOURCE_BUILD)
         set(destination "${CMAKE_CURRENT_SOURCE_DIR}")
         MESSAGE(STATUS "Installing the Python target ${target} in source at destination: ${destination}.")
-        include_directories(SYSTEM ${Python3_INCLUDE_DIRS})
         target_link_libraries(${target} ${Python3_LIBRARIES})
         set_target_properties(${target} PROPERTIES PREFIX "") # Avoid the lib prefix which is required for python finding the module.
         install(TARGETS ${target} LIBRARY DESTINATION ${destination})

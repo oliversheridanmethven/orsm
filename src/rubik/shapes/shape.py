@@ -201,15 +201,15 @@ class Shape(ABC):
         else:
             random.seed(None)
 
-        last_shuffle = None
+        last_move = None
         for turn in range(turns):
             # We try and generate a new move (which is not the reverse of the preceding!).
             while True:
                 move = random.choices(self.moves())[0]
-                if last_shuffle is not None and self.commutative(move, last_shuffle):
+                if last_move is not None and self.commutative(move, last_move):
                     continue
 
-                last_shuffle = move
+                last_move = move
                 break
 
             log.debug(f"{turn = } shuffling with {move = }")

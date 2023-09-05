@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.25)  # Use the latest and greatest.
 
 # Declaring the project and it's languages also sets the,
 # compilers, so we set our paths to the compilers first.
-
+#
 find_program(CMAKE_C_COMPILER NAMES $ENV{CC} clang-16 PATHS ENV PATH NO_DEFAULT_PATH)
 find_program(CMAKE_CXX_COMPILER NAMES $ENV{CXX} clang++ PATHS ENV PATH NO_DEFAULT_PATH)
 #find_program(CMAKE_C_COMPILER NAMES $ENV{CC} gcc-13 PATHS ENV PATH NO_DEFAULT_PATH)
@@ -119,6 +119,10 @@ MESSAGE(STATUS "Looking for the python libraries.")
 include_directories(SYSTEM ${Python3_INCLUDE_DIRS})
 link_libraries(${Python3_LIBRARIES})
 
+find_package(Boost REQUIRED)
+include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
+
+
 
 
 function(add_all_python_tests)
@@ -161,4 +165,7 @@ endfunction()
 
 # Where we find the source files for our builds.
 add_subdirectory(src)
+
+# Where we find the scratch files for our proto-typing things.
+add_subdirectory(misc)
 

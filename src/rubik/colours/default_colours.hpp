@@ -3,9 +3,12 @@
 
 #include <string>
 
-class Colour {
-private:
-    enum class _Colours {
+using enum_underlying = int;
+
+class ColourPalette {
+public:
+
+    enum class Colours : enum_underlying {
         red = 0,
         yellow,
         blue,
@@ -14,10 +17,19 @@ private:
         light_yellow
     };
 
-    _Colours _colour;
 
-public:
+    std::string name(const Colours &colour) const;
+
+    Colours something = Colours::red;
+
     std::string colour(const std::string &s) const;
+
+    enum_underlying value(const Colours &colour) const {
+        return static_cast<typename std::underlying_type<Colours>::type>(colour);
+    }
+
+private:
+    Colours _colour;
 };
 
 #endif //TESTING_DEFAULT_COLOURS_HPP

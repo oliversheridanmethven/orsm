@@ -1,8 +1,8 @@
 #include "default_colours.hpp"
-
+#include "logging/logging.hpp"
 #include <sstream>
 
-std::string Colour::colour(const std::string &s) const {
+std::string ColourPalette::colour(const std::string &s) const {
     /*
      * Following the approach outlined here: https://stackoverflow.com/a/45300654/5134817
      *
@@ -15,25 +15,43 @@ std::string Colour::colour(const std::string &s) const {
      * */
     coloured << "\033[0;";
     switch (this->_colour) {
-        case _Colours::red:
+        case Colours::red:
             coloured << "31";
             break;
-        case _Colours::yellow:
+        case Colours::yellow:
             coloured << "33";
             break;
-        case _Colours::blue:
+        case Colours::blue:
             coloured << "34";
             break;
-        case _Colours::green:
+        case Colours::green:
             coloured << "32";
             break;
-        case _Colours::white:
+        case Colours::white:
             coloured << "97";
             break;
-        case _Colours::light_yellow:
+        case Colours::light_yellow:
             coloured << "93";
             break;
     }
     coloured << s << "\033[0m";
     return coloured.str();
+}
+
+std::string ColourPalette::name(const Colours &colour) const {
+    switch (colour) {
+        case Colours::red:
+            return "red";
+        case Colours::yellow:
+            return "orange";
+        case Colours::blue:
+            return "blue";
+        case Colours::green:
+            return "green";
+        case Colours::white:
+            return "white";
+        case Colours::light_yellow:
+            return "yellow";
+    }
+    throw std::runtime_error("Unknown colour name encountered.");
 }

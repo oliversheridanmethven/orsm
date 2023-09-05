@@ -30,7 +30,18 @@ class Volume : public Shape<Volume> {
 private:
 
     virtual Volume::Faces faces(void) const override final {
-        Volume::Faces faces;
+        Faces faces;
+        for (auto colour: ColourPalette().colours) {
+            Face face;
+            for (size_t i = 0; i < 2; i++) {
+                Row row;
+                for (size_t j = 0; j < 2; j++) {
+                    row.push_back(colour);
+                }
+                face.push_back(row);
+            }
+            faces.push_back(face);
+        }
         return faces;
     }
 
@@ -78,7 +89,7 @@ public:
                 s << ' ';
             }
             for (auto tile: row) {
-                s << colour_palette.colour(std::to_string(colour_palette.value(tile.colour)));
+                s << colour_palette.colour(std::to_string(colour_palette.value(tile.colour)), tile.colour) << " ";
             }
             s << '\n';
             indenting -= 1;
@@ -86,7 +97,7 @@ public:
         for (size_t i = 0; i < top[0].size() * 2; i++) {
             bars << '-';
         }
-        for (size_t i = 0; i < indent; i++) { s << ' ' * indent; }
+        for (size_t i = 0; i < indent; i++) { s << " "; }
         s << '/' << bars.str() << '/';
         for (size_t row = 0; row < left.size(); row++) {
             auto left_row = left[row],
@@ -96,19 +107,19 @@ public:
             s << "\n";
 
             for (auto tile: left_row) {
-                s << colour_palette.colour(std::to_string(colour_palette.value(tile.colour)));
+                s << colour_palette.colour(std::to_string(colour_palette.value(tile.colour)), tile.colour) << " ";
             }
             s << ": ";
             for (auto tile: front_row) {
-                s << colour_palette.colour(std::to_string(colour_palette.value(tile.colour)));
+                s << colour_palette.colour(std::to_string(colour_palette.value(tile.colour)), tile.colour) << " ";
             }
             s << ": ";
             for (auto tile: right_row) {
-                s << colour_palette.colour(std::to_string(colour_palette.value(tile.colour)));
+                s << colour_palette.colour(std::to_string(colour_palette.value(tile.colour)), tile.colour) << " ";
             }
             s << ": ";
             for (auto tile: back_row) {
-                s << colour_palette.colour(std::to_string(colour_palette.value(tile.colour)));
+                s << colour_palette.colour(std::to_string(colour_palette.value(tile.colour)), tile.colour) << " ";
             }
         }
         s << "\n";
@@ -119,11 +130,11 @@ public:
         for (auto row: bottom) {
             s << '\n';
             indenting += 1;
-            for (size_t i = 0; i < indent; i++) {
+            for (size_t i = 0; i < indenting; i++) {
                 s << " ";
             }
             for (auto tile: row) {
-                s << colour_palette.colour(std::to_string(colour_palette.value(tile.colour)));
+                s << colour_palette.colour(std::to_string(colour_palette.value(tile.colour)), tile.colour) << " ";
             }
         }
         s << "\n\n";

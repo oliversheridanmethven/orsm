@@ -19,14 +19,18 @@
 
 class Tile {
 public:
-    ColourPalette::Colours colour;
+    const ColourPalette::Colour colour;
+
+    Tile(const ColourPalette::Colour &colour) : colour(colour) {}
 };
 
 template<typename Self>
 class Shape {
 protected:
     std::vector<Tile> tiles;
-    using Faces = std::vector<std::vector<std::vector<Tile>>>;
+    using Row = std::vector<Tile>;
+    using Face = std::vector<Row>;
+    using Faces = std::vector<Face>;
 
     virtual Faces faces(void) const = 0;
 

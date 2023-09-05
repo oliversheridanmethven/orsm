@@ -1,4 +1,5 @@
 add_subdirectory(tests)
+add_subdirectory(demo)
 
 find_package(PkgConfig REQUIRED)
 pkg_search_module(GLIB REQUIRED glib-2.0)

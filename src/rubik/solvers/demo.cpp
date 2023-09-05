@@ -8,15 +8,17 @@
 #include "boost/program_options.hpp"
 
 int main(int argc, char **argv) {
-    LOG_INIT(argv);
     int seed;
     unsigned int turns;
 
     namespace po = boost::program_options;
-    po::options_description desc("Demonstrate the rubik functionality.");
+    po::options_description desc("Allowed options");
+    po::arg = "";
     desc.add_options()
             ("help", "Produce this help message.")
-            ("turns", po::value<decltype(turns)>(&turns)->default_value(10), "The number of turns.")
+            ("turns", po::value<decltype(turns)>(&turns)->default_value(10)/*->value_name("TURNS")*/,
+             "The number of turns.")
+            ("verbose", po::bool_switch()->default_value(false), "Set verbose logging level.")
             ("seed", po::value(&seed), "The seed.");
 
 
@@ -24,19 +26,31 @@ int main(int argc, char **argv) {
     po::store(po::parse_command_line(argc, argv, desc), vm);
     po::notify(vm);
 
+    if (vm.count("verbose")) {
+        FLAGS_v = 0;
+        FLAGS_logtostdout = true;
+    }
+    google::InitGoogleLogging(argv[0]);
+
     if (vm.count("help")) {
-        std::cout << desc << "\n";
+        LOG_INFO << "Printing the help message.";
+        LOG_WARNING << "Printing the warning message.";
+//        google::FlushLogFiles(google::INFO);
+        std::cout << "Demonstration of the rubik functionality." << "\n\n" << desc << "\n";
         exit(EXIT_SUCCESS);
     }
 
 
     Volume shape;
+    std::cout << "first" << std::endl;
+    LOG_INFO << "The initial shape is: " << shape;
+    auto colour_palette = ColourPalette();
+    std::cout << "The initial shape is: " << shape;
     Path solution_path;
     auto [shuffled, shuffle_path] = shape.shuffle(turns, seed);
+    std::cout << "The shuffled shape is: " << shuffled
+              << "The shuffled shape is constructed by: " << shuffle_path;
     auto solver = MeetInMiddleRecursive<decltype(shape)>();
     solution_path = solver.solve(shape, shuffled);
-    std::cout << "The initial shape was: " << shape
-              << "The shuffled shape is: " << shuffled
-              << "The shuffled shape is constructed by: " << shuffle_path
-              << "The shuffled shape is recovered by: " << solution_path;
+    std::cout << "The shuffled shape is recovered by: " << solution_path;
 }

@@ -2,7 +2,7 @@
 #include "logging/logging.hpp"
 #include <sstream>
 
-std::string ColourPalette::colour(const std::string &s) const {
+std::string ColourPalette::colour(const std::string &s, const Colour &colour) const {
     /*
      * Following the approach outlined here: https://stackoverflow.com/a/45300654/5134817
      *
@@ -14,43 +14,43 @@ std::string ColourPalette::colour(const std::string &s) const {
      *
      * */
     coloured << "\033[0;";
-    switch (this->_colour) {
-        case Colours::red:
+    switch (colour) {
+        case Colour::red:
             coloured << "31";
             break;
-        case Colours::yellow:
+        case Colour::yellow:
             coloured << "33";
             break;
-        case Colours::blue:
+        case Colour::blue:
             coloured << "34";
             break;
-        case Colours::green:
+        case Colour::green:
             coloured << "32";
             break;
-        case Colours::white:
+        case Colour::white:
             coloured << "97";
             break;
-        case Colours::light_yellow:
+        case Colour::light_yellow:
             coloured << "93";
             break;
     }
-    coloured << s << "\033[0m";
+    coloured << "m" << s << "\033[0m";
     return coloured.str();
 }
 
-std::string ColourPalette::name(const Colours &colour) const {
+std::string ColourPalette::name(const Colour &colour) const {
     switch (colour) {
-        case Colours::red:
+        case Colour::red:
             return "red";
-        case Colours::yellow:
+        case Colour::yellow:
             return "orange";
-        case Colours::blue:
+        case Colour::blue:
             return "blue";
-        case Colours::green:
+        case Colour::green:
             return "green";
-        case Colours::white:
+        case Colour::white:
             return "white";
-        case Colours::light_yellow:
+        case Colour::light_yellow:
             return "yellow";
     }
     throw std::runtime_error("Unknown colour name encountered.");

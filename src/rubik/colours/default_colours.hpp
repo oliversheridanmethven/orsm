@@ -2,13 +2,14 @@
 #define TESTING_DEFAULT_COLOURS_HPP
 
 #include <string>
+#include <vector>
 
 using enum_underlying = int;
 
 class ColourPalette {
 public:
 
-    enum class Colours : enum_underlying {
+    enum class Colour : enum_underlying {
         red = 0,
         yellow,
         blue,
@@ -17,19 +18,23 @@ public:
         light_yellow
     };
 
+    // Iterating through an enum class is a nightmare, so we have this small helper function.
+    const std::vector<Colour> colours = {Colour::red,
+                                         Colour::yellow,
+                                         Colour::blue,
+                                         Colour::green,
+                                         Colour::white,
+                                         Colour::light_yellow};
 
-    std::string name(const Colours &colour) const;
+    std::string name(const Colour &colour) const;
 
-    Colours something = Colours::red;
+    Colour something = Colour::red;
 
-    std::string colour(const std::string &s) const;
+    std::string colour(const std::string &s, const Colour &colour) const;
 
-    enum_underlying value(const Colours &colour) const {
-        return static_cast<typename std::underlying_type<Colours>::type>(colour);
+    enum_underlying value(const Colour &colour) const {
+        return static_cast<typename std::underlying_type<Colour>::type>(colour);
     }
-
-private:
-    Colours _colour;
 };
 
 #endif //TESTING_DEFAULT_COLOURS_HPP

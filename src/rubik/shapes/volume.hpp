@@ -4,6 +4,8 @@
 #include "rubik/shapes/shape.hpp"
 #include "rubik/colours/default_colours.hpp"
 #include <sstream>
+#include <boost/functional/hash.hpp>
+
 
 const Move
         move_1 = {"Move the bottom (front -> right)",
@@ -26,7 +28,7 @@ const Move
                   {0, 1, 2, 3, 5, 7, 4, 6, 8, 16, 10, 17, 22, 13, 23, 15, 14, 12, 18, 19, 20, 21, 11, 9}};
 
 
-class Volume : public Shape<Volume> {
+class Volume final : public Shape<Volume> {
 private:
 
     Volume::Faces solved_faces(void) const {
@@ -59,6 +61,8 @@ private:
     }
 
 public:
+
+//    ~Volume() override {}
 
     Volume() {
         for (auto face: solved_faces()) {
@@ -165,6 +169,23 @@ public:
         return os;
     }
 
+
+    friend std::hash<Volume>;
 };
+
+//template<>
+template<>
+struct std::hash<Volume> {
+
+    std::size_t operator()(const Volume &shape) const noexcept {
+        size_t combined_hash = 0; /* <- Must be seeded. */
+        for (const auto &tile: shape.tiles) {
+            size_t tile_hash = std::hash<Tile>{}(tile);
+            boost::hash_combine(combined_hash, tile_hash);
+        }
+        return combined_hash;
+    }
+};
+
 
 #endif //TESTING_VOLUME_HPP

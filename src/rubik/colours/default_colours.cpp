@@ -2,7 +2,7 @@
 #include "logging/logging.hpp"
 #include <sstream>
 
-std::string ColourPalette::colour(const std::string &s, const Colour &colour) const {
+std::string ColourPalette::colour(const std::string &s, const Colour &colour) {
     /*
      * Following the approach outlined here: https://stackoverflow.com/a/45300654/5134817
      *
@@ -38,7 +38,7 @@ std::string ColourPalette::colour(const std::string &s, const Colour &colour) co
     return coloured.str();
 }
 
-std::string ColourPalette::name(const Colour &colour) const {
+std::string ColourPalette::name(const Colour &colour) {
     switch (colour) {
         case Colour::red:
             return "red";

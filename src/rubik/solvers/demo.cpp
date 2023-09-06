@@ -5,6 +5,7 @@
 #include "rubik/solvers/meet_in_middle_recursive.hpp"
 #include "rubik/paths/paths.hpp"
 #include "boost/program_options.hpp"
+#include <ranges>
 
 int main(int argc, char **argv) {
     int seed;
@@ -25,7 +26,7 @@ int main(int argc, char **argv) {
     po::store(po::parse_command_line(argc, argv, desc), vm);
     po::notify(vm);
 
-    if (vm.count("verbose")) {
+    if (vm["verbose"].as<bool>()) {
         FLAGS_v = 0;
         FLAGS_logtostdout = true;
     }

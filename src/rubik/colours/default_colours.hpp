@@ -4,10 +4,10 @@
 #include <string>
 #include <vector>
 
-using enum_underlying = int;
 
 class ColourPalette {
 public:
+    using enum_underlying = int;
 
     enum class Colour : enum_underlying {
         red = 0,
@@ -26,13 +26,11 @@ public:
                                          Colour::white,
                                          Colour::light_yellow};
 
-    std::string name(const Colour &colour) const;
+    static std::string name(const Colour &colour);
 
-    Colour something = Colour::red;
+    static std::string colour(const std::string &s, const Colour &colour);
 
-    std::string colour(const std::string &s, const Colour &colour) const;
-
-    enum_underlying value(const Colour &colour) const {
+    static enum_underlying value(const Colour &colour) {
         return static_cast<typename std::underlying_type<Colour>::type>(colour);
     }
 };

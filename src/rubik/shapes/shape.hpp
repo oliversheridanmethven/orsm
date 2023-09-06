@@ -16,13 +16,30 @@
 
 #include <random>
 #include "logging/logging.hpp"
+#include <boost/functional/hash.hpp>
+
 
 class Tile {
 public:
     ColourPalette::Colour colour;
 
     Tile(const ColourPalette::Colour &colour) : colour(colour) {}
+
+    bool operator==(const Tile &other) const {
+        return colour == other.colour;
+    }
+
+    friend std::hash<Tile>;
 };
+
+template<>
+struct std::hash<Tile> {
+
+    std::size_t operator()(const Tile &tile) const noexcept {
+        return std::hash<ColourPalette::enum_underlying>{}(ColourPalette::value(tile.colour));
+    }
+};
+
 
 template<typename Self>
 class Shape {
@@ -36,6 +53,11 @@ protected:
 
 
 public:
+
+    bool operator==(const Shape &other) const {
+        return tiles == other.tiles;
+    }
+
     virtual const std::vector<Move> moves(void) const = 0;
 
     virtual const std::unordered_map<Move, Move> reverse_moves(void) const = 0;
@@ -77,6 +99,7 @@ public:
             shuffled = shuffled.move(move);
             LOG_DEBUG << "The shuffled shape is: " << shuffled;
             path = path.add(move);
+            LOG_DEBUG << "The current path is: " << path;
         }
         return {shuffled, path};
 
@@ -92,6 +115,5 @@ public:
     }
 
 };
-
 
 #endif //TESTING_SHAPE_HPP

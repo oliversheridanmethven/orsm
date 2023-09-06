@@ -73,7 +73,7 @@ class MeetInMiddleRecursive(Solver):
         while any([_distance_not_final(distance) for distance in distances]):
             index_start = next(i for i, distance in enumerate(distances) if _distance_not_final(distance))
             index_intermediate = index_start + 1
-            intermediate_shape, distance_start, distance_target = self._intermediate_shape_and_turns(start=shapes[index_start], target=shapes[index_start + 1])
+            intermediate_shape, distance_start, distance_target = self._intermediate_shape_and_turns(start=shapes[index_start], target=shapes[index_intermediate])
             distances[index_start] = distance_start
             distances.insert(index_intermediate, distance_target)
             shapes.insert(index_intermediate, intermediate_shape)

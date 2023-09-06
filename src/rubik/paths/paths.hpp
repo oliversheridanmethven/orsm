@@ -6,25 +6,28 @@
 
 class Path {
 private:
-    std::vector<Move> _moves;
-    std::vector<bool> _reverses;
 
     void append(const Move &move, const bool);
 
 public:
+    std::vector<Move> moves;
+    std::vector<bool> reverses;
+    
     Path add(const Move &move, const bool reverse = false);
 
     friend std::ostream &operator<<(std::ostream &os, const Path &path) {
-        if (path._moves.empty()) {
+        if (path.moves.empty()) {
             os << "Empty path.\n";
             return os;
         }
-        for (size_t turn = 0; turn < path._moves.size(); turn++) {
-            os << "\nTurn = " << turn << " " << path._moves[turn] << (path._reverses[turn] ? " in reverse" : "");
+        for (size_t turn = 0; turn < path.moves.size(); turn++) {
+            os << "\nTurn = " << turn << " " << path.moves[turn] << (path.reverses[turn] ? " in reverse" : "");
         }
         os << "\n";
         return os;
     }
+
+    auto begin() const {}
 };
 
 #endif //TESTING_PATHS_HPP

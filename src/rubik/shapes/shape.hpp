@@ -19,7 +19,7 @@
 
 class Tile {
 public:
-    const ColourPalette::Colour colour;
+    ColourPalette::Colour colour;
 
     Tile(const ColourPalette::Colour &colour) : colour(colour) {}
 };
@@ -48,8 +48,9 @@ public:
     Self move(const Move &move, const bool reverse = false) const {
         Self moved;
         auto indices = reverse ? reverse_moves().at(move).indices : move.indices;
-        std::transform(indices.begin(), indices.end(), std::back_inserter(moved.tiles),
-                       [&](auto index) { return tiles.at(index); });
+        for (size_t i = 0; i < indices.size(); i++) {
+            moved.tiles.at(i) = tiles.at(indices.at(i));
+        }
         return moved;
     }
 
@@ -72,8 +73,9 @@ public:
                 break;
             }
 
-            LOG(INFO) << "turn = " << turn << " shuffling with move: " << move;
+            LOG_INFO << "turn = " << turn << " shuffling with move: " << move;
             shuffled = shuffled.move(move);
+            LOG_DEBUG << "The shuffled shape is: " << shuffled;
             path = path.add(move);
         }
         return {shuffled, path};

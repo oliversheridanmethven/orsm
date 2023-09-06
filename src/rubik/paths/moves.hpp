@@ -6,6 +6,7 @@
 #include <vector>
 #include <functional>
 #include <boost/functional/hash.hpp>
+#include "logging/logging.hpp"
 
 class Move {
 private:
@@ -32,7 +33,7 @@ public:
 template<>
 struct std::hash<Move> {
     std::size_t operator()(const Move &move) const noexcept {
-        size_t combined_hash;
+        size_t combined_hash = 0; /* <- Must be seeded. */
         boost::hash_combine(combined_hash, move.description);
         boost::hash_combine(combined_hash, boost::hash_range(move.indices.begin(), move.indices.end()));
         return combined_hash;

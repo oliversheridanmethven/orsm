@@ -4,7 +4,6 @@
 #include "rubik/shapes/volume.hpp"
 #include "rubik/solvers/meet_in_middle_recursive.hpp"
 #include "rubik/paths/paths.hpp"
-#include "rubik/paths/paths.hpp"
 #include "boost/program_options.hpp"
 
 int main(int argc, char **argv) {
@@ -33,24 +32,19 @@ int main(int argc, char **argv) {
     google::InitGoogleLogging(argv[0]);
 
     if (vm.count("help")) {
-        LOG_INFO << "Printing the help message.";
-        LOG_WARNING << "Printing the warning message.";
-//        google::FlushLogFiles(google::INFO);
-        std::cout << "Demonstration of the rubik functionality." << "\n\n" << desc << "\n";
+        std::cout << "Demonstration of the rubik functionality." << "\n\n"
+                  << desc << "\n";
         exit(EXIT_SUCCESS);
     }
 
 
     Volume shape;
-    std::cout << "first" << std::endl;
     LOG_INFO << "The initial shape is: " << shape;
-    auto colour_palette = ColourPalette();
-    std::cout << "The initial shape is: " << shape;
     Path solution_path;
     auto [shuffled, shuffle_path] = shape.shuffle(turns, seed);
-    std::cout << "The shuffled shape is: " << shuffled
-              << "The shuffled shape is constructed by: " << shuffle_path;
+    LOG_INFO << "The shuffled shape is: " << shuffled
+             << "The shuffled shape is constructed by: " << shuffle_path;
     auto solver = MeetInMiddleRecursive<decltype(shape)>();
     solution_path = solver.solve(shape, shuffled);
-    std::cout << "The shuffled shape is recovered by: " << solution_path;
+    LOG_INFO << "The shuffled shape is recovered by: " << solution_path;
 }

@@ -29,7 +29,7 @@ const Move
 class Volume : public Shape<Volume> {
 private:
 
-    virtual Volume::Faces faces(void) const override final {
+    Volume::Faces solved_faces(void) const {
         Faces faces;
         for (auto colour: ColourPalette().colours) {
             Face face;
@@ -45,7 +45,30 @@ private:
         return faces;
     }
 
+    virtual Volume::Faces faces(void) const override final {
+        Faces faces = solved_faces();
+        auto _tile = tiles.begin();
+        for (auto &face: faces) {
+            for (auto &row: face) {
+                for (auto &tile: row) {
+                    tile = *(_tile++);
+                }
+            }
+        }
+        return faces;
+    }
+
 public:
+
+    Volume() {
+        for (auto face: solved_faces()) {
+            for (auto row: face) {
+                for (auto tile: row) {
+                    tiles.push_back(tile);
+                }
+            }
+        }
+    }
 
     const std::vector<Move> moves(void) const override final {
         return {move_1, move_2, move_3, move_4, move_5, move_6, move_7, move_8, move_9};
@@ -73,13 +96,13 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const Volume &volume) {
         auto colour_palette = ColourPalette();
-        auto _faces = volume.faces();
-        auto top = _faces[4];
-        auto front = _faces[0];
-        auto right = _faces[2];
-        auto left = _faces[3];
-        auto back = _faces[1];
-        auto bottom = _faces[5];
+        auto faces = volume.faces();
+        auto front = faces[0];
+        auto back = faces[1];
+        auto right = faces[2];
+        auto left = faces[3];
+        auto top = faces[4];
+        auto bottom = faces[5];
         std::stringstream s, bars;
         s << "\n\n";
         size_t indent = 5;

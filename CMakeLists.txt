@@ -49,6 +49,13 @@ message(DEBUG "The CXX error flags after filtering: ${IGNORE_ERROR_FLAGS_CXX}")
 set(ERROR_FLAGS_C "${ERROR_FLAGS} ${IGNORE_ERROR_FLAGS_C}")
 set(ERROR_FLAGS_CXX "${ERROR_FLAGS} ${IGNORE_ERROR_FLAGS_CXX}")
 message(DEBUG "The C compiler flags are: ${CMAKE_C_FLAGS}")
+
+message(STATUS "Compiling in mode: ${CMAKE_BUILD_TYPE}")
+if(CMAKE_BUILD_TYPE STREQUAL "Release")
+    message(STATUS "Adding optimisation flags.")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
+endif()
+
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${ERROR_FLAGS_C}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${ERROR_FLAGS_CXX}")
 

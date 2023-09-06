@@ -19,6 +19,7 @@ int main(int argc, char **argv) {
             ("turns", po::value<decltype(turns)>(&turns)->default_value(10)/*->value_name("TURNS")*/,
              "The number of turns.")
             ("verbose", po::bool_switch()->default_value(false), "Set verbose logging level.")
+            ("debug", po::bool_switch()->default_value(false), "Set debug logging level.")
             ("seed", po::value(&seed), "The seed.");
 
 
@@ -30,6 +31,13 @@ int main(int argc, char **argv) {
         FLAGS_v = 0;
         FLAGS_logtostdout = true;
     }
+
+    if (vm["debug"].as<bool>()) {
+        FLAGS_v = 1;
+        FLAGS_logtostdout = true;
+    }
+
+
     google::InitGoogleLogging(argv[0]);
 
     if (vm.count("help")) {

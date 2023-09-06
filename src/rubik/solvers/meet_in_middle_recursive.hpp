@@ -5,6 +5,7 @@
 #include "logging/logging.hpp"
 #include "testing/testing.hpp"
 #include <algorithm>
+#include <execution>
 
 template<typename S>
 class MeetInMiddleRecursive final : Solver<S> {
@@ -44,7 +45,7 @@ private:
 
             CHECK_LE(smaller_front.size(), larger_front.size()) << "The sizing of our fronts is mis-matched.";
 
-            std::for_each(smaller_front.begin(), smaller_front.end(),
+            std::for_each(/*std::execution::par,*/ smaller_front.begin(), smaller_front.end(),
                           [&](const auto &shape) {
                               if (larger_front.contains(shape)) {
                                   overlaps.insert(shape);

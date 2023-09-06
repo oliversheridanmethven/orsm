@@ -46,13 +46,13 @@ private:
             CHECK_LE(smaller_front.size(), larger_front.size()) << "The sizing of our fronts is mis-matched.";
 
             std::for_each(/*std::execution::par,*/ smaller_front.begin(), smaller_front.end(),
-                          [&](const auto &shape) {
-                              if (larger_front.contains(shape)) {
-                                  overlaps.insert(shape);
-                              }
-                          });
+                                                   [&](const auto &shape) {
+                                                       if (larger_front.contains(shape)) {
+                                                           overlaps.insert(shape);
+                                                       }
+                                                   });
             if (not overlaps.empty()) {
-                LOG_INFO << "We have found {len(overlaps)} solutions with {turns = }.";
+                LOG_DEBUG << "We have found " << overlaps.size() << " solutions with turns = " << turns;
                 break;
             }
             std::reverse(shape_fronts.begin(), shape_fronts.end());
@@ -71,7 +71,7 @@ private:
             << "We have not correctly split the turns = " << turns << " turns_from_start = "
             << turns_from_start << " turns_from_target = " << turns_from_target;
         auto overlap = *overlaps.begin();
-        LOG_INFO << "The item that overlaps from both sets is: " << overlap;
+        LOG_DEBUG << "The item that overlaps from both sets is: " << overlap;
         return std::make_tuple(overlap, turns_from_start, turns_from_target);
     }
 

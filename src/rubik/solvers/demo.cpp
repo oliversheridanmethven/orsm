@@ -16,10 +16,11 @@ int main(int argc, char **argv) {
     po::arg = "";
     desc.add_options()
             ("help", "Produce this help message.")
-            ("turns", po::value<decltype(turns)>(&turns)->default_value(10)/*->value_name("TURNS")*/,
+            ("turns", po::value<decltype(turns)>(&turns)->default_value(100)/*->value_name("TURNS")*/,
              "The number of turns.")
             ("verbose", po::bool_switch()->default_value(false), "Set verbose logging level.")
             ("debug", po::bool_switch()->default_value(false), "Set debug logging level.")
+            ("trace", po::bool_switch()->default_value(false), "Set trace logging level.")
             ("seed", po::value(&seed), "The seed.");
 
 
@@ -28,12 +29,17 @@ int main(int argc, char **argv) {
     po::notify(vm);
 
     if (vm["verbose"].as<bool>()) {
-        FLAGS_v = 0;
+        FLAGS_v = INFO_LEVEL;
         FLAGS_logtostdout = true;
     }
 
     if (vm["debug"].as<bool>()) {
-        FLAGS_v = 1;
+        FLAGS_v = DEBUG_LEVEL;
+        FLAGS_logtostdout = true;
+    }
+
+    if (vm["trace"].as<bool>()) {
+        FLAGS_v = TRACE_LEVEL;
         FLAGS_logtostdout = true;
     }
 
@@ -51,8 +57,8 @@ int main(int argc, char **argv) {
     LOG_INFO << "The initial shape is: " << shape;
     Path solution_path;
     auto [shuffled, shuffle_path] = shape.shuffle(turns, seed);
-    LOG_INFO << "The shuffled shape is: " << shuffled
-             << "The shuffled shape is constructed by: " << shuffle_path;
+    LOG_INFO << "The shuffled shape is: " << shuffled;
+    LOG_INFO << "The shuffled shape is constructed by:\n" << shuffle_path << "\n";
     auto solver = MeetInMiddleRecursive<decltype(shape)>();
     solution_path = solver.solve(shape, shuffled);
     LOG_INFO << "The shuffled shape is recovered by: " << solution_path;

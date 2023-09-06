@@ -95,7 +95,7 @@ public:
                 break;
             }
 
-            LOG_INFO << "turn = " << turn << " shuffling with move: " << move;
+            LOG_TRACE << "turn = " << turn << " shuffling with move: " << move;
             shuffled = shuffled.move(move);
             LOG_DEBUG << "The shuffled shape is: " << shuffled;
             path = path.add(move);

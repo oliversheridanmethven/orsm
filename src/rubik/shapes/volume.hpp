@@ -61,10 +61,29 @@ private:
     }
 
 public:
-
 //    ~Volume() override {}
 
+    /*
+     * The CRTP pattern makes trying to code this up as an initialiser list awkward, but for now it's no the
+     * bottleneck, so don't stress about it for now.
+     *
+     * */
+    Tiles starting_tiles{ColourPalette::Colour::red, ColourPalette::Colour::red, ColourPalette::Colour::red,
+                         ColourPalette::Colour::red, ColourPalette::Colour::yellow, ColourPalette::Colour::yellow,
+                         ColourPalette::Colour::yellow, ColourPalette::Colour::yellow,
+                         ColourPalette::Colour::blue,
+                         ColourPalette::Colour::blue, ColourPalette::Colour::blue, ColourPalette::Colour::blue,
+                         ColourPalette::Colour::green, ColourPalette::Colour::green, ColourPalette::Colour::green,
+                         ColourPalette::Colour::green, ColourPalette::Colour::white, ColourPalette::Colour::white,
+                         ColourPalette::Colour::white, ColourPalette::Colour::white,
+                         ColourPalette::Colour::light_yellow,
+                         ColourPalette::Colour::light_yellow, ColourPalette::Colour::light_yellow,
+                         ColourPalette::Colour::light_yellow};
+
     Volume() {
+        tiles = starting_tiles;
+        // Equivalent to the following, but faster:
+        /*
         for (auto face: solved_faces()) {
             for (auto row: face) {
                 for (auto tile: row) {
@@ -72,7 +91,9 @@ public:
                 }
             }
         }
+        */
     }
+
 
     const std::vector<Move> moves(void) const override final {
         return {move_1, move_2, move_3, move_4, move_5, move_6, move_7, move_8, move_9};
@@ -173,7 +194,6 @@ public:
     friend std::hash<Volume>;
 };
 
-//template<>
 template<>
 struct std::hash<Volume> {
 

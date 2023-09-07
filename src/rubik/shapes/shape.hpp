@@ -30,6 +30,12 @@ public:
     }
 
     friend std::hash<Tile>;
+
+    friend std::ostream &operator<<(std::ostream &os, const Tile &tile) {
+        os << ColourPalette::name(tile.colour);
+        return os;
+    }
+
 };
 
 template<>
@@ -43,14 +49,15 @@ struct std::hash<Tile> {
 
 template<typename Self>
 class Shape {
-protected:
-    std::vector<Tile> tiles;
+public:
+    using Tiles = std::vector<Tile>;
     using Row = std::vector<Tile>;
     using Face = std::vector<Row>;
     using Faces = std::vector<Face>;
+protected:
+    Tiles tiles;
 
     virtual Faces faces(void) const = 0;
-
 
 public:
 
@@ -115,5 +122,14 @@ public:
     }
 
 };
+
+template<typename T>
+std::ostream &operator<<(std::ostream &os, std::vector<T> values) {
+    for (int leading_comma = 0; const auto &value: values) {
+        os << (leading_comma++ ? ", " : "") << value;
+    }
+    return os;
+}
+
 
 #endif //TESTING_SHAPE_HPP

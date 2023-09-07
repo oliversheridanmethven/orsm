@@ -14,13 +14,22 @@ TYPED_TEST(ShapeTest, printing) {
 }
 
 TYPED_TEST(ShapeTest, equality) {
-    TypeParam shape1, shape2;
-    ASSERT_EQ(shape1, shape2);
+    TypeParam shape_1, shape_2;
+    ASSERT_EQ(shape_1, shape_2);
 }
 
 TYPED_TEST(ShapeTest, hashing) {
-    TypeParam shape1, shape2;
-    ASSERT_EQ(std::hash<TypeParam>{}(shape1), std::hash<TypeParam>{}(shape2));
+    TypeParam shape_1, shape_2;
+    ASSERT_EQ(std::hash<TypeParam>{}(shape_1), std::hash<TypeParam>{}(shape_2));
+}
+
+TYPED_TEST(ShapeTest, after_move) {
+    TypeParam shape_1, shape_2;
+    for (auto move: shape_1.moves()) {
+        shape_2 = shape_1.move(move);
+        ASSERT_NE(shape_1, shape_2);
+        ASSERT_NE(std::hash<TypeParam>{}(shape_1), std::hash<TypeParam>{}(shape_2));
+    }
 }
 
 TYPED_TEST(ShapeTest, moves_equality) {
@@ -38,13 +47,84 @@ TYPED_TEST(ShapeTest, moves_equality) {
 }
 
 TYPED_TEST(ShapeTest, single_moves) {
-    TypeParam shape1, shape2, shape3;
-    for (auto move: shape1.moves()) {
-        shape3 = shape2.move(move);
-        ASSERT_NE(shape3, shape2);
-        ASSERT_EQ(shape1, shape2);
+    TypeParam shape_1, shape_2, shape_3;
+    for (auto move: shape_1.moves()) {
+        shape_3 = shape_2.move(move);
+        ASSERT_NE(shape_3, shape_2);
+        ASSERT_EQ(shape_1, shape_2);
     }
 }
+
+TYPED_TEST(ShapeTest, reverse_moves) {
+    TypeParam shape_1, shape_2, shape_3;
+    for (auto move: shape_1.moves()) {
+        shape_2 = shape_1.move(move);
+        bool reverse = true;
+        shape_3 = shape_2.move(move, reverse);
+        ASSERT_NE(shape_1, shape_2);
+        ASSERT_EQ(shape_1, shape_3);
+    }
+}
+
+TYPED_TEST(ShapeTest, compound_moves) {
+    TypeParam shape_1, shape_2, shape_3, shape_4;
+    for (auto reverse: {true, false}) {
+        for (auto move_1: shape_1.moves()) {
+            for (auto move_2: shape_1.moves()) {
+                shape_2 = shape_1.move(move_1, reverse);
+                shape_3 = shape_2.move(move_2, reverse);
+                shape_4 = shape_1.move({move_1, move_2}, reverse);
+                ASSERT_EQ(shape_3, shape_4);
+            }
+        }
+    }
+}
+
+TYPED_TEST(ShapeTest, multiple_moves) {
+    TypeParam shape_1, shape_2, shape_3;
+    for (auto reverse: {true, false}) {
+        for (auto move_1: shape_1.moves()) {
+            for (auto move_2: shape_1.moves()) {
+                shape_2 = shape_1.move({move_1, move_2}, reverse);
+                shape_3 = shape_1.move(move_1, reverse).move(move_2, reverse);
+                ASSERT_EQ(shape_2, shape_3);
+            }
+        }
+    }
+}
+
+TYPED_TEST(ShapeTest, double_moves) {
+    TypeParam shape;
+    for (auto direction: {true, false}) {
+        auto other_direction = not direction;
+        for (auto move_1: shape.moves()) {
+            for (auto move_2: shape.moves()) {
+                auto shape_moved_once = shape.move(move_1, direction);
+                auto shape_moved_twice = shape_moved_once.move(move_2, direction);
+                if (shape.reverse_of(move_1) == move_2) {
+                    ASSERT_EQ(shape_moved_twice, shape.solved_config());
+                } else {
+                    ASSERT_NE(shape_moved_twice, shape.solved_config());
+                    ASSERT_NE(shape_moved_twice, shape_moved_once);
+                }
+                auto shape_moved_twice_reverted = shape_moved_twice.move(move_2, other_direction);
+                ASSERT_EQ(shape_moved_twice_reverted, shape_moved_once);
+                auto shape_reverted_in_order = shape_moved_twice.move({move_2, move_1}, other_direction);
+                ASSERT_EQ(shape_reverted_in_order, shape);
+                auto shape_reverted_out_of_order = shape_moved_twice.move({move_1, move_2}, other_direction);
+                if (move_1 == move_2 or shape.reverse_of(move_1) == move_2 or shape.commutative(move_1, move_2)) {
+                    ASSERT_EQ(shape_reverted_out_of_order, shape);
+                } else {
+                    ASSERT_NE(shape_reverted_out_of_order, shape);
+                }
+
+            }
+        }
+    }
+
+}
+
+
 
 
 

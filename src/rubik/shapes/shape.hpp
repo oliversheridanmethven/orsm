@@ -74,6 +74,14 @@ public:
     /* In C++ 23, when there is a bit better compiler support, we will use the "deducing this" feature to make derived
      * actions nicer and a cleaner interface for the CRTP pattern. */
 
+    Self move(const std::vector<Move> &moves, const bool reverse = false) const {
+        Self moved = *dynamic_cast<const Self *>(this);
+        for (const auto &_move: moves) {
+            moved = moved.move(_move, reverse);
+        }
+        return moved;
+    }
+
     Self move(const Move &move, const bool reverse = false) const {
         Self moved;
         auto indices = reverse ? reverse_moves().at(move).indices : move.indices;
@@ -119,6 +127,15 @@ public:
             }
         }
         throw std::runtime_error("We could not find a commutative grouping containing our moves.");
+    }
+
+    Move reverse_of(const Move &move) const {
+        return reverse_moves().at(move);
+    }
+
+    Self solved_config(void) const {
+        Self solved;
+        return solved;
     }
 
 };

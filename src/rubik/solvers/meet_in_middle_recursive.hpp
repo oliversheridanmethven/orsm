@@ -3,7 +3,6 @@
 
 #include "rubik/solvers/solver.hpp"
 #include "logging/logging.hpp"
-#include "testing/testing.hpp"
 #include <algorithm>
 #include <execution>
 

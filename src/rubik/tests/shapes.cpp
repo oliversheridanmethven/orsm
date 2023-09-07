@@ -1,5 +1,6 @@
 #include "testing/testing.h"
 #include "rubik/shapes/volume.hpp"
+#include <ranges>
 
 template<typename S>
 class ShapeTest : public testing::Test {
@@ -121,11 +122,49 @@ TYPED_TEST(ShapeTest, double_moves) {
             }
         }
     }
-
 }
 
+TYPED_TEST(ShapeTest, rotational_symmetry) {
+    TypeParam shape;
+    for (auto direction: {true, false}) {
+        auto other_direction = not direction;
+        for (auto move: shape.moves()) {
+            // The two-fold symmetry
+            auto moved = shape.move({move, move}, direction);
+            auto moved_reverse = shape.move({move, move}, other_direction);
+            ASSERT_EQ(moved, moved_reverse);
+            // The four-fold symmetry
+            auto moved_fully = shape.move({move, move, move, move}, direction);
+            ASSERT_EQ(shape, moved_fully);
+        }
+    }
+}
 
-
-
-
-
+TYPED_TEST(ShapeTest, shuffle) {
+    for (size_t turns = 0; turns < 10; turns++) {
+        TypeParam shape;
+        auto [shuffled, path] = shape.shuffle(turns, std::nullopt);
+        LOG_INFO << "The target shuffled cube is:" << shuffled;
+        LOG_DEBUG << "Obtained by:" << path;
+        auto moved = shape;
+        LOG_DEBUG << "The starting configuration is: " << moved;
+        size_t turn = 0;
+        for (auto [move, reverse]: std::ranges::views::zip(path.moves, path.reverses)) {
+            LOG_DEBUG << "Turn = " << turn++ << move << (reverse ? " in reverse" : "");
+            moved = moved.move(move, reverse);
+            LOG_DEBUG << "The moved configuration is: " << moved;
+        }
+        LOG_INFO << "The final moved configuration is: " << moved;
+        LOG_INFO << "The target configuration is: " << shuffled;
+        ASSERT_EQ(moved, shuffled) << "We should have recovered our target configuration.";
+        auto reverted = moved;
+        std::ranges::reverse(path.moves);
+        std::ranges::reverse(path.reverses);
+        for (auto [move, reverse]: std::ranges::views::zip(path.moves, path.reverses)) {
+            auto other_direction = not reverse;
+            LOG_DEBUG << "Turn = " << turn-- << move << (reverse ? " in reverse" : "");
+            reverted = reverted.move(move, other_direction);
+        }
+        ASSERT_EQ(reverted, shape);
+    }
+}

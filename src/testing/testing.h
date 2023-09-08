@@ -4,6 +4,31 @@
 #ifdef __cplusplus
 
 #include <gtest/gtest.h>
+#include <gmock/gmock.h>
+
+/* Taken from: https://stackoverflow.com/a/58369622/5134817. */
+class CaptureStdOut : public ::testing::Test {
+protected:
+    CaptureStdOut() : cout_buffer{nullptr} {}
+
+    ~CaptureStdOut() override = default;
+
+    void SetUp() override {
+        // Save cout's buffer...
+        cout_buffer = std::cout.rdbuf();
+        // Redirect cout to our stringstream buffer or any other ostream
+        std::cout.rdbuf(captured_cout.rdbuf());
+    }
+
+    void TearDown() override {
+        // When done redirect cout to its old self
+        std::cout.rdbuf(cout_buffer);
+        cout_buffer = nullptr;
+    }
+
+    std::stringstream captured_cout{};
+    std::streambuf *cout_buffer;
+};
 
 #else
 

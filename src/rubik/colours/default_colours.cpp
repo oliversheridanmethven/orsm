@@ -55,3 +55,7 @@ std::string ColourPalette::name(const Colour &colour) {
     }
     throw std::runtime_error("Unknown colour name encountered.");
 }
+
+ColourPalette::enum_underlying ColourPalette::value(const Colour &colour) {
+    return static_cast<std::underlying_type<std::decay<decltype(colour)>::type>::type>(colour);
+}

@@ -4,34 +4,28 @@
 #include "moves.hpp"
 #include <vector>
 
-class Path {
-private:
+using Reverse = bool;
 
-    void append(const Move &move, const bool);
+class Path : public std::vector<std::tuple<Move, Reverse>> {
 
 public:
-    std::vector<Move> moves;
-    std::vector<bool> reverses;
 
-    Path add(const Move &move, const bool reverse = false);
+    Path add(const Move &move, const bool reverse = false) const;
 
-    bool operator==(const Path &other) const {
-        return moves == other.moves and reverses == other.reverses;
-    }
+    Path reversed(void) const;
 
     friend std::ostream &operator<<(std::ostream &os, const Path &path) {
-        if (path.moves.empty()) {
+        if (path.empty()) {
             os << "Empty path.\n";
             return os;
         }
-        for (size_t turn = 0; turn < path.moves.size(); turn++) {
-            os << "\nTurn = " << turn << " " << path.moves[turn] << (path.reverses[turn] ? " in reverse" : "");
+
+        for (size_t turn = 0; auto [move, reverse]: path) {
+            os << "\nTurn = " << turn++ << " " << move << (reverse ? " in reverse" : "");
         }
         os << "\n";
         return os;
     }
-
-    auto begin() const {}
 };
 
 #endif //TESTING_PATHS_HPP

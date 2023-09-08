@@ -30,9 +30,7 @@ public:
 
     static std::string colour(const std::string &s, const Colour &colour);
 
-    static enum_underlying value(const Colour &colour) {
-        return static_cast<typename std::underlying_type<Colour>::type>(colour);
-    }
+    static enum_underlying value(const Colour &colour);
 };
 
 #endif //TESTING_DEFAULT_COLOURS_HPP

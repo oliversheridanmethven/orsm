@@ -149,7 +149,7 @@ TYPED_TEST(ShapeTest, shuffle) {
         auto moved = shape;
         LOG_DEBUG << "The starting configuration is: " << moved;
         size_t turn = 0;
-        for (auto [move, reverse]: std::ranges::views::zip(path.moves, path.reverses)) {
+        for (auto [move, reverse]: path) {
             LOG_DEBUG << "Turn = " << turn++ << move << (reverse ? " in reverse" : "");
             moved = moved.move(move, reverse);
             LOG_DEBUG << "The moved configuration is: " << moved;
@@ -158,9 +158,7 @@ TYPED_TEST(ShapeTest, shuffle) {
         LOG_INFO << "The target configuration is: " << shuffled;
         ASSERT_EQ(moved, shuffled) << "We should have recovered our target configuration.";
         auto reverted = moved;
-        std::ranges::reverse(path.moves);
-        std::ranges::reverse(path.reverses);
-        for (auto [move, reverse]: std::ranges::views::zip(path.moves, path.reverses)) {
+        for (auto [move, reverse]: path.reversed()) {
             auto other_direction = not reverse;
             LOG_DEBUG << "Turn = " << turn-- << move << (reverse ? " in reverse" : "");
             reverted = reverted.move(move, other_direction);

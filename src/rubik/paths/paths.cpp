@@ -1,12 +1,17 @@
 #include "paths.hpp"
+#include <algorithm>
 
-void Path::append(const Move &move, const bool reverse) {
-    moves.push_back(move);
-    reverses.push_back(reverse);
+Path Path::add(const Move &move, const bool reverse) const {
+    Path result = *this;
+    result.push_back({move, reverse});
+    return result;
 }
 
-Path Path::add(const Move &move, const bool reverse) {
+Path Path::reversed(void) const {
     Path result = *this;
-    result.append(move, reverse);
+    std::ranges::reverse(result);
+    for (auto &[move, reverse]: result) {
+        reverse = not reverse;
+    }
     return result;
 }

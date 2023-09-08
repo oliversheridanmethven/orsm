@@ -3,7 +3,7 @@
 #include "logging/logging.hpp"
 #include "rubik/shapes/volume.hpp"
 #include "rubik/solvers/meet_in_middle_recursive.hpp"
-#include "rubik/paths/paths.hpp"
+#include "rubik/paths/path.hpp"
 #include "common/cli.hpp"
 #include <ranges>
 #include <boost/optional.hpp>

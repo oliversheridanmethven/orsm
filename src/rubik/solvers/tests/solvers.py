@@ -41,7 +41,7 @@ class Solvers(unittest.TestCase):
         for name, Solver in self.names_and_solvers:
             solver = Solver()
             shape = shapes.Volume()
-            from rubik.shuffles.difficulty import specific
+            from rubik.shufflers.shufflers import specific
             for turns in range(4):
                 with Timeout(5):
                     shuffled, shuffle_path = specific(start=shape, turns=turns, seed=0)

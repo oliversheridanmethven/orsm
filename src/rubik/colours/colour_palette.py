@@ -10,7 +10,7 @@ from common.cli import standard_parse
 
 
 # class syntax
-class Colours(Enum):
+class ColourPalette(Enum):
     red = 0
     yellow = 1
     blue = 2
@@ -46,6 +46,6 @@ class Colours(Enum):
 
 if __name__ == "__main__":
     standard_parse(description=__doc__)
-    for colour in Colours:
+    for colour in ColourPalette:
         log.print(f" {colour.colour('My colour is ' + colour.name)}, {colour.value = }")
         log.print(f" {colour.colour('My colour is ' + colour.name, background=True)}, {colour.value = }")

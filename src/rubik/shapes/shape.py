@@ -4,13 +4,13 @@ A collection of Rubik style shapes we wish to support.
 """
 
 from common.logger import log
-from rubik.colours.default_colours import Colours
+from rubik.colours.colour_palette import ColourPalette
 import numpy as np
 from abc import ABC, abstractmethod
 import itertools
 import random
-from rubik.paths.paths import Path
-from rubik.paths.moves import Move
+from rubik.paths.path import Path
+from rubik.paths.move import Move
 from functools import wraps
 from copy import deepcopy
 
@@ -58,7 +58,7 @@ class Shape(ABC):
     def __init__(self, *args, array=None, faces=None, colours=None, **kwargs):
         self._array = np.array([]) if array is None else array
         # The _array is our underlying invariant which will always be in a correct state.
-        self._colours = Colours if colours is None else colours
+        self._colours = ColourPalette if colours is None else colours
         self._faces = [] if faces is None else faces
         self._args = args
         self._kwargs = kwargs

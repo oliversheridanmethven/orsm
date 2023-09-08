@@ -158,9 +158,8 @@ TYPED_TEST(ShapeTest, shuffle) {
         LOG_INFO << "The target configuration is: " << shuffled;
         ASSERT_EQ(moved, shuffled) << "We should have recovered our target configuration.";
         auto reverted = moved;
-        for (auto [move, reverse]: path.reversed()) {
-            auto other_direction = not reverse;
-            LOG_DEBUG << "Turn = " << turn-- << move << (reverse ? " in reverse" : "");
+        for (auto [move, other_direction]: path.reversed()) {
+            LOG_DEBUG << "Turn = " << turn-- << move << (other_direction ? " in reverse" : "");
             reverted = reverted.move(move, other_direction);
         }
         ASSERT_EQ(reverted, shape);

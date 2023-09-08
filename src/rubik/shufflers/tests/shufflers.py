@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import unittest
-from rubik.shuffles.difficulty import specific, god
+from rubik.shufflers.shufflers import specific, god
 from rubik.shapes import Domino, Volume, Square, Sheet
 from common.variables import variable_names_and_objects
 from common.logger import log

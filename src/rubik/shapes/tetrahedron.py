@@ -3,7 +3,7 @@
 from .shape import Shape, _array_from_faces_at_end
 from common.logger import log
 from copy import deepcopy
-from rubik.paths.moves import Move
+from rubik.paths.move import Move
 
 
 class Tetrahedron(Shape):

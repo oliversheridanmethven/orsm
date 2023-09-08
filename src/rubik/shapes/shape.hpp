@@ -11,9 +11,9 @@
 #include <algorithm>
 #include <chrono>
 
-#include "rubik/colours/default_colours.hpp"
-#include "rubik/paths/moves.hpp"
-#include "rubik/paths/paths.hpp"
+#include "rubik/colours/colour_palette.hpp"
+#include "rubik/paths/move.hpp"
+#include "rubik/paths/path.hpp"
 
 #include <random>
 #include "logging/logging.hpp"

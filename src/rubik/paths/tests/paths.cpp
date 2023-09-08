@@ -1,5 +1,5 @@
 #include "testing/testing.h"
-#include "rubik/paths/paths.hpp"
+#include "rubik/paths/path.hpp"
 #include "rubik/shapes/volume.hpp"
 #include <iostream>
 

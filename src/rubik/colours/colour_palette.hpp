@@ -1,5 +1,5 @@
-#ifndef TESTING_DEFAULT_COLOURS_HPP
-#define TESTING_DEFAULT_COLOURS_HPP
+#ifndef TESTING_COLOUR_PALETTE_HPP
+#define TESTING_COLOUR_PALETTE_HPP
 
 #include <string>
 #include <vector>
@@ -33,4 +33,4 @@ public:
     static enum_underlying value(const Colour &colour);
 };
 
-#endif //TESTING_DEFAULT_COLOURS_HPP
+#endif //TESTING_COLOUR_PALETTE_HPP

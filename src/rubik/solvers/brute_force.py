@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from rubik.solvers.solver import Solver, next_generation_of_shapes_with_paths, check_solver_inputs
-from rubik.paths.paths import Path
+from rubik.paths.path import Path
 from common.logger import log
 from common.profiling import profile
 

@@ -1,7 +1,7 @@
 add_subdirectory(colours)
 add_subdirectory(paths)
 add_subdirectory(shapes)
-add_subdirectory(shuffles)
+add_subdirectory(shufflers)
 add_subdirectory(solvers)
 
 add_library(rubik INTERFACE)

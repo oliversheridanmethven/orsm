@@ -1,4 +1,4 @@
-#include "default_colours.hpp"
+#include "colour_palette.hpp"
 #include "logging/logging.hpp"
 #include <sstream>
 

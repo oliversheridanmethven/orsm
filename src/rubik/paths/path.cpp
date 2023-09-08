@@ -1,4 +1,4 @@
-#include "paths.hpp"
+#include "path.hpp"
 #include <algorithm>
 
 Path Path::add(const Move &move, const bool reverse) const {

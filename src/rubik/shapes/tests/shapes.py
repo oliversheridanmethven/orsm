@@ -6,7 +6,7 @@ import numpy as np
 from numpy import testing
 
 from rubik import shapes
-from rubik.colours.default_colours import Colours
+from rubik.colours.colour_palette import ColourPalette
 from common.variables import variable_names_and_objects
 import itertools
 from common.cli import log, unit_test_parse

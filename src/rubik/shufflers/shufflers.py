@@ -4,7 +4,7 @@ Generate shuffles of certain difficulty.
 """
 
 from rubik.solvers.solver import next_generation_of_shapes_with_paths
-from rubik.paths.paths import Path
+from rubik.paths.path import Path
 from common.logger import log
 from common.timing import Timeout
 

@@ -2,7 +2,7 @@
 #define TESTING_SOLVER_HPP
 
 #include "rubik/shapes/shape.hpp"
-#include "rubik/paths/paths.hpp"
+#include "rubik/paths/path.hpp"
 
 template<typename S>
 class Solver {

@@ -1,5 +1,5 @@
-#ifndef TESTING_MOVES_HPP
-#define TESTING_MOVES_HPP
+#ifndef TESTING_MOVE_HPP
+#define TESTING_MOVE_HPP
 
 #include <iostream>
 #include <string>
@@ -41,4 +41,4 @@ struct std::hash<Move> {
 };
 
 
-#endif //TESTING_MOVES_HPP
+#endif //TESTING_MOVE_HPP

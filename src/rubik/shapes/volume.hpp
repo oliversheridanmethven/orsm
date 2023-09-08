@@ -2,7 +2,7 @@
 #define TESTING_VOLUME_HPP
 
 #include "rubik/shapes/shape.hpp"
-#include "rubik/colours/default_colours.hpp"
+#include "rubik/colours/colour_palette.hpp"
 #include <sstream>
 #include <boost/functional/hash.hpp>
 

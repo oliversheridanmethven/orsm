@@ -1,7 +1,7 @@
-#ifndef TESTING_PATHS_HPP
-#define TESTING_PATHS_HPP
+#ifndef TESTING_PATH_HPP
+#define TESTING_PATH_HPP
 
-#include "moves.hpp"
+#include "move.hpp"
 #include <vector>
 
 using Reverse = bool;
@@ -28,4 +28,4 @@ public:
     }
 };
 
-#endif //TESTING_PATHS_HPP
+#endif //TESTING_PATH_HPP

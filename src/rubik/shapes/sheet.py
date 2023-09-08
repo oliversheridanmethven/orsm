@@ -2,7 +2,7 @@
 from .shape import Shape, _array_from_faces_at_end, _first_update_faces
 from common.logger import log
 from copy import deepcopy
-from rubik.paths.moves import Move
+from rubik.paths.move import Move
 import numpy as np
 
 

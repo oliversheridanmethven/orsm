@@ -6,9 +6,17 @@
 #include "rubik/paths/paths.hpp"
 #include "common/cli.hpp"
 #include <ranges>
+#include <boost/optional.hpp>
 
 int main(int argc, char **argv) {
-    int seed;
+
+    /* Boost doesn't play perfectly well with std::optional yet. cf.:
+     * https://stackoverflow.com/a/66548554/5134817
+     * https://stackoverflow.com/q/76928378/5134817
+     * */
+    using Seed = boost::optional<typename Volume::Seed::value_type>;
+
+    Seed _seed;
     unsigned int turns;
 
     auto [options, positional_options, parser_finalise] = cli::setup_standard_parser(argc, argv,
@@ -16,12 +24,15 @@ int main(int argc, char **argv) {
 
     options.add_options()
             ("turns",
-             cli::po::value<decltype(turns)>(&turns)->default_value(100)/*->value_name("TURNS")*/,
+             cli::po::value(&turns)->default_value(100)/*->value_name("TURNS")*/,
              "The number of turns.")
-            ("seed", cli::po::value(&seed), "The seed.");
+            ("seed", cli::po::value(&_seed)->default_value(Seed{}, "None"), "The seed.");
 
     parser_finalise(options, positional_options);
-
+    typename Volume::Seed seed;
+    if (_seed.has_value()) {
+        seed = _seed.value();
+    }
 
     Volume shape;
     LOG_INFO << "The initial shape is: " << shape;

@@ -9,6 +9,7 @@
 #include <memory>
 #include <optional>
 #include <algorithm>
+#include <chrono>
 
 #include "rubik/colours/default_colours.hpp"
 #include "rubik/paths/moves.hpp"
@@ -54,6 +55,7 @@ public:
     using Row = std::vector<Tile>;
     using Face = std::vector<Row>;
     using Faces = std::vector<Face>;
+    using Seed = std::optional<int>;
 protected:
     Tiles tiles;
 
@@ -91,12 +93,14 @@ public:
         return moved;
     }
 
-    std::pair<Self, Path> shuffle(unsigned int turns, std::optional<int> seed) const {
+    std::pair<Self, Path> shuffle(unsigned int turns, const Seed &seed) const {
         Path path;
         Self shuffled;
 
         std::random_device rd;
         std::mt19937 gen(rd());
+        gen.seed(
+                seed.has_value() ? seed.value() : std::chrono::high_resolution_clock::now().time_since_epoch().count());
         std::optional<Move> last_move;
         for (decltype(turns) turn = 0; turn < turns; turn++) {
             Move move;

@@ -12,8 +12,12 @@ private:
 public:
     std::vector<Move> moves;
     std::vector<bool> reverses;
-    
+
     Path add(const Move &move, const bool reverse = false);
+
+    bool operator==(const Path &other) const {
+        return moves == other.moves and reverses == other.reverses;
+    }
 
     friend std::ostream &operator<<(std::ostream &os, const Path &path) {
         if (path.moves.empty()) {

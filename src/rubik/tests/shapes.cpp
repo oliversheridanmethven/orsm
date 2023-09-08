@@ -168,3 +168,27 @@ TYPED_TEST(ShapeTest, shuffle) {
         ASSERT_EQ(reverted, shape);
     }
 }
+
+TYPED_TEST(ShapeTest, shuffle_seeding) {
+    TypeParam shape_1, shape_2, shuffle_1, shuffle_2;
+    Path path_1, path_2;
+    auto turns = 10;
+    const std::vector<typename TypeParam::Seed> seeds = {std::nullopt, 0, 1, 2};
+    for (const auto &seed: seeds) {
+        while (true) {
+            std::tie(shuffle_1, path_1) = shape_1.shuffle(turns, seed);
+            std::tie(shuffle_2, path_2) = shape_2.shuffle(turns, seed);
+            if (shuffle_1 != shape_1 and shuffle_2 != shape_2) {
+                break;
+            }
+        }
+
+        if (seed.has_value()) {
+            ASSERT_EQ(path_1, path_2);
+            ASSERT_EQ(shuffle_1, shuffle_2);
+        } else {
+            ASSERT_NE(path_1, path_2);
+        }
+    }
+}
+

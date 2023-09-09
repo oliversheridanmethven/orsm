@@ -189,3 +189,22 @@ TYPED_TEST(ShapeTest, shuffle_seeding) {
     }
 }
 
+TYPED_TEST(ShapeTest, cleaning_path) {
+    TypeParam shape;
+    auto turns = 100;
+    auto seed = 0;
+    auto [shuffled, shuffling_path] = shape.shuffle(turns, seed);
+    auto unshuffling_path = shuffling_path.reversed();
+    auto cleaned_unshuffling_path = shape.clean(unshuffling_path);
+    auto reversed_shuffling = shuffling_path;
+    std::ranges::reverse(reversed_shuffling);
+    for (size_t turn = 0; turn < shuffling_path.size(); turn++) {
+        auto [shuffle_move, shuffle_reverse] = shuffling_path.at(turn);
+        auto [cleaned_unshuffling_move, cleaned_unshuffling_reverse] = cleaned_unshuffling_path.at(turn);
+        auto [reversed_shuffling_move, reversed_shuffling_reverse] = reversed_shuffling.at(turn);
+        ASSERT_FALSE(shuffle_reverse);
+        ASSERT_FALSE(cleaned_unshuffling_reverse);
+        ASSERT_FALSE(reversed_shuffling_reverse);
+        ASSERT_EQ(cleaned_unshuffling_move, shape.reverse_of(reversed_shuffling_move));
+    }
+}

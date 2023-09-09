@@ -38,9 +38,10 @@ int main(int argc, char **argv) {
     LOG_INFO << "The initial shape is: " << shape;
     Path solution_path;
     auto [shuffled, shuffle_path] = shape.shuffle(turns, seed);
-    LOG_INFO << "The shuffled shape is: " << shuffled;
     LOG_INFO << "The shuffled shape is constructed by:\n" << shuffle_path << "\n";
+    LOG_INFO << "The shuffled shape is: " << shuffled;
     auto solver = MeetInMiddleRecursive<decltype(shape)>();
     solution_path = solver.solve(shape, shuffled);
-    LOG_INFO << "The shuffled shape is recovered by: " << solution_path;
+    LOG_DEBUG << "The shuffled shape is recovered by: " << solution_path;
+    LOG_INFO << "The original shape is recovered by: " << shape.clean(solution_path.reversed());
 }

@@ -142,6 +142,18 @@ public:
         return solved;
     }
 
+    Path clean(const Path &path) const {
+        /* Restructures a path in turns of its reciprocal moves performed in the forward direction. */
+        Path cleaned = path;
+        for (auto &[move, reverse]: cleaned) {
+            if (reverse) {
+                reverse = false;
+                move = this->reverse_of(move);
+            }
+        }
+        return cleaned;
+    }
+
 };
 
 template<typename T>

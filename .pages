@@ -4,3 +4,4 @@ nav:
     - Source: src
     - Building: build
     - ...
+    - FAQs: docs/faqs.md

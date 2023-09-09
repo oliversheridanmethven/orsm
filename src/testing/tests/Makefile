@@ -185,6 +185,20 @@ example/fast:
 	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/example.dir/build.make src/testing/tests/CMakeFiles/example.dir/build
 .PHONY : example/fast
 
+# Convenience name for target.
+src/testing/tests/CMakeFiles/example_cpp.dir/rule:
+	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/testing/tests/CMakeFiles/example_cpp.dir/rule
+.PHONY : src/testing/tests/CMakeFiles/example_cpp.dir/rule
+
+# Convenience name for target.
+example_cpp: src/testing/tests/CMakeFiles/example_cpp.dir/rule
+.PHONY : example_cpp
+
+# fast build rule for target.
+example_cpp/fast:
+	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/example_cpp.dir/build.make src/testing/tests/CMakeFiles/example_cpp.dir/build
+.PHONY : example_cpp/fast
+
 example.o: example.c.o
 .PHONY : example.o
 
@@ -209,6 +223,30 @@ example.c.s:
 	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/example.dir/build.make src/testing/tests/CMakeFiles/example.dir/example.c.s
 .PHONY : example.c.s
 
+example.o: example.cpp.o
+.PHONY : example.o
+
+# target to build an object file
+example.cpp.o:
+	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/example_cpp.dir/build.make src/testing/tests/CMakeFiles/example_cpp.dir/example.cpp.o
+.PHONY : example.cpp.o
+
+example.i: example.cpp.i
+.PHONY : example.i
+
+# target to preprocess a source file
+example.cpp.i:
+	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/example_cpp.dir/build.make src/testing/tests/CMakeFiles/example_cpp.dir/example.cpp.i
+.PHONY : example.cpp.i
+
+example.s: example.cpp.s
+.PHONY : example.s
+
+# target to generate assembly for a file
+example.cpp.s:
+	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/example_cpp.dir/build.make src/testing/tests/CMakeFiles/example_cpp.dir/example.cpp.s
+.PHONY : example.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -223,6 +261,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... example"
+	@echo "... example_cpp"
+	@echo "... example.o"
+	@echo "... example.i"
+	@echo "... example.s"
 	@echo "... example.o"
 	@echo "... example.i"
 	@echo "... example.s"

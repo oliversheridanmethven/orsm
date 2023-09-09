@@ -73,15 +73,15 @@ src/common/suppressor/CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.o
 src/common/suppressor/CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.o: src/common/suppressor/suppressor_bindings.c
 src/common/suppressor/CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.o: src/common/suppressor/CMakeFiles/suppressor_bindings.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oliver/ClionProjects/testing/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/common/suppressor/CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.o"
-	cd /Users/oliver/ClionProjects/testing/src/common/suppressor && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/common/suppressor/CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.o -MF CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.o.d -o CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.o -c /Users/oliver/ClionProjects/testing/src/common/suppressor/suppressor_bindings.c
+	cd /Users/oliver/ClionProjects/testing/src/common/suppressor && /opt/local/bin/clang-mp-16 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/common/suppressor/CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.o -MF CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.o.d -o CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.o -c /Users/oliver/ClionProjects/testing/src/common/suppressor/suppressor_bindings.c
 
 src/common/suppressor/CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.i"
-	cd /Users/oliver/ClionProjects/testing/src/common/suppressor && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/common/suppressor/suppressor_bindings.c > CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.i
+	cd /Users/oliver/ClionProjects/testing/src/common/suppressor && /opt/local/bin/clang-mp-16 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/common/suppressor/suppressor_bindings.c > CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.i
 
 src/common/suppressor/CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.s"
-	cd /Users/oliver/ClionProjects/testing/src/common/suppressor && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/common/suppressor/suppressor_bindings.c -o CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.s
+	cd /Users/oliver/ClionProjects/testing/src/common/suppressor && /opt/local/bin/clang-mp-16 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/common/suppressor/suppressor_bindings.c -o CMakeFiles/suppressor_bindings.dir/suppressor_bindings.c.s
 
 # Object files for target suppressor_bindings
 suppressor_bindings_OBJECTS = \

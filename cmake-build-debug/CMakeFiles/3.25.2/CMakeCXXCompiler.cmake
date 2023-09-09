@@ -1,7 +1,7 @@
-set(CMAKE_CXX_COMPILER "/usr/local/bin/g++-13")
+set(CMAKE_CXX_COMPILER "/usr/local/opt/llvm/bin/clang++")
 set(CMAKE_CXX_COMPILER_ARG1 "")
-set(CMAKE_CXX_COMPILER_ID "GNU")
-set(CMAKE_CXX_COMPILER_VERSION "13.1.0")
+set(CMAKE_CXX_COMPILER_ID "Clang")
+set(CMAKE_CXX_COMPILER_VERSION "16.0.6")
 set(CMAKE_CXX_COMPILER_VERSION_INTERNAL "")
 set(CMAKE_CXX_COMPILER_WRAPPER "")
 set(CMAKE_CXX_STANDARD_COMPUTED_DEFAULT "17")
@@ -16,20 +16,19 @@ set(CMAKE_CXX23_COMPILE_FEATURES "cxx_std_23")
 
 set(CMAKE_CXX_PLATFORM_ID "Darwin")
 set(CMAKE_CXX_SIMULATE_ID "")
-set(CMAKE_CXX_COMPILER_FRONTEND_VARIANT "")
+set(CMAKE_CXX_COMPILER_FRONTEND_VARIANT "GNU")
 set(CMAKE_CXX_SIMULATE_VERSION "")
 
-set(CMAKE_CXX_COMPILER_SYSROOT "/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr")
-set(CMAKE_COMPILER_SYSROOT "/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr")
+
 
 
 set(CMAKE_AR "/usr/bin/ar")
-set(CMAKE_CXX_COMPILER_AR "/usr/local/bin/gcc-ar-13")
-set(CMAKE_RANLIB "/usr/bin/ranlib")
-set(CMAKE_CXX_COMPILER_RANLIB "/usr/local/bin/gcc-ranlib-13")
+set(CMAKE_CXX_COMPILER_AR "/usr/local/Cellar/llvm/16.0.6/bin/llvm-ar")
+set(CMAKE_RANLIB "/usr/local/opt/llvm/bin/llvm-ranlib")
+set(CMAKE_CXX_COMPILER_RANLIB "/usr/local/Cellar/llvm/16.0.6/bin/llvm-ranlib")
 set(CMAKE_LINKER "/usr/bin/ld")
 set(CMAKE_MT "")
-set(CMAKE_COMPILER_IS_GNUCXX 1)
+set(CMAKE_COMPILER_IS_GNUCXX )
 set(CMAKE_CXX_COMPILER_LOADED 1)
 set(CMAKE_CXX_COMPILER_WORKS TRUE)
 set(CMAKE_CXX_ABI_COMPILED TRUE)
@@ -75,10 +74,10 @@ if(CMAKE_CXX_CL_SHOWINCLUDES_PREFIX)
 endif()
 
 
-set(CMAKE_CXX_SYSROOT_FLAG "-isysroot")
-set(CMAKE_CXX_OSX_DEPLOYMENT_TARGET_FLAG "-mmacosx-version-min=")
 
-set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "/usr/local/Cellar/gcc/13.1.0/include/c++/13;/usr/local/Cellar/gcc/13.1.0/include/c++/13/x86_64-apple-darwin21;/usr/local/Cellar/gcc/13.1.0/include/c++/13/backward;/usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include;/usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include-fixed;/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include;/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks")
-set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;gcc_s.1.1;gcc")
-set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/usr/local/opt/llvm/lib;/usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13;/usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc;/Users/oliver/cdflib;/usr/local/lib;/usr/local/Cellar/gcc/13.1.0/lib/gcc/current;/Users/oliver/ClionProjects/testing;/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/lib")
+
+
+set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "/usr/include")
+set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "")
+set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/usr/local/opt/llvm/lib;/Users/oliver/cdflib;/usr/local/lib;/Users/oliver/ClionProjects/testing;/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks")

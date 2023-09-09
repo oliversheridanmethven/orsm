@@ -1,7 +1,7 @@
-set(CMAKE_C_COMPILER "/Library/Developer/CommandLineTools/usr/bin/cc")
+set(CMAKE_C_COMPILER "/usr/local/bin/gcc-13")
 set(CMAKE_C_COMPILER_ARG1 "")
-set(CMAKE_C_COMPILER_ID "AppleClang")
-set(CMAKE_C_COMPILER_VERSION "14.0.0.14000029")
+set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_VERSION "13.1.0")
 set(CMAKE_C_COMPILER_VERSION_INTERNAL "")
 set(CMAKE_C_COMPILER_WRAPPER "")
 set(CMAKE_C_STANDARD_COMPUTED_DEFAULT "17")
@@ -18,17 +18,18 @@ set(CMAKE_C_SIMULATE_ID "")
 set(CMAKE_C_COMPILER_FRONTEND_VARIANT "GNU")
 set(CMAKE_C_SIMULATE_VERSION "")
 
+set(CMAKE_C_COMPILER_SYSROOT "/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr")
+set(CMAKE_COMPILER_SYSROOT "/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr")
 
 
-
-set(CMAKE_AR "/Library/Developer/CommandLineTools/usr/bin/ar")
-set(CMAKE_C_COMPILER_AR "")
-set(CMAKE_RANLIB "/Library/Developer/CommandLineTools/usr/bin/ranlib")
-set(CMAKE_C_COMPILER_RANLIB "")
-set(CMAKE_LINKER "/Library/Developer/CommandLineTools/usr/bin/ld")
+set(CMAKE_AR "/opt/local/bin/ar")
+set(CMAKE_C_COMPILER_AR "/usr/local/bin/gcc-ar-13")
+set(CMAKE_RANLIB "/opt/local/bin/ranlib")
+set(CMAKE_C_COMPILER_RANLIB "/usr/local/bin/gcc-ranlib-13")
+set(CMAKE_LINKER "/opt/local/bin/ld")
 set(CMAKE_MT "")
 set(CMAKE_TAPI "/Library/Developer/CommandLineTools/usr/bin/tapi")
-set(CMAKE_COMPILER_IS_GNUCC )
+set(CMAKE_COMPILER_IS_GNUCC 1)
 set(CMAKE_C_COMPILER_LOADED 1)
 set(CMAKE_C_COMPILER_WORKS TRUE)
 set(CMAKE_C_ABI_COMPILED TRUE)
@@ -65,10 +66,10 @@ if(CMAKE_C_CL_SHOWINCLUDES_PREFIX)
 endif()
 
 
+set(CMAKE_C_SYSROOT_FLAG "-isysroot")
+set(CMAKE_C_OSX_DEPLOYMENT_TARGET_FLAG "-mmacosx-version-min=")
 
-
-
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/Users/oliver;/usr/local/include;/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include;/Library/Developer/CommandLineTools/usr/include")
-set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/usr/local/opt/llvm/lib;/Users/oliver/cdflib;/usr/local/lib;/Users/oliver/ClionProjects/testing;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/lib")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/usr/local/include;/usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include;/usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13/include-fixed;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks")
+set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "emutls_w;gcc")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/usr/local/opt/llvm/lib;/usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc/x86_64-apple-darwin21/13;/usr/local/Cellar/gcc/13.1.0/lib/gcc/current/gcc;/Users/oliver/cdflib;/usr/local/lib;/usr/local/Cellar/gcc/13.1.0/lib/gcc/current;/Users/oliver/ClionProjects/testing;/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/lib")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "/Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/System/Library/Frameworks")

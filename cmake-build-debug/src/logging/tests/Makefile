@@ -185,6 +185,20 @@ logging_test/fast:
 	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test.dir/build.make src/logging/tests/CMakeFiles/logging_test.dir/build
 .PHONY : logging_test/fast
 
+# Convenience name for target.
+src/logging/tests/CMakeFiles/logging_test_cpp.dir/rule:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/logging/tests/CMakeFiles/logging_test_cpp.dir/rule
+.PHONY : src/logging/tests/CMakeFiles/logging_test_cpp.dir/rule
+
+# Convenience name for target.
+logging_test_cpp: src/logging/tests/CMakeFiles/logging_test_cpp.dir/rule
+.PHONY : logging_test_cpp
+
+# fast build rule for target.
+logging_test_cpp/fast:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test_cpp.dir/build.make src/logging/tests/CMakeFiles/logging_test_cpp.dir/build
+.PHONY : logging_test_cpp/fast
+
 logging.o: logging.c.o
 .PHONY : logging.o
 
@@ -209,6 +223,30 @@ logging.c.s:
 	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test.dir/build.make src/logging/tests/CMakeFiles/logging_test.dir/logging.c.s
 .PHONY : logging.c.s
 
+logging.o: logging.cpp.o
+.PHONY : logging.o
+
+# target to build an object file
+logging.cpp.o:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test_cpp.dir/build.make src/logging/tests/CMakeFiles/logging_test_cpp.dir/logging.cpp.o
+.PHONY : logging.cpp.o
+
+logging.i: logging.cpp.i
+.PHONY : logging.i
+
+# target to preprocess a source file
+logging.cpp.i:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test_cpp.dir/build.make src/logging/tests/CMakeFiles/logging_test_cpp.dir/logging.cpp.i
+.PHONY : logging.cpp.i
+
+logging.s: logging.cpp.s
+.PHONY : logging.s
+
+# target to generate assembly for a file
+logging.cpp.s:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test_cpp.dir/build.make src/logging/tests/CMakeFiles/logging_test_cpp.dir/logging.cpp.s
+.PHONY : logging.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -223,6 +261,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... logging_test"
+	@echo "... logging_test_cpp"
+	@echo "... logging.o"
+	@echo "... logging.i"
+	@echo "... logging.s"
 	@echo "... logging.o"
 	@echo "... logging.i"
 	@echo "... logging.s"

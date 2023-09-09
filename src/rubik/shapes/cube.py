@@ -3,7 +3,7 @@
 from .shape import Shape, _array_from_faces_at_end
 from common.logger import log
 from copy import deepcopy
-from rubik.paths.moves import Move
+from rubik.paths.move import Move
 import numpy as np
 
 
@@ -38,8 +38,9 @@ class Cube(Shape):
         for face in self._faces:
             assert np.shape(face) == (3, 3), f"A {type(self).__name__} face must only contain 9 tiles."
 
-    def moves(self):
-        raise NotImplementedError
+    _moves = NotImplementedError
+    _reverse_moves = NotImplementedError
+    _commutative_moves = NotImplementedError
 
 
 if __name__ == "__main__":

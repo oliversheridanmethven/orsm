@@ -127,30 +127,56 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named hello_world
+# Target rules for targets named hello_world_c
 
 # Build rule for target.
-hello_world: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello_world
-.PHONY : hello_world
+hello_world_c: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello_world_c
+.PHONY : hello_world_c
 
 # fast build rule for target.
-hello_world/fast:
-	$(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world.dir/build.make src/hello_world/CMakeFiles/hello_world.dir/build
-.PHONY : hello_world/fast
+hello_world_c/fast:
+	$(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_c.dir/build.make src/hello_world/CMakeFiles/hello_world_c.dir/build
+.PHONY : hello_world_c/fast
 
 #=============================================================================
-# Target rules for targets named hello_world_example
+# Target rules for targets named hello_world_cpp
 
 # Build rule for target.
-hello_world_example: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello_world_example
-.PHONY : hello_world_example
+hello_world_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello_world_cpp
+.PHONY : hello_world_cpp
 
 # fast build rule for target.
-hello_world_example/fast:
-	$(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_example.dir/build.make src/hello_world/CMakeFiles/hello_world_example.dir/build
-.PHONY : hello_world_example/fast
+hello_world_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_cpp.dir/build.make src/hello_world/CMakeFiles/hello_world_cpp.dir/build
+.PHONY : hello_world_cpp/fast
+
+#=============================================================================
+# Target rules for targets named hello_world_example_c
+
+# Build rule for target.
+hello_world_example_c: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello_world_example_c
+.PHONY : hello_world_example_c
+
+# fast build rule for target.
+hello_world_example_c/fast:
+	$(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_example_c.dir/build.make src/hello_world/CMakeFiles/hello_world_example_c.dir/build
+.PHONY : hello_world_example_c/fast
+
+#=============================================================================
+# Target rules for targets named hello_world_example_cpp
+
+# Build rule for target.
+hello_world_example_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello_world_example_cpp
+.PHONY : hello_world_example_cpp
+
+# fast build rule for target.
+hello_world_example_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_example_cpp.dir/build.make src/hello_world/CMakeFiles/hello_world_example_cpp.dir/build
+.PHONY : hello_world_example_cpp/fast
 
 #=============================================================================
 # Target rules for targets named hello_world_test
@@ -164,6 +190,19 @@ hello_world_test: cmake_check_build_system
 hello_world_test/fast:
 	$(MAKE) $(MAKESILENT) -f src/hello_world/tests/CMakeFiles/hello_world_test.dir/build.make src/hello_world/tests/CMakeFiles/hello_world_test.dir/build
 .PHONY : hello_world_test/fast
+
+#=============================================================================
+# Target rules for targets named hello_world_test_cpp
+
+# Build rule for target.
+hello_world_test_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hello_world_test_cpp
+.PHONY : hello_world_test_cpp
+
+# fast build rule for target.
+hello_world_test_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/hello_world/tests/CMakeFiles/hello_world_test_cpp.dir/build.make src/hello_world/tests/CMakeFiles/hello_world_test_cpp.dir/build
+.PHONY : hello_world_test_cpp/fast
 
 #=============================================================================
 # Target rules for targets named error_codes
@@ -231,6 +270,19 @@ example/fast:
 .PHONY : example/fast
 
 #=============================================================================
+# Target rules for targets named example_cpp
+
+# Build rule for target.
+example_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example_cpp
+.PHONY : example_cpp
+
+# fast build rule for target.
+example_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/testing/tests/CMakeFiles/example_cpp.dir/build.make src/testing/tests/CMakeFiles/example_cpp.dir/build
+.PHONY : example_cpp/fast
+
+#=============================================================================
 # Target rules for targets named logging_test
 
 # Build rule for target.
@@ -242,6 +294,32 @@ logging_test: cmake_check_build_system
 logging_test/fast:
 	$(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test.dir/build.make src/logging/tests/CMakeFiles/logging_test.dir/build
 .PHONY : logging_test/fast
+
+#=============================================================================
+# Target rules for targets named logging_test_cpp
+
+# Build rule for target.
+logging_test_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 logging_test_cpp
+.PHONY : logging_test_cpp
+
+# fast build rule for target.
+logging_test_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/logging/tests/CMakeFiles/logging_test_cpp.dir/build.make src/logging/tests/CMakeFiles/logging_test_cpp.dir/build
+.PHONY : logging_test_cpp/fast
+
+#=============================================================================
+# Target rules for targets named logging_demo_cpp
+
+# Build rule for target.
+logging_demo_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 logging_demo_cpp
+.PHONY : logging_demo_cpp
+
+# fast build rule for target.
+logging_demo_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/logging/demo/CMakeFiles/logging_demo_cpp.dir/build.make src/logging/demo/CMakeFiles/logging_demo_cpp.dir/build
+.PHONY : logging_demo_cpp/fast
 
 #=============================================================================
 # Target rules for targets named version
@@ -347,6 +425,123 @@ _suppressor/fast:
 	$(MAKE) $(MAKESILENT) -f src/common/suppressor/tests/CMakeFiles/_suppressor.dir/build.make src/common/suppressor/tests/CMakeFiles/_suppressor.dir/build
 .PHONY : _suppressor/fast
 
+#=============================================================================
+# Target rules for targets named colours
+
+# Build rule for target.
+colours: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 colours
+.PHONY : colours
+
+# fast build rule for target.
+colours/fast:
+	$(MAKE) $(MAKESILENT) -f src/rubik/colours/CMakeFiles/colours.dir/build.make src/rubik/colours/CMakeFiles/colours.dir/build
+.PHONY : colours/fast
+
+#=============================================================================
+# Target rules for targets named paths
+
+# Build rule for target.
+paths: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 paths
+.PHONY : paths
+
+# fast build rule for target.
+paths/fast:
+	$(MAKE) $(MAKESILENT) -f src/rubik/paths/CMakeFiles/paths.dir/build.make src/rubik/paths/CMakeFiles/paths.dir/build
+.PHONY : paths/fast
+
+#=============================================================================
+# Target rules for targets named paths_cpp
+
+# Build rule for target.
+paths_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 paths_cpp
+.PHONY : paths_cpp
+
+# fast build rule for target.
+paths_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/build.make src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/build
+.PHONY : paths_cpp/fast
+
+#=============================================================================
+# Target rules for targets named shapes_cpp
+
+# Build rule for target.
+shapes_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shapes_cpp
+.PHONY : shapes_cpp
+
+# fast build rule for target.
+shapes_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/build.make src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/build
+.PHONY : shapes_cpp/fast
+
+#=============================================================================
+# Target rules for targets named shufflers_cpp
+
+# Build rule for target.
+shufflers_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shufflers_cpp
+.PHONY : shufflers_cpp
+
+# fast build rule for target.
+shufflers_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/build.make src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/build
+.PHONY : shufflers_cpp/fast
+
+#=============================================================================
+# Target rules for targets named shuffler_demo_cpp
+
+# Build rule for target.
+shuffler_demo_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shuffler_demo_cpp
+.PHONY : shuffler_demo_cpp
+
+# fast build rule for target.
+shuffler_demo_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build
+.PHONY : shuffler_demo_cpp/fast
+
+#=============================================================================
+# Target rules for targets named solvers
+
+# Build rule for target.
+solvers: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 solvers
+.PHONY : solvers
+
+# fast build rule for target.
+solvers/fast:
+	$(MAKE) $(MAKESILENT) -f src/rubik/solvers/CMakeFiles/solvers.dir/build.make src/rubik/solvers/CMakeFiles/solvers.dir/build
+.PHONY : solvers/fast
+
+#=============================================================================
+# Target rules for targets named demo_cpp
+
+# Build rule for target.
+demo_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 demo_cpp
+.PHONY : demo_cpp
+
+# fast build rule for target.
+demo_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/rubik/solvers/demos/CMakeFiles/demo_cpp.dir/build.make src/rubik/solvers/demos/CMakeFiles/demo_cpp.dir/build
+.PHONY : demo_cpp/fast
+
+#=============================================================================
+# Target rules for targets named misc
+
+# Build rule for target.
+misc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 misc
+.PHONY : misc
+
+# fast build rule for target.
+misc/fast:
+	$(MAKE) $(MAKESILENT) -f misc/CMakeFiles/misc.dir/build.make misc/CMakeFiles/misc.dir/build
+.PHONY : misc/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -360,14 +555,29 @@ help:
 	@echo "... _suppressor"
 	@echo "... cli_arguments_0"
 	@echo "... cli_arguments_version"
+	@echo "... colours"
+	@echo "... demo_cpp"
 	@echo "... error_codes"
 	@echo "... example"
+	@echo "... example_cpp"
 	@echo "... examples"
 	@echo "... examples_bindings"
-	@echo "... hello_world"
-	@echo "... hello_world_example"
+	@echo "... hello_world_c"
+	@echo "... hello_world_cpp"
+	@echo "... hello_world_example_c"
+	@echo "... hello_world_example_cpp"
 	@echo "... hello_world_test"
+	@echo "... hello_world_test_cpp"
+	@echo "... logging_demo_cpp"
 	@echo "... logging_test"
+	@echo "... logging_test_cpp"
+	@echo "... misc"
+	@echo "... paths"
+	@echo "... paths_cpp"
+	@echo "... shapes_cpp"
+	@echo "... shuffler_demo_cpp"
+	@echo "... shufflers_cpp"
+	@echo "... solvers"
 	@echo "... suppressor"
 	@echo "... suppressor_bindings"
 	@echo "... version"

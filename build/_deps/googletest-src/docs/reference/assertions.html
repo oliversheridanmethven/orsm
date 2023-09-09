@@ -1,0 +1,2933 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The testing suite.">
+      
+      
+        <meta name="author" content="Dr Oliver Sheridan-Methven">
+      
+      
+        <link rel="canonical" href="https://oliversheridanmethven.github.io/testing/build/_deps/googletest-src/docs/reference/assertions.html">
+      
+      
+        <link rel="prev" href="actions.html">
+      
+      
+        <link rel="next" href="matchers.html">
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Assertions Reference - Testing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../docs/colour_scheme.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Assertions Reference - Testing" >
+      
+        <meta  property="og:description"  content="The testing suite." >
+      
+        <meta  property="og:image"  content="https://oliversheridanmethven.github.io/testing/assets/images/social/build/_deps/googletest-src/docs/reference/assertions.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://oliversheridanmethven.github.io/testing/build/_deps/googletest-src/docs/reference/assertions.html" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Assertions Reference - Testing" >
+      
+        <meta  name="twitter:description"  content="The testing suite." >
+      
+        <meta  name="twitter:image"  content="https://oliversheridanmethven.github.io/testing/assets/images/social/build/_deps/googletest-src/docs/reference/assertions.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#assertions-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../../index.html" title="Testing" class="md-header__button md-logo" aria-label="Testing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Testing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Assertions Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/oliversheridanmethven/testing" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    testing
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../../../index.html" class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../docs/getting_started.html" class="md-tabs__link">
+        Documentation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../src/index.html" class="md-tabs__link">
+        Source
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../index.html" class="md-tabs__link md-tabs__link--active">
+        Building
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../../../bin/index.html" class="md-tabs__link">
+      Binaries
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../../data/index.html" class="md-tabs__link">
+        Data
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../../../lib/index.html" class="md-tabs__link">
+      Libraries
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../../../docs/faqs.md" class="md-tabs__link">
+      FAQs
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../../index.html" title="Testing" class="md-nav__button md-logo" aria-label="Testing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Testing
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/oliversheridanmethven/testing" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    testing
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../index.html" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../docs/getting_started.html" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../docs/dependencies.html" class="md-nav__link">
+        Dependencies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../docs/faqs.html" class="md-nav__link">
+        Frequently asked questions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../docs/advanced.html" class="md-nav__link">
+        Advanced
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../docs/todo.html" class="md-nav__link">
+        TODO
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Source
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Source
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../src/index.html" class="md-nav__link">
+        Source
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          Binding
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Binding
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../src/binding/index.html" class="md-nav__link">
+        Binding
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../src/binding/benchmarks/index.html" class="md-nav__link">
+        Benchmarking
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../src/cli/index.html" class="md-nav__link">
+        Command line interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../src/error_codes/index.html" class="md-nav__link">
+        Error codes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../src/hello_world/index.html" class="md-nav__link">
+        Hello world
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../src/logging/index.html" class="md-nav__link">
+        Logging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../src/media/index.html" class="md-nav__link">
+        Media
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../src/rubik/index.html" class="md-nav__link">
+        Rubik
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          Testing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_9">
+          <span class="md-nav__icon md-icon"></span>
+          Testing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../src/testing/index.html" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../src/testing/tests/index.html" class="md-nav__link">
+        Tests
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../src/version/index.html" class="md-nav__link">
+        Version
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Building
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Building
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../index.html" class="md-nav__link">
+        Build
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          Googletest src
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          Googletest src
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        GoogleTest
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CONTRIBUTING.html" class="md-nav__link">
+        How to become a contributor and submit your own code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
+          Docs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Docs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        GoogleTest User's Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced.html" class="md-nav__link">
+        Advanced googletest Topics
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../community_created_documentation.html" class="md-nav__link">
+        Community-Created Documentation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq.html" class="md-nav__link">
+        Googletest FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gmock_cheat_sheet.html" class="md-nav__link">
+        gMock Cheat Sheet
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gmock_cook_book.html" class="md-nav__link">
+        gMock Cookbook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gmock_faq.html" class="md-nav__link">
+        Legacy gMock FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gmock_for_dummies.html" class="md-nav__link">
+        gMock for Dummies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pkgconfig.html" class="md-nav__link">
+        Pkgconfig
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../platforms.html" class="md-nav__link">
+        Supported Platforms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primer.html" class="md-nav__link">
+        Googletest Primer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart-bazel.html" class="md-nav__link">
+        Quickstart: Building with Bazel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart-cmake.html" class="md-nav__link">
+        Quickstart: Building with CMake
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../samples.html" class="md-nav__link">
+        Googletest Samples
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3_15" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_3_15" id="__nav_4_2_3_15_label" tabindex="0">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_3_15_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_2_3_15">
+          <span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="actions.html" class="md-nav__link">
+        Actions Reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Assertions Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="assertions.html" class="md-nav__link md-nav__link--active">
+        Assertions Reference
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explicit-success-and-failure-success-failure" class="md-nav__link">
+    Explicit Success and Failure {#success-failure}
+  </a>
+  
+    <nav class="md-nav" aria-label="Explicit Success and Failure {#success-failure}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#succeed-succeed" class="md-nav__link">
+    SUCCEED {#SUCCEED}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fail-fail" class="md-nav__link">
+    FAIL {#FAIL}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_failure-add_failure" class="md-nav__link">
+    ADD_FAILURE {#ADD_FAILURE}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_failure_at-add_failure_at" class="md-nav__link">
+    ADD_FAILURE_AT {#ADD_FAILURE_AT}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generalized-assertion-generalized" class="md-nav__link">
+    Generalized Assertion {#generalized}
+  </a>
+  
+    <nav class="md-nav" aria-label="Generalized Assertion {#generalized}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_that-expect_that" class="md-nav__link">
+    EXPECT_THAT {#EXPECT_THAT}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boolean-conditions-boolean" class="md-nav__link">
+    Boolean Conditions {#boolean}
+  </a>
+  
+    <nav class="md-nav" aria-label="Boolean Conditions {#boolean}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_true-expect_true" class="md-nav__link">
+    EXPECT_TRUE {#EXPECT_TRUE}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_false-expect_false" class="md-nav__link">
+    EXPECT_FALSE {#EXPECT_FALSE}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binary-comparison-binary-comparison" class="md-nav__link">
+    Binary Comparison {#binary-comparison}
+  </a>
+  
+    <nav class="md-nav" aria-label="Binary Comparison {#binary-comparison}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_eq-expect_eq" class="md-nav__link">
+    EXPECT_EQ {#EXPECT_EQ}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_ne-expect_ne" class="md-nav__link">
+    EXPECT_NE {#EXPECT_NE}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_lt-expect_lt" class="md-nav__link">
+    EXPECT_LT {#EXPECT_LT}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_le-expect_le" class="md-nav__link">
+    EXPECT_LE {#EXPECT_LE}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_gt-expect_gt" class="md-nav__link">
+    EXPECT_GT {#EXPECT_GT}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_ge-expect_ge" class="md-nav__link">
+    EXPECT_GE {#EXPECT_GE}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-comparison-c-strings" class="md-nav__link">
+    String Comparison {#c-strings}
+  </a>
+  
+    <nav class="md-nav" aria-label="String Comparison {#c-strings}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_streq-expect_streq" class="md-nav__link">
+    EXPECT_STREQ {#EXPECT_STREQ}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_strne-expect_strne" class="md-nav__link">
+    EXPECT_STRNE {#EXPECT_STRNE}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_strcaseeq-expect_strcaseeq" class="md-nav__link">
+    EXPECT_STRCASEEQ {#EXPECT_STRCASEEQ}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_strcasene-expect_strcasene" class="md-nav__link">
+    EXPECT_STRCASENE {#EXPECT_STRCASENE}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#floating-point-comparison-floating-point" class="md-nav__link">
+    Floating-Point Comparison {#floating-point}
+  </a>
+  
+    <nav class="md-nav" aria-label="Floating-Point Comparison {#floating-point}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_float_eq-expect_float_eq" class="md-nav__link">
+    EXPECT_FLOAT_EQ {#EXPECT_FLOAT_EQ}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_double_eq-expect_double_eq" class="md-nav__link">
+    EXPECT_DOUBLE_EQ {#EXPECT_DOUBLE_EQ}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_near-expect_near" class="md-nav__link">
+    EXPECT_NEAR {#EXPECT_NEAR}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exception-assertions-exceptions" class="md-nav__link">
+    Exception Assertions {#exceptions}
+  </a>
+  
+    <nav class="md-nav" aria-label="Exception Assertions {#exceptions}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_throw-expect_throw" class="md-nav__link">
+    EXPECT_THROW {#EXPECT_THROW}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_any_throw-expect_any_throw" class="md-nav__link">
+    EXPECT_ANY_THROW {#EXPECT_ANY_THROW}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_no_throw-expect_no_throw" class="md-nav__link">
+    EXPECT_NO_THROW {#EXPECT_NO_THROW}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicate-assertions-predicates" class="md-nav__link">
+    Predicate Assertions {#predicates}
+  </a>
+  
+    <nav class="md-nav" aria-label="Predicate Assertions {#predicates}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_pred-expect_pred" class="md-nav__link">
+    EXPECT_PRED* {#EXPECT_PRED}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_pred_format-expect_pred_format" class="md-nav__link">
+    EXPECT_PRED_FORMAT* {#EXPECT_PRED_FORMAT}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-hresult-assertions-hresult" class="md-nav__link">
+    Windows HRESULT Assertions {#HRESULT}
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows HRESULT Assertions {#HRESULT}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_hresult_succeeded-expect_hresult_succeeded" class="md-nav__link">
+    EXPECT_HRESULT_SUCCEEDED {#EXPECT_HRESULT_SUCCEEDED}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_hresult_failed-expect_hresult_failed" class="md-nav__link">
+    EXPECT_HRESULT_FAILED {#EXPECT_HRESULT_FAILED}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#death-assertions-death" class="md-nav__link">
+    Death Assertions {#death}
+  </a>
+  
+    <nav class="md-nav" aria-label="Death Assertions {#death}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_death-expect_death" class="md-nav__link">
+    EXPECT_DEATH {#EXPECT_DEATH}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_death_if_supported-expect_death_if_supported" class="md-nav__link">
+    EXPECT_DEATH_IF_SUPPORTED {#EXPECT_DEATH_IF_SUPPORTED}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_debug_death-expect_debug_death" class="md-nav__link">
+    EXPECT_DEBUG_DEATH {#EXPECT_DEBUG_DEATH}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_exit-expect_exit" class="md-nav__link">
+    EXPECT_EXIT {#EXPECT_EXIT}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="matchers.html" class="md-nav__link">
+        Matchers Reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mocking.html" class="md-nav__link">
+        Mocking Reference
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="testing.html" class="md-nav__link">
+        Testing Reference
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_4" id="__nav_4_2_4_label" tabindex="0">
+          Googlemock
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Googlemock
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../googlemock/index.html" class="md-nav__link">
+        Googletest Mocking (gMock) Framework
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../googlemock/docs/index.html" class="md-nav__link">
+        Content Moved
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../googlemock/include/gmock/internal/custom/index.html" class="md-nav__link">
+        Customization Points
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../googlemock/scripts/index.html" class="md-nav__link">
+        Please Note:
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2_5" id="__nav_4_2_5_label" tabindex="0">
+          Googletest
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Googletest
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../googletest/index.html" class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../googletest/docs/index.html" class="md-nav__link">
+        Content Moved
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../googletest/include/gtest/internal/custom/index.html" class="md-nav__link">
+        Customization Points
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../googletest/scripts/index.html" class="md-nav__link">
+        Please Note:
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          Build instructions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Build instructions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../build_instructions/from_source.html" class="md-nav__link">
+        Building from source
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../build_instructions/python_bindings.html" class="md-nav__link">
+        Python bindings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../build_instructions/in_source.html" class="md-nav__link">
+        In source builds
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../bin/index.html" class="md-nav__link">
+        Binaries
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Data
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../data/index.html" class="md-nav__link">
+        Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../data/videos/index.html" class="md-nav__link">
+        Uploading media
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../lib/index.html" class="md-nav__link">
+        Libraries
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../docs/faqs.md" class="md-nav__link">
+        FAQs
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#explicit-success-and-failure-success-failure" class="md-nav__link">
+    Explicit Success and Failure {#success-failure}
+  </a>
+  
+    <nav class="md-nav" aria-label="Explicit Success and Failure {#success-failure}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#succeed-succeed" class="md-nav__link">
+    SUCCEED {#SUCCEED}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fail-fail" class="md-nav__link">
+    FAIL {#FAIL}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_failure-add_failure" class="md-nav__link">
+    ADD_FAILURE {#ADD_FAILURE}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add_failure_at-add_failure_at" class="md-nav__link">
+    ADD_FAILURE_AT {#ADD_FAILURE_AT}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generalized-assertion-generalized" class="md-nav__link">
+    Generalized Assertion {#generalized}
+  </a>
+  
+    <nav class="md-nav" aria-label="Generalized Assertion {#generalized}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_that-expect_that" class="md-nav__link">
+    EXPECT_THAT {#EXPECT_THAT}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boolean-conditions-boolean" class="md-nav__link">
+    Boolean Conditions {#boolean}
+  </a>
+  
+    <nav class="md-nav" aria-label="Boolean Conditions {#boolean}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_true-expect_true" class="md-nav__link">
+    EXPECT_TRUE {#EXPECT_TRUE}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_false-expect_false" class="md-nav__link">
+    EXPECT_FALSE {#EXPECT_FALSE}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binary-comparison-binary-comparison" class="md-nav__link">
+    Binary Comparison {#binary-comparison}
+  </a>
+  
+    <nav class="md-nav" aria-label="Binary Comparison {#binary-comparison}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_eq-expect_eq" class="md-nav__link">
+    EXPECT_EQ {#EXPECT_EQ}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_ne-expect_ne" class="md-nav__link">
+    EXPECT_NE {#EXPECT_NE}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_lt-expect_lt" class="md-nav__link">
+    EXPECT_LT {#EXPECT_LT}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_le-expect_le" class="md-nav__link">
+    EXPECT_LE {#EXPECT_LE}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_gt-expect_gt" class="md-nav__link">
+    EXPECT_GT {#EXPECT_GT}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_ge-expect_ge" class="md-nav__link">
+    EXPECT_GE {#EXPECT_GE}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#string-comparison-c-strings" class="md-nav__link">
+    String Comparison {#c-strings}
+  </a>
+  
+    <nav class="md-nav" aria-label="String Comparison {#c-strings}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_streq-expect_streq" class="md-nav__link">
+    EXPECT_STREQ {#EXPECT_STREQ}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_strne-expect_strne" class="md-nav__link">
+    EXPECT_STRNE {#EXPECT_STRNE}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_strcaseeq-expect_strcaseeq" class="md-nav__link">
+    EXPECT_STRCASEEQ {#EXPECT_STRCASEEQ}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_strcasene-expect_strcasene" class="md-nav__link">
+    EXPECT_STRCASENE {#EXPECT_STRCASENE}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#floating-point-comparison-floating-point" class="md-nav__link">
+    Floating-Point Comparison {#floating-point}
+  </a>
+  
+    <nav class="md-nav" aria-label="Floating-Point Comparison {#floating-point}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_float_eq-expect_float_eq" class="md-nav__link">
+    EXPECT_FLOAT_EQ {#EXPECT_FLOAT_EQ}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_double_eq-expect_double_eq" class="md-nav__link">
+    EXPECT_DOUBLE_EQ {#EXPECT_DOUBLE_EQ}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_near-expect_near" class="md-nav__link">
+    EXPECT_NEAR {#EXPECT_NEAR}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exception-assertions-exceptions" class="md-nav__link">
+    Exception Assertions {#exceptions}
+  </a>
+  
+    <nav class="md-nav" aria-label="Exception Assertions {#exceptions}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_throw-expect_throw" class="md-nav__link">
+    EXPECT_THROW {#EXPECT_THROW}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_any_throw-expect_any_throw" class="md-nav__link">
+    EXPECT_ANY_THROW {#EXPECT_ANY_THROW}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_no_throw-expect_no_throw" class="md-nav__link">
+    EXPECT_NO_THROW {#EXPECT_NO_THROW}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicate-assertions-predicates" class="md-nav__link">
+    Predicate Assertions {#predicates}
+  </a>
+  
+    <nav class="md-nav" aria-label="Predicate Assertions {#predicates}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_pred-expect_pred" class="md-nav__link">
+    EXPECT_PRED* {#EXPECT_PRED}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_pred_format-expect_pred_format" class="md-nav__link">
+    EXPECT_PRED_FORMAT* {#EXPECT_PRED_FORMAT}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-hresult-assertions-hresult" class="md-nav__link">
+    Windows HRESULT Assertions {#HRESULT}
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows HRESULT Assertions {#HRESULT}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_hresult_succeeded-expect_hresult_succeeded" class="md-nav__link">
+    EXPECT_HRESULT_SUCCEEDED {#EXPECT_HRESULT_SUCCEEDED}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_hresult_failed-expect_hresult_failed" class="md-nav__link">
+    EXPECT_HRESULT_FAILED {#EXPECT_HRESULT_FAILED}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#death-assertions-death" class="md-nav__link">
+    Death Assertions {#death}
+  </a>
+  
+    <nav class="md-nav" aria-label="Death Assertions {#death}">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expect_death-expect_death" class="md-nav__link">
+    EXPECT_DEATH {#EXPECT_DEATH}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_death_if_supported-expect_death_if_supported" class="md-nav__link">
+    EXPECT_DEATH_IF_SUPPORTED {#EXPECT_DEATH_IF_SUPPORTED}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_debug_death-expect_debug_death" class="md-nav__link">
+    EXPECT_DEBUG_DEATH {#EXPECT_DEBUG_DEATH}
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expect_exit-expect_exit" class="md-nav__link">
+    EXPECT_EXIT {#EXPECT_EXIT}
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="assertions-reference">Assertions Reference</h1>
+<p>This page lists the assertion macros provided by GoogleTest for verifying code
+behavior. To use them, include the header <code>gtest/gtest.h</code>.</p>
+<p>The majority of the macros listed below come as a pair with an <code>EXPECT_</code> variant
+and an <code>ASSERT_</code> variant. Upon failure, <code>EXPECT_</code> macros generate nonfatal
+failures and allow the current function to continue running, while <code>ASSERT_</code>
+macros generate fatal failures and abort the current function.</p>
+<p>All assertion macros support streaming a custom failure message into them with
+the <code>&lt;&lt;</code> operator, for example:</p>
+<pre><code class="language-cpp">EXPECT_TRUE(my_condition) &lt;&lt; &quot;My condition is not true&quot;;
+</code></pre>
+<p>Anything that can be streamed to an <code>ostream</code> can be streamed to an assertion
+macro—in particular, C strings and string objects. If a wide string (<code>wchar_t*</code>,
+<code>TCHAR*</code> in <code>UNICODE</code> mode on Windows, or <code>std::wstring</code>) is streamed to an
+assertion, it will be translated to UTF-8 when printed.</p>
+<h2 id="explicit-success-and-failure-success-failure">Explicit Success and Failure {#success-failure}</h2>
+<p>The assertions in this section generate a success or failure directly instead of
+testing a value or expression. These are useful when control flow, rather than a
+Boolean expression, determines the test's success or failure, as shown by the
+following example:</p>
+<pre><code class="language-c++">switch(expression) {
+  case 1:
+    ... some checks ...
+  case 2:
+    ... some other checks ...
+  default:
+    FAIL() &lt;&lt; &quot;We shouldn't get here.&quot;;
+}
+</code></pre>
+<h3 id="succeed-succeed">SUCCEED {#SUCCEED}</h3>
+<p><code>SUCCEED()</code></p>
+<p>Generates a success. This <em>does not</em> make the overall test succeed. A test is
+considered successful only if none of its assertions fail during its execution.</p>
+<p>The <code>SUCCEED</code> assertion is purely documentary and currently doesn't generate any
+user-visible output. However, we may add <code>SUCCEED</code> messages to GoogleTest output
+in the future.</p>
+<h3 id="fail-fail">FAIL {#FAIL}</h3>
+<p><code>FAIL()</code></p>
+<p>Generates a fatal failure, which returns from the current function.</p>
+<p>Can only be used in functions that return <code>void</code>. See
+<a href="../advanced.html#assertion-placement">Assertion Placement</a> for more information.</p>
+<h3 id="add_failure-add_failure">ADD_FAILURE {#ADD_FAILURE}</h3>
+<p><code>ADD_FAILURE()</code></p>
+<p>Generates a nonfatal failure, which allows the current function to continue
+running.</p>
+<h3 id="add_failure_at-add_failure_at">ADD_FAILURE_AT {#ADD_FAILURE_AT}</h3>
+<p><code>ADD_FAILURE_AT(</code><em><code>file_path</code></em><code>,</code><em><code>line_number</code></em><code>)</code></p>
+<p>Generates a nonfatal failure at the file and line number specified.</p>
+<h2 id="generalized-assertion-generalized">Generalized Assertion {#generalized}</h2>
+<p>The following assertion allows <a href="matchers.html">matchers</a> to be used to verify
+values.</p>
+<h3 id="expect_that-expect_that">EXPECT_THAT {#EXPECT_THAT}</h3>
+<p><code>EXPECT_THAT(</code><em><code>value</code></em><code>,</code><em><code>matcher</code></em><code>)</code> \
+<code>ASSERT_THAT(</code><em><code>value</code></em><code>,</code><em><code>matcher</code></em><code>)</code></p>
+<p>Verifies that <em><code>value</code></em> matches the <a href="matchers.html">matcher</a> <em><code>matcher</code></em>.</p>
+<p>For example, the following code verifies that the string <code>value1</code> starts with
+<code>"Hello"</code>, <code>value2</code> matches a regular expression, and <code>value3</code> is between 5 and
+10:</p>
+<pre><code class="language-cpp">#include &quot;gmock/gmock.h&quot;
+
+using ::testing::AllOf;
+using ::testing::Gt;
+using ::testing::Lt;
+using ::testing::MatchesRegex;
+using ::testing::StartsWith;
+
+...
+EXPECT_THAT(value1, StartsWith(&quot;Hello&quot;));
+EXPECT_THAT(value2, MatchesRegex(&quot;Line \\d+&quot;));
+ASSERT_THAT(value3, AllOf(Gt(5), Lt(10)));
+</code></pre>
+<p>Matchers enable assertions of this form to read like English and generate
+informative failure messages. For example, if the above assertion on <code>value1</code>
+fails, the resulting message will be similar to the following:</p>
+<pre><code>Value of: value1
+  Actual: &quot;Hi, world!&quot;
+Expected: starts with &quot;Hello&quot;
+</code></pre>
+<p>GoogleTest provides a built-in library of matchers—see the
+<a href="matchers.html">Matchers Reference</a>. It is also possible to write your own
+matchers—see <a href="../gmock_cook_book.html#NewMatchers">Writing New Matchers Quickly</a>.
+The use of matchers makes <code>EXPECT_THAT</code> a powerful, extensible assertion.</p>
+<p><em>The idea for this assertion was borrowed from Joe Walnes' Hamcrest project,
+which adds <code>assertThat()</code> to JUnit.</em></p>
+<h2 id="boolean-conditions-boolean">Boolean Conditions {#boolean}</h2>
+<p>The following assertions test Boolean conditions.</p>
+<h3 id="expect_true-expect_true">EXPECT_TRUE {#EXPECT_TRUE}</h3>
+<p><code>EXPECT_TRUE(</code><em><code>condition</code></em><code>)</code> \
+<code>ASSERT_TRUE(</code><em><code>condition</code></em><code>)</code></p>
+<p>Verifies that <em><code>condition</code></em> is true.</p>
+<h3 id="expect_false-expect_false">EXPECT_FALSE {#EXPECT_FALSE}</h3>
+<p><code>EXPECT_FALSE(</code><em><code>condition</code></em><code>)</code> \
+<code>ASSERT_FALSE(</code><em><code>condition</code></em><code>)</code></p>
+<p>Verifies that <em><code>condition</code></em> is false.</p>
+<h2 id="binary-comparison-binary-comparison">Binary Comparison {#binary-comparison}</h2>
+<p>The following assertions compare two values. The value arguments must be
+comparable by the assertion's comparison operator, otherwise a compiler error
+will result.</p>
+<p>If an argument supports the <code>&lt;&lt;</code> operator, it will be called to print the
+argument when the assertion fails. Otherwise, GoogleTest will attempt to print
+them in the best way it can—see
+<a href="../advanced.html#teaching-googletest-how-to-print-your-values">Teaching GoogleTest How to Print Your Values</a>.</p>
+<p>Arguments are always evaluated exactly once, so it's OK for the arguments to
+have side effects. However, the argument evaluation order is undefined and
+programs should not depend on any particular argument evaluation order.</p>
+<p>These assertions work with both narrow and wide string objects (<code>string</code> and
+<code>wstring</code>).</p>
+<p>See also the <a href="#floating-point">Floating-Point Comparison</a> assertions to compare
+floating-point numbers and avoid problems caused by rounding.</p>
+<h3 id="expect_eq-expect_eq">EXPECT_EQ {#EXPECT_EQ}</h3>
+<p><code>EXPECT_EQ(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code> \
+<code>ASSERT_EQ(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code></p>
+<p>Verifies that <em><code>val1</code></em><code>==</code><em><code>val2</code></em>.</p>
+<p>Does pointer equality on pointers. If used on two C strings, it tests if they
+are in the same memory location, not if they have the same value. Use
+<a href="#EXPECT_STREQ"><code>EXPECT_STREQ</code></a> to compare C strings (e.g. <code>const char*</code>) by
+value.</p>
+<p>When comparing a pointer to <code>NULL</code>, use <code>EXPECT_EQ(</code><em><code>ptr</code></em><code>, nullptr)</code> instead
+of <code>EXPECT_EQ(</code><em><code>ptr</code></em><code>, NULL)</code>.</p>
+<h3 id="expect_ne-expect_ne">EXPECT_NE {#EXPECT_NE}</h3>
+<p><code>EXPECT_NE(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code> \
+<code>ASSERT_NE(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code></p>
+<p>Verifies that <em><code>val1</code></em><code>!=</code><em><code>val2</code></em>.</p>
+<p>Does pointer equality on pointers. If used on two C strings, it tests if they
+are in different memory locations, not if they have different values. Use
+<a href="#EXPECT_STRNE"><code>EXPECT_STRNE</code></a> to compare C strings (e.g. <code>const char*</code>) by
+value.</p>
+<p>When comparing a pointer to <code>NULL</code>, use <code>EXPECT_NE(</code><em><code>ptr</code></em><code>, nullptr)</code> instead
+of <code>EXPECT_NE(</code><em><code>ptr</code></em><code>, NULL)</code>.</p>
+<h3 id="expect_lt-expect_lt">EXPECT_LT {#EXPECT_LT}</h3>
+<p><code>EXPECT_LT(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code> \
+<code>ASSERT_LT(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code></p>
+<p>Verifies that <em><code>val1</code></em><code>&lt;</code><em><code>val2</code></em>.</p>
+<h3 id="expect_le-expect_le">EXPECT_LE {#EXPECT_LE}</h3>
+<p><code>EXPECT_LE(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code> \
+<code>ASSERT_LE(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code></p>
+<p>Verifies that <em><code>val1</code></em><code>&lt;=</code><em><code>val2</code></em>.</p>
+<h3 id="expect_gt-expect_gt">EXPECT_GT {#EXPECT_GT}</h3>
+<p><code>EXPECT_GT(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code> \
+<code>ASSERT_GT(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code></p>
+<p>Verifies that <em><code>val1</code></em><code>&gt;</code><em><code>val2</code></em>.</p>
+<h3 id="expect_ge-expect_ge">EXPECT_GE {#EXPECT_GE}</h3>
+<p><code>EXPECT_GE(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code> \
+<code>ASSERT_GE(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code></p>
+<p>Verifies that <em><code>val1</code></em><code>&gt;=</code><em><code>val2</code></em>.</p>
+<h2 id="string-comparison-c-strings">String Comparison {#c-strings}</h2>
+<p>The following assertions compare two <strong>C strings</strong>. To compare two <code>string</code>
+objects, use <a href="#EXPECT_EQ"><code>EXPECT_EQ</code></a> or <a href="#EXPECT_NE"><code>EXPECT_NE</code></a> instead.</p>
+<p>These assertions also accept wide C strings (<code>wchar_t*</code>). If a comparison of two
+wide strings fails, their values will be printed as UTF-8 narrow strings.</p>
+<p>To compare a C string with <code>NULL</code>, use <code>EXPECT_EQ(</code><em><code>c_string</code></em><code>, nullptr)</code> or
+<code>EXPECT_NE(</code><em><code>c_string</code></em><code>, nullptr)</code>.</p>
+<h3 id="expect_streq-expect_streq">EXPECT_STREQ {#EXPECT_STREQ}</h3>
+<p><code>EXPECT_STREQ(</code><em><code>str1</code></em><code>,</code><em><code>str2</code></em><code>)</code> \
+<code>ASSERT_STREQ(</code><em><code>str1</code></em><code>,</code><em><code>str2</code></em><code>)</code></p>
+<p>Verifies that the two C strings <em><code>str1</code></em> and <em><code>str2</code></em> have the same contents.</p>
+<h3 id="expect_strne-expect_strne">EXPECT_STRNE {#EXPECT_STRNE}</h3>
+<p><code>EXPECT_STRNE(</code><em><code>str1</code></em><code>,</code><em><code>str2</code></em><code>)</code> \
+<code>ASSERT_STRNE(</code><em><code>str1</code></em><code>,</code><em><code>str2</code></em><code>)</code></p>
+<p>Verifies that the two C strings <em><code>str1</code></em> and <em><code>str2</code></em> have different contents.</p>
+<h3 id="expect_strcaseeq-expect_strcaseeq">EXPECT_STRCASEEQ {#EXPECT_STRCASEEQ}</h3>
+<p><code>EXPECT_STRCASEEQ(</code><em><code>str1</code></em><code>,</code><em><code>str2</code></em><code>)</code> \
+<code>ASSERT_STRCASEEQ(</code><em><code>str1</code></em><code>,</code><em><code>str2</code></em><code>)</code></p>
+<p>Verifies that the two C strings <em><code>str1</code></em> and <em><code>str2</code></em> have the same contents,
+ignoring case.</p>
+<h3 id="expect_strcasene-expect_strcasene">EXPECT_STRCASENE {#EXPECT_STRCASENE}</h3>
+<p><code>EXPECT_STRCASENE(</code><em><code>str1</code></em><code>,</code><em><code>str2</code></em><code>)</code> \
+<code>ASSERT_STRCASENE(</code><em><code>str1</code></em><code>,</code><em><code>str2</code></em><code>)</code></p>
+<p>Verifies that the two C strings <em><code>str1</code></em> and <em><code>str2</code></em> have different contents,
+ignoring case.</p>
+<h2 id="floating-point-comparison-floating-point">Floating-Point Comparison {#floating-point}</h2>
+<p>The following assertions compare two floating-point values.</p>
+<p>Due to rounding errors, it is very unlikely that two floating-point values will
+match exactly, so <code>EXPECT_EQ</code> is not suitable. In general, for floating-point
+comparison to make sense, the user needs to carefully choose the error bound.</p>
+<p>GoogleTest also provides assertions that use a default error bound based on
+Units in the Last Place (ULPs). To learn more about ULPs, see the article
+<a href="https://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/">Comparing Floating Point Numbers</a>.</p>
+<h3 id="expect_float_eq-expect_float_eq">EXPECT_FLOAT_EQ {#EXPECT_FLOAT_EQ}</h3>
+<p><code>EXPECT_FLOAT_EQ(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code> \
+<code>ASSERT_FLOAT_EQ(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code></p>
+<p>Verifies that the two <code>float</code> values <em><code>val1</code></em> and <em><code>val2</code></em> are approximately
+equal, to within 4 ULPs from each other.</p>
+<h3 id="expect_double_eq-expect_double_eq">EXPECT_DOUBLE_EQ {#EXPECT_DOUBLE_EQ}</h3>
+<p><code>EXPECT_DOUBLE_EQ(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code> \
+<code>ASSERT_DOUBLE_EQ(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code></p>
+<p>Verifies that the two <code>double</code> values <em><code>val1</code></em> and <em><code>val2</code></em> are approximately
+equal, to within 4 ULPs from each other.</p>
+<h3 id="expect_near-expect_near">EXPECT_NEAR {#EXPECT_NEAR}</h3>
+<p><code>EXPECT_NEAR(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>,</code><em><code>abs_error</code></em><code>)</code> \
+<code>ASSERT_NEAR(</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>,</code><em><code>abs_error</code></em><code>)</code></p>
+<p>Verifies that the difference between <em><code>val1</code></em> and <em><code>val2</code></em> does not exceed the
+absolute error bound <em><code>abs_error</code></em>.</p>
+<h2 id="exception-assertions-exceptions">Exception Assertions {#exceptions}</h2>
+<p>The following assertions verify that a piece of code throws, or does not throw,
+an exception. Usage requires exceptions to be enabled in the build environment.</p>
+<p>Note that the piece of code under test can be a compound statement, for example:</p>
+<pre><code class="language-cpp">EXPECT_NO_THROW({
+  int n = 5;
+  DoSomething(&amp;n);
+});
+</code></pre>
+<h3 id="expect_throw-expect_throw">EXPECT_THROW {#EXPECT_THROW}</h3>
+<p><code>EXPECT_THROW(</code><em><code>statement</code></em><code>,</code><em><code>exception_type</code></em><code>)</code> \
+<code>ASSERT_THROW(</code><em><code>statement</code></em><code>,</code><em><code>exception_type</code></em><code>)</code></p>
+<p>Verifies that <em><code>statement</code></em> throws an exception of type <em><code>exception_type</code></em>.</p>
+<h3 id="expect_any_throw-expect_any_throw">EXPECT_ANY_THROW {#EXPECT_ANY_THROW}</h3>
+<p><code>EXPECT_ANY_THROW(</code><em><code>statement</code></em><code>)</code> \
+<code>ASSERT_ANY_THROW(</code><em><code>statement</code></em><code>)</code></p>
+<p>Verifies that <em><code>statement</code></em> throws an exception of any type.</p>
+<h3 id="expect_no_throw-expect_no_throw">EXPECT_NO_THROW {#EXPECT_NO_THROW}</h3>
+<p><code>EXPECT_NO_THROW(</code><em><code>statement</code></em><code>)</code> \
+<code>ASSERT_NO_THROW(</code><em><code>statement</code></em><code>)</code></p>
+<p>Verifies that <em><code>statement</code></em> does not throw any exception.</p>
+<h2 id="predicate-assertions-predicates">Predicate Assertions {#predicates}</h2>
+<p>The following assertions enable more complex predicates to be verified while
+printing a more clear failure message than if <code>EXPECT_TRUE</code> were used alone.</p>
+<h3 id="expect_pred-expect_pred">EXPECT_PRED* {#EXPECT_PRED}</h3>
+<p><code>EXPECT_PRED1(</code><em><code>pred</code></em><code>,</code><em><code>val1</code></em><code>)</code> \
+<code>EXPECT_PRED2(</code><em><code>pred</code></em><code>,</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code> \
+<code>EXPECT_PRED3(</code><em><code>pred</code></em><code>,</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>,</code><em><code>val3</code></em><code>)</code> \
+<code>EXPECT_PRED4(</code><em><code>pred</code></em><code>,</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>,</code><em><code>val3</code></em><code>,</code><em><code>val4</code></em><code>)</code> \
+<code>EXPECT_PRED5(</code><em><code>pred</code></em><code>,</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>,</code><em><code>val3</code></em><code>,</code><em><code>val4</code></em><code>,</code><em><code>val5</code></em><code>)</code></p>
+<p><code>ASSERT_PRED1(</code><em><code>pred</code></em><code>,</code><em><code>val1</code></em><code>)</code> \
+<code>ASSERT_PRED2(</code><em><code>pred</code></em><code>,</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code> \
+<code>ASSERT_PRED3(</code><em><code>pred</code></em><code>,</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>,</code><em><code>val3</code></em><code>)</code> \
+<code>ASSERT_PRED4(</code><em><code>pred</code></em><code>,</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>,</code><em><code>val3</code></em><code>,</code><em><code>val4</code></em><code>)</code> \
+<code>ASSERT_PRED5(</code><em><code>pred</code></em><code>,</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>,</code><em><code>val3</code></em><code>,</code><em><code>val4</code></em><code>,</code><em><code>val5</code></em><code>)</code></p>
+<p>Verifies that the predicate <em><code>pred</code></em> returns <code>true</code> when passed the given values
+as arguments.</p>
+<p>The parameter <em><code>pred</code></em> is a function or functor that accepts as many arguments
+as the corresponding macro accepts values. If <em><code>pred</code></em> returns <code>true</code> for the
+given arguments, the assertion succeeds, otherwise the assertion fails.</p>
+<p>When the assertion fails, it prints the value of each argument. Arguments are
+always evaluated exactly once.</p>
+<p>As an example, see the following code:</p>
+<pre><code class="language-cpp">// Returns true if m and n have no common divisors except 1.
+bool MutuallyPrime(int m, int n) { ... }
+...
+const int a = 3;
+const int b = 4;
+const int c = 10;
+...
+EXPECT_PRED2(MutuallyPrime, a, b);  // Succeeds
+EXPECT_PRED2(MutuallyPrime, b, c);  // Fails
+</code></pre>
+<p>In the above example, the first assertion succeeds, and the second fails with
+the following message:</p>
+<pre><code>MutuallyPrime(b, c) is false, where
+b is 4
+c is 10
+</code></pre>
+<p>Note that if the given predicate is an overloaded function or a function
+template, the assertion macro might not be able to determine which version to
+use, and it might be necessary to explicitly specify the type of the function.
+For example, for a Boolean function <code>IsPositive()</code> overloaded to take either a
+single <code>int</code> or <code>double</code> argument, it would be necessary to write one of the
+following:</p>
+<pre><code class="language-cpp">EXPECT_PRED1(static_cast&lt;bool (*)(int)&gt;(IsPositive), 5);
+EXPECT_PRED1(static_cast&lt;bool (*)(double)&gt;(IsPositive), 3.14);
+</code></pre>
+<p>Writing simply <code>EXPECT_PRED1(IsPositive, 5);</code> would result in a compiler error.
+Similarly, to use a template function, specify the template arguments:</p>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+bool IsNegative(T x) {
+  return x &lt; 0;
+}
+...
+EXPECT_PRED1(IsNegative&lt;int&gt;, -5);  // Must specify type for IsNegative
+</code></pre>
+<p>If a template has multiple parameters, wrap the predicate in parentheses so the
+macro arguments are parsed correctly:</p>
+<pre><code class="language-cpp">ASSERT_PRED2((MyPredicate&lt;int, int&gt;), 5, 0);
+</code></pre>
+<h3 id="expect_pred_format-expect_pred_format">EXPECT_PRED_FORMAT* {#EXPECT_PRED_FORMAT}</h3>
+<p><code>EXPECT_PRED_FORMAT1(</code><em><code>pred_formatter</code></em><code>,</code><em><code>val1</code></em><code>)</code> \
+<code>EXPECT_PRED_FORMAT2(</code><em><code>pred_formatter</code></em><code>,</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code> \
+<code>EXPECT_PRED_FORMAT3(</code><em><code>pred_formatter</code></em><code>,</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>,</code><em><code>val3</code></em><code>)</code> \
+<code>EXPECT_PRED_FORMAT4(</code><em><code>pred_formatter</code></em><code>,</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>,</code><em><code>val3</code></em><code>,</code><em><code>val4</code></em><code>)</code>
+\
+<code>EXPECT_PRED_FORMAT5(</code><em><code>pred_formatter</code></em><code>,</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>,</code><em><code>val3</code></em><code>,</code><em><code>val4</code></em><code>,</code><em><code>val5</code></em><code>)</code></p>
+<p><code>ASSERT_PRED_FORMAT1(</code><em><code>pred_formatter</code></em><code>,</code><em><code>val1</code></em><code>)</code> \
+<code>ASSERT_PRED_FORMAT2(</code><em><code>pred_formatter</code></em><code>,</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>)</code> \
+<code>ASSERT_PRED_FORMAT3(</code><em><code>pred_formatter</code></em><code>,</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>,</code><em><code>val3</code></em><code>)</code> \
+<code>ASSERT_PRED_FORMAT4(</code><em><code>pred_formatter</code></em><code>,</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>,</code><em><code>val3</code></em><code>,</code><em><code>val4</code></em><code>)</code>
+\
+<code>ASSERT_PRED_FORMAT5(</code><em><code>pred_formatter</code></em><code>,</code><em><code>val1</code></em><code>,</code><em><code>val2</code></em><code>,</code><em><code>val3</code></em><code>,</code><em><code>val4</code></em><code>,</code><em><code>val5</code></em><code>)</code></p>
+<p>Verifies that the predicate <em><code>pred_formatter</code></em> succeeds when passed the given
+values as arguments.</p>
+<p>The parameter <em><code>pred_formatter</code></em> is a <em>predicate-formatter</em>, which is a function
+or functor with the signature:</p>
+<pre><code class="language-cpp">testing::AssertionResult PredicateFormatter(const char* expr1,
+                                            const char* expr2,
+                                            ...
+                                            const char* exprn,
+                                            T1 val1,
+                                            T2 val2,
+                                            ...
+                                            Tn valn);
+</code></pre>
+<p>where <em><code>val1</code></em>, <em><code>val2</code></em>, ..., <em><code>valn</code></em> are the values of the predicate
+arguments, and <em><code>expr1</code></em>, <em><code>expr2</code></em>, ..., <em><code>exprn</code></em> are the corresponding
+expressions as they appear in the source code. The types <code>T1</code>, <code>T2</code>, ..., <code>Tn</code>
+can be either value types or reference types; if an argument has type <code>T</code>, it
+can be declared as either <code>T</code> or <code>const T&amp;</code>, whichever is appropriate. For more
+about the return type <code>testing::AssertionResult</code>, see
+<a href="../advanced.html#using-a-function-that-returns-an-assertionresult">Using a Function That Returns an AssertionResult</a>.</p>
+<p>As an example, see the following code:</p>
+<pre><code class="language-cpp">// Returns the smallest prime common divisor of m and n,
+// or 1 when m and n are mutually prime.
+int SmallestPrimeCommonDivisor(int m, int n) { ... }
+
+// Returns true if m and n have no common divisors except 1.
+bool MutuallyPrime(int m, int n) { ... }
+
+// A predicate-formatter for asserting that two integers are mutually prime.
+testing::AssertionResult AssertMutuallyPrime(const char* m_expr,
+                                             const char* n_expr,
+                                             int m,
+                                             int n) {
+  if (MutuallyPrime(m, n)) return testing::AssertionSuccess();
+
+  return testing::AssertionFailure() &lt;&lt; m_expr &lt;&lt; &quot; and &quot; &lt;&lt; n_expr
+      &lt;&lt; &quot; (&quot; &lt;&lt; m &lt;&lt; &quot; and &quot; &lt;&lt; n &lt;&lt; &quot;) are not mutually prime, &quot;
+      &lt;&lt; &quot;as they have a common divisor &quot; &lt;&lt; SmallestPrimeCommonDivisor(m, n);
+}
+
+...
+const int a = 3;
+const int b = 4;
+const int c = 10;
+...
+EXPECT_PRED_FORMAT2(AssertMutuallyPrime, a, b);  // Succeeds
+EXPECT_PRED_FORMAT2(AssertMutuallyPrime, b, c);  // Fails
+</code></pre>
+<p>In the above example, the final assertion fails and the predicate-formatter
+produces the following failure message:</p>
+<pre><code>b and c (4 and 10) are not mutually prime, as they have a common divisor 2
+</code></pre>
+<h2 id="windows-hresult-assertions-hresult">Windows HRESULT Assertions {#HRESULT}</h2>
+<p>The following assertions test for <code>HRESULT</code> success or failure. For example:</p>
+<pre><code class="language-cpp">CComPtr&lt;IShellDispatch2&gt; shell;
+ASSERT_HRESULT_SUCCEEDED(shell.CoCreateInstance(L&quot;Shell.Application&quot;));
+CComVariant empty;
+ASSERT_HRESULT_SUCCEEDED(shell-&gt;ShellExecute(CComBSTR(url), empty, empty, empty, empty));
+</code></pre>
+<p>The generated output contains the human-readable error message associated with
+the returned <code>HRESULT</code> code.</p>
+<h3 id="expect_hresult_succeeded-expect_hresult_succeeded">EXPECT_HRESULT_SUCCEEDED {#EXPECT_HRESULT_SUCCEEDED}</h3>
+<p><code>EXPECT_HRESULT_SUCCEEDED(</code><em><code>expression</code></em><code>)</code> \
+<code>ASSERT_HRESULT_SUCCEEDED(</code><em><code>expression</code></em><code>)</code></p>
+<p>Verifies that <em><code>expression</code></em> is a success <code>HRESULT</code>.</p>
+<h3 id="expect_hresult_failed-expect_hresult_failed">EXPECT_HRESULT_FAILED {#EXPECT_HRESULT_FAILED}</h3>
+<p><code>EXPECT_HRESULT_FAILED(</code><em><code>expression</code></em><code>)</code> \
+<code>EXPECT_HRESULT_FAILED(</code><em><code>expression</code></em><code>)</code></p>
+<p>Verifies that <em><code>expression</code></em> is a failure <code>HRESULT</code>.</p>
+<h2 id="death-assertions-death">Death Assertions {#death}</h2>
+<p>The following assertions verify that a piece of code causes the process to
+terminate. For context, see <a href="../advanced.html#death-tests">Death Tests</a>.</p>
+<p>These assertions spawn a new process and execute the code under test in that
+process. How that happens depends on the platform and the variable
+<code>::testing::GTEST_FLAG(death_test_style)</code>, which is initialized from the
+command-line flag <code>--gtest_death_test_style</code>.</p>
+<ul>
+<li>On POSIX systems, <code>fork()</code> (or <code>clone()</code> on Linux) is used to spawn the
+    child, after which:<ul>
+<li>If the variable's value is <code>"fast"</code>, the death test statement is
+    immediately executed.</li>
+<li>If the variable's value is <code>"threadsafe"</code>, the child process re-executes
+    the unit test binary just as it was originally invoked, but with some
+    extra flags to cause just the single death test under consideration to
+    be run.</li>
+</ul>
+</li>
+<li>On Windows, the child is spawned using the <code>CreateProcess()</code> API, and
+    re-executes the binary to cause just the single death test under
+    consideration to be run - much like the <code>"threadsafe"</code> mode on POSIX.</li>
+</ul>
+<p>Other values for the variable are illegal and will cause the death test to fail.
+Currently, the flag's default value is
+<strong><code>"fast"</code></strong>.</p>
+<p>If the death test statement runs to completion without dying, the child process
+will nonetheless terminate, and the assertion fails.</p>
+<p>Note that the piece of code under test can be a compound statement, for example:</p>
+<pre><code class="language-cpp">EXPECT_DEATH({
+  int n = 5;
+  DoSomething(&amp;n);
+}, &quot;Error on line .* of DoSomething()&quot;);
+</code></pre>
+<h3 id="expect_death-expect_death">EXPECT_DEATH {#EXPECT_DEATH}</h3>
+<p><code>EXPECT_DEATH(</code><em><code>statement</code></em><code>,</code><em><code>matcher</code></em><code>)</code> \
+<code>ASSERT_DEATH(</code><em><code>statement</code></em><code>,</code><em><code>matcher</code></em><code>)</code></p>
+<p>Verifies that <em><code>statement</code></em> causes the process to terminate with a nonzero exit
+status and produces <code>stderr</code> output that matches <em><code>matcher</code></em>.</p>
+<p>The parameter <em><code>matcher</code></em> is either a <a href="matchers.html">matcher</a> for a <code>const
+std::string&amp;</code>, or a regular expression (see
+<a href="../advanced.html#regular-expression-syntax">Regular Expression Syntax</a>)—a bare
+string <em><code>s</code></em> (with no matcher) is treated as
+<a href="matchers.html#string-matchers"><code>ContainsRegex(s)</code></a>, <strong>not</strong>
+<a href="matchers.html#generic-comparison"><code>Eq(s)</code></a>.</p>
+<p>For example, the following code verifies that calling <code>DoSomething(42)</code> causes
+the process to die with an error message that contains the text <code>My error</code>:</p>
+<pre><code class="language-cpp">EXPECT_DEATH(DoSomething(42), &quot;My error&quot;);
+</code></pre>
+<h3 id="expect_death_if_supported-expect_death_if_supported">EXPECT_DEATH_IF_SUPPORTED {#EXPECT_DEATH_IF_SUPPORTED}</h3>
+<p><code>EXPECT_DEATH_IF_SUPPORTED(</code><em><code>statement</code></em><code>,</code><em><code>matcher</code></em><code>)</code> \
+<code>ASSERT_DEATH_IF_SUPPORTED(</code><em><code>statement</code></em><code>,</code><em><code>matcher</code></em><code>)</code></p>
+<p>If death tests are supported, behaves the same as
+<a href="#EXPECT_DEATH"><code>EXPECT_DEATH</code></a>. Otherwise, verifies nothing.</p>
+<h3 id="expect_debug_death-expect_debug_death">EXPECT_DEBUG_DEATH {#EXPECT_DEBUG_DEATH}</h3>
+<p><code>EXPECT_DEBUG_DEATH(</code><em><code>statement</code></em><code>,</code><em><code>matcher</code></em><code>)</code> \
+<code>ASSERT_DEBUG_DEATH(</code><em><code>statement</code></em><code>,</code><em><code>matcher</code></em><code>)</code></p>
+<p>In debug mode, behaves the same as <a href="#EXPECT_DEATH"><code>EXPECT_DEATH</code></a>. When not in
+debug mode (i.e. <code>NDEBUG</code> is defined), just executes <em><code>statement</code></em>.</p>
+<h3 id="expect_exit-expect_exit">EXPECT_EXIT {#EXPECT_EXIT}</h3>
+<p><code>EXPECT_EXIT(</code><em><code>statement</code></em><code>,</code><em><code>predicate</code></em><code>,</code><em><code>matcher</code></em><code>)</code> \
+<code>ASSERT_EXIT(</code><em><code>statement</code></em><code>,</code><em><code>predicate</code></em><code>,</code><em><code>matcher</code></em><code>)</code></p>
+<p>Verifies that <em><code>statement</code></em> causes the process to terminate with an exit status
+that satisfies <em><code>predicate</code></em>, and produces <code>stderr</code> output that matches
+<em><code>matcher</code></em>.</p>
+<p>The parameter <em><code>predicate</code></em> is a function or functor that accepts an <code>int</code> exit
+status and returns a <code>bool</code>. GoogleTest provides two predicates to handle common
+cases:</p>
+<pre><code class="language-cpp">// Returns true if the program exited normally with the given exit status code.
+::testing::ExitedWithCode(exit_code);
+
+// Returns true if the program was killed by the given signal.
+// Not available on Windows.
+::testing::KilledBySignal(signal_number);
+</code></pre>
+<p>The parameter <em><code>matcher</code></em> is either a <a href="matchers.html">matcher</a> for a <code>const
+std::string&amp;</code>, or a regular expression (see
+<a href="../advanced.html#regular-expression-syntax">Regular Expression Syntax</a>)—a bare
+string <em><code>s</code></em> (with no matcher) is treated as
+<a href="matchers.html#string-matchers"><code>ContainsRegex(s)</code></a>, <strong>not</strong>
+<a href="matchers.html#generic-comparison"><code>Eq(s)</code></a>.</p>
+<p>For example, the following code verifies that calling <code>NormalExit()</code> causes the
+process to print a message containing the text <code>Success</code> to <code>stderr</code> and exit
+with exit status code 0:</p>
+<pre><code class="language-cpp">EXPECT_EXIT(NormalExit(), testing::ExitedWithCode(0), &quot;Success&quot;);
+</code></pre>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 25, 2021</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 25, 2021</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="actions.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Actions Reference" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Actions Reference
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="matchers.html" class="md-footer__link md-footer__link--next" aria-label="Next: Matchers Reference" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Matchers Reference
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/oliversheridanmethven/testing" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/oliver-sheridan-methven/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:oliver.sheridan-methven@hotmail.co.uk" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48H48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0L0 176z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.tabs.sticky", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.footer"], "search": "../../../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

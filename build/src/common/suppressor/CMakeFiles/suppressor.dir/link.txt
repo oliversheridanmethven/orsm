@@ -1,2 +1,2 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libsuppressor.a CMakeFiles/suppressor.dir/suppressor.c.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libsuppressor.a
+/opt/local/bin/ar qc libsuppressor.a CMakeFiles/suppressor.dir/suppressor.c.o
+/opt/local/bin/ranlib libsuppressor.a

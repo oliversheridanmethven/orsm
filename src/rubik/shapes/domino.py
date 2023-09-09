@@ -3,7 +3,7 @@
 from .shape import Shape, _array_from_faces_at_end
 from common.logger import log
 from copy import deepcopy
-from rubik.paths.moves import Move
+from rubik.paths.move import Move
 import numpy as np
 
 
@@ -40,9 +40,9 @@ class Domino(Shape):
             array = array[[0, 3, 2, 1]]
             return type(shape)(array=array)
 
-    def moves(self, *args, **kwargs):
-
-        return [self.move_1(*args, shape=self, **kwargs)]
+    _moves = [move_1]
+    _reverse_moves = NotImplementedError
+    _commutative_moves = NotImplementedError
 
 
 if __name__ == "__main__":

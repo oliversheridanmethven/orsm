@@ -73,15 +73,15 @@ src/hello_world/CMakeFiles/hello_world_example.dir/hello_world_example.c.o: src/
 src/hello_world/CMakeFiles/hello_world_example.dir/hello_world_example.c.o: /Users/oliver/ClionProjects/testing/src/hello_world/hello_world_example.c
 src/hello_world/CMakeFiles/hello_world_example.dir/hello_world_example.c.o: src/hello_world/CMakeFiles/hello_world_example.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/hello_world/CMakeFiles/hello_world_example.dir/hello_world_example.c.o"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/hello_world && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/hello_world/CMakeFiles/hello_world_example.dir/hello_world_example.c.o -MF CMakeFiles/hello_world_example.dir/hello_world_example.c.o.d -o CMakeFiles/hello_world_example.dir/hello_world_example.c.o -c /Users/oliver/ClionProjects/testing/src/hello_world/hello_world_example.c
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/hello_world && /usr/local/opt/llvm/bin/clang-16 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/hello_world/CMakeFiles/hello_world_example.dir/hello_world_example.c.o -MF CMakeFiles/hello_world_example.dir/hello_world_example.c.o.d -o CMakeFiles/hello_world_example.dir/hello_world_example.c.o -c /Users/oliver/ClionProjects/testing/src/hello_world/hello_world_example.c
 
 src/hello_world/CMakeFiles/hello_world_example.dir/hello_world_example.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/hello_world_example.dir/hello_world_example.c.i"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/hello_world && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/hello_world/hello_world_example.c > CMakeFiles/hello_world_example.dir/hello_world_example.c.i
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/hello_world && /usr/local/opt/llvm/bin/clang-16 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/oliver/ClionProjects/testing/src/hello_world/hello_world_example.c > CMakeFiles/hello_world_example.dir/hello_world_example.c.i
 
 src/hello_world/CMakeFiles/hello_world_example.dir/hello_world_example.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/hello_world_example.dir/hello_world_example.c.s"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/hello_world && /usr/local/bin/gcc-13 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/hello_world/hello_world_example.c -o CMakeFiles/hello_world_example.dir/hello_world_example.c.s
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/hello_world && /usr/local/opt/llvm/bin/clang-16 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/oliver/ClionProjects/testing/src/hello_world/hello_world_example.c -o CMakeFiles/hello_world_example.dir/hello_world_example.c.s
 
 # Object files for target hello_world_example
 hello_world_example_OBJECTS = \

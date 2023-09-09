@@ -172,39 +172,67 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/hello_world/CMakeFiles/hello_world.dir/rule:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/hello_world/CMakeFiles/hello_world.dir/rule
-.PHONY : src/hello_world/CMakeFiles/hello_world.dir/rule
+src/hello_world/CMakeFiles/hello_world_c.dir/rule:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/hello_world/CMakeFiles/hello_world_c.dir/rule
+.PHONY : src/hello_world/CMakeFiles/hello_world_c.dir/rule
 
 # Convenience name for target.
-hello_world: src/hello_world/CMakeFiles/hello_world.dir/rule
-.PHONY : hello_world
+hello_world_c: src/hello_world/CMakeFiles/hello_world_c.dir/rule
+.PHONY : hello_world_c
 
 # fast build rule for target.
-hello_world/fast:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world.dir/build.make src/hello_world/CMakeFiles/hello_world.dir/build
-.PHONY : hello_world/fast
+hello_world_c/fast:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_c.dir/build.make src/hello_world/CMakeFiles/hello_world_c.dir/build
+.PHONY : hello_world_c/fast
 
 # Convenience name for target.
-src/hello_world/CMakeFiles/hello_world_example.dir/rule:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/hello_world/CMakeFiles/hello_world_example.dir/rule
-.PHONY : src/hello_world/CMakeFiles/hello_world_example.dir/rule
+src/hello_world/CMakeFiles/hello_world_cpp.dir/rule:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/hello_world/CMakeFiles/hello_world_cpp.dir/rule
+.PHONY : src/hello_world/CMakeFiles/hello_world_cpp.dir/rule
 
 # Convenience name for target.
-hello_world_example: src/hello_world/CMakeFiles/hello_world_example.dir/rule
-.PHONY : hello_world_example
+hello_world_cpp: src/hello_world/CMakeFiles/hello_world_cpp.dir/rule
+.PHONY : hello_world_cpp
 
 # fast build rule for target.
-hello_world_example/fast:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_example.dir/build.make src/hello_world/CMakeFiles/hello_world_example.dir/build
-.PHONY : hello_world_example/fast
+hello_world_cpp/fast:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_cpp.dir/build.make src/hello_world/CMakeFiles/hello_world_cpp.dir/build
+.PHONY : hello_world_cpp/fast
+
+# Convenience name for target.
+src/hello_world/CMakeFiles/hello_world_example_c.dir/rule:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/hello_world/CMakeFiles/hello_world_example_c.dir/rule
+.PHONY : src/hello_world/CMakeFiles/hello_world_example_c.dir/rule
+
+# Convenience name for target.
+hello_world_example_c: src/hello_world/CMakeFiles/hello_world_example_c.dir/rule
+.PHONY : hello_world_example_c
+
+# fast build rule for target.
+hello_world_example_c/fast:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_example_c.dir/build.make src/hello_world/CMakeFiles/hello_world_example_c.dir/build
+.PHONY : hello_world_example_c/fast
+
+# Convenience name for target.
+src/hello_world/CMakeFiles/hello_world_example_cpp.dir/rule:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/hello_world/CMakeFiles/hello_world_example_cpp.dir/rule
+.PHONY : src/hello_world/CMakeFiles/hello_world_example_cpp.dir/rule
+
+# Convenience name for target.
+hello_world_example_cpp: src/hello_world/CMakeFiles/hello_world_example_cpp.dir/rule
+.PHONY : hello_world_example_cpp
+
+# fast build rule for target.
+hello_world_example_cpp/fast:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_example_cpp.dir/build.make src/hello_world/CMakeFiles/hello_world_example_cpp.dir/build
+.PHONY : hello_world_example_cpp/fast
 
 hello_world.o: hello_world.c.o
 .PHONY : hello_world.o
 
 # target to build an object file
 hello_world.c.o:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world.dir/build.make src/hello_world/CMakeFiles/hello_world.dir/hello_world.c.o
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_c.dir/build.make src/hello_world/CMakeFiles/hello_world_c.dir/hello_world.c.o
 .PHONY : hello_world.c.o
 
 hello_world.i: hello_world.c.i
@@ -212,7 +240,7 @@ hello_world.i: hello_world.c.i
 
 # target to preprocess a source file
 hello_world.c.i:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world.dir/build.make src/hello_world/CMakeFiles/hello_world.dir/hello_world.c.i
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_c.dir/build.make src/hello_world/CMakeFiles/hello_world_c.dir/hello_world.c.i
 .PHONY : hello_world.c.i
 
 hello_world.s: hello_world.c.s
@@ -220,15 +248,39 @@ hello_world.s: hello_world.c.s
 
 # target to generate assembly for a file
 hello_world.c.s:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world.dir/build.make src/hello_world/CMakeFiles/hello_world.dir/hello_world.c.s
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_c.dir/build.make src/hello_world/CMakeFiles/hello_world_c.dir/hello_world.c.s
 .PHONY : hello_world.c.s
+
+hello_world.o: hello_world.cpp.o
+.PHONY : hello_world.o
+
+# target to build an object file
+hello_world.cpp.o:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_cpp.dir/build.make src/hello_world/CMakeFiles/hello_world_cpp.dir/hello_world.cpp.o
+.PHONY : hello_world.cpp.o
+
+hello_world.i: hello_world.cpp.i
+.PHONY : hello_world.i
+
+# target to preprocess a source file
+hello_world.cpp.i:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_cpp.dir/build.make src/hello_world/CMakeFiles/hello_world_cpp.dir/hello_world.cpp.i
+.PHONY : hello_world.cpp.i
+
+hello_world.s: hello_world.cpp.s
+.PHONY : hello_world.s
+
+# target to generate assembly for a file
+hello_world.cpp.s:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_cpp.dir/build.make src/hello_world/CMakeFiles/hello_world_cpp.dir/hello_world.cpp.s
+.PHONY : hello_world.cpp.s
 
 hello_world_example.o: hello_world_example.c.o
 .PHONY : hello_world_example.o
 
 # target to build an object file
 hello_world_example.c.o:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_example.dir/build.make src/hello_world/CMakeFiles/hello_world_example.dir/hello_world_example.c.o
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_example_c.dir/build.make src/hello_world/CMakeFiles/hello_world_example_c.dir/hello_world_example.c.o
 .PHONY : hello_world_example.c.o
 
 hello_world_example.i: hello_world_example.c.i
@@ -236,7 +288,7 @@ hello_world_example.i: hello_world_example.c.i
 
 # target to preprocess a source file
 hello_world_example.c.i:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_example.dir/build.make src/hello_world/CMakeFiles/hello_world_example.dir/hello_world_example.c.i
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_example_c.dir/build.make src/hello_world/CMakeFiles/hello_world_example_c.dir/hello_world_example.c.i
 .PHONY : hello_world_example.c.i
 
 hello_world_example.s: hello_world_example.c.s
@@ -244,8 +296,32 @@ hello_world_example.s: hello_world_example.c.s
 
 # target to generate assembly for a file
 hello_world_example.c.s:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_example.dir/build.make src/hello_world/CMakeFiles/hello_world_example.dir/hello_world_example.c.s
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_example_c.dir/build.make src/hello_world/CMakeFiles/hello_world_example_c.dir/hello_world_example.c.s
 .PHONY : hello_world_example.c.s
+
+hello_world_example.o: hello_world_example.cpp.o
+.PHONY : hello_world_example.o
+
+# target to build an object file
+hello_world_example.cpp.o:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_example_cpp.dir/build.make src/hello_world/CMakeFiles/hello_world_example_cpp.dir/hello_world_example.cpp.o
+.PHONY : hello_world_example.cpp.o
+
+hello_world_example.i: hello_world_example.cpp.i
+.PHONY : hello_world_example.i
+
+# target to preprocess a source file
+hello_world_example.cpp.i:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_example_cpp.dir/build.make src/hello_world/CMakeFiles/hello_world_example_cpp.dir/hello_world_example.cpp.i
+.PHONY : hello_world_example.cpp.i
+
+hello_world_example.s: hello_world_example.cpp.s
+.PHONY : hello_world_example.s
+
+# target to generate assembly for a file
+hello_world_example.cpp.s:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/hello_world/CMakeFiles/hello_world_example_cpp.dir/build.make src/hello_world/CMakeFiles/hello_world_example_cpp.dir/hello_world_example.cpp.s
+.PHONY : hello_world_example.cpp.s
 
 # Help Target
 help:
@@ -260,11 +336,19 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... hello_world"
-	@echo "... hello_world_example"
+	@echo "... hello_world_c"
+	@echo "... hello_world_cpp"
+	@echo "... hello_world_example_c"
+	@echo "... hello_world_example_cpp"
 	@echo "... hello_world.o"
 	@echo "... hello_world.i"
 	@echo "... hello_world.s"
+	@echo "... hello_world.o"
+	@echo "... hello_world.i"
+	@echo "... hello_world.s"
+	@echo "... hello_world_example.o"
+	@echo "... hello_world_example.i"
+	@echo "... hello_world_example.s"
 	@echo "... hello_world_example.o"
 	@echo "... hello_world_example.i"
 	@echo "... hello_world_example.s"

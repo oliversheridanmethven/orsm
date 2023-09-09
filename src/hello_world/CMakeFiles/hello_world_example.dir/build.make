@@ -93,7 +93,7 @@ hello_world_example_EXTERNAL_OBJECTS =
 bin/hello_world_example: src/hello_world/CMakeFiles/hello_world_example.dir/hello_world_example.c.o
 bin/hello_world_example: src/hello_world/CMakeFiles/hello_world_example.dir/build.make
 bin/hello_world_example: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
-bin/hello_world_example: lib/libhello_world.a
+bin/hello_world_example: lib/libhello_world_c.a
 bin/hello_world_example: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
 bin/hello_world_example: src/hello_world/CMakeFiles/hello_world_example.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/oliver/ClionProjects/testing/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable ../../bin/hello_world_example"

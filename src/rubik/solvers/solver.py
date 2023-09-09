@@ -37,24 +37,40 @@ def check_solver_inputs(func):
     return check_solver_inputs_wrapper
 
 
-def next_generation_of_moves(shapes_and_paths):
+def next_generation_of_shapes_with_paths(shapes_and_paths):
     """
     Compute the next generation of shapes that can be achieved
-    from the input group.
+    from the input group, noting the paths used.
     """
     assert isinstance(shapes_and_paths, dict)
     shapes_and_paths_next = {}
     for shape, path in progressbar(shapes_and_paths.items()):
         assert isinstance(shape, Shape)
         assert isinstance(path, Path)
-        for reverse in [True, False]:
-            for move in shape.moves():
-                moved = shape.move(move, reverse=reverse)
-                moved_path = path.add(move=move, reverse=reverse)
-                assert moved_path != path, f"The path has not changed."
-                assert len(moved_path) == len(path) + 1, f"The path has not increased enough."
-                shapes_and_paths_next[moved] = moved_path
+        for move in shape.moves():
+            moved = shape.move(move)
+            moved_path = path.add(move=move, reverse=False)
+            assert moved_path != path, f"The path has not changed."
+            assert len(moved_path) == len(path) + 1, f"The path has not increased enough."
+            shapes_and_paths_next[moved] = moved_path
+    assert shapes_and_paths_next
     return shapes_and_paths_next
+
+
+def next_generation_of_shapes_without_paths(shapes):
+    """
+    Compute the next generation of shapes that can be achieved
+    from the input group.
+    """
+    assert isinstance(shapes, set)
+    shapes_next = set()
+    for shape in progressbar(shapes):
+        assert isinstance(shape, Shape)
+        for move in shape.moves():
+            moved = shape.move(move)
+            shapes_next.add(moved)
+    assert shapes_next
+    return shapes_next
 
 
 if __name__ == "__main__":

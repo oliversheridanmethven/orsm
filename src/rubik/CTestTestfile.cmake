@@ -4,4 +4,8 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-subdirs("tests")
+subdirs("colours")
+subdirs("paths")
+subdirs("shapes")
+subdirs("shufflers")
+subdirs("solvers")

@@ -1,2 +1,2 @@
 /usr/bin/ar qc libsuppressor.a CMakeFiles/suppressor.dir/suppressor.c.o
-/usr/bin/ranlib libsuppressor.a
+/usr/local/opt/llvm/bin/llvm-ranlib libsuppressor.a

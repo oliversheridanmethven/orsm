@@ -1,2 +1,2 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libversion.a CMakeFiles/version.dir/version.c.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libversion.a
+/opt/local/bin/ar qc libversion.a CMakeFiles/version.dir/version.c.o
+/opt/local/bin/ranlib libversion.a

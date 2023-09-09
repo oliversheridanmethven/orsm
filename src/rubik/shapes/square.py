@@ -3,7 +3,7 @@
 from .shape import Shape, _array_from_faces_at_end, _first_update_faces
 from common.logger import log
 from copy import deepcopy
-from rubik.paths.moves import Move
+from rubik.paths.move import Move
 import numpy as np
 
 
@@ -66,11 +66,10 @@ class Square(Shape):
             array = array[[0, 4, 2, 6, 1, 5, 3, 7]]
             return type(shape)(array=array)
 
-    _moves = {i: move for i, move in enumerate([move_1, move_2])}
+    _moves = [move_1, move_2]
 
-    @classmethod
-    def moves(cls):
-        return [move for move in cls._moves]
+    _reverse_moves = NotImplemented
+    _commutative_moves = NotImplementedError
 
 
 if __name__ == "__main__":

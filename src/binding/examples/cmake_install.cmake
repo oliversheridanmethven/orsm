@@ -34,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/usr/local/opt/llvm/bin/llvm-objdump")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -50,7 +50,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   if(EXISTS "$ENV{DESTDIR}/Users/oliver/ClionProjects/testing/src/binding/examples/examples_bindings.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/Users/oliver/ClionProjects/testing/src/binding/examples/examples_bindings.so")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" -x "$ENV{DESTDIR}/Users/oliver/ClionProjects/testing/src/binding/examples/examples_bindings.so")
+      execute_process(COMMAND "/opt/local/bin/strip" -x "$ENV{DESTDIR}/Users/oliver/ClionProjects/testing/src/binding/examples/examples_bindings.so")
     endif()
   endif()
 endif()

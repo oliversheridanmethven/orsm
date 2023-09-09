@@ -4,13 +4,13 @@ A collection of Rubik style shapes we wish to support.
 """
 
 from common.logger import log
-from rubik.colours.default_colours import Colours
+from rubik.colours.colour_palette import ColourPalette
 import numpy as np
 from abc import ABC, abstractmethod
 import itertools
 import random
-from rubik.paths.paths import Path
-from rubik.paths.moves import Move
+from rubik.paths.path import Path
+from rubik.paths.move import Move
 from functools import wraps
 from copy import deepcopy
 
@@ -54,11 +54,11 @@ class Shape(ABC):
         new.assign_tiles(values=values)
         self._faces = new._faces
 
-    # @_array_from_faces
+    # @_array_from_faces_at_end
     def __init__(self, *args, array=None, faces=None, colours=None, **kwargs):
         self._array = np.array([]) if array is None else array
         # The _array is our underlying invariant which will always be in a correct state.
-        self._colours = Colours if colours is None else colours
+        self._colours = ColourPalette if colours is None else colours
         self._faces = [] if faces is None else faces
         self._args = args
         self._kwargs = kwargs
@@ -148,8 +148,44 @@ class Shape(ABC):
         return moved
 
     @abstractmethod
-    def moves(self, **kwargs):
+    def _moves(self):
+        """A container to hold the moves."""
         ...
+
+    @abstractmethod
+    def _reverse_moves(self):
+        """A container to hold the mappings between the moves and the reverse moves."""
+        ...
+
+    @abstractmethod
+    def _commutative_moves(self):
+        """A container to hold the mappings between the moves which commute."""
+        ...
+
+    @classmethod
+    def moves(cls, *args, **kwargs):
+        # Working with moves as indices can make the path constructions generally much quicker.
+        # But not as nice for printing though...
+        return [move(*args, shape=cls(), **kwargs) for move in cls._moves]
+        # return cls._moves
+
+    @classmethod
+    def _reverse_moves_mapping(cls, *args, **kwargs):
+        return {move(*args, shape=cls(), **kwargs): reverse_move(*args, shape=cls(), **kwargs) for move, reverse_move in cls._reverse_moves.items()}
+
+    @classmethod
+    def reverse_of(cls, move, **kwargs):
+        moves_mapping = cls._reverse_moves_mapping()
+        reverse_move = moves_mapping[move]
+        assert isinstance(reverse_move, Move), f"We are returning the wrong type."
+        return reverse_move
+
+    @classmethod
+    def commutative(cls, move_1, move_2, *args, **kwargs):
+        commutative_moves = [[move(*args, shape=cls(), **kwargs) for move in moves] for moves in cls._commutative_moves]
+        results = [move_2 in moves for moves in commutative_moves if move_1 in moves]
+        assert len(results) == 1
+        return results[0]
 
     def shuffle(self, *args, turns=100, seed=False, **kwargs):
         """Produces a shuffled cube, and lists how it got there."""
@@ -165,20 +201,20 @@ class Shape(ABC):
         else:
             random.seed(None)
 
-        last_shuffle = None
+        last_move = None
         for turn in range(turns):
             # We try and generate a new move (which is not the reverse of the preceding!).
             while True:
-                move, reverse = random.choices(list(itertools.product(self.moves(), [True, False])))[0]
-                if last_shuffle == (move, not reverse):
+                move = random.choices(self.moves())[0]
+                if last_move is not None and self.commutative(move, last_move):
                     continue
 
-                last_shuffle = (move, reverse)
+                last_move = move
                 break
 
-            log.debug(f"{turn = } shuffling with {move = } {reverse = }")
-            shuffled = shuffled.move(move, reverse=reverse)
-            path._append(move=move, reverse=reverse)
+            log.debug(f"{turn = } shuffling with {move = }")
+            shuffled = shuffled.move(move)
+            path._append(move=move, reverse=False)
 
         return shuffled, path
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-from rubik.paths.paths import Path
-from rubik.solvers.solver import Solver, check_solver_inputs, next_generation_of_moves
+from rubik.paths.path import Path
+from rubik.solvers.solver import Solver, check_solver_inputs, next_generation_of_shapes_with_paths
 from common.logger import log
 from common.profiling import profile
 
@@ -12,7 +12,6 @@ class MeetInMiddle(Solver):
     """
 
     @check_solver_inputs
-    @profile
     def solve(self, *args, start, target, **kwargs):
 
         turns = 0
@@ -23,7 +22,7 @@ class MeetInMiddle(Solver):
                 log.info(f"We have found {len(overlaps)} solutions with {turns = }.")
                 break
             shape_and_path_fronts = shape_and_path_fronts[::-1]
-            shape_and_path_fronts[0] = next_generation_of_moves(shape_and_path_fronts[0])
+            shape_and_path_fronts[0] = next_generation_of_shapes_with_paths(shape_and_path_fronts[0])
             turns += 1
 
         shape_and_path_fronts = shape_and_path_fronts if turns % 2 != 0 else reversed(shape_and_path_fronts)

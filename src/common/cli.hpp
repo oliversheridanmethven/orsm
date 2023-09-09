@@ -3,9 +3,13 @@
 
 #include "boost/program_options.hpp"
 #include "boost/filesystem.hpp"
-#include <string>
 #include "version/version.h"
 #include <cassert>
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <tuple>
+#include "logging/logging.hpp"
 
 namespace cli {
     namespace po = boost::program_options;
@@ -61,7 +65,7 @@ namespace cli {
     }
 
 
-    auto setup_standard_parser(int argc, char **argv, std::string description = "") {
+    auto standard_parser_setup(int argc, char **argv, std::string description = "") {
         std::stringstream _epilogue;
         _epilogue << "\nVersion:\n\t" << repo_name() << " " << repo_version() << "\n";
         _epilogue << "\nAuthor:\n\t" << repo_author() << "\n";
@@ -70,7 +74,7 @@ namespace cli {
 
         po::options_description options("Allowed options");
         po::positional_options_description positional_options;
-        
+
         po::arg = "";
         options.add_options()
                 ("help", "Show this help message.")

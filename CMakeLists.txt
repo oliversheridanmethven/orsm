@@ -2,9 +2,10 @@ cmake_minimum_required(VERSION 3.25)  # Use the latest and greatest.
 
 # Declaring the project and it's languages also sets the,
 # compilers, so we set our paths to the compilers first.
-#
-find_program(CMAKE_C_COMPILER NAMES $ENV{CC} clang-16 PATHS ENV PATH NO_DEFAULT_PATH)
-find_program(CMAKE_CXX_COMPILER NAMES $ENV{CXX} clang++ PATHS ENV PATH NO_DEFAULT_PATH)
+# cf: https://stackoverflow.com/a/29904501/5134817
+
+find_program(CMAKE_C_COMPILER NAMES $ENV{CXX} clang-mp-16 clang-16 clang PATHS ENV PATH NO_DEFAULT_PATH)
+find_program(CMAKE_CXX_COMPILER NAMES $ENV{CXX} clang++-mp-16 clang++-16 clang++ PATHS ENV PATH NO_DEFAULT_PATH)
 #find_program(CMAKE_C_COMPILER NAMES $ENV{CC} gcc-13 PATHS ENV PATH NO_DEFAULT_PATH)
 #find_program(CMAKE_CXX_COMPILER NAMES $ENV{CXX} g++-13 PATHS ENV PATH NO_DEFAULT_PATH)
 
@@ -108,6 +109,7 @@ enable_testing()
 # ^ This must be before any calls to add_subdirectory to ensure it is enabled recursively.
 # cf. https://stackoverflow.com/questions/54550939/ctest-add-tests-in-subdirectories#comment109191766_55835742
 
+message(DEBUG "Just printing this to supress a warning: ${PYTHON_EXECUTABLE}")
 set(Python3_FIND_VIRTUALENV FIRST)
 set(Python3_ROOT_DIR "${PROJECT_SOURCE_DIR}/venv")
 find_package(Python3 COMPONENTS Interpreter Development)
@@ -131,8 +133,6 @@ link_libraries(${Python3_LIBRARIES})
 
 find_package(Boost REQUIRED)
 include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
-
-
 
 
 function(add_all_python_tests)
@@ -178,4 +178,3 @@ add_subdirectory(src)
 
 # Where we find the scratch files for our proto-typing things.
 add_subdirectory(misc)
-

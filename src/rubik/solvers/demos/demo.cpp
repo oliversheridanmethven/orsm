@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
     Seed _seed;
     unsigned int turns;
 
-    auto [options, positional_options, parser_finalise] = cli::setup_standard_parser(argc, argv,
+    auto [options, positional_options, parser_finalise] = cli::standard_parser_setup(argc, argv,
                                                                                      "Demonstration of solving Rubik style puzzles.");
 
     options.add_options()

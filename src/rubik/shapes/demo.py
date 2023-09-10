@@ -3,7 +3,7 @@
 from common.logger import log
 from common.cli import setup_standard_parser
 from itertools import product
-from rubik.shapes import Volume, Domino, Square, Sheet
+from rubik.shapes import Volume, Domino, Square, Sheet, Cube
 from common.variables import variable_names_and_objects
 
 if __name__ == "__main__":
@@ -15,7 +15,7 @@ if __name__ == "__main__":
     parser.add_argument("--shape", type=str, metavar="SHAPE", help="Which shape to demo.", default='Volume')
     kwargs = vars(parser.parse_args())
 
-    for name, Shape in variable_names_and_objects(Volume, Domino, Square, Sheet):
+    for name, Shape in variable_names_and_objects(Volume, Domino, Square, Sheet, Cube):
         if name != kwargs["shape"]:
             continue
         shape = Shape()
@@ -23,7 +23,7 @@ if __name__ == "__main__":
             for move in shape.moves():
                 log.info(f"Original: {shape = !s}")
                 log.info(f"{move}: {shape.move(move) = !s}")
-                log.info(f"{move} (reversed): {shape.move(move, reverse=True)  = !s}\n\n")
+                # log.info(f"{move} (reversed): {shape.move(move, reverse=True)  = !s}\n\n")
         if kwargs["double"]:
             for move_1, move_2 in product(*[shape.moves() for i in range(2)]):
                 log.info(f"Original: {shape  = !s}")

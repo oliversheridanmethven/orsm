@@ -23,7 +23,9 @@ class Move(ABC):
         return self.__str__()
 
     def __str__(self):
-        return self.__doc__
+        doc_string_description = self.__doc__
+        assert doc_string_description is not None and isinstance(doc_string_description, str) and doc_string_description, f"A docstring describing {self = } must be provided and non-trivial, not {doc_string_description = }."
+        return doc_string_description
 
     def __hash__(self):
         # The description should be unique.

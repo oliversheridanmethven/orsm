@@ -103,7 +103,7 @@ class Sheet(Shape):
         assert [np.shape(face) for face in self._faces] == shapes, f"A {type(self).__name__} face must only contain 16 tiles in the specific shape: {shapes}"
 
     class move_1(Move):
-        """Move the bottom."""
+        """Move the bottom (front -> back)."""
 
         def __call__(self, *args, shape, reverse=False, **kwargs):
             array = shape._array
@@ -111,7 +111,7 @@ class Sheet(Shape):
             return type(shape)(array=array)
 
     class move_2(Move):
-        """Move the right."""
+        """Move the right (front -> back)."""
 
         def __call__(self, *args, shape, reverse=False, **kwargs):
             array = shape._array
@@ -122,6 +122,9 @@ class Sheet(Shape):
 
     _reverse_moves = NotImplementedError
     _commutative_moves = NotImplementedError
+
+    _reverse_moves = {move: reverse_move for move, reverse_move in [(move_1, move_1), (move_2, move_2)]}
+    _commutative_moves = ()
 
 
 if __name__ == "__main__":

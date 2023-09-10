@@ -277,14 +277,74 @@ class Cube(Shape):
         def __call__(self, *args, shape, reverse=False, **kwargs):
             return type(shape)(array=shape._array[[]])
 
-    _moves = [move_1, move_2, move_3, move_4, move_5, move_6, move_7, move_8, move_9,
-              move_10, move_11, move_12, move_13, move_14, move_15, move_16, move_17, move_18,
-              move_19, move_20, move_21, move_22, move_23, move_24, move_25, move_26, move_27]
-    # _moves = [move__]
-    # _moves = []
-    # _moves = [move_4, move_25]
-    _reverse_moves = NotImplementedError
-    _commutative_moves = NotImplementedError
+    _moves = [move_1, move_2, move_3,
+              move_4, move_5, move_6,
+              move_7, move_8, move_9,
+              #
+              move_10, move_11, move_12,
+              move_13, move_14, move_15,
+              move_16, move_17, move_18,
+              #
+              move_19, move_20, move_21,
+              move_22, move_23, move_24,
+              move_25, move_26, move_27]
+
+    _reverse_moves = {move: reverse_move for move, reverse_move in [(move_1, move_3),
+                                                                    (move_2, move_2),
+                                                                    (move_3, move_1),
+                                                                    #
+                                                                    (move_4, move_6),
+                                                                    (move_5, move_5),
+                                                                    (move_6, move_4),
+                                                                    #
+                                                                    (move_7, move_9),
+                                                                    (move_8, move_8),
+                                                                    (move_9, move_7),
+                                                                    #
+                                                                    #
+                                                                    (move_10, move_12),
+                                                                    (move_11, move_11),
+                                                                    (move_12, move_10),
+                                                                    #
+                                                                    (move_13, move_15),
+                                                                    (move_14, move_14),
+                                                                    (move_15, move_13),
+                                                                    #
+                                                                    (move_16, move_18),
+                                                                    (move_17, move_17),
+                                                                    (move_18, move_16),
+                                                                    #
+                                                                    #
+                                                                    (move_19, move_21),
+                                                                    (move_20, move_20),
+                                                                    (move_21, move_19),
+                                                                    #
+                                                                    (move_22, move_24),
+                                                                    (move_23, move_23),
+                                                                    (move_24, move_22),
+                                                                    #
+                                                                    (move_25, move_27),
+                                                                    (move_26, move_26),
+                                                                    (move_27, move_25),
+                                                                    #
+                                                                    #
+                                                                    ]}
+    _commutative_moves = (
+        #  Moving in the same plane commutes.
+        (move_1, move_2, move_3,
+         move_4, move_5, move_6,
+         move_7, move_8, move_9),
+        #
+        (move_10, move_11, move_12,
+         move_13, move_14, move_15,
+         move_16, move_17, move_18),
+        #
+        (move_19, move_20, move_21,
+         move_22, move_23, move_24,
+         move_25, move_26, move_27),
+        # Moving the centres 180 so happens to commute.
+        (move_2, move_11, move_20),
+    )
 
 
 if __name__ == "__main__":

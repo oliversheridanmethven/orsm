@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from .shape import Shape, _array_from_faces_at_end, _first_update_faces
+from .utils import printing_cubic_shapes
 from common.logger import log
 from copy import deepcopy
 from rubik.paths.move import Move
@@ -26,47 +27,7 @@ class Volume(Shape):
 
     @_first_update_faces
     def __str__(self):
-        """Try to show the cube in a very pictorial way."""
-        'front 0  back 1  right 2  left 3  top 4  bottom 5'
-        top = self._faces[4]
-        front = self._faces[0]
-        right = self._faces[2]
-        left = self._faces[3]
-        back = self._faces[1]
-        bottom = self._faces[5]
-        s = "\n\n"
-        indent = 5
-        indenting = indent + 3
-        for row in top:
-            s += ' ' * indenting
-            for tile in row:
-                s += f"{self._colours(tile).colour(tile)} "
-            s += '\n'
-            indenting -= 1
-        bars = '-' * len(row) * 2
-        s += ' ' * indent + '/' + bars + '/'
-        for left_row, front_row, right_row, back_row in zip(left, front, right, back):
-            s += "\n"
-            for tile in left_row:
-                s += f"{self._colours(tile).colour(tile)} "
-            s += ': '
-            for tile in front_row:
-                s += f"{self._colours(tile).colour(tile)} "
-            s += ': '
-            for tile in right_row:
-                s += f"{self._colours(tile).colour(tile)} "
-            s += ': '
-            for tile in back_row:
-                s += f"{self._colours(tile).colour(tile)} "
-        s += "\n" + ' ' * indent + "\\" + bars + "\\"
-        for row in bottom:
-            s += '\n'
-            indenting += 1
-            s += ' ' * indenting
-            for tile in row:
-                s += f"{self._colours(tile).colour(tile)} "
-        s += "\n\n"
-        return s
+        return printing_cubic_shapes.to_string(faces=self._faces, colours=self._colours)
 
     @_array_from_faces_at_end
     def __init__(self, *args, **kwargs):

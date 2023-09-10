@@ -28,7 +28,7 @@ def specific(*args, start, turns, seed=None, timeout=None, **kwargs):
                     log.debug(f"We have found a god shuffle after {generation = }")
                     shapes_and_paths_new = shapes_and_paths_new_previous
                     break
-                raise RuntimeError(f"The requested difficulty is too hard, and we could not generate any new paths after {generation = } when requesting {turns = }.")
+                raise RuntimeError(f"The requested difficulty is too hard for {type(start)}, and we could not generate any new paths after {generation = } when requesting {turns = }.")
             generation += 1
 
     log.info(f"We were able to find {len(shapes_and_paths_new)} matching the specific difficulty ({turns = }).")

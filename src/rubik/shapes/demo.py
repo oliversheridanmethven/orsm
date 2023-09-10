@@ -20,8 +20,8 @@ if __name__ == "__main__":
             continue
         shape = Shape()
         if kwargs["single"]:
+            log.info(f"Original: {shape = !s}")
             for move in shape.moves():
-                log.info(f"Original: {shape = !s}")
                 log.info(f"{move}: {shape.move(move) = !s}")
                 # log.info(f"{move} (reversed): {shape.move(move, reverse=True)  = !s}\n\n")
         if kwargs["double"]:

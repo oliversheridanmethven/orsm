@@ -154,13 +154,29 @@ public:
         return cleaned;
     }
 
+    friend std::hash<Self>;
+};
+
+template<typename Self> requires std::is_base_of_v<Shape<Self>, Self>
+struct std::hash<Self> {
+
+    std::size_t operator()(const Self &shape) const noexcept {
+        size_t combined_hash = 0; /* <- Must be seeded. */
+        for (const auto &tile: shape.tiles) {
+            size_t tile_hash = std::hash<Tile>{}(tile);
+            boost::hash_combine(combined_hash, tile_hash);
+        }
+        return combined_hash;
+    }
 };
 
 template<typename T>
 std::ostream &operator<<(std::ostream &os, std::vector<T> values) {
+    os << "[";
     for (int leading_comma = 0; const auto &value: values) {
         os << (leading_comma++ ? ", " : "") << value;
     }
+    os << "]";
     return os;
 }
 

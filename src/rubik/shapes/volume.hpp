@@ -190,21 +190,6 @@ public:
         return os;
     }
 
-
-    friend std::hash<Volume>;
-};
-
-template<>
-struct std::hash<Volume> {
-
-    std::size_t operator()(const Volume &shape) const noexcept {
-        size_t combined_hash = 0; /* <- Must be seeded. */
-        for (const auto &tile: shape.tiles) {
-            size_t tile_hash = std::hash<Tile>{}(tile);
-            boost::hash_combine(combined_hash, tile_hash);
-        }
-        return combined_hash;
-    }
 };
 
 

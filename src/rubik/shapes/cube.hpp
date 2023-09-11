@@ -1,0 +1,4 @@
+#ifndef TESTING_CUBE_HPP
+#define TESTING_CUBE_HPP
+
+#endif //TESTING_CUBE_HPP

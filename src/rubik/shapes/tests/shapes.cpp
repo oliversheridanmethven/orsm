@@ -1,4 +1,5 @@
 #include "testing/testing.h"
+#include "logging/logging.hpp"
 #include "rubik/shapes/volume.hpp"
 #include "rubik/shapes/cube.hpp"
 #include <ranges>

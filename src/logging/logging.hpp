@@ -13,6 +13,8 @@
 #define LOG_TRACE VLOG(TRACE_LEVEL)
 #define LOG_WARNING LOG(WARNING)
 #define LOG_ERROR LOG(ERROR)
+#define LOG_CRITICAL LOG(FATAL)
+#define LOG_FAILURE LOG(FATAL)
 
 #define LOG_INIT(argv) google::InitGoogleLogging(argv[0]);
 

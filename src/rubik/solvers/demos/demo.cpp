@@ -2,10 +2,10 @@
 #include <iostream>
 #include "logging/logging.hpp"
 #include "rubik/shapes/volume.hpp"
+#include "rubik/shapes/cube.hpp"
 #include "rubik/solvers/meet_in_middle_recursive.hpp"
-#include "rubik/paths/path.hpp"
 #include "common/cli.hpp"
-#include <ranges>
+#include <variant>
 #include <boost/optional.hpp>
 
 int main(int argc, char **argv) {
@@ -18,15 +18,16 @@ int main(int argc, char **argv) {
 
     Seed _seed;
     unsigned int turns;
-
+    std::string shape_name;
     auto [options, positional_options, parser_finalise] = cli::standard_parser_setup(argc, argv,
                                                                                      "Demonstration of solving Rubik style puzzles.");
 
     options.add_options()
             ("turns",
-             cli::po::value(&turns)->default_value(100)/*->value_name("TURNS")*/,
+             cli::po::value(&turns)->default_value(5)/*->value_name("TURNS")*/,
              "The number of turns.")
-            ("seed", cli::po::value(&_seed)->default_value(Seed{}, "None"), "The seed.");
+            ("seed", cli::po::value(&_seed)->default_value(Seed{}, "None"), "The seed.")
+            ("shape", cli::po::value(&shape_name)->default_value("Cube"), "The shape.");
 
     parser_finalise(options, positional_options);
     typename Volume::Seed seed;
@@ -34,14 +35,27 @@ int main(int argc, char **argv) {
         seed = _seed.value();
     }
 
-    Volume shape;
-    LOG_INFO << "The initial shape is: " << shape;
-    Path solution_path;
-    auto [shuffled, shuffle_path] = shape.shuffle(turns, seed);
-    LOG_INFO << "The shuffled shape is constructed by:\n" << shuffle_path << "\n";
-    LOG_INFO << "The shuffled shape is: " << shuffled;
-    auto solver = MeetInMiddleRecursive<decltype(shape)>();
-    solution_path = solver.solve(shape, shuffled);
-    LOG_DEBUG << "The shuffled shape is recovered by: " << solution_path;
-    LOG_INFO << "The original shape is recovered by: " << shape.clean(solution_path.reversed());
+    Volume volume;
+    Cube cube;
+    std::variant<Volume, Cube> shapes;
+    if (shape_name == "Volume") {
+        shapes = volume;
+    } else if (shape_name == "Cube") {
+        shapes = cube;
+    } else {
+        LOG_CRITICAL << "Unknown shape name specified: " << shape_name;
+    }
+
+    std::visit([=](auto shape) {
+        LOG_INFO << "The initial shape is: " << shape;
+        Path solution_path;
+        auto [shuffled, shuffle_path] = shape.shuffle(turns, seed);
+        LOG_INFO << "The shuffled shape is constructed by:\n" << shuffle_path << "\n";
+        LOG_INFO << "The shuffled shape is: " << shuffled;
+        auto solver = MeetInMiddleRecursive<decltype(shape)>();
+        solution_path = solver.solve(shape, shuffled);
+        LOG_DEBUG << "The shuffled shape is recovered by: " << solution_path;
+        LOG_INFO << "The original shape is recovered by: " << shape.clean(solution_path.reversed());
+    }, shapes);
+
 }

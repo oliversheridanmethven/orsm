@@ -1,5 +1,6 @@
 #include "testing/testing.h"
 #include "rubik/shapes/volume.hpp"
+#include "rubik/shapes/cube.hpp"
 #include "rubik/shufflers/shufflers.hpp"
 
 
@@ -7,7 +8,7 @@ template<typename S>
 class ShapeShufflerTest : public testing::Test {
 };
 
-using ShapeTypes = ::testing::Types<Volume>;
+using ShapeTypes = ::testing::Types<Volume, Cube>;
 TYPED_TEST_SUITE(ShapeShufflerTest, ShapeTypes);
 
 TYPED_TEST(ShapeShufflerTest, trivial_difficulty) {
@@ -39,21 +40,27 @@ TYPED_TEST(ShapeShufflerTest, moderate_difficulty) {
     }
 }
 
-TEST(ShufflerTest, infeasible_moderate_difficulty) {
+TYPED_TEST(ShapeShufflerTest, infeasible_moderate_difficulty) {
     GTEST_SKIP(); /* This takes too long. */
-    Volume shape;
-    auto turns = 20;
+    TypeParam shape;
+    auto turns = 50;
     auto seed = 0;
     ASSERT_THROW(specific(shape, turns, seed), std::runtime_error)
                                 << "We should not have been able to produce a difficulty this large.";
 }
 
-TEST(ShufflerTest, moderate_god_shuffle) {
+TYPED_TEST(ShapeShufflerTest, moderate_god_shuffle) {
     GTEST_SKIP(); /* This takes too long. */
-    Volume shape;
+    TypeParam shape;
     auto seed = 0;
     auto [shuffled, shuffle_path] = god(shape, seed);
-    ASSERT_EQ(shuffle_path.size(), 11)
-                                << "We did not recover the god shuffle quoted in: cf: https://ruwix.com/the-rubiks-cube/gods-number/";
+    if (std::is_same<TypeParam, Volume>::value) {
+        ASSERT_EQ(shuffle_path.size(), 11)
+                                    << "We did not recover the god shuffle quoted in: cf: https://ruwix.com/the-rubiks-cube/gods-number/";
+    } else if (std::is_same<TypeParam, Cube>::value) {
+        ASSERT_EQ(shuffle_path.size(), 20)
+                                    << "We did not recover the god shuffle quoted in: cf: https://ruwix.com/the-rubiks-cube/gods-number/";
+    }
+
 }
 

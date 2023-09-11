@@ -1,12 +1,13 @@
 #include "testing/testing.h"
 #include "rubik/shapes/volume.hpp"
+#include "rubik/shapes/cube.hpp"
 #include <ranges>
 
 template<typename S>
 class ShapeTest : public testing::Test {
 };
 
-using ShapeTypes = ::testing::Types<Volume>;
+using ShapeTypes = ::testing::Types<Volume, Cube>;
 TYPED_TEST_SUITE(ShapeTest, ShapeTypes);
 
 TYPED_TEST(ShapeTest, printing) {
@@ -116,7 +117,10 @@ TYPED_TEST(ShapeTest, double_moves) {
                 if (move_1 == move_2 or shape.reverse_of(move_1) == move_2 or shape.commutative(move_1, move_2)) {
                     ASSERT_EQ(shape_reverted_out_of_order, shape);
                 } else {
-                    ASSERT_NE(shape_reverted_out_of_order, shape);
+                    ASSERT_NE(shape_reverted_out_of_order, shape)
+                                                << "Performing the following moves in reverse in the wrong order should not recover the original."
+                                                << "\nmove_1: " << move_1
+                                                << "\nmove_2: " << move_2;
                 }
 
             }

@@ -271,12 +271,6 @@ class Cube(Shape):
         def __call__(self, *args, shape, reverse=False, **kwargs):
             return type(shape)(array=shape._array[[0, 1, 2, 3, 4, 5, 6, 7, 8, 11, 14, 17, 10, 13, 16, 9, 12, 15, 18, 39, 36, 21, 40, 37, 24, 41, 38, 51, 48, 29, 52, 49, 32, 53, 50, 35, 33, 30, 27, 34, 31, 28, 42, 43, 44, 45, 46, 47, 25, 22, 19, 26, 23, 20]])
 
-    class move_x(Move):
-        """Move XXX (YYY -> ZZZ)."""
-
-        def __call__(self, *args, shape, reverse=False, **kwargs):
-            return type(shape)(array=shape._array[[]])
-
     _moves = [move_1, move_2, move_3,
               move_4, move_5, move_6,
               move_7, move_8, move_9,

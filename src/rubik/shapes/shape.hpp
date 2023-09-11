@@ -125,12 +125,15 @@ public:
     }
 
     bool commutative(const Move &move_1, const Move &move_2) const {
+        bool any_commutative_groups = false;
         for (auto &commuting_moves: commutative_moves()) {
             if (commuting_moves.contains(move_1)) {
-                return commuting_moves.contains(move_2);
+                if (commuting_moves.contains(move_2)) {
+                    any_commutative_groups = true;
+                }
             }
         }
-        throw std::runtime_error("We could not find a commutative grouping containing our moves.");
+        return any_commutative_groups;
     }
 
     Move reverse_of(const Move &move) const {

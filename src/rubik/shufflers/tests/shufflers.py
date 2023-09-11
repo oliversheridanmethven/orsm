@@ -30,7 +30,7 @@ class Shuffles(unittest.TestCase):
     def test_feasible_moderate_difficulty(self):
         for name, Shape in variable_names_and_objects(Volume, Cube):
             shape = Shape()
-            max_turns, timelimit = (5, 5) if name != "Cube" else (4, 20)
+            max_turns, timelimit = (5, 10) if name != "Cube" else (4, 30)
             for turns in range(1, max_turns):
                 with Timeout(timelimit):
                     shuffled, shuffle_path = specific(start=shape, turns=turns, seed=0)

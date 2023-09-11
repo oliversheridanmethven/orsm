@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
 
     options.add_options()
             ("turns",
-             cli::po::value(&turns)->default_value(5)/*->value_name("TURNS")*/,
+             cli::po::value(&turns)->default_value(6)/*->value_name("TURNS")*/,
              "The number of turns.")
             ("seed", cli::po::value(&_seed)->default_value(Seed{}, "None"), "The seed.")
             ("shape", cli::po::value(&shape_name)->default_value("Cube"), "The shape.");

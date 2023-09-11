@@ -7,8 +7,12 @@
 #include <sstream>
 
 
-class Cube final : public Shape<Cube> {
+class Cube final : public Shape<Cube, 3> {
 private:
+
+    using Row = std::array<Tile, 3>;
+    using Face = std::array<Row, 3>;
+    using Faces = std::array<Face, 6>;
 
     static const Move move_1, move_2, move_3,
             move_4, move_5, move_6,
@@ -20,60 +24,25 @@ private:
             move_22, move_23, move_24,
             move_25, move_26, move_27;
 
-    Cube::Faces solved_faces(void) const {
-        Faces faces;
-        for (auto colour: ColourPalette().colours) {
-            Face face;
-            for (size_t i = 0; i < 3; i++) {
-                Row row;
-                for (size_t j = 0; j < 3; j++) {
-                    row.push_back(colour);
-                }
-                face.push_back(row);
-            }
-            faces.push_back(face);
+
+    consteval static std::array<int, 10> foo(void) {
+        std::array<int, 10> v;
+        for (size_t i = 0; i < 10; i++) {
+            v.at(i) = i;
         }
-        return faces;
+        return v;
     }
 
-    virtual Cube::Faces faces(void) const override final {
-        Faces faces = solved_faces();
-        auto _tile = tiles.begin();
-        for (auto &face: faces) {
-            for (auto &row: face) {
-                for (auto &tile: row) {
-                    tile = *(_tile++);
-                }
-            }
-        }
-        return faces;
-    }
 
 public:
-//    ~Cube() override {}
-    /*
-     * The CRTP pattern makes trying to code this up as an initialiser list awkward, but for now it's no the
-     * bottleneck, so don't stress about it for now.
-     *
-     * */
-//    Tiles starting_tiles{ColourPalette::Colour::red, ColourPalette::Colour::red, ColourPalette::Colour::red,
-//                         ColourPalette::Colour::red, ColourPalette::Colour::yellow, ColourPalette::Colour::yellow,
-//                         ColourPalette::Colour::yellow, ColourPalette::Colour::yellow,
-//                         ColourPalette::Colour::blue,
-//                         ColourPalette::Colour::blue, ColourPalette::Colour::blue, ColourPalette::Colour::blue,
-//                         ColourPalette::Colour::green, ColourPalette::Colour::green, ColourPalette::Colour::green,
-//                         ColourPalette::Colour::green, ColourPalette::Colour::white, ColourPalette::Colour::white,
-//                         ColourPalette::Colour::white, ColourPalette::Colour::white,
-//                         ColourPalette::Colour::light_yellow,
-//                         ColourPalette::Colour::light_yellow, ColourPalette::Colour::light_yellow,
-//                         ColourPalette::Colour::light_yellow};
+
     Cube() {
 //        tiles = starting_tiles;
         // Equivalent to the following:
-        for (auto face: solved_faces()) {
-            for (auto row: face) {
-                for (auto tile: row) {
-                    tiles.push_back(tile);
+        for (size_t t = 0; const auto &face: solved_faces()) {
+            for (const auto &row: face) {
+                for (const auto &tile: row) {
+                    tiles.at(t++) = tile;
                 }
             }
         }

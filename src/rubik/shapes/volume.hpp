@@ -6,41 +6,9 @@
 #include "rubik/colours/colour_palette.hpp"
 #include <sstream>
 
-class Volume final : public Shape<Volume> {
+class Volume final : public Shape<Volume, 2> {
 private:
     static const Move move_1, move_2, move_3, move_4, move_5, move_6, move_7, move_8, move_9;
-
-private:
-
-
-    Volume::Faces solved_faces(void) const {
-        Faces faces;
-        for (auto colour: ColourPalette().colours) {
-            Face face;
-            for (size_t i = 0; i < 2; i++) {
-                Row row;
-                for (size_t j = 0; j < 2; j++) {
-                    row.push_back(colour);
-                }
-                face.push_back(row);
-            }
-            faces.push_back(face);
-        }
-        return faces;
-    }
-
-    virtual Volume::Faces faces(void) const override final {
-        Faces faces = solved_faces();
-        auto _tile = tiles.begin();
-        for (auto &face: faces) {
-            for (auto &row: face) {
-                for (auto &tile: row) {
-                    tile = *(_tile++);
-                }
-            }
-        }
-        return faces;
-    }
 
 public:
 //    ~Volume() override {}

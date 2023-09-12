@@ -46,69 +46,6 @@ class Cube(Shape):
     def __str__(self):
         return printing_cubic_shapes.to_string(faces=self._faces, colours=self._colours)
 
-    class move__(Move):
-        """ TESTING ONLY. """
-
-        # @profile
-        def __call__(self, *args, shape, reverse=False, **kwargs):
-            array = shape._array
-            if not shape._faces:
-                shape._update_faces()
-            faces = deepcopy(shape._faces)
-            if not shape._faces:
-                shape._update_faces()
-            if not reverse:
-                # move the row
-                f = faces
-                # # moving the back
-                f[3][0][0], f[3][1][0], f[3][2][0], \
-                    f[5][2][0], f[5][2][1], f[5][2][2], \
-                    f[2][2][2], f[2][1][2], f[2][0][2], \
-                    f[4][0][2], f[4][0][1], f[4][0][0] \
-                    = \
-                    f[4][0][2], f[4][0][1], f[4][0][0], \
-                        f[3][0][0], f[3][1][0], f[3][2][0], \
-                        f[5][2][0], f[5][2][1], f[5][2][2], \
-                        f[2][2][2], f[2][1][2], f[2][0][2]
-
-                # # moving the back centre
-                # f[3][0][1], f[3][1][1], f[3][2][1], \
-                #     f[5][1][0], f[5][1][1], f[5][1][2], \
-                #     f[2][2][1], f[2][1][1], f[2][0][1], \
-                #     f[4][1][2], f[4][1][1], f[4][1][0] \
-                #     = \
-                #     f[4][1][2], f[4][1][1], f[4][1][0], \
-                #         f[3][0][1], f[3][1][1], f[3][2][1], \
-                #         f[5][1][0], f[5][1][1], f[5][1][2], \
-                #         f[2][2][1], f[2][1][1], f[2][0][1]
-
-                # moving the right
-                # faces[0][0][2], faces[0][1][2], faces[0][2][2], \
-                #     faces[5][0][2], faces[5][1][2], faces[5][2][2], \
-                #     faces[1][2][0], faces[1][1][0], faces[1][0][0], \
-                #     faces[4][0][2], faces[4][1][2], faces[4][2][2] \
-                #     = \
-                #     faces[5][0][2], faces[5][1][2], faces[5][2][2], \
-                #         faces[1][2][0], faces[1][1][0], faces[1][0][0], \
-                #         faces[4][0][2], faces[4][1][2], faces[4][2][2], \
-                #         faces[0][0][2], faces[0][1][2], faces[0][2][2]
-
-                #  Moving the front.
-                # faces[0][2], faces[2][2], faces[1][2], faces[3][2] = faces[3][2], faces[0][2], faces[2][2], faces[1][2]
-                # move the face
-                faces[1][0][0], faces[1][0][1], faces[1][0][2], faces[1][1][2], faces[1][2][2], faces[1][2][1], faces[1][2][0], faces[1][1][0] = \
-                    faces[1][2][0], faces[1][1][0], faces[1][0][0], faces[1][0][1], faces[1][0][2], faces[1][1][2], faces[1][2][2], faces[1][2][1]
-
-                # faces[5][0][0], faces[5][0][1], faces[5][0][2], faces[5][1][2], faces[5][2][2], faces[5][2][1], faces[5][2][0], faces[5][1][0] = \
-                #     faces[5][2][0], faces[5][1][0], faces[5][0][0], faces[5][0][1], faces[5][0][2], faces[5][1][2], faces[5][2][2], faces[5][2][1]
-
-                # faces[2][0][0], faces[2][0][1], faces[2][0][2], faces[2][1][2], faces[2][2][2], faces[2][2][1], faces[2][2][0], faces[2][1][0] = \
-                #     faces[2][2][0], faces[2][1][0], faces[2][0][0], faces[2][0][1], faces[2][0][2], faces[2][1][2], faces[2][2][2], faces[2][2][1]
-            else:
-                raise RuntimeError
-            moved = type(shape)(faces=faces)
-            return moved
-
     class move_1(Move):
         """Move the second bottom (front -> right)."""
 
@@ -339,6 +276,8 @@ class Cube(Shape):
         # Moving the centres 180 so happens to commute.
         (move_2, move_11, move_20),
     )
+
+    _invariant_tile_positions = ((0, 0, 0), (4, 2, 0), (3, 0, 2))
 
 
 if __name__ == "__main__":

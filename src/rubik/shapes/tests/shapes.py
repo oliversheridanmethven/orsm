@@ -164,6 +164,21 @@ class Moves(unittest.TestCase):
                     moved_fully = shape.move(move, move, move, move, reverse=direction)
                     self.assertEqual(shape, moved_fully)
 
+    def test_invariant_positions(self):
+
+        def check_invariant_positions(shape):
+            solved_config = shape.solved_config()
+            for face, row, column in shape._invariant_tile_positions:
+                for s in [shape, solved_config]:
+                    s._update_faces()
+                assert len(set([s._faces[face][row][column] for s in [shape, solved_config]])), f"The tiles dont match for {face = }, {row = }, {column = }"
+
+        for name, Shape in self.cubic_shapes:
+            shape = Shape()
+            for turns in range(10):
+                shuffled, path = shape.shuffle(turns=turns, seed=0)
+                check_invariant_positions(shuffled)
+
     def test_shuffle(self):
         for name, Shape in self.cubic_shapes:
             shape = Shape()

@@ -45,6 +45,7 @@ class Domino(Shape):
     _moves = [move_1]
     _reverse_moves = {move: reverse_move for move, reverse_move in [(move_1, move_1)]}
     _commutative_moves = ()
+    _invariant_tile_positions = ((0, 0, 0), (1, 0, 0))
 
 
 if __name__ == "__main__":

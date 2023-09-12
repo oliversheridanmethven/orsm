@@ -49,8 +49,8 @@ def to_string(*args, faces, colours, **kwargs):
     back = faces[1]
     bottom = faces[5]
     s = "\n\n"
-    indent = 1 + 2 * len(top)
-    indenting = indent + 1 + len(top)
+    indent = 1 + 2 * len(left[0])
+    indenting = indent + 1 + len(top[0])
     for row in top:
         s += ' ' * indenting
         for tile in row:

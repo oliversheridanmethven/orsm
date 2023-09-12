@@ -7,7 +7,7 @@
 #include <sstream>
 
 
-class Cube final : public Shape<Cube, 3> {
+class Cube : public Shape<Cube, 3> {
 private:
 
     using Row = std::array<Tile, 3>;
@@ -36,6 +36,8 @@ private:
 
 public:
 
+    ~Cube() override {}
+
     Cube() {
 //        tiles = starting_tiles;
         // Equivalent to the following:
@@ -46,6 +48,12 @@ public:
                 }
             }
         }
+    }
+
+    const std::vector<std::array<size_t, 3>> invariant_tile_positions(void) const override final {
+        return {{0, 0, 0},
+                {4, 2, 0},
+                {3, 0, 2}};
     }
 
     const std::vector<Move> moves(void) const override final {

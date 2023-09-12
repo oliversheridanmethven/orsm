@@ -2,14 +2,21 @@
 #include "logging/logging.hpp"
 #include "rubik/shapes/volume.hpp"
 #include "rubik/shapes/cube.hpp"
+#include "rubik/shapes/shape.hpp"
 #include <ranges>
 
 template<typename S>
 class ShapeTest : public testing::Test {
 };
 
+template<typename S>
+class ShapeTestPrivate : public ShapeTest<S>, public S /*cf: https://stackoverflow.com/a/24445370/5134817*/ {
+};
+
+
 using ShapeTypes = ::testing::Types<Volume, Cube>;
 TYPED_TEST_SUITE(ShapeTest, ShapeTypes);
+TYPED_TEST_SUITE(ShapeTestPrivate, ShapeTypes);
 
 TYPED_TEST(ShapeTest, printing) {
     TypeParam shape;
@@ -191,6 +198,28 @@ TYPED_TEST(ShapeTest, shuffle_seeding) {
         } else {
             ASSERT_NE(path_1, path_2);
         }
+    }
+}
+
+TYPED_TEST(ShapeTestPrivate, invariant_positions) {
+
+    auto check_invariant_positions = [](const auto &shape) {
+        auto solved_config = shape.solved_config();
+        for (const auto &[face, row, column]: shape.invariant_tile_positions()) {
+            std::array<Tile, 2> tiles;
+            for (size_t t = 0; const auto &s: {shape, solved_config}) {
+                tiles.at(t++) = TypeParam::faces_of(s).at(face).at(row).at(column);
+            }
+            CHECK_EQ(tiles.front(), tiles.back()) << "The tiles dont match for face = " << face << " row = " << row
+                                                  << " column = " << column;
+        }
+    };
+
+    TypeParam shape;
+    auto seed = 0;
+    for (auto turns = 0; turns < 10; turns++) {
+        auto [shuffled, path] = shape.shuffle(turns, seed);
+        check_invariant_positions(shuffled);
     }
 }
 

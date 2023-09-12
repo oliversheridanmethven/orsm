@@ -153,6 +153,7 @@ class Volume(Shape):
                                                                     (move_8, move_8),
                                                                     (move_9, move_7)]}
     _commutative_moves = ((move_1, move_2, move_3), (move_4, move_5, move_6), (move_7, move_8, move_9))
+    _invariant_tile_positions = ((0, 0, 0), (4, 1, 0), (3, 0, 1))
 
 
 if __name__ == "__main__":

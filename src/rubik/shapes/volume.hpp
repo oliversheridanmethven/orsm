@@ -6,12 +6,12 @@
 #include "rubik/colours/colour_palette.hpp"
 #include <sstream>
 
-class Volume final : public Shape<Volume, 2> {
+class Volume : public Shape<Volume, 2> {
 private:
     static const Move move_1, move_2, move_3, move_4, move_5, move_6, move_7, move_8, move_9;
 
 public:
-//    ~Volume() override {}
+    ~Volume() override {}
 
     /*
      * The CRTP pattern makes trying to code this up as an initialiser list awkward, but for now it's no the
@@ -44,6 +44,11 @@ public:
         */
     }
 
+    const std::vector<std::array<size_t, 3>> invariant_tile_positions(void) const override final {
+        return {{0, 0, 0},
+                {4, 1, 0},
+                {3, 0, 1}};
+    }
 
     const std::vector<Move> moves(void) const override final {
         return {move_1, move_2, move_3, move_4, move_5, move_6, move_7, move_8, move_9};

@@ -70,6 +70,7 @@ class Square(Shape):
 
     _reverse_moves = NotImplemented
     _commutative_moves = NotImplementedError
+    _invariant_tile_positions = NotImplementedError
 
 
 if __name__ == "__main__":

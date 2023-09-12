@@ -166,6 +166,11 @@ class Shape(ABC):
         """A container to hold the mappings between the moves which commute."""
         ...
 
+    @abstractmethod
+    def _invariant_tile_positions(self):
+        """A container to hold the tile positions which should be invariant under moves."""
+        ...
+
     @classmethod
     def moves(cls, *args, **kwargs):
         # Working with moves as indices can make the path constructions generally much quicker.

@@ -78,7 +78,11 @@ protected:
         }
         return faces;
     }
-    
+
+    static Faces faces_of(const Self &shape) {
+        /* ^ Useful for testing to have a static version. */
+        return shape.faces();
+    }
 
     Faces faces(void) const {
         auto faces = solved_faces();
@@ -95,9 +99,13 @@ protected:
 
 public:
 
+    virtual ~Shape() {}
+
     bool operator==(const Shape &other) const {
         return tiles == other.tiles;
     }
+
+    virtual const std::vector<std::array<size_t, 3>> invariant_tile_positions(void) const = 0;
 
     virtual const std::vector<Move> moves(void) const = 0;
 

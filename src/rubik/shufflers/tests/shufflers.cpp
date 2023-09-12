@@ -58,6 +58,10 @@ TYPED_TEST(ShapeShufflerTest, moderate_god_shuffle) {
         ASSERT_EQ(shuffle_path.size(), 11)
                                     << "We did not recover the god shuffle quoted in: cf: https://ruwix.com/the-rubiks-cube/gods-number/";
     } else if (std::is_same<TypeParam, Cube>::value) {
+        /* For a regular cube whose faces can move (and the centres stay fixed) the god number is known to be 20.
+         * However, we allow more degrees of freedom and the centres to move, so our god number should be less. However,
+         * in lieu of know what is should be for our specification, then we will guess 20 until we ever actually
+         * run this test. */
         ASSERT_EQ(shuffle_path.size(), 20)
                                     << "We did not recover the god shuffle quoted in: cf: https://ruwix.com/the-rubiks-cube/gods-number/";
     }

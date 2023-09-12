@@ -41,6 +41,7 @@ class Grid(Shape):
     _moves = NotImplementedError
     _reverse_moves = NotImplementedError
     _commutative_moves = NotImplementedError
+    _invariant_tile_positions = NotImplementedError
 
 
 if __name__ == "__main__":

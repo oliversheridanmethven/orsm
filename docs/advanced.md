@@ -7,6 +7,12 @@ To list the git version tags:
 git tag -l
 ```
 
+To list the git version tags along with a brief 1-line description (`-n<K>` for `K` lines):
+```bash
+git tag -l -n1
+```
+
+
 To add a tag use:
 ```bash
 git tag -a <vX.Y.Z> -m "<SOME BRIEF MESSAGE>"

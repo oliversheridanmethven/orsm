@@ -27,29 +27,31 @@ class Solvers(unittest.TestCase):
         self.assertEqual(solution, original, f"Using {solver_name} we do not arrive at the start using the solution moves in reverse.")
 
     def test_solvers(self):
-        for name, Solver in self.names_and_solvers:
-            solver = Solver()
-            shape = shapes.Volume()
-            for turns in range(4):
-                with Timeout(5):
-                    shuffled, shuffle_path = shape.shuffle(turns=turns, seed=0)
-                    solution_path = solver.solve(start=shape, target=shuffled)
-                    self.assertLessEqual(len(solution_path.moves), len(shuffle_path), f"The solution path for {name} is not optimal, as it takes more moves than we used to shuffle our cube.")
-                    self._check_solution_recovers_shuffled(original=shape, shuffled=shuffled, solution_path=solution_path, shuffle_path=shuffle_path, solver_name=name)
+        for solver_name, Solver in self.names_and_solvers:
+            for shape_name, Shape in variable_names_and_objects(shapes.Volume, shapes.Cube):
+                solver = Solver()
+                shape = Shape()
+                for turns in range(4):
+                    with Timeout(20):
+                        shuffled, shuffle_path = shape.shuffle(turns=turns, seed=0)
+                        solution_path = solver.solve(start=shape, target=shuffled)
+                        self.assertLessEqual(len(solution_path.moves), len(shuffle_path), f"The solution path for {solver_name} is not optimal, as it takes more moves than we used to shuffle our {shape_name}.")
+                        self._check_solution_recovers_shuffled(original=shape, shuffled=shuffled, solution_path=solution_path, shuffle_path=shuffle_path, solver_name=solver_name)
 
     def test_solver_at_specific_difficulty(self):
-        for name, Solver in self.names_and_solvers:
-            solver = Solver()
-            shape = shapes.Volume()
-            from rubik.shufflers.shufflers import specific
-            for turns in range(4):
-                with Timeout(5):
-                    shuffled, shuffle_path = specific(start=shape, turns=turns, seed=0)
-                    self.assertEqual(len(shuffle_path), turns, f"We have not generated a shuffled path with the required number of turns.")
-                    solution_path = solver.solve(start=shape, target=shuffled)
-                    self.assertLessEqual(len(solution_path.moves), len(shuffle_path), f"The solution path for {name} is not optimal, as it takes more moves than we used to shuffle our cube.")
-                    self.assertEqual(len(solution_path.moves), turns, f"Our solution path is not the right length.")
-                    self._check_solution_recovers_shuffled(original=shape, shuffled=shuffled, solution_path=solution_path, shuffle_path=shuffle_path, solver_name=name)
+        for solver_name, Solver in self.names_and_solvers:
+            for shape_name, Shape in variable_names_and_objects(shapes.Volume, shapes.Cube):
+                solver = Solver()
+                shape = shapes.Volume()
+                from rubik.shufflers.shufflers import specific
+                for turns in range(5):
+                    with Timeout(10):
+                        shuffled, shuffle_path = specific(start=shape, turns=turns, seed=0)
+                        self.assertEqual(len(shuffle_path), turns, f"We have not generated a shuffled path with the required number of turns.")
+                        solution_path = solver.solve(start=shape, target=shuffled)
+                        self.assertLessEqual(len(solution_path.moves), len(shuffle_path), f"The solution path for {solver_name} is not optimal, as it takes more moves than we used to shuffle our {shape_name}.")
+                        self.assertEqual(len(solution_path.moves), turns, f"Our solution path is not the right length.")
+                        self._check_solution_recovers_shuffled(original=shape, shuffled=shuffled, solution_path=solution_path, shuffle_path=shuffle_path, solver_name=solver_name)
 
 
 if __name__ == '__main__':

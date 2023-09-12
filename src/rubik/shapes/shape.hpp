@@ -19,10 +19,12 @@
 #include "logging/logging.hpp"
 #include <boost/functional/hash.hpp>
 
-
+// TODO: Make this a literal type so I can use in in consteval expressions.
 class Tile {
 public:
     ColourPalette::Colour colour;
+
+    Tile() {}
 
     Tile(const ColourPalette::Colour &colour) : colour(colour) {}
 
@@ -48,24 +50,62 @@ struct std::hash<Tile> {
 };
 
 
-template<typename Self>
+template<typename Self, int N>
 class Shape {
 public:
-    using Tiles = std::vector<Tile>;
-    using Row = std::vector<Tile>;
-    using Face = std::vector<Row>;
-    using Faces = std::vector<Face>;
+    static const int N_FACES = 6;
+    using Tiles = std::array<Tile, N * N * N_FACES>;
     using Seed = std::optional<int>;
+    using Row = std::array<Tile, N>;
+    using Face = std::array<Row, N>;
+    using Faces = std::array<Face, N_FACES>;
+
 protected:
     Tiles tiles;
 
-    virtual Faces faces(void) const = 0;
+    static Faces solved_faces(void) {
+        Faces faces;
+        for (size_t f = 0; const auto &colour: ColourPalette::colours) {
+            Face face;
+            for (size_t r = 0, i = 0; i < N; i++) {
+                Row row;
+                for (size_t c = 0, j = 0; j < N; j++) {
+                    row.at(c++) = colour;
+                }
+                face.at(r++) = row;
+            }
+            faces.at(f++) = face;
+        }
+        return faces;
+    }
+
+    static Faces faces_of(const Self &shape) {
+        /* ^ Useful for testing to have a static version. */
+        return shape.faces();
+    }
+
+    Faces faces(void) const {
+        auto faces = solved_faces();
+        auto _tile = tiles.begin();
+        for (auto &face: faces) {
+            for (auto &row: face) {
+                for (auto &tile: row) {
+                    tile = *(_tile++);
+                }
+            }
+        }
+        return faces;
+    }
 
 public:
+
+    virtual ~Shape() {}
 
     bool operator==(const Shape &other) const {
         return tiles == other.tiles;
     }
+
+    virtual const std::vector<std::array<size_t, 3>> invariant_tile_positions(void) const = 0;
 
     virtual const std::vector<Move> moves(void) const = 0;
 
@@ -77,7 +117,7 @@ public:
      * actions nicer and a cleaner interface for the CRTP pattern. */
 
     Self move(const std::vector<Move> &moves, const bool reverse = false) const {
-        Self moved = *dynamic_cast<const Self *>(this);
+        Self moved = static_cast<const Self &>(*this);
         for (const auto &_move: moves) {
             moved = moved.move(_move, reverse);
         }
@@ -125,12 +165,15 @@ public:
     }
 
     bool commutative(const Move &move_1, const Move &move_2) const {
+        bool any_commutative_groups = false;
         for (auto &commuting_moves: commutative_moves()) {
             if (commuting_moves.contains(move_1)) {
-                return commuting_moves.contains(move_2);
+                if (commuting_moves.contains(move_2)) {
+                    any_commutative_groups = true;
+                }
             }
         }
-        throw std::runtime_error("We could not find a commutative grouping containing our moves.");
+        return any_commutative_groups;
     }
 
     Move reverse_of(const Move &move) const {
@@ -154,13 +197,30 @@ public:
         return cleaned;
     }
 
+    friend std::hash<Self>;
+};
+
+
+template<typename Self> requires std::is_base_of_v<Shape<Self, 2>, Self> or std::is_base_of_v<Shape<Self, 3>, Self>
+struct std::hash<Self> {
+
+    std::size_t operator()(const Self &shape) const noexcept {
+        size_t combined_hash = 0; /* <- Must be seeded. */
+        for (const auto &tile: shape.tiles) {
+            size_t tile_hash = std::hash<Tile>{}(tile);
+            boost::hash_combine(combined_hash, tile_hash);
+        }
+        return combined_hash;
+    }
 };
 
 template<typename T>
 std::ostream &operator<<(std::ostream &os, std::vector<T> values) {
+    os << "[";
     for (int leading_comma = 0; const auto &value: values) {
         os << (leading_comma++ ? ", " : "") << value;
     }
+    os << "]";
     return os;
 }
 

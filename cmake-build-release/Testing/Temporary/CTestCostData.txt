@@ -1,0 +1,41 @@
+hello_world_test 5 0.0816658
+hello_world_test_cpp 5 0.112765
+error_codes 5 0.144721
+binding_import 5 0.249323
+example 5 0.171696
+basic_python 5 0.17625
+basic_python_again 5 0.175026
+example_cpp 5 0.216517
+logging_test 5 0.237048
+logging_test_cpp 5 0.292857
+version_test 5 0.537814
+version_bindings 0 0
+cli_arguments_0 5 0.516247
+cli_arguments_version 5 0.485511
+arguments 5 0.257711
+cli_print_logs 0 0
+logger 0 0
+output 5 0.188276
+output_suppressor_c_extension 5 0.11549
+timing 0 0
+variables 5 0.17275
+output_suppression 5 0.165106
+suppressor 5 0.255033
+images 5 1.46087
+window 0 0
+paths_cpp 5 0.422289
+shapes 0 0
+shapes_cpp 5 1.82664
+shufflers 0 0
+shufflers_cpp 5 4.71915
+solvers 0 0
+solvers_cpp 5 4.88789
+---
+shufflers
+solvers
+cli_print_logs
+timing
+version_bindings
+logger
+shapes
+window

@@ -69,31 +69,33 @@ include src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/flags.make
 
-src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o: src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/flags.make
-src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o: /Users/oliver/ClionProjects/testing/src/rubik/shufflers/demos/demo.cpp
-src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o: src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/shufflers/demos && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o -MF CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o.d -o CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o -c /Users/oliver/ClionProjects/testing/src/rubik/shufflers/demos/demo.cpp
+src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.o: src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/flags.make
+src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.o: /Users/oliver/ClionProjects/testing/src/rubik/shufflers/demos/shufflers_demo.cpp
+src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.o: src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.o"
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/shufflers/demos && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.o -MF CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.o.d -o CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.o -c /Users/oliver/ClionProjects/testing/src/rubik/shufflers/demos/shufflers_demo.cpp
 
-src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.i"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/shufflers/demos && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oliver/ClionProjects/testing/src/rubik/shufflers/demos/demo.cpp > CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.i
+src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.i"
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/shufflers/demos && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oliver/ClionProjects/testing/src/rubik/shufflers/demos/shufflers_demo.cpp > CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.i
 
-src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.s"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/shufflers/demos && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oliver/ClionProjects/testing/src/rubik/shufflers/demos/demo.cpp -o CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.s
+src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.s"
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/shufflers/demos && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oliver/ClionProjects/testing/src/rubik/shufflers/demos/shufflers_demo.cpp -o CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.s
 
 # Object files for target shuffler_demo_cpp
 shuffler_demo_cpp_OBJECTS = \
-"CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o"
+"CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.o"
 
 # External object files for target shuffler_demo_cpp
 shuffler_demo_cpp_EXTERNAL_OBJECTS =
 
-src/rubik/shufflers/demos/shuffler_demo_cpp: src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o
+src/rubik/shufflers/demos/shuffler_demo_cpp: src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.o
 src/rubik/shufflers/demos/shuffler_demo_cpp: src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make
 src/rubik/shufflers/demos/shuffler_demo_cpp: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
 src/rubik/shufflers/demos/shuffler_demo_cpp: src/version/libversion.a
+src/rubik/shufflers/demos/shuffler_demo_cpp: src/rubik/colours/libcolours.a
+src/rubik/shufflers/demos/shuffler_demo_cpp: src/rubik/paths/libpaths.a
 src/rubik/shufflers/demos/shuffler_demo_cpp: src/rubik/colours/libcolours.a
 src/rubik/shufflers/demos/shuffler_demo_cpp: src/rubik/paths/libpaths.a
 src/rubik/shufflers/demos/shuffler_demo_cpp: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib

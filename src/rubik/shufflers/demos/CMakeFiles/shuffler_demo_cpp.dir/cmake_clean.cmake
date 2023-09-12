@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "../../../../bin/shuffler_demo_cpp"
   "../../../../bin/shuffler_demo_cpp.pdb"
-  "CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o"
-  "CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o.d"
+  "CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.o"
+  "CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

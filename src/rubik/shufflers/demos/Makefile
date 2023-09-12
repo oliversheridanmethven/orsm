@@ -185,29 +185,29 @@ shuffler_demo_cpp/fast:
 	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build
 .PHONY : shuffler_demo_cpp/fast
 
-demo.o: demo.cpp.o
-.PHONY : demo.o
+shufflers_demo.o: shufflers_demo.cpp.o
+.PHONY : shufflers_demo.o
 
 # target to build an object file
-demo.cpp.o:
-	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o
-.PHONY : demo.cpp.o
+shufflers_demo.cpp.o:
+	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.o
+.PHONY : shufflers_demo.cpp.o
 
-demo.i: demo.cpp.i
-.PHONY : demo.i
+shufflers_demo.i: shufflers_demo.cpp.i
+.PHONY : shufflers_demo.i
 
 # target to preprocess a source file
-demo.cpp.i:
-	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.i
-.PHONY : demo.cpp.i
+shufflers_demo.cpp.i:
+	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.i
+.PHONY : shufflers_demo.cpp.i
 
-demo.s: demo.cpp.s
-.PHONY : demo.s
+shufflers_demo.s: shufflers_demo.cpp.s
+.PHONY : shufflers_demo.s
 
 # target to generate assembly for a file
-demo.cpp.s:
-	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.s
-.PHONY : demo.cpp.s
+shufflers_demo.cpp.s:
+	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.s
+.PHONY : shufflers_demo.cpp.s
 
 # Help Target
 help:
@@ -223,9 +223,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... shuffler_demo_cpp"
-	@echo "... demo.o"
-	@echo "... demo.i"
-	@echo "... demo.s"
+	@echo "... shufflers_demo.o"
+	@echo "... shufflers_demo.i"
+	@echo "... shufflers_demo.s"
 .PHONY : help
 
 

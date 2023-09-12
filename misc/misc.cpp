@@ -1,90 +1,75 @@
-//#include "common/cli.hpp"
+#include <vector>
 
-#ifndef TESTING_CLI_HPP
-#define TESTING_CLI_HPP
+template<typename Self>
+class Base {
+protected:
+    using my_type = int;
+    std::vector<my_type> bar; // <- I will be doing something special to hash this...
 
-#include "boost/program_options.hpp"
-//#include "boost/filesystem.hpp"
-#include "version/version.h"
-#include <cassert>
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <tuple>
-//#include "logging/logging.hpp"
+public:
+    virtual void baz(void) const = 0;
 
-namespace cli {
-    namespace po = boost::program_options;
-
-    auto standard_parser_setup(int argc, char **argv) {
-
-        po::options_description options;
-
-        bool dummy;
-        int foo;
-
-//        po::arg = ""; /* <- gcc doesn't like this. */
-        options.add_options()
-                ("help", "Show this help message.")
-                ("version", "Show the version of this program.")
-                ("verbose", po::bool_switch(&dummy), "Set verbose logging level.")
-                ("foo", po::value(&foo), "Set verbose logging level.")
-//                ("debug", po::bool_switch()->default_value(false), "Set debug logging level.")
-//                ("trace", po::bool_switch()->default_value(false), "Set trace logging level.")
-                ;
-
-        return options;
-
-    }
-
-    void
-    standard_parser_finalise(int argc, char **argv, /*const po::options_description &options,*/
-                             std::string description) {
-//                std::stringstream _epilogue;
-//        _epilogue << "\nVersion:\n\t" << repo_name() << " " << repo_version() << "\n";
-//        _epilogue << "\nAuthor:\n\t" << repo_author() << "\n";
-//        _epilogue << "\nMaintained by:\n\t" << repo_author() << " " << repo_email() << "\n";
-//        std::string epilogue/* = _epilogue.str()*/;
-//        po::variables_map vm;
-//        po::store(po::parse_command_line(argc, argv, options), vm);
-//        po::notify(vm);
-//
-//        if (vm["verbose"].as<bool>()) {
-//            FLAGS_v = INFO_LEVEL;
-//            FLAGS_logtostdout = true;
-//        }
-//
-//        if (vm["debug"].as<bool>()) {
-//            FLAGS_v = DEBUG_LEVEL;
-//            FLAGS_logtostdout = true;
-//        }
-//
-//        if (vm["trace"].as<bool>()) {
-//            FLAGS_v = TRACE_LEVEL;
-//            FLAGS_logtostdout = true;
-//        }
-//
-//        google::InitGoogleLogging(argv[0]);
-//
-//        if (vm.count("help")) {
-//            std::cout << "\n"
-//                      << description << "\n\n"
-//                      << "Usage:\n"
-//                      << options << "\n"
-////                          << epilogue << "\n"
-//                    ;
-//            exit(EXIT_SUCCESS);
-//        }
-//
-//        if (vm.count("version")) {
-//            std::cout << repo_version() << "\n";
-//            exit(EXIT_SUCCESS);
-//        }
+    Self foo(void) const {
+        Self result = *dynamic_cast<const Self *>(this);
+        // do something with the private bar variable.
+        return result;
     };
-}
-#endif //TESTING_CLI_HPP
+};
 
+class Derived_A final : public Base<Derived_A> {
+public:
+    void baz(void) const override {}
+};
+
+class Derived_B : public Base<Derived_B> {
+public:
+    void baz(void) const override {}
+};
+
+template<>
+struct std::hash<Derived_B> {
+    std::size_t operator()(const auto &shape) const noexcept { return 0; }
+};
+
+template<typename Self> requires std::is_base_of_v<Base<Self>, Self>
+struct std::hash<Self> {
+    std::size_t operator()(const Self &shape) const noexcept { return 0; }
+};
 
 int main() {
-
+    Derived_A d_a;
+    Derived_B d_b;
+    auto d_a_ = d_a.foo();
+    d_a.baz();
+    std::hash<Derived_B>{}(d_b);
+    std::hash<Derived_A>{}(d_a);
 }
+
+
+//#include <vector>
+//
+//template<typename Self>
+//class Base {
+//protected:
+//    std::vector<int> bar;
+//public:
+//    virtual void baz(void) const = 0;
+//
+//    Self foo(void) const {
+//        Self result = *dynamic_cast<const Self *>(this);
+//        // do something with the private bar variable.
+//        return result;
+//    };
+//};
+//
+//class Derived final : public Base<Derived> {
+//public:
+//    virtual void baz(void) const override {
+//        // e.g. do something with bar.
+//    }
+//};
+//
+//int main() {
+//    Derived d;
+//    auto d2 = d.foo();
+//}

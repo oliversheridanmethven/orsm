@@ -129,7 +129,7 @@ class Shape(ABC):
         new.assign_tiles(values=array_values)
         return new
 
-    def move(self, *moves, copy_faces=False, **kwargs):
+    def move(self, *moves, copy_faces=False, reverse=False, **kwargs):
         if not moves:
             log.info(f"There are no moves specified for {type(self).__name__}")
         moved = type(self)(array=self._array, **kwargs)
@@ -143,7 +143,11 @@ class Shape(ABC):
             assert isinstance(move, (Move, int)), f"{move = } is of the wrong type: {type(move) = }"
             if isinstance(move, int):
                 move = self._moves[move](shape=self)
-            moved = move(shape=moved, **kwargs)
+            reverse_all_moves = reverse
+            if reverse:
+                move = self.reverse_of(move)
+                reverse_all_moves = False
+            moved = move(shape=moved, reverse=reverse_all_moves, **kwargs)
 
         return moved
 
@@ -160,6 +164,11 @@ class Shape(ABC):
     @abstractmethod
     def _commutative_moves(self):
         """A container to hold the mappings between the moves which commute."""
+        ...
+
+    @abstractmethod
+    def _invariant_tile_positions(self):
+        """A container to hold the tile positions which should be invariant under moves."""
         ...
 
     @classmethod
@@ -184,8 +193,8 @@ class Shape(ABC):
     def commutative(cls, move_1, move_2, *args, **kwargs):
         commutative_moves = [[move(*args, shape=cls(), **kwargs) for move in moves] for moves in cls._commutative_moves]
         results = [move_2 in moves for moves in commutative_moves if move_1 in moves]
-        assert len(results) == 1
-        return results[0]
+        assert len(results) >= 1
+        return any(results)
 
     def shuffle(self, *args, turns=100, seed=False, **kwargs):
         """Produces a shuffled cube, and lists how it got there."""

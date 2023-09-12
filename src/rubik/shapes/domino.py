@@ -34,6 +34,8 @@ class Domino(Shape):
             assert np.shape(face) == (2, 1), f"A {type(self).__name__} face must only contain 2 tiles."
 
     class move_1(Move):
+        """ Move the bottom (front -> back)."""
+
         def __call__(self, *args, shape, reverse=False, **kwargs):
             array = shape._array
             # This is the same whether we are in reverse or not...
@@ -41,8 +43,9 @@ class Domino(Shape):
             return type(shape)(array=array)
 
     _moves = [move_1]
-    _reverse_moves = NotImplementedError
-    _commutative_moves = NotImplementedError
+    _reverse_moves = {move: reverse_move for move, reverse_move in [(move_1, move_1)]}
+    _commutative_moves = ()
+    _invariant_tile_positions = ((0, 0, 0), (1, 0, 0))
 
 
 if __name__ == "__main__":

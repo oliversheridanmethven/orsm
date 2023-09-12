@@ -93,10 +93,10 @@ shufflers_cpp_EXTERNAL_OBJECTS =
 src/rubik/shufflers/tests/shufflers_cpp: src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/shufflers.cpp.o
 src/rubik/shufflers/tests/shufflers_cpp: src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/build.make
 src/rubik/shufflers/tests/shufflers_cpp: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
+src/rubik/shufflers/tests/shufflers_cpp: src/rubik/colours/libcolours.a
+src/rubik/shufflers/tests/shufflers_cpp: src/rubik/paths/libpaths.a
 src/rubik/shufflers/tests/shufflers_cpp: /usr/local/lib/libgtest_main.a
 src/rubik/shufflers/tests/shufflers_cpp: /usr/local/lib/libgtest.a
-src/rubik/shufflers/tests/shufflers_cpp: src/rubik/paths/libpaths.a
-src/rubik/shufflers/tests/shufflers_cpp: src/rubik/colours/libcolours.a
 src/rubik/shufflers/tests/shufflers_cpp: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
 src/rubik/shufflers/tests/shufflers_cpp: /usr/local/lib/libglog.0.6.0.dylib
 src/rubik/shufflers/tests/shufflers_cpp: /usr/local/lib/libgflags.2.2.2.dylib

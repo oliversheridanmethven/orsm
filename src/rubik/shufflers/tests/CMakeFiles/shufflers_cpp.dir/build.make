@@ -93,10 +93,10 @@ shufflers_cpp_EXTERNAL_OBJECTS =
 bin/shufflers_cpp: src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/shufflers.cpp.o
 bin/shufflers_cpp: src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/build.make
 bin/shufflers_cpp: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
+bin/shufflers_cpp: lib/libcolours.a
+bin/shufflers_cpp: lib/libpaths.a
 bin/shufflers_cpp: /usr/local/lib/libgtest_main.a
 bin/shufflers_cpp: /usr/local/lib/libgtest.a
-bin/shufflers_cpp: lib/libpaths.a
-bin/shufflers_cpp: lib/libcolours.a
 bin/shufflers_cpp: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
 bin/shufflers_cpp: /usr/local/lib/libglog.0.6.0.dylib
 bin/shufflers_cpp: /usr/local/lib/libgflags.2.2.2.dylib

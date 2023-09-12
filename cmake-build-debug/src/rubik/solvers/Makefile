@@ -171,44 +171,6 @@ depend:
 	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-src/rubik/solvers/CMakeFiles/solvers.dir/rule:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubik/solvers/CMakeFiles/solvers.dir/rule
-.PHONY : src/rubik/solvers/CMakeFiles/solvers.dir/rule
-
-# Convenience name for target.
-solvers: src/rubik/solvers/CMakeFiles/solvers.dir/rule
-.PHONY : solvers
-
-# fast build rule for target.
-solvers/fast:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/rubik/solvers/CMakeFiles/solvers.dir/build.make src/rubik/solvers/CMakeFiles/solvers.dir/build
-.PHONY : solvers/fast
-
-meet_in_middle_recursive.o: meet_in_middle_recursive.cpp.o
-.PHONY : meet_in_middle_recursive.o
-
-# target to build an object file
-meet_in_middle_recursive.cpp.o:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/rubik/solvers/CMakeFiles/solvers.dir/build.make src/rubik/solvers/CMakeFiles/solvers.dir/meet_in_middle_recursive.cpp.o
-.PHONY : meet_in_middle_recursive.cpp.o
-
-meet_in_middle_recursive.i: meet_in_middle_recursive.cpp.i
-.PHONY : meet_in_middle_recursive.i
-
-# target to preprocess a source file
-meet_in_middle_recursive.cpp.i:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/rubik/solvers/CMakeFiles/solvers.dir/build.make src/rubik/solvers/CMakeFiles/solvers.dir/meet_in_middle_recursive.cpp.i
-.PHONY : meet_in_middle_recursive.cpp.i
-
-meet_in_middle_recursive.s: meet_in_middle_recursive.cpp.s
-.PHONY : meet_in_middle_recursive.s
-
-# target to generate assembly for a file
-meet_in_middle_recursive.cpp.s:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/rubik/solvers/CMakeFiles/solvers.dir/build.make src/rubik/solvers/CMakeFiles/solvers.dir/meet_in_middle_recursive.cpp.s
-.PHONY : meet_in_middle_recursive.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -222,10 +184,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... solvers"
-	@echo "... meet_in_middle_recursive.o"
-	@echo "... meet_in_middle_recursive.i"
-	@echo "... meet_in_middle_recursive.s"
 .PHONY : help
 
 

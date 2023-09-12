@@ -834,9 +834,8 @@ src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/shapes.cpp.o: \
   /usr/local/include/gmock/internal/custom/gmock-generated-actions.h \
   /usr/local/include/gmock/gmock-more-matchers.h \
   /usr/local/include/gmock/gmock-nice-strict.h \
-  /Users/oliver/ClionProjects/testing/src/testing/../rubik/shapes/volume.hpp \
-  /Users/oliver/ClionProjects/testing/src/testing/../rubik/shapes/shape.hpp \
-  /opt/local/libexec/llvm-16/bin/../include/c++/v1/unordered_set \
+  /Users/oliver/ClionProjects/testing/src/testing/../logging/logging.hpp \
+  /usr/local/include/glog/logging.h \
   /opt/local/libexec/llvm-16/bin/../include/c++/v1/chrono \
   /opt/local/libexec/llvm-16/bin/../include/c++/v1/__chrono/calendar.h \
   /opt/local/libexec/llvm-16/bin/../include/c++/v1/__chrono/convert_to_tm.h \
@@ -856,6 +855,19 @@ src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/shapes.cpp.o: \
   /opt/local/libexec/llvm-16/bin/../include/c++/v1/__chrono/year_month_weekday.h \
   /opt/local/libexec/llvm-16/bin/../include/c++/v1/__chrono/file_clock.h \
   /opt/local/libexec/llvm-16/bin/../include/c++/v1/__chrono/literals.h \
+  /usr/local/include/glog/platform.h /usr/local/include/glog/export.h \
+  /opt/local/libexec/llvm-16/bin/../include/c++/v1/inttypes.h \
+  /opt/local/libexec/llvm-16/lib/clang/16/include/inttypes.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/inttypes.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_inttypes.h \
+  /usr/local/include/gflags/gflags.h \
+  /usr/local/include/gflags/gflags_declare.h \
+  /usr/local/include/gflags/gflags_gflags.h \
+  /usr/local/include/glog/log_severity.h \
+  /usr/local/include/glog/vlog_is_on.h \
+  /Users/oliver/ClionProjects/testing/src/testing/../rubik/shapes/volume.hpp \
+  /Users/oliver/ClionProjects/testing/src/testing/../rubik/shapes/shape.hpp \
+  /opt/local/libexec/llvm-16/bin/../include/c++/v1/unordered_set \
   /Users/oliver/ClionProjects/testing/src/testing/../rubik/colours/colour_palette.hpp \
   /Users/oliver/ClionProjects/testing/src/testing/../rubik/paths/move.hpp \
   /usr/local/include/boost/functional/hash.hpp \
@@ -960,18 +972,6 @@ src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/shapes.cpp.o: \
   /usr/local/include/boost/type_traits/conjunction.hpp \
   /opt/local/libexec/llvm-16/bin/../include/c++/v1/complex \
   /opt/local/libexec/llvm-16/bin/../include/c++/v1/typeindex \
-  /Users/oliver/ClionProjects/testing/src/testing/../logging/logging.hpp \
-  /usr/local/include/glog/logging.h /usr/local/include/glog/platform.h \
-  /usr/local/include/glog/export.h \
-  /opt/local/libexec/llvm-16/bin/../include/c++/v1/inttypes.h \
-  /opt/local/libexec/llvm-16/lib/clang/16/include/inttypes.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/inttypes.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_inttypes.h \
-  /usr/local/include/gflags/gflags.h \
-  /usr/local/include/gflags/gflags_declare.h \
-  /usr/local/include/gflags/gflags_gflags.h \
-  /usr/local/include/glog/log_severity.h \
-  /usr/local/include/glog/vlog_is_on.h \
   /Users/oliver/ClionProjects/testing/src/testing/../rubik/paths/path.hpp \
   /opt/local/libexec/llvm-16/bin/../include/c++/v1/random \
   /opt/local/libexec/llvm-16/bin/../include/c++/v1/__random/bernoulli_distribution.h \
@@ -1021,6 +1021,8 @@ src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/shapes.cpp.o: \
   /opt/local/libexec/llvm-16/bin/../include/c++/v1/__random/seed_seq.h \
   /opt/local/libexec/llvm-16/bin/../include/c++/v1/__random/student_t_distribution.h \
   /opt/local/libexec/llvm-16/bin/../include/c++/v1/__random/weibull_distribution.h \
+  /Users/oliver/ClionProjects/testing/src/testing/../rubik/shapes/utils/printing_cubic_shapes.hpp \
+  /Users/oliver/ClionProjects/testing/src/testing/../rubik/shapes/cube.hpp \
   /opt/local/libexec/llvm-16/bin/../include/c++/v1/__ranges/all.h \
   /opt/local/libexec/llvm-16/bin/../include/c++/v1/__ranges/owning_view.h \
   /opt/local/libexec/llvm-16/bin/../include/c++/v1/__ranges/range_adaptor.h \

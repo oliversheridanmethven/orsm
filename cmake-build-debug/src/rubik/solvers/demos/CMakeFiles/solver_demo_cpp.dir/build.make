@@ -69,33 +69,32 @@ include src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/flags.make
 
-src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/demo.cpp.o: src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/flags.make
-src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/demo.cpp.o: /Users/oliver/ClionProjects/testing/src/rubik/solvers/demos/demo.cpp
-src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/demo.cpp.o: src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/demo.cpp.o"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/solvers/demos && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/demo.cpp.o -MF CMakeFiles/solver_demo_cpp.dir/demo.cpp.o.d -o CMakeFiles/solver_demo_cpp.dir/demo.cpp.o -c /Users/oliver/ClionProjects/testing/src/rubik/solvers/demos/demo.cpp
+src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/solver.cpp.o: src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/flags.make
+src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/solver.cpp.o: /Users/oliver/ClionProjects/testing/src/rubik/solvers/demos/solver.cpp
+src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/solver.cpp.o: src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/solver.cpp.o"
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/solvers/demos && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/solver.cpp.o -MF CMakeFiles/solver_demo_cpp.dir/solver.cpp.o.d -o CMakeFiles/solver_demo_cpp.dir/solver.cpp.o -c /Users/oliver/ClionProjects/testing/src/rubik/solvers/demos/solver.cpp
 
-src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/demo.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solver_demo_cpp.dir/demo.cpp.i"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/solvers/demos && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oliver/ClionProjects/testing/src/rubik/solvers/demos/demo.cpp > CMakeFiles/solver_demo_cpp.dir/demo.cpp.i
+src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/solver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/solver_demo_cpp.dir/solver.cpp.i"
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/solvers/demos && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/oliver/ClionProjects/testing/src/rubik/solvers/demos/solver.cpp > CMakeFiles/solver_demo_cpp.dir/solver.cpp.i
 
-src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/demo.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solver_demo_cpp.dir/demo.cpp.s"
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/solvers/demos && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oliver/ClionProjects/testing/src/rubik/solvers/demos/demo.cpp -o CMakeFiles/solver_demo_cpp.dir/demo.cpp.s
+src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/solver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/solver_demo_cpp.dir/solver.cpp.s"
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug/src/rubik/solvers/demos && /usr/local/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/oliver/ClionProjects/testing/src/rubik/solvers/demos/solver.cpp -o CMakeFiles/solver_demo_cpp.dir/solver.cpp.s
 
 # Object files for target solver_demo_cpp
 solver_demo_cpp_OBJECTS = \
-"CMakeFiles/solver_demo_cpp.dir/demo.cpp.o"
+"CMakeFiles/solver_demo_cpp.dir/solver.cpp.o"
 
 # External object files for target solver_demo_cpp
 solver_demo_cpp_EXTERNAL_OBJECTS =
 
-src/rubik/solvers/demos/solver_demo_cpp: src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/demo.cpp.o
+src/rubik/solvers/demos/solver_demo_cpp: src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/solver.cpp.o
 src/rubik/solvers/demos/solver_demo_cpp: src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build.make
 src/rubik/solvers/demos/solver_demo_cpp: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
 src/rubik/solvers/demos/solver_demo_cpp: src/rubik/colours/libcolours.a
 src/rubik/solvers/demos/solver_demo_cpp: src/rubik/paths/libpaths.a
-src/rubik/solvers/demos/solver_demo_cpp: src/rubik/solvers/libsolvers.a
 src/rubik/solvers/demos/solver_demo_cpp: src/rubik/colours/libcolours.a
 src/rubik/solvers/demos/solver_demo_cpp: src/rubik/paths/libpaths.a
 src/rubik/solvers/demos/solver_demo_cpp: /usr/local/lib/libglog.0.6.0.dylib

@@ -8,14 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/oliver/ClionProjects/testing/src/rubik/solvers/demos/demo.cpp" "src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/demo.cpp.o" "gcc" "src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/demo.cpp.o.d"
+  "/Users/oliver/ClionProjects/testing/src/rubik/solvers/demos/solver.cpp" "src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/solver.cpp.o" "gcc" "src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/solver.cpp.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/Users/oliver/ClionProjects/testing/src/rubik/colours/CMakeFiles/colours.dir/DependInfo.cmake"
   "/Users/oliver/ClionProjects/testing/src/rubik/paths/CMakeFiles/paths.dir/DependInfo.cmake"
-  "/Users/oliver/ClionProjects/testing/src/rubik/solvers/CMakeFiles/solvers.dir/DependInfo.cmake"
   "/Users/oliver/ClionProjects/testing/src/version/CMakeFiles/version.dir/DependInfo.cmake"
   )
 

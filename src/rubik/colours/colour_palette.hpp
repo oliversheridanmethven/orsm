@@ -19,12 +19,7 @@ public:
     };
 
     // Iterating through an enum class is a nightmare, so we have this small helper function.
-    const std::vector<Colour> colours = {Colour::red,
-                                         Colour::yellow,
-                                         Colour::blue,
-                                         Colour::green,
-                                         Colour::white,
-                                         Colour::light_yellow};
+    static const std::vector<Colour> colours;
 
     static std::string name(const Colour &colour);
 

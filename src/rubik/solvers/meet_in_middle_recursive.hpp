@@ -6,9 +6,9 @@
 #include <algorithm>
 #include <execution>
 
-template<typename S>
-class MeetInMiddleRecursive final : Solver<S> {
-    using ShapeFront = std::unordered_set<S>;
+template<typename Shape>
+class MeetInMiddleRecursive final : Solver<Shape> {
+    using ShapeFront = std::unordered_set<Shape>;
     using Distance = std::optional<int>;
 
 private:
@@ -28,12 +28,12 @@ private:
         return shapes_next;
     }
 
-    static auto intermediate_shape_and_turns(const S &start, const S &target) {
+    static auto intermediate_shape_and_turns(const Shape &start, const Shape &target) {
         size_t turns = 0;
         ShapeFront shape_front_1 = {target};
         ShapeFront shape_front_2 = {start};
-        std::array < ShapeFront, 2 > shape_fronts = {shape_front_1,
-                                                     shape_front_2};
+        std::array<ShapeFront, 2> shape_fronts = {shape_front_1,
+                                                  shape_front_2};
 
         ShapeFront overlaps;
         while (true) {
@@ -79,8 +79,8 @@ private:
     }
 
 public:
-    virtual Path solve(const S &start, const S &target) const override final {
-        std::vector<S> shapes = {start, target};
+    virtual Path solve(const Shape &start, const Shape &target) const override final {
+        std::vector<Shape> shapes = {start, target};
         std::vector<Distance> distances = {std::nullopt};
 
         while (std::any_of(distances.begin(), distances.end(), &distance_not_final)) {
@@ -146,8 +146,8 @@ public:
          * */
         Path path;
         for (size_t i = 0; i < shapes.size() - 1; i++) {
-            S shape = shapes.at(i);
-            S next_shape = shapes.at(i + 1);
+            Shape shape = shapes.at(i);
+            Shape next_shape = shapes.at(i + 1);
 
             bool found_match = false;
             for (auto move: shape.moves()) {

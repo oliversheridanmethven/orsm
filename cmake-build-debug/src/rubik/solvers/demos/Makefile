@@ -185,29 +185,29 @@ solver_demo_cpp/fast:
 	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build.make src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build
 .PHONY : solver_demo_cpp/fast
 
-demo.o: demo.cpp.o
-.PHONY : demo.o
+solver.o: solver.cpp.o
+.PHONY : solver.o
 
 # target to build an object file
-demo.cpp.o:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build.make src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/demo.cpp.o
-.PHONY : demo.cpp.o
+solver.cpp.o:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build.make src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/solver.cpp.o
+.PHONY : solver.cpp.o
 
-demo.i: demo.cpp.i
-.PHONY : demo.i
+solver.i: solver.cpp.i
+.PHONY : solver.i
 
 # target to preprocess a source file
-demo.cpp.i:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build.make src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/demo.cpp.i
-.PHONY : demo.cpp.i
+solver.cpp.i:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build.make src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/solver.cpp.i
+.PHONY : solver.cpp.i
 
-demo.s: demo.cpp.s
-.PHONY : demo.s
+solver.s: solver.cpp.s
+.PHONY : solver.s
 
 # target to generate assembly for a file
-demo.cpp.s:
-	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build.make src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/demo.cpp.s
-.PHONY : demo.cpp.s
+solver.cpp.s:
+	cd /Users/oliver/ClionProjects/testing/cmake-build-debug && $(MAKE) $(MAKESILENT) -f src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build.make src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/solver.cpp.s
+.PHONY : solver.cpp.s
 
 # Help Target
 help:
@@ -223,9 +223,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... solver_demo_cpp"
-	@echo "... demo.o"
-	@echo "... demo.i"
-	@echo "... demo.s"
+	@echo "... solver.o"
+	@echo "... solver.i"
+	@echo "... solver.s"
 .PHONY : help
 
 

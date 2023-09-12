@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from .shape import Shape, _array_from_faces_at_end, _first_update_faces
+from .utils import printing_cubic_shapes
 from common.logger import log
 from copy import deepcopy
 from rubik.paths.move import Move
@@ -46,47 +47,7 @@ class Sheet(Shape):
 
     @_first_update_faces
     def __str__(self):
-        """Try to show the cube in a very pictorial way."""
-        'front 0  back 1  right 2  left 3  top 4  bottom 5'
-        top = self._faces[4]
-        front = self._faces[0]
-        right = self._faces[2]
-        left = self._faces[3]
-        back = self._faces[1]
-        bottom = self._faces[5]
-        s = "\n\n"
-        indent = 3
-        indenting = indent + 2
-        for row in top:
-            s += ' ' * indenting
-            for tile in row:
-                s += f"{self._colours(tile).colour(tile)} "
-            s += '\n'
-            indenting -= 1
-        bars = '-' * len(row) * 2
-        s += ' ' * indent + '/' + bars + '/'
-        for left_row, front_row, right_row, back_row in zip(left, front, right, back):
-            s += "\n"
-            for tile in left_row:
-                s += f"{self._colours(tile).colour(tile)} "
-            s += ': '
-            for tile in front_row:
-                s += f"{self._colours(tile).colour(tile)} "
-            s += ': '
-            for tile in right_row:
-                s += f"{self._colours(tile).colour(tile)} "
-            s += ': '
-            for tile in back_row:
-                s += f"{self._colours(tile).colour(tile)} "
-        s += "\n" + ' ' * indent + "\\" + bars + "\\"
-        for row in bottom:
-            s += '\n'
-            indenting += 1
-            s += ' ' * indenting
-            for tile in row:
-                s += f"{self._colours(tile).colour(tile)} "
-        s += "\n\n"
-        return s
+        return printing_cubic_shapes.to_string(faces=self._faces, colours=self._colours)
 
     @_array_from_faces_at_end
     def __init__(self, *args, **kwargs):
@@ -103,7 +64,7 @@ class Sheet(Shape):
         assert [np.shape(face) for face in self._faces] == shapes, f"A {type(self).__name__} face must only contain 16 tiles in the specific shape: {shapes}"
 
     class move_1(Move):
-        """Move the bottom."""
+        """Move the bottom (front -> back)."""
 
         def __call__(self, *args, shape, reverse=False, **kwargs):
             array = shape._array
@@ -111,7 +72,7 @@ class Sheet(Shape):
             return type(shape)(array=array)
 
     class move_2(Move):
-        """Move the right."""
+        """Move the right (front -> back)."""
 
         def __call__(self, *args, shape, reverse=False, **kwargs):
             array = shape._array
@@ -119,9 +80,9 @@ class Sheet(Shape):
             return type(shape)(array=array)
 
     _moves = [move_1, move_2]
-
-    _reverse_moves = NotImplementedError
-    _commutative_moves = NotImplementedError
+    _reverse_moves = {move: reverse_move for move, reverse_move in [(move_1, move_1), (move_2, move_2)]}
+    _commutative_moves = ()
+    _invariant_tile_positions = ((0, 0, 0), (4, 0, 0), (3, 0, 0))
 
 
 if __name__ == "__main__":

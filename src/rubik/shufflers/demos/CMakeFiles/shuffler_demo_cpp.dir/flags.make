@@ -6,5 +6,5 @@ CXX_DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_D
 
 CXX_INCLUDES = -I/Users/oliver/ClionProjects/testing/src/logging/.. -I/Users/oliver/ClionProjects/testing/src/common/.. -I/Users/oliver/ClionProjects/testing/src/version/.. -isystem /Library/Frameworks/Python.framework/Versions/3.11/include/python3.11 -isystem /usr/local/include -isystem /usr/local/Cellar/glib/2.76.4/include/glib-2.0 -isystem /usr/local/Cellar/glib/2.76.4/lib/glib-2.0/include -isystem /usr/local/opt/gettext/include -isystem /usr/local/Cellar/pcre2/10.42/include
 
-CXX_FLAGS =  -Wall -Wextra -Werror -Wattributes -Wunused-result -Wpedantic -pedantic -Wreserved-identifier  -Wno-missing-field-initializers -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function  -g -mmacosx-version-min=12.6 -fcolor-diagnostics -Wno-constant-logical-operand -std=c++2b
+CXX_FLAGS =  -g -O0 -Wall -Wextra -Werror -Wattributes -Wunused-result -Wpedantic -pedantic -Wreserved-identifier  -Wno-missing-field-initializers -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function  -g -mmacosx-version-min=12.6 -fcolor-diagnostics -Wno-constant-logical-operand -std=c++2b
 

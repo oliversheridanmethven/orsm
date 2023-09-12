@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o"
-  "CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o.d"
+  "CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.o"
+  "CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.o.d"
   "shuffler_demo_cpp"
   "shuffler_demo_cpp.pdb"
 )

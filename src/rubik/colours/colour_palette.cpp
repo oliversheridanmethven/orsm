@@ -59,3 +59,11 @@ std::string ColourPalette::name(const Colour &colour) {
 ColourPalette::enum_underlying ColourPalette::value(const Colour &colour) {
     return static_cast<std::underlying_type<std::decay<decltype(colour)>::type>::type>(colour);
 }
+
+using Colour = ColourPalette::Colour;
+const std::vector<ColourPalette::Colour> ColourPalette::colours = {Colour::red,
+                                                                   Colour::yellow,
+                                                                   Colour::blue,
+                                                                   Colour::green,
+                                                                   Colour::white,
+                                                                   Colour::light_yellow};

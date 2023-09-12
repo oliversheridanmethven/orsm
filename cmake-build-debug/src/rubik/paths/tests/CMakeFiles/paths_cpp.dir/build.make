@@ -96,6 +96,8 @@ src/rubik/paths/tests/paths_cpp: /Library/Frameworks/Python.framework/Versions/3
 src/rubik/paths/tests/paths_cpp: src/rubik/paths/libpaths.a
 src/rubik/paths/tests/paths_cpp: /usr/local/lib/libgtest_main.a
 src/rubik/paths/tests/paths_cpp: /usr/local/lib/libgtest.a
+src/rubik/paths/tests/paths_cpp: src/rubik/paths/libpaths.a
+src/rubik/paths/tests/paths_cpp: src/rubik/colours/libcolours.a
 src/rubik/paths/tests/paths_cpp: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
 src/rubik/paths/tests/paths_cpp: /usr/local/lib/libglog.0.6.0.dylib
 src/rubik/paths/tests/paths_cpp: /usr/local/lib/libgflags.2.2.2.dylib

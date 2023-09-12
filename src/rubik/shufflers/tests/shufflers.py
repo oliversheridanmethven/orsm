@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import unittest
 from rubik.shufflers.shufflers import specific, god
-from rubik.shapes import Domino, Volume, Square, Sheet
+from rubik.shapes import Domino, Volume, Square, Sheet, Cube
 from common.variables import variable_names_and_objects
 from common.logger import log
 from common.timing import Timeout
@@ -10,7 +10,7 @@ from common.timing import Timeout
 class Shuffles(unittest.TestCase):
 
     def test_trivial_difficulty(self):
-        for name, Shape in variable_names_and_objects(Domino, Volume):
+        for name, Shape in variable_names_and_objects(Domino, Volume, Cube):
             shape = Shape()
             log.debug(f"Testing the shape {name}")
             turns = 0
@@ -19,7 +19,7 @@ class Shuffles(unittest.TestCase):
             self.assertEqual(len(shuffle_path), turns)
 
     def test_feasible_easy_difficulty(self):
-        for name, Shape in variable_names_and_objects(Domino, Volume):
+        for name, Shape in variable_names_and_objects(Domino, Volume, Cube):
             shape = Shape()
             log.debug(f"Testing the shape {name}")
             for turns in range(1, 2):
@@ -28,12 +28,14 @@ class Shuffles(unittest.TestCase):
                 self.assertEqual(len(shuffle_path), turns)
 
     def test_feasible_moderate_difficulty(self):
-        shape = Volume()
-        for turns in range(1, 5):
-            with Timeout(5):
-                shuffled, shuffle_path = specific(start=shape, turns=turns, seed=0)
-                self.assertNotEqual(shuffled, shape)
-                self.assertEqual(len(shuffle_path), turns)
+        for name, Shape in variable_names_and_objects(Volume, Cube):
+            shape = Shape()
+            max_turns, timelimit = (5, 10) if name != "Cube" else (4, 30)
+            for turns in range(1, max_turns):
+                with Timeout(timelimit):
+                    shuffled, shuffle_path = specific(start=shape, turns=turns, seed=0)
+                    self.assertNotEqual(shuffled, shape)
+                    self.assertEqual(len(shuffle_path), turns)
 
     def test_infeasible_moderate_difficulty(self):
         shape = Domino()

@@ -96,6 +96,8 @@ bin/paths_cpp: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3
 bin/paths_cpp: lib/libpaths.a
 bin/paths_cpp: /usr/local/lib/libgtest_main.a
 bin/paths_cpp: /usr/local/lib/libgtest.a
+bin/paths_cpp: lib/libpaths.a
+bin/paths_cpp: lib/libcolours.a
 bin/paths_cpp: /Library/Frameworks/Python.framework/Versions/3.11/lib/libpython3.11.dylib
 bin/paths_cpp: /usr/local/lib/libglog.0.6.0.dylib
 bin/paths_cpp: /usr/local/lib/libgflags.2.2.2.dylib

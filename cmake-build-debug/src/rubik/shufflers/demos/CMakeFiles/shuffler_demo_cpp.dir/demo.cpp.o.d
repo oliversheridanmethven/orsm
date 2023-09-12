@@ -1,6 +1,6 @@
 src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o: \
   /Users/oliver/ClionProjects/testing/src/rubik/shufflers/demos/demo.cpp \
-  /Users/oliver/ClionProjects/testing/src/logging/../common/cli.hpp \
+  /Users/oliver/ClionProjects/testing/src/common/../common/cli.hpp \
   /usr/local/include/boost/program_options.hpp \
   /usr/local/include/boost/program_options/options_description.hpp \
   /usr/local/include/boost/program_options/config.hpp \
@@ -1407,9 +1407,9 @@ src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o: \
   /usr/local/include/boost/core/scoped_enum.hpp \
   /usr/local/include/boost/filesystem/operations.hpp \
   /usr/local/include/boost/filesystem/convenience.hpp \
-  /Users/oliver/ClionProjects/testing/src/logging/../version/version.h \
+  /Users/oliver/ClionProjects/testing/src/common/../version/version.h \
   /usr/local/opt/llvm/bin/../include/c++/v1/iostream \
-  /Users/oliver/ClionProjects/testing/src/logging/../logging/logging.hpp \
+  /Users/oliver/ClionProjects/testing/src/common/../logging/logging.hpp \
   /usr/local/include/glog/logging.h \
   /usr/local/opt/llvm/bin/../include/c++/v1/chrono \
   /usr/local/opt/llvm/bin/../include/c++/v1/__chrono/calendar.h \
@@ -1475,13 +1475,13 @@ src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o: \
   /usr/local/include/boost/optional/detail/optional_reference_spec.hpp \
   /usr/local/include/boost/optional/detail/optional_relops.hpp \
   /usr/local/include/boost/optional/detail/optional_swap.hpp \
-  /Users/oliver/ClionProjects/testing/src/logging/../rubik/shapes/volume.hpp \
-  /Users/oliver/ClionProjects/testing/src/logging/../rubik/shapes/shape.hpp \
+  /Users/oliver/ClionProjects/testing/src/common/../rubik/shapes/volume.hpp \
+  /Users/oliver/ClionProjects/testing/src/common/../rubik/shapes/shape.hpp \
   /usr/local/opt/llvm/bin/../include/c++/v1/unordered_set \
-  /Users/oliver/ClionProjects/testing/src/logging/../rubik/colours/colour_palette.hpp \
-  /Users/oliver/ClionProjects/testing/src/logging/../rubik/paths/move.hpp \
+  /Users/oliver/ClionProjects/testing/src/common/../rubik/colours/colour_palette.hpp \
+  /Users/oliver/ClionProjects/testing/src/common/../rubik/paths/move.hpp \
   /usr/local/include/boost/functional/hash.hpp \
-  /Users/oliver/ClionProjects/testing/src/logging/../rubik/paths/path.hpp \
+  /Users/oliver/ClionProjects/testing/src/common/../rubik/paths/path.hpp \
   /usr/local/opt/llvm/bin/../include/c++/v1/random \
   /usr/local/opt/llvm/bin/../include/c++/v1/__random/bernoulli_distribution.h \
   /usr/local/opt/llvm/bin/../include/c++/v1/__random/uniform_real_distribution.h \
@@ -1530,4 +1530,5 @@ src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o: \
   /usr/local/opt/llvm/bin/../include/c++/v1/__random/seed_seq.h \
   /usr/local/opt/llvm/bin/../include/c++/v1/__random/student_t_distribution.h \
   /usr/local/opt/llvm/bin/../include/c++/v1/__random/weibull_distribution.h \
-  /Users/oliver/ClionProjects/testing/src/logging/../rubik/shufflers/shufflers.hpp
+  /Users/oliver/ClionProjects/testing/src/common/../rubik/shapes/utils/printing_cubic_shapes.hpp \
+  /Users/oliver/ClionProjects/testing/src/common/../rubik/shufflers/shufflers.hpp

@@ -549,17 +549,17 @@ shuffler_demo_cpp/fast:
 .PHONY : shuffler_demo_cpp/fast
 
 #=============================================================================
-# Target rules for targets named solvers
+# Target rules for targets named solvers_cpp
 
 # Build rule for target.
-solvers: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 solvers
-.PHONY : solvers
+solvers_cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 solvers_cpp
+.PHONY : solvers_cpp
 
 # fast build rule for target.
-solvers/fast:
-	$(MAKE) $(MAKESILENT) -f src/rubik/solvers/CMakeFiles/solvers.dir/build.make src/rubik/solvers/CMakeFiles/solvers.dir/build
-.PHONY : solvers/fast
+solvers_cpp/fast:
+	$(MAKE) $(MAKESILENT) -f src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/build.make src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/build
+.PHONY : solvers_cpp/fast
 
 #=============================================================================
 # Target rules for targets named solver_demo_cpp
@@ -626,7 +626,7 @@ help:
 	@echo "... shuffler_demo_cpp"
 	@echo "... shufflers_cpp"
 	@echo "... solver_demo_cpp"
-	@echo "... solvers"
+	@echo "... solvers_cpp"
 	@echo "... suppressor"
 	@echo "... suppressor_bindings"
 	@echo "... version"

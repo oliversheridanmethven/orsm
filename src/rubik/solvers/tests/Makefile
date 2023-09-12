@@ -171,6 +171,44 @@ depend:
 	cd /Users/oliver/ClionProjects/testing && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/rule:
+	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/rule
+.PHONY : src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/rule
+
+# Convenience name for target.
+solvers_cpp: src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/rule
+.PHONY : solvers_cpp
+
+# fast build rule for target.
+solvers_cpp/fast:
+	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/build.make src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/build
+.PHONY : solvers_cpp/fast
+
+solvers.o: solvers.cpp.o
+.PHONY : solvers.o
+
+# target to build an object file
+solvers.cpp.o:
+	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/build.make src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/solvers.cpp.o
+.PHONY : solvers.cpp.o
+
+solvers.i: solvers.cpp.i
+.PHONY : solvers.i
+
+# target to preprocess a source file
+solvers.cpp.i:
+	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/build.make src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/solvers.cpp.i
+.PHONY : solvers.cpp.i
+
+solvers.s: solvers.cpp.s
+.PHONY : solvers.s
+
+# target to generate assembly for a file
+solvers.cpp.s:
+	cd /Users/oliver/ClionProjects/testing && $(MAKE) $(MAKESILENT) -f src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/build.make src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/solvers.cpp.s
+.PHONY : solvers.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -184,6 +222,10 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... solvers_cpp"
+	@echo "... solvers.o"
+	@echo "... solvers.i"
+	@echo "... solvers.s"
 .PHONY : help
 
 

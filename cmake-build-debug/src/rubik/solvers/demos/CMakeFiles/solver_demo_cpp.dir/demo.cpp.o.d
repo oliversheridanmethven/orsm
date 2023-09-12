@@ -969,6 +969,8 @@ src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/demo.cpp.o: \
   /usr/local/opt/llvm/bin/../include/c++/v1/__random/seed_seq.h \
   /usr/local/opt/llvm/bin/../include/c++/v1/__random/student_t_distribution.h \
   /usr/local/opt/llvm/bin/../include/c++/v1/__random/weibull_distribution.h \
+  /Users/oliver/ClionProjects/testing/src/logging/../rubik/shapes/utils/printing_cubic_shapes.hpp \
+  /Users/oliver/ClionProjects/testing/src/logging/../rubik/shapes/cube.hpp \
   /Users/oliver/ClionProjects/testing/src/logging/../rubik/solvers/meet_in_middle_recursive.hpp \
   /Users/oliver/ClionProjects/testing/src/logging/../rubik/solvers/solver.hpp \
   /Users/oliver/ClionProjects/testing/src/logging/../common/cli.hpp \
@@ -1497,36 +1499,6 @@ src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/demo.cpp.o: \
   /usr/local/include/boost/filesystem/operations.hpp \
   /usr/local/include/boost/filesystem/convenience.hpp \
   /Users/oliver/ClionProjects/testing/src/logging/../version/version.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/all.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/owning_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/range_adaptor.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/ref_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/as_rvalue_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/common_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/counted.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__fwd/span.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/drop_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/empty_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/iota_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/copyable_box.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/non_propagating_cache.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/drop_while_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/elements_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/filter_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/join_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__iterator/iterator_with_data.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/lazy_split_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/single_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/rbegin.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/rend.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/reverse_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/split_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/take_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/take_while_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/transform_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/views.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/zip_view.h \
-  /usr/local/opt/llvm/bin/../include/c++/v1/__ranges/istream_view.h \
   /usr/local/include/boost/optional.hpp \
   /usr/local/include/boost/optional/optional.hpp \
   /usr/local/include/boost/core/explicit_operator_bool.hpp \

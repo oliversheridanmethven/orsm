@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/oliver/ClionProjects/testing/src/rubik/shufflers/demos/demo.cpp" "src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o" "gcc" "src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/demo.cpp.o.d"
+  "/Users/oliver/ClionProjects/testing/src/rubik/shufflers/demos/shufflers_demo.cpp" "src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.o" "gcc" "src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/shufflers_demo.cpp.o.d"
   )
 
 # Targets to which this target links.

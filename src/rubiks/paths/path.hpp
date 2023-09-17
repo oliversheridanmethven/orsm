@@ -19,22 +19,23 @@ namespace rubiks
 
             Path reversed(void) const;
 
-            friend std::ostream &operator<<(std::ostream &os, const Path &path)
-            {
-                if (path.empty())
-                {
-                    os << "Empty path.\n";
-                    return os;
-                }
-
-                for (size_t turn = 0; auto [move, reverse]: path)
-                {
-                    os << "\nTurn = " << turn++ << " " << move << (reverse ? " in reverse" : "");
-                }
-                os << "\n";
-                return os;
-            }
+            friend std::ostream &operator<<(std::ostream &os, const Path &path);
         };
+
+        auto clean(const Path &path, const auto &shape)
+        {
+            /* Restructures a path in turns of its reciprocal moves performed in the forward direction. */
+            auto cleaned = path;
+            for (auto &[move, reverse]: cleaned)
+            {
+                if (reverse)
+                {
+                    reverse = false;
+                    move = shape.reverse_of(move);
+                }
+            }
+            return cleaned;
+        }
 
     }// namespace paths
 }// namespace rubiks

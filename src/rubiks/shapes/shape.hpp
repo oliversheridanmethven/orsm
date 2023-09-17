@@ -22,8 +22,8 @@ namespace rubiks
 {
     namespace shapes
     {
-        using namespace rubiks::moves;
         using namespace rubiks::paths;
+        using namespace rubiks::moves;
         using namespace tiles;
 
         template<typename Self, int N>
@@ -90,16 +90,13 @@ namespace rubiks
                 return tiles == other.tiles;
             }
 
+            virtual const std::vector<Move> moves(void) const = 0;
+            virtual const std::unordered_map<Move, Move> reverse_moves(void) const = 0;
+            virtual const std::vector<std::unordered_set<Move>> commutative_moves(void) const = 0;
             virtual const std::vector<std::array<size_t, 3>> invariant_tile_positions(void) const = 0;
 
-            virtual const std::vector<Move> moves(void) const = 0;
-
-            virtual const std::unordered_map<Move, Move> reverse_moves(void) const = 0;
-
-            virtual const std::vector<std::unordered_set<Move>> commutative_moves(void) const = 0;
-
             /* In C++ 23, when there is a bit better compiler support, we will use the "deducing this" feature to make derived
-             * actions nicer and a cleaner interface for the CRTP pattern. */
+             * actions nicer and a cleaner interface than the CRTP pattern. */
 
             Self move(const std::vector<Move> &moves, const bool reverse = false) const
             {
@@ -122,6 +119,24 @@ namespace rubiks
                 return moved;
             }
 
+            /*
+             * Many of the following should really be static class methods, but
+             * until I can figure out a nice way to emulate "static virtual
+             * member functions/variables" then I am tied down to requiring
+             * a class instance.
+             * */
+
+            Move reverse_of(const Move &move) const
+            {
+                return reverse_moves().at(move);
+            }
+
+            Self solved_config(void) const
+            {
+                Self solved;
+                return solved;
+            }
+
             bool commutative(const Move &move_1, const Move &move_2) const
             {
                 bool any_commutative_groups = false;
@@ -136,32 +151,6 @@ namespace rubiks
                     }
                 }
                 return any_commutative_groups;
-            }
-
-            Move reverse_of(const Move &move) const
-            {
-                return reverse_moves().at(move);
-            }
-
-            Self solved_config(void) const
-            {
-                Self solved;
-                return solved;
-            }
-
-            Path clean(const Path &path) const
-            {
-                /* Restructures a path in turns of its reciprocal moves performed in the forward direction. */
-                Path cleaned = path;
-                for (auto &[move, reverse]: cleaned)
-                {
-                    if (reverse)
-                    {
-                        reverse = false;
-                        move = this->reverse_of(move);
-                    }
-                }
-                return cleaned;
             }
 
             friend std::hash<Self>;

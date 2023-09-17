@@ -67,7 +67,7 @@ int main(int argc, char **argv)
         auto solver = MeetInMiddleRecursive<decltype(shape)>();
         solution_path = solver.solve(shape, shuffled);
         LOG_DEBUG << "The shuffled shape is recovered by: " << solution_path;
-        LOG_INFO << "The original shape is recovered by: " << shape.clean(solution_path.reversed());
+        LOG_INFO << "The original shape is recovered by: " << clean(solution_path.reversed(), shape);
     },
                shapes);
 }

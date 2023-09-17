@@ -1,11 +1,10 @@
-#include "path.hpp"
+#include "rubiks/paths/path.hpp"
 #include <algorithm>
 
 namespace rubiks
 {
     namespace paths
     {
-        using namespace rubiks::moves;
 
         Path Path::add(const Move &move, const bool reverse) const
         {
@@ -24,5 +23,22 @@ namespace rubiks
             }
             return result;
         }
+
+        std::ostream &operator<<(std::ostream &os, const Path &path)
+        {
+            if (path.empty())
+            {
+                os << "Empty path.\n";
+                return os;
+            }
+
+            for (size_t turn = 0; auto [move, reverse]: path)
+            {
+                os << "\nTurn = " << turn++ << " " << move << (reverse ? " in reverse" : "");
+            }
+            os << "\n";
+            return os;
+        }
+
     }// namespace paths
 }// namespace rubiks

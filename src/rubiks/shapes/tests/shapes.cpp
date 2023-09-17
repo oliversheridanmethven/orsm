@@ -287,7 +287,7 @@ TYPED_TEST(ShapeTest, cleaning_path)
     auto seed = 0;
     auto [shuffled, shuffling_path] = shuffle(shape, turns, seed);
     auto unshuffling_path = shuffling_path.reversed();
-    auto cleaned_unshuffling_path = shape.clean(unshuffling_path);
+    auto cleaned_unshuffling_path = clean(unshuffling_path, shape);
     auto reversed_shuffling = shuffling_path;
     std::ranges::reverse(reversed_shuffling);
     for (size_t turn = 0; turn < shuffling_path.size(); turn++)

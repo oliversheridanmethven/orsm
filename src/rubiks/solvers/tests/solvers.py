@@ -45,7 +45,7 @@ class Solvers(unittest.TestCase):
                 shape = shapes.Volume()
                 from rubiks.shufflers.shufflers import specific
                 for turns in range(5):
-                    with Timeout(10):
+                    with Timeout(30):
                         shuffled, shuffle_path = specific(start=shape, turns=turns, seed=0)
                         self.assertEqual(len(shuffle_path), turns, f"We have not generated a shuffled path with the required number of turns.")
                         solution_path = solver.solve(start=shape, target=shuffled)

@@ -42,3 +42,21 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/Users/oliver/ClionProjects/testing/cmake-build-release/src/common/suppressor/tests/cmake_install.cmake")
 endif()
 
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/Users/oliver/ClionProjects/testing/src/common/suppressor/suppressor_bindings.so")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  file(INSTALL DESTINATION "/Users/oliver/ClionProjects/testing/src/common/suppressor" TYPE MODULE FILES "/Users/oliver/ClionProjects/testing/cmake-build-release/src/common/suppressor/suppressor_bindings.so")
+  if(EXISTS "$ENV{DESTDIR}/Users/oliver/ClionProjects/testing/src/common/suppressor/suppressor_bindings.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/Users/oliver/ClionProjects/testing/src/common/suppressor/suppressor_bindings.so")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/local/opt/llvm/bin/llvm-strip" -x "$ENV{DESTDIR}/Users/oliver/ClionProjects/testing/src/common/suppressor/suppressor_bindings.so")
+    endif()
+  endif()
+endif()
+

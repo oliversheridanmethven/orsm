@@ -1,41 +1,33 @@
-hello_world_test 5 0.0816658
-hello_world_test_cpp 5 0.112765
-error_codes 5 0.144721
-binding_import 5 0.249323
-example 5 0.171696
-basic_python 5 0.17625
-basic_python_again 5 0.175026
-example_cpp 5 0.216517
-logging_test 5 0.237048
-logging_test_cpp 5 0.292857
-version_test 5 0.537814
-version_bindings 0 0
-cli_arguments_0 5 0.516247
-cli_arguments_version 5 0.485511
-arguments 5 0.257711
-cli_print_logs 0 0
-logger 0 0
-output 5 0.188276
-output_suppressor_c_extension 5 0.11549
-timing 0 0
-variables 5 0.17275
-output_suppression 5 0.165106
-suppressor 5 0.255033
-images 5 1.46087
-window 0 0
-paths_cpp 5 0.422289
-shapes 0 0
-shapes_cpp 5 1.82664
-shufflers 0 0
-shufflers_cpp 5 4.71915
-solvers 0 0
-solvers_cpp 5 4.88789
+hello_world_test 9 0.138189
+hello_world_test_cpp 9 0.131824
+error_codes 9 0.136043
+binding_import 9 0.256699
+example 9 0.137681
+basic_python 9 0.167991
+basic_python_again 9 0.158047
+example_cpp 9 0.175588
+logging_test 9 0.188841
+logging_test_cpp 9 0.303242
+version_test 9 0.39265
+version_bindings 3 0.260863
+cli_arguments_0 9 0.413195
+cli_arguments_version 9 0.336248
+arguments 9 0.265151
+cli_print_logs 3 0.345718
+logger 3 3.24996
+output 9 0.188104
+output_suppressor_c_extension 9 0.108573
+timing 3 3.09621
+variables 9 0.161031
+output_suppression 9 0.151879
+suppressor 9 0.182273
+images 9 1.48906
+window 3 1.98856
+paths_cpp 9 0.417833
+shapes 3 48.8517
+shapes_cpp 9 1.88085
+shufflers 3 16.2703
+shufflers_cpp 9 5.2506
+solvers 2 22.8929
+solvers_cpp 9 5.35122
 ---
-shufflers
-solvers
-cli_print_logs
-timing
-version_bindings
-logger
-shapes
-window

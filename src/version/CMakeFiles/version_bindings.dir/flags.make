@@ -4,7 +4,7 @@
 # compile C with /opt/local/bin/clang-mp-16
 C_DEFINES = -Dversion_bindings_EXPORTS
 
-C_INCLUDES = -I/Users/oliver/ClionProjects/testing/src/binding/.. -I/Users/oliver/ClionProjects/testing/src/version/.. -isystem /Library/Frameworks/Python.framework/Versions/3.11/include/python3.11 -isystem /usr/local/include
+C_INCLUDES = -I/Users/oliver/ClionProjects/testing/src/binding/.. -I/Users/oliver/ClionProjects/testing/src/version/.. -isystem /Library/Frameworks/Python.framework/Versions/3.11/include/python3.11
 
 C_FLAGS =  -Wall -Wextra -Werror -Wattributes -Wunused-result -Wpedantic -pedantic -Wreserved-identifier -Wno-int-conversion -Wno-missing-field-initializers -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-incompatible-pointer-types -std=c2x -g -mmacosx-version-min=12.6 -fPIC -fcolor-diagnostics -std=c2x
 

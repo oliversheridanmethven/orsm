@@ -105,7 +105,7 @@ src/all: src/version/all
 src/all: src/cli/all
 src/all: src/common/all
 src/all: src/media/all
-src/all: src/rubik/all
+src/all: src/rubiks/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
@@ -118,7 +118,7 @@ src/preinstall: src/version/preinstall
 src/preinstall: src/cli/preinstall
 src/preinstall: src/common/preinstall
 src/preinstall: src/media/preinstall
-src/preinstall: src/rubik/preinstall
+src/preinstall: src/rubiks/preinstall
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
@@ -131,7 +131,7 @@ src/clean: src/version/clean
 src/clean: src/cli/clean
 src/clean: src/common/clean
 src/clean: src/media/clean
-src/clean: src/rubik/clean
+src/clean: src/rubiks/clean
 .PHONY : src/clean
 
 #=============================================================================
@@ -454,222 +454,222 @@ src/media/tests/clean:
 .PHONY : src/media/tests/clean
 
 #=============================================================================
-# Directory level rules for directory src/rubik
+# Directory level rules for directory src/rubiks
 
 # Recursive "all" directory target.
-src/rubik/all: src/rubik/colours/all
-src/rubik/all: src/rubik/paths/all
-src/rubik/all: src/rubik/shapes/all
-src/rubik/all: src/rubik/shufflers/all
-src/rubik/all: src/rubik/solvers/all
-.PHONY : src/rubik/all
+src/rubiks/all: src/rubiks/colours/all
+src/rubiks/all: src/rubiks/paths/all
+src/rubiks/all: src/rubiks/shapes/all
+src/rubiks/all: src/rubiks/shufflers/all
+src/rubiks/all: src/rubiks/solvers/all
+.PHONY : src/rubiks/all
 
 # Recursive "preinstall" directory target.
-src/rubik/preinstall: src/rubik/colours/preinstall
-src/rubik/preinstall: src/rubik/paths/preinstall
-src/rubik/preinstall: src/rubik/shapes/preinstall
-src/rubik/preinstall: src/rubik/shufflers/preinstall
-src/rubik/preinstall: src/rubik/solvers/preinstall
-.PHONY : src/rubik/preinstall
+src/rubiks/preinstall: src/rubiks/colours/preinstall
+src/rubiks/preinstall: src/rubiks/paths/preinstall
+src/rubiks/preinstall: src/rubiks/shapes/preinstall
+src/rubiks/preinstall: src/rubiks/shufflers/preinstall
+src/rubiks/preinstall: src/rubiks/solvers/preinstall
+.PHONY : src/rubiks/preinstall
 
 # Recursive "clean" directory target.
-src/rubik/clean: src/rubik/colours/clean
-src/rubik/clean: src/rubik/paths/clean
-src/rubik/clean: src/rubik/shapes/clean
-src/rubik/clean: src/rubik/shufflers/clean
-src/rubik/clean: src/rubik/solvers/clean
-.PHONY : src/rubik/clean
+src/rubiks/clean: src/rubiks/colours/clean
+src/rubiks/clean: src/rubiks/paths/clean
+src/rubiks/clean: src/rubiks/shapes/clean
+src/rubiks/clean: src/rubiks/shufflers/clean
+src/rubiks/clean: src/rubiks/solvers/clean
+.PHONY : src/rubiks/clean
 
 #=============================================================================
-# Directory level rules for directory src/rubik/colours
+# Directory level rules for directory src/rubiks/colours
 
 # Recursive "all" directory target.
-src/rubik/colours/all: src/rubik/colours/CMakeFiles/colours.dir/all
-.PHONY : src/rubik/colours/all
+src/rubiks/colours/all: src/rubiks/colours/CMakeFiles/colours.dir/all
+.PHONY : src/rubiks/colours/all
 
 # Recursive "preinstall" directory target.
-src/rubik/colours/preinstall:
-.PHONY : src/rubik/colours/preinstall
+src/rubiks/colours/preinstall:
+.PHONY : src/rubiks/colours/preinstall
 
 # Recursive "clean" directory target.
-src/rubik/colours/clean: src/rubik/colours/CMakeFiles/colours.dir/clean
-.PHONY : src/rubik/colours/clean
+src/rubiks/colours/clean: src/rubiks/colours/CMakeFiles/colours.dir/clean
+.PHONY : src/rubiks/colours/clean
 
 #=============================================================================
-# Directory level rules for directory src/rubik/paths
+# Directory level rules for directory src/rubiks/paths
 
 # Recursive "all" directory target.
-src/rubik/paths/all: src/rubik/paths/CMakeFiles/paths.dir/all
-src/rubik/paths/all: src/rubik/paths/tests/all
-.PHONY : src/rubik/paths/all
+src/rubiks/paths/all: src/rubiks/paths/CMakeFiles/paths.dir/all
+src/rubiks/paths/all: src/rubiks/paths/tests/all
+.PHONY : src/rubiks/paths/all
 
 # Recursive "preinstall" directory target.
-src/rubik/paths/preinstall: src/rubik/paths/tests/preinstall
-.PHONY : src/rubik/paths/preinstall
+src/rubiks/paths/preinstall: src/rubiks/paths/tests/preinstall
+.PHONY : src/rubiks/paths/preinstall
 
 # Recursive "clean" directory target.
-src/rubik/paths/clean: src/rubik/paths/CMakeFiles/paths.dir/clean
-src/rubik/paths/clean: src/rubik/paths/tests/clean
-.PHONY : src/rubik/paths/clean
+src/rubiks/paths/clean: src/rubiks/paths/CMakeFiles/paths.dir/clean
+src/rubiks/paths/clean: src/rubiks/paths/tests/clean
+.PHONY : src/rubiks/paths/clean
 
 #=============================================================================
-# Directory level rules for directory src/rubik/paths/tests
+# Directory level rules for directory src/rubiks/paths/tests
 
 # Recursive "all" directory target.
-src/rubik/paths/tests/all: src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/all
-.PHONY : src/rubik/paths/tests/all
+src/rubiks/paths/tests/all: src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/all
+.PHONY : src/rubiks/paths/tests/all
 
 # Recursive "preinstall" directory target.
-src/rubik/paths/tests/preinstall:
-.PHONY : src/rubik/paths/tests/preinstall
+src/rubiks/paths/tests/preinstall:
+.PHONY : src/rubiks/paths/tests/preinstall
 
 # Recursive "clean" directory target.
-src/rubik/paths/tests/clean: src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/clean
-.PHONY : src/rubik/paths/tests/clean
+src/rubiks/paths/tests/clean: src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/clean
+.PHONY : src/rubiks/paths/tests/clean
 
 #=============================================================================
-# Directory level rules for directory src/rubik/shapes
+# Directory level rules for directory src/rubiks/shapes
 
 # Recursive "all" directory target.
-src/rubik/shapes/all: src/rubik/shapes/tests/all
-src/rubik/shapes/all: src/rubik/shapes/utils/all
-.PHONY : src/rubik/shapes/all
+src/rubiks/shapes/all: src/rubiks/shapes/tests/all
+src/rubiks/shapes/all: src/rubiks/shapes/utils/all
+.PHONY : src/rubiks/shapes/all
 
 # Recursive "preinstall" directory target.
-src/rubik/shapes/preinstall: src/rubik/shapes/tests/preinstall
-src/rubik/shapes/preinstall: src/rubik/shapes/utils/preinstall
-.PHONY : src/rubik/shapes/preinstall
+src/rubiks/shapes/preinstall: src/rubiks/shapes/tests/preinstall
+src/rubiks/shapes/preinstall: src/rubiks/shapes/utils/preinstall
+.PHONY : src/rubiks/shapes/preinstall
 
 # Recursive "clean" directory target.
-src/rubik/shapes/clean: src/rubik/shapes/tests/clean
-src/rubik/shapes/clean: src/rubik/shapes/utils/clean
-.PHONY : src/rubik/shapes/clean
+src/rubiks/shapes/clean: src/rubiks/shapes/tests/clean
+src/rubiks/shapes/clean: src/rubiks/shapes/utils/clean
+.PHONY : src/rubiks/shapes/clean
 
 #=============================================================================
-# Directory level rules for directory src/rubik/shapes/tests
+# Directory level rules for directory src/rubiks/shapes/tests
 
 # Recursive "all" directory target.
-src/rubik/shapes/tests/all: src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/all
-.PHONY : src/rubik/shapes/tests/all
+src/rubiks/shapes/tests/all: src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/all
+.PHONY : src/rubiks/shapes/tests/all
 
 # Recursive "preinstall" directory target.
-src/rubik/shapes/tests/preinstall:
-.PHONY : src/rubik/shapes/tests/preinstall
+src/rubiks/shapes/tests/preinstall:
+.PHONY : src/rubiks/shapes/tests/preinstall
 
 # Recursive "clean" directory target.
-src/rubik/shapes/tests/clean: src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/clean
-.PHONY : src/rubik/shapes/tests/clean
+src/rubiks/shapes/tests/clean: src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/clean
+.PHONY : src/rubiks/shapes/tests/clean
 
 #=============================================================================
-# Directory level rules for directory src/rubik/shapes/utils
+# Directory level rules for directory src/rubiks/shapes/utils
 
 # Recursive "all" directory target.
-src/rubik/shapes/utils/all:
-.PHONY : src/rubik/shapes/utils/all
+src/rubiks/shapes/utils/all:
+.PHONY : src/rubiks/shapes/utils/all
 
 # Recursive "preinstall" directory target.
-src/rubik/shapes/utils/preinstall:
-.PHONY : src/rubik/shapes/utils/preinstall
+src/rubiks/shapes/utils/preinstall:
+.PHONY : src/rubiks/shapes/utils/preinstall
 
 # Recursive "clean" directory target.
-src/rubik/shapes/utils/clean:
-.PHONY : src/rubik/shapes/utils/clean
+src/rubiks/shapes/utils/clean:
+.PHONY : src/rubiks/shapes/utils/clean
 
 #=============================================================================
-# Directory level rules for directory src/rubik/shufflers
+# Directory level rules for directory src/rubiks/shufflers
 
 # Recursive "all" directory target.
-src/rubik/shufflers/all: src/rubik/shufflers/tests/all
-src/rubik/shufflers/all: src/rubik/shufflers/demos/all
-.PHONY : src/rubik/shufflers/all
+src/rubiks/shufflers/all: src/rubiks/shufflers/tests/all
+src/rubiks/shufflers/all: src/rubiks/shufflers/demos/all
+.PHONY : src/rubiks/shufflers/all
 
 # Recursive "preinstall" directory target.
-src/rubik/shufflers/preinstall: src/rubik/shufflers/tests/preinstall
-src/rubik/shufflers/preinstall: src/rubik/shufflers/demos/preinstall
-.PHONY : src/rubik/shufflers/preinstall
+src/rubiks/shufflers/preinstall: src/rubiks/shufflers/tests/preinstall
+src/rubiks/shufflers/preinstall: src/rubiks/shufflers/demos/preinstall
+.PHONY : src/rubiks/shufflers/preinstall
 
 # Recursive "clean" directory target.
-src/rubik/shufflers/clean: src/rubik/shufflers/tests/clean
-src/rubik/shufflers/clean: src/rubik/shufflers/demos/clean
-.PHONY : src/rubik/shufflers/clean
+src/rubiks/shufflers/clean: src/rubiks/shufflers/tests/clean
+src/rubiks/shufflers/clean: src/rubiks/shufflers/demos/clean
+.PHONY : src/rubiks/shufflers/clean
 
 #=============================================================================
-# Directory level rules for directory src/rubik/shufflers/demos
+# Directory level rules for directory src/rubiks/shufflers/demos
 
 # Recursive "all" directory target.
-src/rubik/shufflers/demos/all: src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/all
-.PHONY : src/rubik/shufflers/demos/all
+src/rubiks/shufflers/demos/all: src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/all
+.PHONY : src/rubiks/shufflers/demos/all
 
 # Recursive "preinstall" directory target.
-src/rubik/shufflers/demos/preinstall:
-.PHONY : src/rubik/shufflers/demos/preinstall
+src/rubiks/shufflers/demos/preinstall:
+.PHONY : src/rubiks/shufflers/demos/preinstall
 
 # Recursive "clean" directory target.
-src/rubik/shufflers/demos/clean: src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/clean
-.PHONY : src/rubik/shufflers/demos/clean
+src/rubiks/shufflers/demos/clean: src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/clean
+.PHONY : src/rubiks/shufflers/demos/clean
 
 #=============================================================================
-# Directory level rules for directory src/rubik/shufflers/tests
+# Directory level rules for directory src/rubiks/shufflers/tests
 
 # Recursive "all" directory target.
-src/rubik/shufflers/tests/all: src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/all
-.PHONY : src/rubik/shufflers/tests/all
+src/rubiks/shufflers/tests/all: src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/all
+.PHONY : src/rubiks/shufflers/tests/all
 
 # Recursive "preinstall" directory target.
-src/rubik/shufflers/tests/preinstall:
-.PHONY : src/rubik/shufflers/tests/preinstall
+src/rubiks/shufflers/tests/preinstall:
+.PHONY : src/rubiks/shufflers/tests/preinstall
 
 # Recursive "clean" directory target.
-src/rubik/shufflers/tests/clean: src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/clean
-.PHONY : src/rubik/shufflers/tests/clean
+src/rubiks/shufflers/tests/clean: src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/clean
+.PHONY : src/rubiks/shufflers/tests/clean
 
 #=============================================================================
-# Directory level rules for directory src/rubik/solvers
+# Directory level rules for directory src/rubiks/solvers
 
 # Recursive "all" directory target.
-src/rubik/solvers/all: src/rubik/solvers/tests/all
-src/rubik/solvers/all: src/rubik/solvers/demos/all
-.PHONY : src/rubik/solvers/all
+src/rubiks/solvers/all: src/rubiks/solvers/tests/all
+src/rubiks/solvers/all: src/rubiks/solvers/demos/all
+.PHONY : src/rubiks/solvers/all
 
 # Recursive "preinstall" directory target.
-src/rubik/solvers/preinstall: src/rubik/solvers/tests/preinstall
-src/rubik/solvers/preinstall: src/rubik/solvers/demos/preinstall
-.PHONY : src/rubik/solvers/preinstall
+src/rubiks/solvers/preinstall: src/rubiks/solvers/tests/preinstall
+src/rubiks/solvers/preinstall: src/rubiks/solvers/demos/preinstall
+.PHONY : src/rubiks/solvers/preinstall
 
 # Recursive "clean" directory target.
-src/rubik/solvers/clean: src/rubik/solvers/tests/clean
-src/rubik/solvers/clean: src/rubik/solvers/demos/clean
-.PHONY : src/rubik/solvers/clean
+src/rubiks/solvers/clean: src/rubiks/solvers/tests/clean
+src/rubiks/solvers/clean: src/rubiks/solvers/demos/clean
+.PHONY : src/rubiks/solvers/clean
 
 #=============================================================================
-# Directory level rules for directory src/rubik/solvers/demos
+# Directory level rules for directory src/rubiks/solvers/demos
 
 # Recursive "all" directory target.
-src/rubik/solvers/demos/all: src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/all
-.PHONY : src/rubik/solvers/demos/all
+src/rubiks/solvers/demos/all: src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/all
+.PHONY : src/rubiks/solvers/demos/all
 
 # Recursive "preinstall" directory target.
-src/rubik/solvers/demos/preinstall:
-.PHONY : src/rubik/solvers/demos/preinstall
+src/rubiks/solvers/demos/preinstall:
+.PHONY : src/rubiks/solvers/demos/preinstall
 
 # Recursive "clean" directory target.
-src/rubik/solvers/demos/clean: src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/clean
-.PHONY : src/rubik/solvers/demos/clean
+src/rubiks/solvers/demos/clean: src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/clean
+.PHONY : src/rubiks/solvers/demos/clean
 
 #=============================================================================
-# Directory level rules for directory src/rubik/solvers/tests
+# Directory level rules for directory src/rubiks/solvers/tests
 
 # Recursive "all" directory target.
-src/rubik/solvers/tests/all: src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/all
-.PHONY : src/rubik/solvers/tests/all
+src/rubiks/solvers/tests/all: src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/all
+.PHONY : src/rubiks/solvers/tests/all
 
 # Recursive "preinstall" directory target.
-src/rubik/solvers/tests/preinstall:
-.PHONY : src/rubik/solvers/tests/preinstall
+src/rubiks/solvers/tests/preinstall:
+.PHONY : src/rubiks/solvers/tests/preinstall
 
 # Recursive "clean" directory target.
-src/rubik/solvers/tests/clean: src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/clean
-.PHONY : src/rubik/solvers/tests/clean
+src/rubiks/solvers/tests/clean: src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/clean
+.PHONY : src/rubiks/solvers/tests/clean
 
 #=============================================================================
 # Directory level rules for directory src/testing
@@ -1339,220 +1339,220 @@ src/common/suppressor/tests/CMakeFiles/_suppressor.dir/clean:
 .PHONY : src/common/suppressor/tests/CMakeFiles/_suppressor.dir/clean
 
 #=============================================================================
-# Target rules for target src/rubik/colours/CMakeFiles/colours.dir
+# Target rules for target src/rubiks/colours/CMakeFiles/colours.dir
 
 # All Build rule for target.
-src/rubik/colours/CMakeFiles/colours.dir/all:
-	$(MAKE) $(MAKESILENT) -f src/rubik/colours/CMakeFiles/colours.dir/build.make src/rubik/colours/CMakeFiles/colours.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/rubik/colours/CMakeFiles/colours.dir/build.make src/rubik/colours/CMakeFiles/colours.dir/build
+src/rubiks/colours/CMakeFiles/colours.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/rubiks/colours/CMakeFiles/colours.dir/build.make src/rubiks/colours/CMakeFiles/colours.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/rubiks/colours/CMakeFiles/colours.dir/build.make src/rubiks/colours/CMakeFiles/colours.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target colours"
-.PHONY : src/rubik/colours/CMakeFiles/colours.dir/all
+.PHONY : src/rubiks/colours/CMakeFiles/colours.dir/all
 
 # Build rule for subdir invocation for target.
-src/rubik/colours/CMakeFiles/colours.dir/rule: cmake_check_build_system
+src/rubiks/colours/CMakeFiles/colours.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubik/colours/CMakeFiles/colours.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubiks/colours/CMakeFiles/colours.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles 0
-.PHONY : src/rubik/colours/CMakeFiles/colours.dir/rule
+.PHONY : src/rubiks/colours/CMakeFiles/colours.dir/rule
 
 # Convenience name for target.
-colours: src/rubik/colours/CMakeFiles/colours.dir/rule
+colours: src/rubiks/colours/CMakeFiles/colours.dir/rule
 .PHONY : colours
 
 # clean rule for target.
-src/rubik/colours/CMakeFiles/colours.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/rubik/colours/CMakeFiles/colours.dir/build.make src/rubik/colours/CMakeFiles/colours.dir/clean
-.PHONY : src/rubik/colours/CMakeFiles/colours.dir/clean
+src/rubiks/colours/CMakeFiles/colours.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/rubiks/colours/CMakeFiles/colours.dir/build.make src/rubiks/colours/CMakeFiles/colours.dir/clean
+.PHONY : src/rubiks/colours/CMakeFiles/colours.dir/clean
 
 #=============================================================================
-# Target rules for target src/rubik/paths/CMakeFiles/paths.dir
+# Target rules for target src/rubiks/paths/CMakeFiles/paths.dir
 
 # All Build rule for target.
-src/rubik/paths/CMakeFiles/paths.dir/all:
-	$(MAKE) $(MAKESILENT) -f src/rubik/paths/CMakeFiles/paths.dir/build.make src/rubik/paths/CMakeFiles/paths.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/rubik/paths/CMakeFiles/paths.dir/build.make src/rubik/paths/CMakeFiles/paths.dir/build
+src/rubiks/paths/CMakeFiles/paths.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/rubiks/paths/CMakeFiles/paths.dir/build.make src/rubiks/paths/CMakeFiles/paths.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/rubiks/paths/CMakeFiles/paths.dir/build.make src/rubiks/paths/CMakeFiles/paths.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=42,43 "Built target paths"
-.PHONY : src/rubik/paths/CMakeFiles/paths.dir/all
+.PHONY : src/rubiks/paths/CMakeFiles/paths.dir/all
 
 # Build rule for subdir invocation for target.
-src/rubik/paths/CMakeFiles/paths.dir/rule: cmake_check_build_system
+src/rubiks/paths/CMakeFiles/paths.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubik/paths/CMakeFiles/paths.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubiks/paths/CMakeFiles/paths.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles 0
-.PHONY : src/rubik/paths/CMakeFiles/paths.dir/rule
+.PHONY : src/rubiks/paths/CMakeFiles/paths.dir/rule
 
 # Convenience name for target.
-paths: src/rubik/paths/CMakeFiles/paths.dir/rule
+paths: src/rubiks/paths/CMakeFiles/paths.dir/rule
 .PHONY : paths
 
 # clean rule for target.
-src/rubik/paths/CMakeFiles/paths.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/rubik/paths/CMakeFiles/paths.dir/build.make src/rubik/paths/CMakeFiles/paths.dir/clean
-.PHONY : src/rubik/paths/CMakeFiles/paths.dir/clean
+src/rubiks/paths/CMakeFiles/paths.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/rubiks/paths/CMakeFiles/paths.dir/build.make src/rubiks/paths/CMakeFiles/paths.dir/clean
+.PHONY : src/rubiks/paths/CMakeFiles/paths.dir/clean
 
 #=============================================================================
-# Target rules for target src/rubik/paths/tests/CMakeFiles/paths_cpp.dir
+# Target rules for target src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir
 
 # All Build rule for target.
-src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/all: src/rubik/colours/CMakeFiles/colours.dir/all
-src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/all: src/rubik/paths/CMakeFiles/paths.dir/all
-	$(MAKE) $(MAKESILENT) -f src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/build.make src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/build.make src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/build
+src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/all: src/rubiks/colours/CMakeFiles/colours.dir/all
+src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/all: src/rubiks/paths/CMakeFiles/paths.dir/all
+	$(MAKE) $(MAKESILENT) -f src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/build.make src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/build.make src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=44,45 "Built target paths_cpp"
-.PHONY : src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/all
+.PHONY : src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/rule: cmake_check_build_system
+src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles 0
-.PHONY : src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/rule
+.PHONY : src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/rule
 
 # Convenience name for target.
-paths_cpp: src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/rule
+paths_cpp: src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/rule
 .PHONY : paths_cpp
 
 # clean rule for target.
-src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/build.make src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/clean
-.PHONY : src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/clean
+src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/build.make src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/clean
+.PHONY : src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/clean
 
 #=============================================================================
-# Target rules for target src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir
+# Target rules for target src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir
 
 # All Build rule for target.
-src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/all: src/rubik/colours/CMakeFiles/colours.dir/all
-src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/all: src/rubik/paths/CMakeFiles/paths.dir/all
-	$(MAKE) $(MAKESILENT) -f src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/build.make src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/build.make src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/build
+src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/all: src/rubiks/colours/CMakeFiles/colours.dir/all
+src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/all: src/rubiks/paths/CMakeFiles/paths.dir/all
+	$(MAKE) $(MAKESILENT) -f src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/build.make src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/build.make src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=46,47 "Built target shapes_cpp"
-.PHONY : src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/all
+.PHONY : src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/rule: cmake_check_build_system
+src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles 0
-.PHONY : src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/rule
+.PHONY : src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/rule
 
 # Convenience name for target.
-shapes_cpp: src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/rule
+shapes_cpp: src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/rule
 .PHONY : shapes_cpp
 
 # clean rule for target.
-src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/build.make src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/clean
-.PHONY : src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/clean
+src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/build.make src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/clean
+.PHONY : src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/clean
 
 #=============================================================================
-# Target rules for target src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir
+# Target rules for target src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir
 
 # All Build rule for target.
-src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/all: src/rubik/colours/CMakeFiles/colours.dir/all
-src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/all: src/rubik/paths/CMakeFiles/paths.dir/all
-	$(MAKE) $(MAKESILENT) -f src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/build.make src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/build.make src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/build
+src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/all: src/rubiks/colours/CMakeFiles/colours.dir/all
+src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/all: src/rubiks/paths/CMakeFiles/paths.dir/all
+	$(MAKE) $(MAKESILENT) -f src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/build.make src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/build.make src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=50,51 "Built target shufflers_cpp"
-.PHONY : src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/all
+.PHONY : src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/rule: cmake_check_build_system
+src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles 0
-.PHONY : src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/rule
+.PHONY : src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/rule
 
 # Convenience name for target.
-shufflers_cpp: src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/rule
+shufflers_cpp: src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/rule
 .PHONY : shufflers_cpp
 
 # clean rule for target.
-src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/build.make src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/clean
-.PHONY : src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/clean
+src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/build.make src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/clean
+.PHONY : src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/clean
 
 #=============================================================================
-# Target rules for target src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir
+# Target rules for target src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir
 
 # All Build rule for target.
-src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/all: src/version/CMakeFiles/version.dir/all
-src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/all: src/rubik/colours/CMakeFiles/colours.dir/all
-src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/all: src/rubik/paths/CMakeFiles/paths.dir/all
-	$(MAKE) $(MAKESILENT) -f src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build
+src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/all: src/version/CMakeFiles/version.dir/all
+src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/all: src/rubiks/colours/CMakeFiles/colours.dir/all
+src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/all: src/rubiks/paths/CMakeFiles/paths.dir/all
+	$(MAKE) $(MAKESILENT) -f src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=48,49 "Built target shuffler_demo_cpp"
-.PHONY : src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/all
+.PHONY : src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/rule: cmake_check_build_system
+src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles 0
-.PHONY : src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/rule
+.PHONY : src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/rule
 
 # Convenience name for target.
-shuffler_demo_cpp: src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/rule
+shuffler_demo_cpp: src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/rule
 .PHONY : shuffler_demo_cpp
 
 # clean rule for target.
-src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/clean
-.PHONY : src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/clean
+src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/clean
+.PHONY : src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/clean
 
 #=============================================================================
-# Target rules for target src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir
+# Target rules for target src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir
 
 # All Build rule for target.
-src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/all: src/rubik/colours/CMakeFiles/colours.dir/all
-src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/all: src/rubik/paths/CMakeFiles/paths.dir/all
-	$(MAKE) $(MAKESILENT) -f src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/build.make src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/build.make src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/build
+src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/all: src/rubiks/colours/CMakeFiles/colours.dir/all
+src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/all: src/rubiks/paths/CMakeFiles/paths.dir/all
+	$(MAKE) $(MAKESILENT) -f src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/build.make src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/build.make src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=54,55 "Built target solvers_cpp"
-.PHONY : src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/all
+.PHONY : src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/rule: cmake_check_build_system
+src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles 0
-.PHONY : src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/rule
+.PHONY : src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/rule
 
 # Convenience name for target.
-solvers_cpp: src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/rule
+solvers_cpp: src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/rule
 .PHONY : solvers_cpp
 
 # clean rule for target.
-src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/build.make src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/clean
-.PHONY : src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/clean
+src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/build.make src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/clean
+.PHONY : src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/clean
 
 #=============================================================================
-# Target rules for target src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir
+# Target rules for target src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir
 
 # All Build rule for target.
-src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/all: src/version/CMakeFiles/version.dir/all
-src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/all: src/rubik/colours/CMakeFiles/colours.dir/all
-src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/all: src/rubik/paths/CMakeFiles/paths.dir/all
-	$(MAKE) $(MAKESILENT) -f src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build.make src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build.make src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build
+src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/all: src/version/CMakeFiles/version.dir/all
+src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/all: src/rubiks/colours/CMakeFiles/colours.dir/all
+src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/all: src/rubiks/paths/CMakeFiles/paths.dir/all
+	$(MAKE) $(MAKESILENT) -f src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build.make src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build.make src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles --progress-num=52,53 "Built target solver_demo_cpp"
-.PHONY : src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/all
+.PHONY : src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/all
 
 # Build rule for subdir invocation for target.
-src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/rule: cmake_check_build_system
+src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles 9
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/oliver/ClionProjects/testing/cmake-build-debug/CMakeFiles 0
-.PHONY : src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/rule
+.PHONY : src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/rule
 
 # Convenience name for target.
-solver_demo_cpp: src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/rule
+solver_demo_cpp: src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/rule
 .PHONY : solver_demo_cpp
 
 # clean rule for target.
-src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build.make src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/clean
-.PHONY : src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/clean
+src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build.make src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/clean
+.PHONY : src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/clean
 
 #=============================================================================
 # Target rules for target misc/CMakeFiles/misc.dir

@@ -84,6 +84,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/oliver/ClionProjects/testing/cmake-build-release/src/rubik/cmake_install.cmake")
+  include("/Users/oliver/ClionProjects/testing/cmake-build-release/src/rubiks/cmake_install.cmake")
 endif()
 

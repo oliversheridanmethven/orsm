@@ -55,7 +55,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   if(EXISTS "$ENV{DESTDIR}/Users/oliver/ClionProjects/testing/src/version/version_bindings.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/Users/oliver/ClionProjects/testing/src/version/version_bindings.so")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/opt/local/bin/strip" -x "$ENV{DESTDIR}/Users/oliver/ClionProjects/testing/src/version/version_bindings.so")
+      execute_process(COMMAND "/usr/local/opt/llvm/bin/llvm-strip" -x "$ENV{DESTDIR}/Users/oliver/ClionProjects/testing/src/version/version_bindings.so")
     endif()
   endif()
 endif()

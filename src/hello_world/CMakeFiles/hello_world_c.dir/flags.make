@@ -4,7 +4,7 @@
 # compile C with /opt/local/bin/clang-mp-16
 C_DEFINES = 
 
-C_INCLUDES = -isystem /Library/Frameworks/Python.framework/Versions/3.11/include/python3.11 -isystem /usr/local/include
+C_INCLUDES = -isystem /Library/Frameworks/Python.framework/Versions/3.11/include/python3.11
 
 C_FLAGS =  -Wall -Wextra -Werror -Wattributes -Wunused-result -Wpedantic -pedantic -Wreserved-identifier -Wno-int-conversion -Wno-missing-field-initializers -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-incompatible-pointer-types -std=c2x -g -mmacosx-version-min=12.6 -fcolor-diagnostics -std=c2x
 

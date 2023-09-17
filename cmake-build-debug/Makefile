@@ -480,7 +480,7 @@ colours: cmake_check_build_system
 
 # fast build rule for target.
 colours/fast:
-	$(MAKE) $(MAKESILENT) -f src/rubik/colours/CMakeFiles/colours.dir/build.make src/rubik/colours/CMakeFiles/colours.dir/build
+	$(MAKE) $(MAKESILENT) -f src/rubiks/colours/CMakeFiles/colours.dir/build.make src/rubiks/colours/CMakeFiles/colours.dir/build
 .PHONY : colours/fast
 
 #=============================================================================
@@ -493,7 +493,7 @@ paths: cmake_check_build_system
 
 # fast build rule for target.
 paths/fast:
-	$(MAKE) $(MAKESILENT) -f src/rubik/paths/CMakeFiles/paths.dir/build.make src/rubik/paths/CMakeFiles/paths.dir/build
+	$(MAKE) $(MAKESILENT) -f src/rubiks/paths/CMakeFiles/paths.dir/build.make src/rubiks/paths/CMakeFiles/paths.dir/build
 .PHONY : paths/fast
 
 #=============================================================================
@@ -506,7 +506,7 @@ paths_cpp: cmake_check_build_system
 
 # fast build rule for target.
 paths_cpp/fast:
-	$(MAKE) $(MAKESILENT) -f src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/build.make src/rubik/paths/tests/CMakeFiles/paths_cpp.dir/build
+	$(MAKE) $(MAKESILENT) -f src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/build.make src/rubiks/paths/tests/CMakeFiles/paths_cpp.dir/build
 .PHONY : paths_cpp/fast
 
 #=============================================================================
@@ -519,7 +519,7 @@ shapes_cpp: cmake_check_build_system
 
 # fast build rule for target.
 shapes_cpp/fast:
-	$(MAKE) $(MAKESILENT) -f src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/build.make src/rubik/shapes/tests/CMakeFiles/shapes_cpp.dir/build
+	$(MAKE) $(MAKESILENT) -f src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/build.make src/rubiks/shapes/tests/CMakeFiles/shapes_cpp.dir/build
 .PHONY : shapes_cpp/fast
 
 #=============================================================================
@@ -532,7 +532,7 @@ shufflers_cpp: cmake_check_build_system
 
 # fast build rule for target.
 shufflers_cpp/fast:
-	$(MAKE) $(MAKESILENT) -f src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/build.make src/rubik/shufflers/tests/CMakeFiles/shufflers_cpp.dir/build
+	$(MAKE) $(MAKESILENT) -f src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/build.make src/rubiks/shufflers/tests/CMakeFiles/shufflers_cpp.dir/build
 .PHONY : shufflers_cpp/fast
 
 #=============================================================================
@@ -545,7 +545,7 @@ shuffler_demo_cpp: cmake_check_build_system
 
 # fast build rule for target.
 shuffler_demo_cpp/fast:
-	$(MAKE) $(MAKESILENT) -f src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make src/rubik/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build
+	$(MAKE) $(MAKESILENT) -f src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build.make src/rubiks/shufflers/demos/CMakeFiles/shuffler_demo_cpp.dir/build
 .PHONY : shuffler_demo_cpp/fast
 
 #=============================================================================
@@ -558,7 +558,7 @@ solvers_cpp: cmake_check_build_system
 
 # fast build rule for target.
 solvers_cpp/fast:
-	$(MAKE) $(MAKESILENT) -f src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/build.make src/rubik/solvers/tests/CMakeFiles/solvers_cpp.dir/build
+	$(MAKE) $(MAKESILENT) -f src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/build.make src/rubiks/solvers/tests/CMakeFiles/solvers_cpp.dir/build
 .PHONY : solvers_cpp/fast
 
 #=============================================================================
@@ -571,7 +571,7 @@ solver_demo_cpp: cmake_check_build_system
 
 # fast build rule for target.
 solver_demo_cpp/fast:
-	$(MAKE) $(MAKESILENT) -f src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build.make src/rubik/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build
+	$(MAKE) $(MAKESILENT) -f src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build.make src/rubiks/solvers/demos/CMakeFiles/solver_demo_cpp.dir/build
 .PHONY : solver_demo_cpp/fast
 
 #=============================================================================

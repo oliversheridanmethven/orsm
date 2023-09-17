@@ -1,0 +1,832 @@
+Start testing: Sep 12 12:01 CEST
+----------------------------------------------------------
+6/32 Testing: basic_python
+6/32 Test: basic_python
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/testing/tests/basic_python.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/testing/tests
+"basic_python" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK
+<end of output>
+Test time =   0.22 sec
+----------------------------------------------------------
+Test Passed.
+"basic_python" end time: Sep 12 12:01 CEST
+"basic_python" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/32 Testing: basic_python_again
+7/32 Test: basic_python_again
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/testing/tests/basic_python_again.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/testing/tests
+"basic_python_again" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.004s
+
+OK
+<end of output>
+Test time =   0.22 sec
+----------------------------------------------------------
+Test Passed.
+"basic_python_again" end time: Sep 12 12:01 CEST
+"basic_python_again" time elapsed: 00:00:00
+----------------------------------------------------------
+
+1/32 Testing: hello_world_test
+1/32 Test: hello_world_test
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/hello_world/tests/hello_world_test"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/hello_world/tests
+"hello_world_test" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/googletest-20230817-4868-3xc7f8/googletest-1.14.0/googletest/src/gtest_main.cc
+[==========] Running 0 tests from 0 test suites.
+[==========] 0 tests from 0 test suites ran. (0 ms total)
+[  PASSED  ] 0 tests.
+<end of output>
+Test time =   0.27 sec
+----------------------------------------------------------
+Test Passed.
+"hello_world_test" end time: Sep 12 12:01 CEST
+"hello_world_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/32 Testing: binding_import
+4/32 Test: binding_import
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/binding/tests/binding_import.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/binding/tests
+"binding_import" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+.['/Users/oliver/ClionProjects/testing/src/binding/tests', '/Users/oliver/ClionProjects/testing/src', '/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/binding/tests', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python311.zip', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload', '/Users/oliver/ClionProjects/testing/venv/lib/python3.11/site-packages']
+We are fatally failing now.
+Hello world from within C.
+The input values are: a = 1 and b = foo
+.A non-fatal error from C in our Python binding.
+.
+----------------------------------------------------------------------
+Ran 3 tests in 0.023s
+
+OK
+We were successfully able to catch an exception: Raising a non-fatal error from C in our Python binding up to Python.
+
+Hello world from within C.
+The input values are: a = 1 and b = foo
+<end of output>
+Test time =   0.29 sec
+----------------------------------------------------------
+Test Passed.
+"binding_import" end time: Sep 12 12:01 CEST
+"binding_import" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/32 Testing: hello_world_test_cpp
+2/32 Test: hello_world_test_cpp
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/hello_world/tests/hello_world_test_cpp"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/hello_world/tests
+"hello_world_test_cpp" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/googletest-20230817-4868-3xc7f8/googletest-1.14.0/googletest/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CaptureStdOut
+[ RUN      ] CaptureStdOut.hello_world_to_stdout
+[       OK ] CaptureStdOut.hello_world_to_stdout (0 ms)
+[----------] 1 test from CaptureStdOut (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.42 sec
+----------------------------------------------------------
+Test Passed.
+"hello_world_test_cpp" end time: Sep 12 12:01 CEST
+"hello_world_test_cpp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/32 Testing: error_codes
+3/32 Test: error_codes
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/error_codes/tests/_error_codes"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/error_codes/tests
+"error_codes" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/googletest-20230817-4868-3xc7f8/googletest-1.14.0/googletest/src/gtest_main.cc
+[==========] Running 0 tests from 0 test suites.
+[==========] 0 tests from 0 test suites ran. (0 ms total)
+[  PASSED  ] 0 tests.
+<end of output>
+Test time =   0.62 sec
+----------------------------------------------------------
+Test Passed.
+"error_codes" end time: Sep 12 12:01 CEST
+"error_codes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/32 Testing: version_bindings
+12/32 Test: version_bindings
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/version/tests/version_bindings.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/version/tests
+"version_bindings" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.006s
+
+OK
+<end of output>
+Test time =   0.25 sec
+----------------------------------------------------------
+Test Passed.
+"version_bindings" end time: Sep 12 12:01 CEST
+"version_bindings" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/32 Testing: example
+5/32 Test: example
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/testing/tests/example"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/testing/tests
+"example" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/googletest-20230817-4868-3xc7f8/googletest-1.14.0/googletest/src/gtest_main.cc
+[==========] Running 0 tests from 0 test suites.
+[==========] 0 tests from 0 test suites ran. (0 ms total)
+[  PASSED  ] 0 tests.
+<end of output>
+Test time =   0.78 sec
+----------------------------------------------------------
+Test Passed.
+"example" end time: Sep 12 12:01 CEST
+"example" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/32 Testing: example_cpp
+8/32 Test: example_cpp
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/testing/tests/example_cpp"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/testing/tests
+"example_cpp" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/googletest-20230817-4868-3xc7f8/googletest-1.14.0/googletest/src/gtest_main.cc
+[==========] Running 4 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 3 tests from example
+[ RUN      ] example.test_failure
+/Users/oliver/ClionProjects/testing/src/testing/tests/example.cpp:7: Skipped
+
+
+[  SKIPPED ] example.test_failure (0 ms)
+[ RUN      ] example.test_expect
+[       OK ] example.test_expect (0 ms)
+[ RUN      ] example.test_fail
+[       OK ] example.test_fail (0 ms)
+[----------] 3 tests from example (0 ms total)
+
+[----------] 1 test from logging
+[ RUN      ] logging.test_exit
+[       OK ] logging.test_exit (5 ms)
+[----------] 1 test from logging (5 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 2 test suites ran. (5 ms total)
+[  PASSED  ] 3 tests.
+[  SKIPPED ] 1 test, listed below:
+[  SKIPPED ] example.test_failure
+<end of output>
+Test time =   0.73 sec
+----------------------------------------------------------
+Test Passed.
+"example_cpp" end time: Sep 12 12:01 CEST
+"example_cpp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/32 Testing: arguments
+15/32 Test: arguments
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/arguments.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/common/tests
+"arguments" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.037s
+
+OK
+['/Users/oliver/ClionProjects/testing/src/common/tests', '/Users/oliver/ClionProjects/testing/src', '/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/common/tests', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python311.zip', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload', '/Users/oliver/ClionProjects/testing/venv/lib/python3.11/site-packages']
+<end of output>
+Test time =   0.20 sec
+----------------------------------------------------------
+Test Passed.
+"arguments" end time: Sep 12 12:01 CEST
+"arguments" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/32 Testing: logging_test
+9/32 Test: logging_test
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/logging/tests/logging_test"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/logging/tests
+"logging_test" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/googletest-20230817-4868-3xc7f8/googletest-1.14.0/googletest/src/gtest_main.cc
+[==========] Running 0 tests from 0 test suites.
+[==========] 0 tests from 0 test suites ran. (0 ms total)
+[  PASSED  ] 0 tests.
+<end of output>
+Test time =   0.93 sec
+----------------------------------------------------------
+Test Passed.
+"logging_test" end time: Sep 12 12:01 CEST
+"logging_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/32 Testing: cli_print_logs
+16/32 Test: cli_print_logs
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/cli_print_logs.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/common/tests
+"cli_print_logs" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+A message from print
+[2023-09-12 12:01:21,166]: WARNING: (/Users/oliver/ClionProjects/testing/src/common/tests/cli_print_logs.py:13) A message from warning
+[2023-09-12 12:01:21,178]: ERROR: (/Users/oliver/ClionProjects/testing/src/common/tests/cli_print_logs.py:13) A message from error
+[2023-09-12 12:01:21,189]: CRITICAL:  (/Users/oliver/ClionProjects/testing/src/common/tests/cli_print_logs.py:13) A message from critical
+<end of output>
+Test time =   0.29 sec
+----------------------------------------------------------
+Test Passed.
+"cli_print_logs" end time: Sep 12 12:01 CEST
+"cli_print_logs" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/32 Testing: logging_test_cpp
+10/32 Test: logging_test_cpp
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/logging/tests/logging_test_cpp"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/logging/tests
+"logging_test_cpp" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/googletest-20230817-4868-3xc7f8/googletest-1.14.0/googletest/src/gtest_main.cc
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from logging
+[ RUN      ] logging.minimal_strings
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+W20230912 12:01:21.277895 9445934 logging.cpp:7] some warning
+[       OK ] logging.minimal_strings (2 ms)
+[ RUN      ] logging.variable_args
+[       OK ] logging.variable_args (0 ms)
+[ RUN      ] logging.error_fails
+E20230912 12:01:21.279459 9445934 logging.cpp:15] some error
+[       OK ] logging.error_fails (0 ms)
+[----------] 3 tests from logging (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (2 ms total)
+[  PASSED  ] 3 tests.
+<end of output>
+Test time =   1.04 sec
+----------------------------------------------------------
+Test Passed.
+"logging_test_cpp" end time: Sep 12 12:01 CEST
+"logging_test_cpp" time elapsed: 00:00:01
+----------------------------------------------------------
+
+18/32 Testing: output
+18/32 Test: output
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/output.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/common/tests
+"output" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.013s
+
+OK
+<end of output>
+Test time =   0.16 sec
+----------------------------------------------------------
+Test Passed.
+"output" end time: Sep 12 12:01 CEST
+"output" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/32 Testing: output_suppressor_c_extension
+19/32 Test: output_suppressor_c_extension
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/output_suppressor_c_extension.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/common/tests
+"output_suppressor_c_extension" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Hello world from within C.
+<end of output>
+Test time =   0.11 sec
+----------------------------------------------------------
+Test Passed.
+"output_suppressor_c_extension" end time: Sep 12 12:01 CEST
+"output_suppressor_c_extension" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/32 Testing: variables
+21/32 Test: variables
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/variables.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/common/tests
+"variables" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"variables" end time: Sep 12 12:01 CEST
+"variables" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/32 Testing: output_suppression
+22/32 Test: output_suppression
+Command: "/Users/oliver/ClionProjects/testing/src/common/tests/output_suppressor_c_extension.sh" "/Users/oliver/ClionProjects/testing/src/common/tests/output_suppressor_c_extension.py" "--suppress_output"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/common/tests
+"output_suppression" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Testing suppression:
+script: /Users/oliver/ClionProjects/testing/src/common/tests/output_suppressor_c_extension.py
+args: --suppress_output
+The suppressor worked and no output was detected. Output = ""
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"output_suppression" end time: Sep 12 12:01 CEST
+"output_suppression" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/32 Testing: version_test
+11/32 Test: version_test
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/version/tests/version_example"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/version/tests
+"version_test" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/googletest-20230817-4868-3xc7f8/googletest-1.14.0/googletest/src/gtest_main.cc
+[==========] Running 0 tests from 0 test suites.
+[==========] 0 tests from 0 test suites ran. (0 ms total)
+[  PASSED  ] 0 tests.
+<end of output>
+Test time =   1.22 sec
+----------------------------------------------------------
+Test Passed.
+"version_test" end time: Sep 12 12:01 CEST
+"version_test" time elapsed: 00:00:01
+----------------------------------------------------------
+
+13/32 Testing: cli_arguments_0
+13/32 Test: cli_arguments_0
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/cli/tests/cli_arguments_0"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/cli/tests
+"cli_arguments_0" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/googletest-20230817-4868-3xc7f8/googletest-1.14.0/googletest/src/gtest_main.cc
+[==========] Running 0 tests from 0 test suites.
+[==========] 0 tests from 0 test suites ran. (0 ms total)
+[  PASSED  ] 0 tests.
+<end of output>
+Test time =   1.09 sec
+----------------------------------------------------------
+Test Passed.
+"cli_arguments_0" end time: Sep 12 12:01 CEST
+"cli_arguments_0" time elapsed: 00:00:01
+----------------------------------------------------------
+
+14/32 Testing: cli_arguments_version
+14/32 Test: cli_arguments_version
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/cli/tests/cli_arguments_version"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/cli/tests
+"cli_arguments_version" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/googletest-20230817-4868-3xc7f8/googletest-1.14.0/googletest/src/gtest_main.cc
+[==========] Running 0 tests from 0 test suites.
+[==========] 0 tests from 0 test suites ran. (0 ms total)
+[  PASSED  ] 0 tests.
+<end of output>
+Test time =   1.19 sec
+----------------------------------------------------------
+Test Passed.
+"cli_arguments_version" end time: Sep 12 12:01 CEST
+"cli_arguments_version" time elapsed: 00:00:01
+----------------------------------------------------------
+
+23/32 Testing: suppressor
+23/32 Test: suppressor
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/common/suppressor/tests/_suppressor"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/common/suppressor/tests
+"suppressor" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/googletest-20230817-4868-3xc7f8/googletest-1.14.0/googletest/src/gtest_main.cc
+[==========] Running 0 tests from 0 test suites.
+[==========] 0 tests from 0 test suites ran. (0 ms total)
+[  PASSED  ] 0 tests.
+<end of output>
+Test time =   0.55 sec
+----------------------------------------------------------
+Test Passed.
+"suppressor" end time: Sep 12 12:01 CEST
+"suppressor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/32 Testing: paths_cpp
+26/32 Test: paths_cpp
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/rubik/paths/tests/paths_cpp"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/rubik/paths/tests
+"paths_cpp" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/googletest-20230817-4868-3xc7f8/googletest-1.14.0/googletest/src/gtest_main.cc
+[==========] Running 4 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 2 tests from CaptureStdOut
+[ RUN      ] CaptureStdOut.printing_empty
+[       OK ] CaptureStdOut.printing_empty (0 ms)
+[ RUN      ] CaptureStdOut.printing_nonempty
+[       OK ] CaptureStdOut.printing_nonempty (0 ms)
+[----------] 2 tests from CaptureStdOut (0 ms total)
+
+[----------] 2 tests from Path
+[ RUN      ] Path.add
+[       OK ] Path.add (0 ms)
+[ RUN      ] Path.reversing_moves
+[       OK ] Path.reversing_moves (4 ms)
+[----------] 2 tests from Path (4 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 2 test suites ran. (4 ms total)
+[  PASSED  ] 4 tests.
+<end of output>
+Test time =   0.72 sec
+----------------------------------------------------------
+Test Passed.
+"paths_cpp" end time: Sep 12 12:01 CEST
+"paths_cpp" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/32 Testing: images
+24/32 Test: images
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/media/tests/images.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/media/tests
+"images" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.825s
+
+OK
+<end of output>
+Test time =   1.44 sec
+----------------------------------------------------------
+Test Passed.
+"images" end time: Sep 12 12:01 CEST
+"images" time elapsed: 00:00:01
+----------------------------------------------------------
+
+17/32 Testing: logger
+17/32 Test: logger
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/logger.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/common/tests
+"logger" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+......
+----------------------------------------------------------------------
+Ran 6 tests in 2.621s
+
+OK
+<end of output>
+Test time =   2.95 sec
+----------------------------------------------------------
+Test Passed.
+"logger" end time: Sep 12 12:01 CEST
+"logger" time elapsed: 00:00:02
+----------------------------------------------------------
+
+28/32 Testing: shapes_cpp
+28/32 Test: shapes_cpp
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/rubik/shapes/tests/shapes_cpp"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/rubik/shapes/tests
+"shapes_cpp" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/googletest-20230817-4868-3xc7f8/googletest-1.14.0/googletest/src/gtest_main.cc
+[==========] Running 30 tests from 4 test suites.
+[----------] Global test environment set-up.
+[----------] 14 tests from ShapeTest/0, where TypeParam = Volume
+[ RUN      ] ShapeTest/0.printing
+[       OK ] ShapeTest/0.printing (0 ms)
+[ RUN      ] ShapeTest/0.equality
+[       OK ] ShapeTest/0.equality (0 ms)
+[ RUN      ] ShapeTest/0.hashing
+[       OK ] ShapeTest/0.hashing (0 ms)
+[ RUN      ] ShapeTest/0.after_move
+[       OK ] ShapeTest/0.after_move (0 ms)
+[ RUN      ] ShapeTest/0.moves_equality
+[       OK ] ShapeTest/0.moves_equality (0 ms)
+[ RUN      ] ShapeTest/0.single_moves
+[       OK ] ShapeTest/0.single_moves (0 ms)
+[ RUN      ] ShapeTest/0.reverse_moves
+[       OK ] ShapeTest/0.reverse_moves (0 ms)
+[ RUN      ] ShapeTest/0.compound_moves
+[       OK ] ShapeTest/0.compound_moves (6 ms)
+[ RUN      ] ShapeTest/0.multiple_moves
+[       OK ] ShapeTest/0.multiple_moves (4 ms)
+[ RUN      ] ShapeTest/0.double_moves
+[       OK ] ShapeTest/0.double_moves (15 ms)
+[ RUN      ] ShapeTest/0.rotational_symmetry
+[       OK ] ShapeTest/0.rotational_symmetry (1 ms)
+[ RUN      ] ShapeTest/0.shuffle
+[       OK ] ShapeTest/0.shuffle (2 ms)
+[ RUN      ] ShapeTest/0.shuffle_seeding
+[       OK ] ShapeTest/0.shuffle_seeding (3 ms)
+[ RUN      ] ShapeTest/0.cleaning_path
+[       OK ] ShapeTest/0.cleaning_path (10 ms)
+[----------] 14 tests from ShapeTest/0 (46 ms total)
+
+[----------] 14 tests from ShapeTest/1, where TypeParam = Cube
+[ RUN      ] ShapeTest/1.printing
+[       OK ] ShapeTest/1.printing (0 ms)
+[ RUN      ] ShapeTest/1.equality
+[       OK ] ShapeTest/1.equality (0 ms)
+[ RUN      ] ShapeTest/1.hashing
+[       OK ] ShapeTest/1.hashing (0 ms)
+[ RUN      ] ShapeTest/1.after_move
+[       OK ] ShapeTest/1.after_move (0 ms)
+[ RUN      ] ShapeTest/1.moves_equality
+[       OK ] ShapeTest/1.moves_equality (0 ms)
+[ RUN      ] ShapeTest/1.single_moves
+[       OK ] ShapeTest/1.single_moves (0 ms)
+[ RUN      ] ShapeTest/1.reverse_moves
+[       OK ] ShapeTest/1.reverse_moves (2 ms)
+[ RUN      ] ShapeTest/1.compound_moves
+[       OK ] ShapeTest/1.compound_moves (228 ms)
+[ RUN      ] ShapeTest/1.multiple_moves
+[       OK ] ShapeTest/1.multiple_moves (281 ms)
+[ RUN      ] ShapeTest/1.double_moves
+[       OK ] ShapeTest/1.double_moves (1021 ms)
+[ RUN      ] ShapeTest/1.rotational_symmetry
+[       OK ] ShapeTest/1.rotational_symmetry (17 ms)
+[ RUN      ] ShapeTest/1.shuffle
+[       OK ] ShapeTest/1.shuffle (12 ms)
+[ RUN      ] ShapeTest/1.shuffle_seeding
+[       OK ] ShapeTest/1.shuffle_seeding (14 ms)
+[ RUN      ] ShapeTest/1.cleaning_path
+[       OK ] ShapeTest/1.cleaning_path (37 ms)
+[----------] 14 tests from ShapeTest/1 (1615 ms total)
+
+[----------] 1 test from ShapeTestPrivate/0, where TypeParam = Volume
+[ RUN      ] ShapeTestPrivate/0.invariant_positions
+[       OK ] ShapeTestPrivate/0.invariant_positions (1 ms)
+[----------] 1 test from ShapeTestPrivate/0 (1 ms total)
+
+[----------] 1 test from ShapeTestPrivate/1, where TypeParam = Cube
+[ RUN      ] ShapeTestPrivate/1.invariant_positions
+[       OK ] ShapeTestPrivate/1.invariant_positions (7 ms)
+[----------] 1 test from ShapeTestPrivate/1 (7 ms total)
+
+[----------] Global test environment tear-down
+[==========] 30 tests from 4 test suites ran. (1671 ms total)
+[  PASSED  ] 30 tests.
+<end of output>
+Test time =   2.23 sec
+----------------------------------------------------------
+Test Passed.
+"shapes_cpp" end time: Sep 12 12:01 CEST
+"shapes_cpp" time elapsed: 00:00:02
+----------------------------------------------------------
+
+20/32 Testing: timing
+20/32 Test: timing
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/common/tests/timing.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/common/tests
+"timing" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+......
+----------------------------------------------------------------------
+Ran 6 tests in 2.851s
+
+OK
+['/Users/oliver/ClionProjects/testing/src/common/tests', '/Users/oliver/ClionProjects/testing/src', '/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/common/tests', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python311.zip', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload', '/Users/oliver/ClionProjects/testing/venv/lib/python3.11/site-packages']
+['/Users/oliver/ClionProjects/testing/src/common/tests', '/Users/oliver/ClionProjects/testing/src', '/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/common/tests', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python311.zip', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11', '/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/lib-dynload', '/Users/oliver/ClionProjects/testing/venv/lib/python3.11/site-packages']
+The function sleep test took 0.9087128639221191 seconds over 3 iterations, averaging 0.30290428797403973 seconds per function call.
+The function sleep test took 0.9043002128601074 seconds over 3 iterations, averaging 0.30143340428670246 seconds per function call.
+<end of output>
+Test time =   3.05 sec
+----------------------------------------------------------
+Test Passed.
+"timing" end time: Sep 12 12:01 CEST
+"timing" time elapsed: 00:00:03
+----------------------------------------------------------
+
+30/32 Testing: shufflers_cpp
+30/32 Test: shufflers_cpp
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/rubik/shufflers/tests/shufflers_cpp"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/rubik/shufflers/tests
+"shufflers_cpp" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/googletest-20230817-4868-3xc7f8/googletest-1.14.0/googletest/src/gtest_main.cc
+[==========] Running 10 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 5 tests from ShapeShufflerTest/0, where TypeParam = Volume
+[ RUN      ] ShapeShufflerTest/0.trivial_difficulty
+[       OK ] ShapeShufflerTest/0.trivial_difficulty (0 ms)
+[ RUN      ] ShapeShufflerTest/0.easy_difficulty
+[       OK ] ShapeShufflerTest/0.easy_difficulty (0 ms)
+[ RUN      ] ShapeShufflerTest/0.moderate_difficulty
+[       OK ] ShapeShufflerTest/0.moderate_difficulty (30 ms)
+[ RUN      ] ShapeShufflerTest/0.infeasible_moderate_difficulty
+/Users/oliver/ClionProjects/testing/src/rubik/shufflers/tests/shufflers.cpp:44: Skipped
+
+
+[  SKIPPED ] ShapeShufflerTest/0.infeasible_moderate_difficulty (0 ms)
+[ RUN      ] ShapeShufflerTest/0.moderate_god_shuffle
+/Users/oliver/ClionProjects/testing/src/rubik/shufflers/tests/shufflers.cpp:53: Skipped
+
+
+[  SKIPPED ] ShapeShufflerTest/0.moderate_god_shuffle (0 ms)
+[----------] 5 tests from ShapeShufflerTest/0 (31 ms total)
+
+[----------] 5 tests from ShapeShufflerTest/1, where TypeParam = Cube
+[ RUN      ] ShapeShufflerTest/1.trivial_difficulty
+[       OK ] ShapeShufflerTest/1.trivial_difficulty (0 ms)
+[ RUN      ] ShapeShufflerTest/1.easy_difficulty
+[       OK ] ShapeShufflerTest/1.easy_difficulty (5 ms)
+[ RUN      ] ShapeShufflerTest/1.moderate_difficulty
+[       OK ] ShapeShufflerTest/1.moderate_difficulty (4889 ms)
+[ RUN      ] ShapeShufflerTest/1.infeasible_moderate_difficulty
+/Users/oliver/ClionProjects/testing/src/rubik/shufflers/tests/shufflers.cpp:44: Skipped
+
+
+[  SKIPPED ] ShapeShufflerTest/1.infeasible_moderate_difficulty (0 ms)
+[ RUN      ] ShapeShufflerTest/1.moderate_god_shuffle
+/Users/oliver/ClionProjects/testing/src/rubik/shufflers/tests/shufflers.cpp:53: Skipped
+
+
+[  SKIPPED ] ShapeShufflerTest/1.moderate_god_shuffle (0 ms)
+[----------] 5 tests from ShapeShufflerTest/1 (4895 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 2 test suites ran. (4926 ms total)
+[  PASSED  ] 6 tests.
+[  SKIPPED ] 4 tests, listed below:
+[  SKIPPED ] ShapeShufflerTest/0.infeasible_moderate_difficulty
+[  SKIPPED ] ShapeShufflerTest/0.moderate_god_shuffle
+[  SKIPPED ] ShapeShufflerTest/1.infeasible_moderate_difficulty
+[  SKIPPED ] ShapeShufflerTest/1.moderate_god_shuffle
+<end of output>
+Test time =   5.32 sec
+----------------------------------------------------------
+Test Passed.
+"shufflers_cpp" end time: Sep 12 12:01 CEST
+"shufflers_cpp" time elapsed: 00:00:05
+----------------------------------------------------------
+
+32/32 Testing: solvers_cpp
+32/32 Test: solvers_cpp
+Command: "/Users/oliver/ClionProjects/testing/cmake-build-release-2/src/rubik/solvers/tests/solvers_cpp"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/rubik/solvers/tests
+"solvers_cpp" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+Running main() from /tmp/googletest-20230817-4868-3xc7f8/googletest-1.14.0/googletest/src/gtest_main.cc
+[==========] Running 4 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 2 tests from ShapeSolverTest/0, where TypeParam = Volume
+[ RUN      ] ShapeSolverTest/0.solver
+[       OK ] ShapeSolverTest/0.solver (3 ms)
+[ RUN      ] ShapeSolverTest/0.specific_difficulty
+[       OK ] ShapeSolverTest/0.specific_difficulty (34 ms)
+[----------] 2 tests from ShapeSolverTest/0 (38 ms total)
+
+[----------] 2 tests from ShapeSolverTest/1, where TypeParam = Cube
+[ RUN      ] ShapeSolverTest/1.solver
+[       OK ] ShapeSolverTest/1.solver (42 ms)
+[ RUN      ] ShapeSolverTest/1.specific_difficulty
+[       OK ] ShapeSolverTest/1.specific_difficulty (4574 ms)
+[----------] 2 tests from ShapeSolverTest/1 (4617 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 2 test suites ran. (4655 ms total)
+[  PASSED  ] 4 tests.
+<end of output>
+Test time =   4.91 sec
+----------------------------------------------------------
+Test Passed.
+"solvers_cpp" end time: Sep 12 12:01 CEST
+"solvers_cpp" time elapsed: 00:00:04
+----------------------------------------------------------
+
+29/32 Testing: shufflers
+29/32 Test: shufflers
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/rubik/shufflers/tests/shufflers.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/rubik/shufflers/tests
+"shufflers" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                     .  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                     .  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/54 [00:00<?, ?it/s] 30%|██▉       | 16/54 [00:00<00:00, 157.87it/s] 59%|█████▉    | 32/54 [00:00<00:00, 140.93it/s] 91%|█████████ | 49/54 [00:00<00:00, 148.36it/s]                                                  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/54 [00:00<?, ?it/s] 20%|██        | 11/54 [00:00<00:00, 105.29it/s] 56%|█████▌    | 30/54 [00:00<00:00, 150.97it/s] 85%|████████▌ | 46/54 [00:00<00:00, 150.09it/s]                                                  0%|          | 0/321 [00:00<?, ?it/s]  5%|▍         | 15/321 [00:00<00:02, 140.86it/s] 10%|▉         | 32/321 [00:00<00:01, 151.87it/s] 15%|█▍        | 48/321 [00:00<00:01, 154.49it/s] 21%|██        | 66/321 [00:00<00:01, 163.69it/s] 26%|██▌       | 83/321 [00:00<00:01, 140.88it/s] 31%|███       | 100/321 [00:00<00:01, 149.19it/s] 37%|███▋      | 118/321 [00:00<00:01, 157.95it/s] 43%|████▎     | 138/321 [00:00<00:01, 169.84it/s] 49%|████▊     | 156/321 [00:00<00:00, 171.64it/s] 54%|█████▍    | 174/321 [00:01<00:00, 168.26it/s] 60%|█████▉    | 191/321 [00:01<00:00, 167.62it/s] 65%|██████▌   | 209/321 [00:01<00:00, 147.03it/s] 71%|███████▏  | 229/321 [00:01<00:00, 159.68it/s] 77%|███████▋  | 246/321 [00:01<00:00, 156.03it/s] 82%|████████▏ | 263/321 [00:01<00:00, 157.58it/s] 88%|████████▊ | 281/321 [00:01<00:00, 162.55it/s] 93%|█████████▎| 298/321 [00:01<00:00, 161.22it/s] 98%|█████████▊| 315/321 [00:02<00:00, 147.29it/s]                                                    0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/27 [00:00<?, ?it/s] 33%|███▎      | 9/27 [00:00<00:00, 73.97it/s] 63%|██████▎   | 17/27 [00:00<00:00, 75.66it/s] 96%|█████████▋| 26/27 [00:00<00:00, 80.50it/s]                                                 0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/27 [00:00<?, ?it/s] 33%|███▎      | 9/27 [00:00<00:00, 81.02it/s] 67%|██████▋   | 18/27 [00:00<00:00, 82.47it/s]100%|██████████| 27/27 [00:00<00:00, 85.20it/s]                                                 0%|          | 0/501 [00:00<?, ?it/s]  2%|▏         | 9/501 [00:00<00:05, 89.09it/s]  4%|▎         | 18/501 [00:00<00:05, 80.57it/s]  6%|▌         | 28/501 [00:00<00:05, 87.45it/s]  8%|▊         | 38/501 [00:00<00:05, 89.85it/s] 10%|▉         | 48/501 [00:00<00:05, 90.08it/s] 12%|█▏        | 58/501 [00:00<00:04, 92.81it/s] 14%|█▎        | 68/501 [00:00<00:05, 85.10it/s] 16%|█▌        | 78/501 [00:00<00:04, 89.10it/s] 18%|█▊        | 88/501 [00:00<00:04, 91.00it/s] 20%|█▉        | 98/501 [00:01<00:04, 93.24it/s] 22%|██▏       | 108/501 [00:01<00:04, 94.36it/s] 24%|██▎       | 118/501 [00:01<00:04, 85.35it/s] 26%|██▌       | 128/501 [00:01<00:04, 87.63it/s] 28%|██▊       | 138/501 [00:01<00:04, 88.94it/s] 30%|██▉       | 148/501 [00:01<00:04, 87.34it/s] 32%|███▏      | 158/501 [00:01<00:03, 89.34it/s] 34%|███▎      | 168/501 [00:01<00:04, 79.22it/s] 36%|███▌      | 178/501 [00:02<00:03, 84.30it/s] 38%|███▊      | 189/501 [00:02<00:03, 89.08it/s] 40%|███▉      | 200/501 [00:02<00:03, 92.37it/s] 42%|████▏     | 210/501 [00:02<00:03, 78.72it/s] 44%|████▍     | 220/501 [00:02<00:03, 83.10it/s] 46%|████▌     | 230/501 [00:02<00:03, 86.81it/s] 48%|████▊     | 240/501 [00:02<00:02, 89.92it/s] 50%|████▉     | 250/501 [00:02<00:02, 92.20it/s] 52%|█████▏    | 261/501 [00:03<00:03, 76.32it/s] 54%|█████▍    | 272/501 [00:03<00:02, 82.38it/s] 56%|█████▋    | 282/501 [00:03<00:02, 86.10it/s] 58%|█████▊    | 292/501 [00:03<00:02, 88.60it/s] 60%|██████    | 302/501 [00:03<00:02, 89.50it/s] 62%|██████▏   | 312/501 [00:03<00:02, 91.53it/s] 64%|██████▍   | 322/501 [00:03<00:01, 92.92it/s] 66%|██████▋   | 332/501 [00:03<00:02, 73.67it/s] 68%|██████▊   | 342/501 [00:03<00:02, 78.83it/s] 70%|███████   | 352/501 [00:04<00:01, 83.89it/s] 72%|███████▏  | 362/501 [00:04<00:01, 88.14it/s] 74%|███████▍  | 373/501 [00:04<00:01, 93.08it/s] 77%|███████▋  | 384/501 [00:04<00:01, 96.13it/s] 79%|███████▉  | 395/501 [00:04<00:01, 97.59it/s] 81%|████████  | 405/501 [00:04<00:00, 97.18it/s] 83%|████████▎ | 415/501 [00:04<00:01, 71.66it/s] 85%|████████▍ | 425/501 [00:04<00:00, 76.48it/s] 87%|████████▋ | 435/501 [00:05<00:00, 81.18it/s] 89%|████████▉ | 446/501 [00:05<00:00, 86.99it/s] 91%|█████████ | 456/501 [00:05<00:00, 90.25it/s] 93%|█████████▎| 466/501 [00:05<00:00, 92.65it/s] 95%|█████████▌| 476/501 [00:05<00:00, 92.63it/s] 97%|█████████▋| 486/501 [00:05<00:00, 93.60it/s] 99%|█████████▉| 496/501 [00:05<00:00, 94.27it/s]                                                 .  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                     .  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/2 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                     .s.
+----------------------------------------------------------------------
+Ran 7 tests in 13.000s
+
+OK (skipped=1)
+<end of output>
+Test time =  13.46 sec
+----------------------------------------------------------
+Test Passed.
+"shufflers" end time: Sep 12 12:01 CEST
+"shufflers" time elapsed: 00:00:13
+----------------------------------------------------------
+
+31/32 Testing: solvers
+31/32 Test: solvers
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/rubik/solvers/tests/solvers.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/rubik/solvers/tests
+"solvers" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/54 [00:00<?, ?it/s] 35%|███▌      | 19/54 [00:00<00:00, 181.08it/s] 70%|███████   | 38/54 [00:00<00:00, 178.31it/s]                                                  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/64 [00:00<?, ?it/s] 28%|██▊       | 18/64 [00:00<00:00, 179.16it/s] 59%|█████▉    | 38/64 [00:00<00:00, 185.34it/s] 91%|█████████ | 58/64 [00:00<00:00, 189.56it/s]                                                  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/54 [00:00<?, ?it/s] 33%|███▎      | 18/54 [00:00<00:00, 169.66it/s] 69%|██████▊   | 37/54 [00:00<00:00, 177.14it/s]                                                  0%|          | 0/321 [00:00<?, ?it/s]  3%|▎         | 11/321 [00:00<00:03, 99.58it/s]  7%|▋         | 21/321 [00:00<00:03, 98.81it/s] 10%|▉         | 31/321 [00:00<00:03, 95.33it/s] 14%|█▍        | 45/321 [00:00<00:02, 110.55it/s] 18%|█▊        | 57/321 [00:00<00:02, 111.13it/s] 21%|██▏       | 69/321 [00:00<00:02, 110.94it/s] 25%|██▌       | 81/321 [00:00<00:02, 113.18it/s] 29%|██▉       | 93/321 [00:00<00:02, 113.88it/s] 34%|███▎      | 108/321 [00:00<00:01, 123.81it/s] 38%|███▊      | 121/321 [00:01<00:02, 91.40it/s]  42%|████▏     | 136/321 [00:01<00:01, 103.56it/s] 46%|████▌     | 148/321 [00:01<00:01, 107.46it/s] 50%|████▉     | 160/321 [00:01<00:01, 93.09it/s]  54%|█████▍    | 174/321 [00:01<00:01, 103.63it/s] 59%|█████▉    | 190/321 [00:01<00:01, 117.45it/s] 64%|██████▍   | 207/321 [00:01<00:00, 131.17it/s] 70%|██████▉   | 224/321 [00:01<00:00, 139.95it/s] 75%|███████▌  | 242/321 [00:02<00:00, 150.05it/s] 81%|████████  | 259/321 [00:02<00:00, 153.28it/s] 86%|████████▋ | 277/321 [00:02<00:00, 158.51it/s] 92%|█████████▏| 294/321 [00:02<00:00, 135.91it/s] 98%|█████████▊| 313/321 [00:02<00:00, 147.81it/s]                                                    0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/64 [00:00<?, ?it/s] 34%|███▍      | 22/64 [00:00<00:00, 218.60it/s] 69%|██████▉   | 44/64 [00:00<00:00, 214.41it/s]                                                  0%|          | 0/385 [00:00<?, ?it/s]  4%|▍         | 16/385 [00:00<00:02, 159.22it/s]  8%|▊         | 32/385 [00:00<00:02, 153.90it/s] 14%|█▎        | 52/385 [00:00<00:01, 172.98it/s] 18%|█▊        | 70/385 [00:00<00:01, 162.75it/s] 24%|██▍       | 93/385 [00:00<00:01, 184.19it/s] 30%|██▉       | 115/385 [00:00<00:01, 194.29it/s] 36%|███▌      | 137/385 [00:00<00:01, 199.38it/s] 41%|████      | 158/385 [00:00<00:01, 202.49it/s] 47%|████▋     | 181/385 [00:00<00:00, 208.44it/s] 54%|█████▍    | 207/385 [00:01<00:00, 185.79it/s] 60%|█████▉    | 230/385 [00:01<00:00, 195.77it/s] 66%|██████▌   | 253/385 [00:01<00:00, 204.39it/s] 72%|███████▏  | 278/385 [00:01<00:00, 216.05it/s] 79%|███████▉  | 304/385 [00:01<00:00, 226.77it/s] 85%|████████▌ | 328/385 [00:01<00:00, 229.16it/s] 92%|█████████▏| 354/385 [00:01<00:00, 236.58it/s] 98%|█████████▊| 378/385 [00:01<00:00, 216.59it/s]                                                    0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/54 [00:00<?, ?it/s] 72%|███████▏  | 39/54 [00:00<00:00, 385.93it/s]                                                  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/64 [00:00<?, ?it/s] 64%|██████▍   | 41/64 [00:00<00:00, 408.35it/s]                                                  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/54 [00:00<?, ?it/s] 70%|███████   | 38/54 [00:00<00:00, 375.20it/s]                                                  0%|          | 0/321 [00:00<?, ?it/s] 11%|█         | 34/321 [00:00<00:00, 333.21it/s] 21%|██▏       | 69/321 [00:00<00:00, 341.23it/s] 32%|███▏      | 104/321 [00:00<00:00, 314.90it/s] 43%|████▎     | 139/321 [00:00<00:00, 326.99it/s] 54%|█████▎    | 172/321 [00:00<00:00, 324.68it/s] 64%|██████▍   | 205/321 [00:00<00:00, 326.23it/s] 74%|███████▍  | 238/321 [00:00<00:00, 279.00it/s] 85%|████████▌ | 273/321 [00:00<00:00, 297.09it/s] 96%|█████████▌| 307/321 [00:00<00:00, 308.47it/s]                                                    0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/64 [00:00<?, ?it/s] 58%|█████▊    | 37/64 [00:00<00:00, 367.11it/s]                                                  0%|          | 0/385 [00:00<?, ?it/s]  9%|▉         | 35/385 [00:00<00:01, 343.87it/s] 18%|█▊        | 70/385 [00:00<00:00, 341.47it/s] 27%|██▋       | 105/385 [00:00<00:00, 339.74it/s] 36%|███▌      | 139/385 [00:00<00:00, 314.33it/s] 45%|████▌     | 174/385 [00:00<00:00, 324.00it/s] 55%|█████▍    | 211/385 [00:00<00:00, 336.87it/s] 64%|██████▎   | 245/385 [00:00<00:00, 334.48it/s] 72%|███████▏  | 279/385 [00:00<00:00, 294.61it/s] 81%|████████  | 312/385 [00:00<00:00, 304.33it/s] 90%|████████▉ | 345/385 [00:01<00:00, 309.50it/s] 98%|█████████▊| 379/385 [00:01<00:00, 318.06it/s]                                                    0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/54 [00:00<?, ?it/s] 74%|███████▍  | 40/54 [00:00<00:00, 398.99it/s]                                                  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/54 [00:00<?, ?it/s] 80%|███████▉  | 43/54 [00:00<00:00, 429.26it/s]                                                  0%|          | 0/321 [00:00<?, ?it/s] 12%|█▏        | 39/321 [00:00<00:00, 378.46it/s] 24%|██▍       | 77/321 [00:00<00:00, 330.36it/s] 36%|███▌      | 114/321 [00:00<00:00, 343.49it/s] 46%|████▋     | 149/321 [00:00<00:00, 343.49it/s] 58%|█████▊    | 185/321 [00:00<00:00, 346.53it/s] 69%|██████▊   | 220/321 [00:00<00:00, 320.82it/s] 79%|███████▉  | 253/321 [00:00<00:00, 320.51it/s] 89%|████████▉ | 286/321 [00:00<00:00, 322.58it/s]100%|██████████| 321/321 [00:00<00:00, 330.00it/s]                                                    0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/54 [00:00<?, ?it/s] 78%|███████▊  | 42/54 [00:00<00:00, 415.35it/s]                                                  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/54 [00:00<?, ?it/s] 74%|███████▍  | 40/54 [00:00<00:00, 397.48it/s]                                                  0%|          | 0/321 [00:00<?, ?it/s]  9%|▊         | 28/321 [00:00<00:01, 276.29it/s] 20%|█▉        | 63/321 [00:00<00:00, 316.92it/s] 30%|███       | 97/321 [00:00<00:00, 326.77it/s] 40%|████      | 130/321 [00:00<00:00, 326.63it/s] 51%|█████     | 163/321 [00:00<00:00, 301.82it/s] 62%|██████▏   | 198/321 [00:00<00:00, 315.72it/s] 72%|███████▏  | 232/321 [00:00<00:00, 321.42it/s] 83%|████████▎ | 267/321 [00:00<00:00, 329.94it/s] 94%|█████████▍| 301/321 [00:00<00:00, 290.33it/s]                                                    0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/54 [00:00<?, ?it/s] 80%|███████▉  | 43/54 [00:00<00:00, 421.49it/s]                                                  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/54 [00:00<?, ?it/s] 72%|███████▏  | 39/54 [00:00<00:00, 389.50it/s]                                                  0%|          | 0/321 [00:00<?, ?it/s] 11%|█         | 36/321 [00:00<00:00, 354.42it/s] 24%|██▎       | 76/321 [00:00<00:00, 380.12it/s] 36%|███▌      | 115/321 [00:00<00:00, 348.14it/s] 49%|████▊     | 156/321 [00:00<00:00, 370.05it/s] 60%|██████    | 194/321 [00:00<00:00, 373.48it/s] 72%|███████▏  | 232/321 [00:00<00:00, 335.38it/s] 85%|████████▌ | 273/321 [00:00<00:00, 355.28it/s] 97%|█████████▋| 312/321 [00:00<00:00, 365.24it/s]                                                    0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/54 [00:00<?, ?it/s] 76%|███████▌  | 41/54 [00:00<00:00, 405.50it/s]                                                  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/54 [00:00<?, ?it/s] 63%|██████▎   | 34/54 [00:00<00:00, 339.54it/s]                                                  0%|          | 0/321 [00:00<?, ?it/s] 12%|█▏        | 39/321 [00:00<00:00, 382.45it/s] 24%|██▍       | 78/321 [00:00<00:00, 348.13it/s] 37%|███▋      | 118/321 [00:00<00:00, 368.20it/s] 49%|████▊     | 156/321 [00:00<00:00, 369.75it/s] 60%|██████    | 194/321 [00:00<00:00, 337.28it/s] 73%|███████▎  | 235/321 [00:00<00:00, 359.29it/s] 85%|████████▌ | 273/321 [00:00<00:00, 364.61it/s] 97%|█████████▋| 310/321 [00:00<00:00, 366.00it/s]                                                    0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                     .  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/64 [00:00<?, ?it/s] 73%|███████▎  | 47/64 [00:00<00:00, 464.03it/s]                                                  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/27 [00:00<?, ?it/s] 52%|█████▏    | 14/27 [00:00<00:00, 138.20it/s]                                                  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/27 [00:00<?, ?it/s] 52%|█████▏    | 14/27 [00:00<00:00, 131.85it/s]                                                  0%|          | 0/529 [00:00<?, ?it/s]  2%|▏         | 12/529 [00:00<00:04, 112.62it/s]  5%|▍         | 24/529 [00:00<00:04, 112.75it/s]  7%|▋         | 36/529 [00:00<00:04, 100.67it/s]  9%|▉         | 47/529 [00:00<00:04, 103.09it/s] 11%|█         | 58/529 [00:00<00:04, 102.08it/s] 13%|█▎        | 69/529 [00:00<00:04, 102.11it/s] 15%|█▌        | 81/529 [00:00<00:04, 105.31it/s] 17%|█▋        | 92/529 [00:00<00:04, 96.44it/s]  19%|█▉        | 102/529 [00:01<00:04, 96.64it/s] 21%|██▏       | 113/529 [00:01<00:04, 98.59it/s] 23%|██▎       | 124/529 [00:01<00:04, 99.90it/s] 26%|██▌       | 135/529 [00:01<00:03, 101.51it/s] 28%|██▊       | 146/529 [00:01<00:04, 89.39it/s]  30%|██▉       | 157/529 [00:01<00:03, 93.45it/s] 32%|███▏      | 168/529 [00:01<00:03, 96.53it/s] 34%|███▍      | 180/529 [00:01<00:03, 100.54it/s] 36%|███▌      | 191/529 [00:01<00:03, 87.36it/s]  38%|███▊      | 202/529 [00:02<00:03, 91.67it/s] 40%|████      | 214/529 [00:02<00:03, 96.76it/s] 43%|████▎     | 226/529 [00:02<00:03, 100.85it/s] 45%|████▍     | 237/529 [00:02<00:02, 103.03it/s] 47%|████▋     | 248/529 [00:02<00:03, 85.58it/s]  49%|████▉     | 260/529 [00:02<00:02, 92.48it/s] 51%|█████▏    | 272/529 [00:02<00:02, 97.72it/s] 54%|█████▎    | 284/529 [00:02<00:02, 101.46it/s] 56%|█████▌    | 295/529 [00:03<00:02, 101.49it/s] 58%|█████▊    | 306/529 [00:03<00:02, 75.56it/s]  60%|██████    | 318/529 [00:03<00:02, 84.07it/s] 62%|██████▏   | 329/529 [00:03<00:02, 89.98it/s] 64%|██████▍   | 340/529 [00:03<00:01, 94.68it/s] 67%|██████▋   | 352/529 [00:03<00:01, 100.75it/s] 69%|██████▊   | 363/529 [00:03<00:01, 102.62it/s] 71%|███████   | 374/529 [00:04<00:02, 74.75it/s]  73%|███████▎  | 385/529 [00:04<00:01, 82.47it/s] 75%|███████▌  | 397/529 [00:04<00:01, 90.04it/s] 77%|███████▋  | 409/529 [00:04<00:01, 96.01it/s] 80%|███████▉  | 421/529 [00:04<00:01, 100.49it/s] 82%|████████▏ | 432/529 [00:04<00:00, 102.90it/s] 84%|████████▍ | 444/529 [00:04<00:00, 105.27it/s] 86%|████████▌ | 456/529 [00:04<00:00, 107.62it/s] 88%|████████▊ | 467/529 [00:05<00:00, 71.04it/s]  90%|█████████ | 478/529 [00:05<00:00, 79.13it/s] 92%|█████████▏| 489/529 [00:05<00:00, 85.92it/s] 95%|█████████▍| 500/529 [00:05<00:00, 90.67it/s] 97%|█████████▋| 511/529 [00:05<00:00, 95.07it/s] 99%|█████████▊| 522/529 [00:05<00:00, 98.31it/s]                                                   0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/27 [00:00<?, ?it/s] 56%|█████▌    | 15/27 [00:00<00:00, 145.93it/s]                                                  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/9 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/27 [00:00<?, ?it/s] 81%|████████▏ | 22/27 [00:00<00:00, 213.36it/s]                                                  0%|          | 0/1 [00:00<?, ?it/s]                                       0%|          | 0/1 [00:00<?, ?it/s]                                     .
+----------------------------------------------------------------------
+Ran 2 tests in 24.643s
+
+OK
+<end of output>
+Test time =  25.39 sec
+----------------------------------------------------------
+Test Passed.
+"solvers" end time: Sep 12 12:01 CEST
+"solvers" time elapsed: 00:00:25
+----------------------------------------------------------
+
+27/32 Testing: shapes
+27/32 Test: shapes
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/rubik/shapes/tests/shapes.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/rubik/shapes/tests
+"shapes" start time: Sep 12 12:01 CEST
+Output:
+----------------------------------------------------------
+...  0%|          | 0/81 [00:00<?, ?it/s]  4%|▎         | 3/81 [00:00<00:02, 27.13it/s]  7%|▋         | 6/81 [00:00<00:03, 21.85it/s] 11%|█         | 9/81 [00:00<00:03, 23.43it/s] 16%|█▌        | 13/81 [00:00<00:02, 28.12it/s] 20%|█▉        | 16/81 [00:00<00:02, 27.38it/s] 23%|██▎       | 19/81 [00:00<00:02, 26.85it/s] 27%|██▋       | 22/81 [00:00<00:02, 27.13it/s] 31%|███       | 25/81 [00:00<00:02, 27.09it/s] 35%|███▍      | 28/81 [00:01<00:01, 27.59it/s] 38%|███▊      | 31/81 [00:01<00:02, 20.83it/s] 43%|████▎     | 35/81 [00:01<00:01, 23.89it/s] 47%|████▋     | 38/81 [00:01<00:01, 24.24it/s] 52%|█████▏    | 42/81 [00:01<00:01, 26.50it/s] 56%|█████▌    | 45/81 [00:01<00:01, 26.74it/s] 60%|██████    | 49/81 [00:01<00:01, 29.23it/s] 65%|██████▌   | 53/81 [00:01<00:00, 31.67it/s] 70%|███████   | 57/81 [00:02<00:00, 32.29it/s] 75%|███████▌  | 61/81 [00:02<00:00, 33.65it/s] 80%|████████  | 65/81 [00:02<00:00, 34.78it/s] 85%|████████▌ | 69/81 [00:02<00:00, 35.80it/s] 90%|█████████ | 73/81 [00:02<00:00, 36.70it/s] 95%|█████████▌| 77/81 [00:02<00:00, 37.02it/s]100%|██████████| 81/81 [00:02<00:00, 37.19it/s]                                                 0%|          | 0/729 [00:00<?, ?it/s]  0%|          | 2/729 [00:00<01:00, 12.01it/s]  1%|          | 4/729 [00:00<01:02, 11.60it/s]  1%|          | 6/729 [00:00<01:07, 10.70it/s]  1%|          | 8/729 [00:00<01:08, 10.53it/s]  1%|▏         | 10/729 [00:00<01:03, 11.30it/s]  2%|▏         | 12/729 [00:01<01:09, 10.25it/s]  2%|▏         | 14/729 [00:01<01:07, 10.65it/s]  2%|▏         | 16/729 [00:01<01:02, 11.33it/s]  2%|▏         | 18/729 [00:01<01:00, 11.73it/s]  3%|▎         | 20/729 [00:01<01:01, 11.59it/s]  3%|▎         | 22/729 [00:01<00:57, 12.40it/s]  3%|▎         | 24/729 [00:02<00:56, 12.48it/s]  4%|▎         | 26/729 [00:02<00:54, 12.81it/s]  4%|▍         | 28/729 [00:02<00:53, 13.07it/s]  4%|▍         | 30/729 [00:02<00:52, 13.44it/s]  4%|▍         | 32/729 [00:02<00:50, 13.93it/s]  5%|▍         | 34/729 [00:02<00:45, 15.19it/s]  5%|▌         | 37/729 [00:02<00:41, 16.51it/s]  5%|▌         | 39/729 [00:03<00:39, 17.28it/s]  6%|▌         | 41/729 [00:03<00:38, 17.89it/s]  6%|▌         | 43/729 [00:03<00:37, 18.41it/s]  6%|▋         | 46/729 [00:03<00:36, 18.74it/s]  7%|▋         | 49/729 [00:03<00:35, 19.24it/s]  7%|▋         | 52/729 [00:03<00:34, 19.55it/s]  7%|▋         | 54/729 [00:03<00:34, 19.40it/s]  8%|▊         | 57/729 [00:03<00:32, 20.68it/s]  8%|▊         | 60/729 [00:04<00:32, 20.35it/s]  9%|▊         | 63/729 [00:04<00:34, 19.11it/s]  9%|▉         | 65/729 [00:04<00:34, 19.28it/s]  9%|▉         | 68/729 [00:04<00:33, 19.94it/s] 10%|▉         | 71/729 [00:04<00:33, 19.73it/s] 10%|█         | 74/729 [00:04<00:32, 20.23it/s] 11%|█         | 77/729 [00:04<00:31, 20.49it/s] 11%|█         | 80/729 [00:05<00:32, 20.13it/s] 11%|█▏        | 83/729 [00:05<00:31, 20.32it/s] 12%|█▏        | 86/729 [00:05<00:30, 20.99it/s] 12%|█▏        | 89/729 [00:05<00:30, 20.86it/s] 13%|█▎        | 92/729 [00:05<00:30, 20.98it/s] 13%|█▎        | 95/729 [00:05<00:30, 21.02it/s] 13%|█▎        | 98/729 [00:05<00:30, 20.38it/s] 14%|█▍        | 101/729 [00:06<00:31, 20.18it/s] 14%|█▍        | 104/729 [00:06<00:31, 20.04it/s] 15%|█▍        | 107/729 [00:06<00:30, 20.44it/s] 15%|█▌        | 110/729 [00:06<00:29, 20.74it/s] 16%|█▌        | 113/729 [00:06<00:29, 20.88it/s] 16%|█▌        | 116/729 [00:06<00:29, 20.98it/s] 16%|█▋        | 119/729 [00:06<00:28, 21.60it/s] 17%|█▋        | 122/729 [00:07<00:28, 21.24it/s] 17%|█▋        | 125/729 [00:07<00:28, 21.13it/s] 18%|█▊        | 128/729 [00:07<00:28, 21.38it/s] 18%|█▊        | 131/729 [00:07<00:28, 20.99it/s] 18%|█▊        | 134/729 [00:07<00:28, 20.58it/s] 19%|█▉        | 137/729 [00:07<00:28, 20.59it/s] 19%|█▉        | 140/729 [00:07<00:28, 20.84it/s] 20%|█▉        | 143/729 [00:08<00:27, 21.07it/s] 20%|██        | 146/729 [00:08<00:28, 20.40it/s] 20%|██        | 149/729 [00:08<00:28, 20.46it/s] 21%|██        | 152/729 [00:08<00:28, 20.44it/s] 21%|██▏       | 155/729 [00:08<00:28, 20.05it/s] 22%|██▏       | 158/729 [00:08<00:28, 20.03it/s] 22%|██▏       | 161/729 [00:08<00:28, 20.21it/s] 22%|██▏       | 164/729 [00:09<00:28, 19.95it/s] 23%|██▎       | 167/729 [00:09<00:27, 20.27it/s] 23%|██▎       | 170/729 [00:09<00:26, 20.86it/s] 24%|██▎       | 173/729 [00:09<00:27, 20.38it/s] 24%|██▍       | 176/729 [00:09<00:27, 20.34it/s] 25%|██▍       | 179/729 [00:09<00:26, 20.66it/s] 25%|██▍       | 182/729 [00:09<00:26, 20.90it/s] 25%|██▌       | 185/729 [00:10<00:26, 20.49it/s] 26%|██▌       | 188/729 [00:10<00:26, 20.69it/s] 26%|██▌       | 191/729 [00:10<00:25, 20.84it/s] 27%|██▋       | 194/729 [00:10<00:25, 20.91it/s] 27%|██▋       | 197/729 [00:10<00:24, 21.74it/s] 27%|██▋       | 200/729 [00:10<00:23, 22.21it/s] 28%|██▊       | 203/729 [00:10<00:22, 22.89it/s] 28%|██▊       | 206/729 [00:11<00:23, 22.36it/s] 29%|██▊       | 209/729 [00:11<00:22, 22.76it/s] 29%|██▉       | 212/729 [00:11<00:22, 23.17it/s] 29%|██▉       | 215/729 [00:11<00:22, 23.01it/s] 30%|██▉       | 218/729 [00:11<00:22, 22.89it/s] 30%|███       | 221/729 [00:11<00:22, 22.62it/s] 31%|███       | 224/729 [00:11<00:22, 22.89it/s] 31%|███       | 227/729 [00:11<00:21, 23.26it/s] 32%|███▏      | 230/729 [00:12<00:23, 21.22it/s] 32%|███▏      | 233/729 [00:12<00:22, 21.94it/s] 32%|███▏      | 236/729 [00:12<00:21, 22.45it/s] 33%|███▎      | 239/729 [00:12<00:21, 22.33it/s] 33%|███▎      | 242/729 [00:12<00:21, 22.50it/s] 34%|███▎      | 245/729 [00:12<00:21, 22.90it/s] 34%|███▍      | 248/729 [00:12<00:21, 22.59it/s] 34%|███▍      | 251/729 [00:13<00:21, 22.55it/s] 35%|███▍      | 254/729 [00:13<00:20, 23.27it/s] 35%|███▌      | 257/729 [00:13<00:20, 23.02it/s] 36%|███▌      | 260/729 [00:13<00:20, 23.40it/s] 36%|███▌      | 263/729 [00:13<00:20, 23.09it/s] 36%|███▋      | 266/729 [00:13<00:20, 23.06it/s] 37%|███▋      | 269/729 [00:13<00:19, 23.20it/s] 37%|███▋      | 272/729 [00:13<00:19, 23.07it/s] 38%|███▊      | 275/729 [00:14<00:19, 23.15it/s] 38%|███▊      | 278/729 [00:14<00:19, 23.09it/s] 39%|███▊      | 281/729 [00:14<00:19, 23.45it/s] 39%|███▉      | 284/729 [00:14<00:19, 23.22it/s] 39%|███▉      | 287/729 [00:14<00:19, 22.51it/s] 40%|███▉      | 290/729 [00:14<00:20, 21.93it/s] 40%|████      | 293/729 [00:14<00:19, 22.52it/s] 41%|████      | 296/729 [00:15<00:19, 22.32it/s] 41%|████      | 299/729 [00:15<00:19, 21.58it/s] 41%|████▏     | 302/729 [00:15<00:19, 21.64it/s] 42%|████▏     | 305/729 [00:15<00:19, 21.61it/s] 42%|████▏     | 308/729 [00:15<00:19, 21.79it/s] 43%|████▎     | 311/729 [00:15<00:18, 22.32it/s] 43%|████▎     | 314/729 [00:15<00:18, 22.12it/s] 43%|████▎     | 317/729 [00:15<00:18, 22.43it/s] 44%|████▍     | 320/729 [00:16<00:18, 22.36it/s] 44%|████▍     | 323/729 [00:16<00:18, 22.37it/s] 45%|████▍     | 326/729 [00:16<00:17, 22.82it/s] 45%|████▌     | 329/729 [00:16<00:17, 22.72it/s] 46%|████▌     | 332/729 [00:16<00:17, 22.39it/s] 46%|████▌     | 335/729 [00:16<00:17, 22.85it/s] 46%|████▋     | 338/729 [00:16<00:16, 23.56it/s] 47%|████▋     | 341/729 [00:17<00:16, 23.05it/s] 47%|████▋     | 344/729 [00:17<00:16, 22.94it/s] 48%|████▊     | 347/729 [00:17<00:17, 22.03it/s] 48%|████▊     | 350/729 [00:17<00:16, 22.56it/s] 48%|████▊     | 353/729 [00:17<00:16, 22.63it/s] 49%|████▉     | 356/729 [00:17<00:16, 22.70it/s] 49%|████▉     | 359/729 [00:17<00:16, 22.77it/s] 50%|████▉     | 362/729 [00:17<00:16, 22.87it/s] 50%|█████     | 365/729 [00:18<00:15, 22.97it/s] 50%|█████     | 368/729 [00:18<00:15, 23.24it/s] 51%|█████     | 371/729 [00:18<00:15, 23.36it/s] 51%|█████▏    | 374/729 [00:18<00:15, 23.13it/s] 52%|█████▏    | 377/729 [00:18<00:15, 23.19it/s] 52%|█████▏    | 380/729 [00:18<00:14, 23.32it/s] 53%|█████▎    | 383/729 [00:18<00:15, 22.98it/s] 53%|█████▎    | 386/729 [00:18<00:14, 23.25it/s] 53%|█████▎    | 389/729 [00:19<00:14, 22.67it/s] 54%|█████▍    | 392/729 [00:19<00:14, 23.04it/s] 54%|█████▍    | 395/729 [00:19<00:14, 23.33it/s] 55%|█████▍    | 398/729 [00:19<00:14, 22.76it/s] 55%|█████▌    | 401/729 [00:19<00:14, 22.86it/s] 55%|█████▌    | 404/729 [00:19<00:14, 23.13it/s] 56%|█████▌    | 407/729 [00:19<00:14, 22.77it/s] 56%|█████▌    | 410/729 [00:20<00:13, 22.86it/s] 57%|█████▋    | 413/729 [00:20<00:13, 23.03it/s] 57%|█████▋    | 416/729 [00:20<00:13, 22.63it/s] 57%|█████▋    | 419/729 [00:20<00:13, 23.02it/s] 58%|█████▊    | 422/729 [00:20<00:12, 23.95it/s] 58%|█████▊    | 425/729 [00:20<00:12, 23.74it/s] 59%|█████▊    | 428/729 [00:20<00:12, 24.22it/s] 59%|█████▉    | 431/729 [00:20<00:12, 23.93it/s] 60%|█████▉    | 434/729 [00:21<00:12, 24.15it/s] 60%|█████▉    | 437/729 [00:21<00:11, 24.44it/s] 60%|██████    | 440/729 [00:21<00:12, 23.98it/s] 61%|██████    | 443/729 [00:21<00:11, 24.30it/s] 61%|██████    | 446/729 [00:21<00:11, 24.43it/s] 62%|██████▏   | 449/729 [00:21<00:11, 24.19it/s] 62%|██████▏   | 452/729 [00:21<00:11, 24.04it/s] 62%|██████▏   | 455/729 [00:21<00:11, 24.16it/s] 63%|██████▎   | 458/729 [00:22<00:11, 23.66it/s] 63%|██████▎   | 461/729 [00:22<00:11, 24.05it/s] 64%|██████▎   | 464/729 [00:22<00:11, 23.92it/s] 64%|██████▍   | 467/729 [00:22<00:10, 24.33it/s] 64%|██████▍   | 470/729 [00:22<00:10, 24.48it/s] 65%|██████▍   | 473/729 [00:22<00:10, 24.22it/s] 65%|██████▌   | 476/729 [00:22<00:10, 24.73it/s] 66%|██████▌   | 479/729 [00:22<00:09, 25.43it/s] 66%|██████▌   | 482/729 [00:23<00:09, 24.79it/s] 67%|██████▋   | 485/729 [00:23<00:09, 24.62it/s] 67%|██████▋   | 488/729 [00:23<00:09, 24.84it/s] 67%|██████▋   | 491/729 [00:23<00:09, 24.43it/s] 68%|██████▊   | 494/729 [00:23<00:09, 24.72it/s] 68%|██████▊   | 497/729 [00:23<00:09, 24.72it/s] 69%|██████▊   | 500/729 [00:23<00:09, 24.39it/s] 69%|██████▉   | 503/729 [00:23<00:09, 24.67it/s] 69%|██████▉   | 506/729 [00:23<00:08, 24.84it/s] 70%|██████▉   | 509/729 [00:24<00:08, 24.82it/s] 70%|███████   | 512/729 [00:24<00:08, 24.76it/s] 71%|███████   | 515/729 [00:24<00:08, 24.10it/s] 71%|███████   | 518/729 [00:24<00:08, 24.28it/s] 71%|███████▏  | 521/729 [00:24<00:08, 23.89it/s] 72%|███████▏  | 524/729 [00:24<00:08, 23.22it/s] 72%|███████▏  | 527/729 [00:24<00:08, 23.24it/s] 73%|███████▎  | 530/729 [00:25<00:08, 23.34it/s] 73%|███████▎  | 533/729 [00:25<00:08, 23.06it/s] 74%|███████▎  | 536/729 [00:25<00:08, 22.86it/s] 74%|███████▍  | 539/729 [00:25<00:08, 22.77it/s] 74%|███████▍  | 542/729 [00:25<00:08, 22.07it/s] 75%|███████▍  | 545/729 [00:25<00:08, 22.67it/s] 75%|███████▌  | 548/729 [00:25<00:07, 22.95it/s] 76%|███████▌  | 551/729 [00:25<00:07, 23.32it/s] 76%|███████▌  | 554/729 [00:26<00:07, 22.93it/s] 76%|███████▋  | 557/729 [00:26<00:07, 22.72it/s] 77%|███████▋  | 560/729 [00:26<00:07, 23.36it/s] 77%|███████▋  | 563/729 [00:26<00:06, 24.18it/s] 78%|███████▊  | 566/729 [00:26<00:06, 23.56it/s] 78%|███████▊  | 569/729 [00:26<00:06, 23.90it/s] 78%|███████▊  | 572/729 [00:26<00:06, 23.99it/s] 79%|███████▉  | 575/729 [00:26<00:06, 23.52it/s] 79%|███████▉  | 578/729 [00:27<00:06, 23.66it/s] 80%|███████▉  | 581/729 [00:27<00:06, 23.45it/s] 80%|████████  | 584/729 [00:27<00:06, 23.82it/s] 81%|████████  | 587/729 [00:27<00:05, 24.10it/s] 81%|████████  | 590/729 [00:27<00:05, 24.21it/s] 81%|████████▏ | 593/729 [00:27<00:05, 24.55it/s] 82%|████████▏ | 596/729 [00:27<00:05, 24.60it/s] 82%|████████▏ | 599/729 [00:27<00:05, 24.06it/s] 83%|████████▎ | 602/729 [00:28<00:05, 24.05it/s] 83%|████████▎ | 605/729 [00:28<00:05, 24.28it/s] 83%|████████▎ | 608/729 [00:28<00:05, 24.02it/s] 84%|████████▍ | 611/729 [00:28<00:04, 24.25it/s] 84%|████████▍ | 614/729 [00:28<00:04, 23.87it/s] 85%|████████▍ | 617/729 [00:28<00:04, 23.53it/s] 85%|████████▌ | 620/729 [00:28<00:05, 20.13it/s] 85%|████████▌ | 623/729 [00:29<00:06, 17.18it/s] 86%|████████▌ | 626/729 [00:29<00:05, 18.76it/s] 86%|████████▋ | 629/729 [00:29<00:05, 19.80it/s] 87%|████████▋ | 632/729 [00:29<00:04, 20.44it/s] 87%|████████▋ | 635/729 [00:29<00:04, 21.37it/s] 88%|████████▊ | 638/729 [00:29<00:04, 22.15it/s] 88%|████████▊ | 641/729 [00:29<00:03, 22.10it/s] 88%|████████▊ | 644/729 [00:30<00:03, 22.96it/s] 89%|████████▉ | 647/729 [00:30<00:03, 23.55it/s] 89%|████████▉ | 650/729 [00:30<00:03, 22.69it/s] 90%|████████▉ | 653/729 [00:30<00:03, 23.15it/s] 90%|████████▉ | 656/729 [00:30<00:03, 23.43it/s] 90%|█████████ | 659/729 [00:30<00:03, 22.94it/s] 91%|█████████ | 662/729 [00:30<00:02, 22.91it/s] 91%|█████████ | 665/729 [00:30<00:02, 22.42it/s] 92%|█████████▏| 668/729 [00:31<00:02, 22.84it/s] 92%|█████████▏| 671/729 [00:31<00:02, 22.96it/s] 92%|█████████▏| 674/729 [00:31<00:02, 22.93it/s] 93%|█████████▎| 677/729 [00:31<00:02, 22.84it/s] 93%|█████████▎| 680/729 [00:31<00:02, 23.12it/s] 94%|█████████▎| 683/729 [00:31<00:02, 22.78it/s] 94%|█████████▍| 686/729 [00:31<00:01, 23.00it/s] 95%|█████████▍| 689/729 [00:31<00:01, 23.57it/s] 95%|█████████▍| 692/729 [00:32<00:01, 22.74it/s] 95%|█████████▌| 695/729 [00:32<00:01, 23.37it/s] 96%|█████████▌| 698/729 [00:32<00:01, 23.48it/s] 96%|█████████▌| 701/729 [00:32<00:01, 23.69it/s] 97%|█████████▋| 704/729 [00:32<00:01, 23.56it/s] 97%|█████████▋| 707/729 [00:32<00:00, 23.34it/s] 97%|█████████▋| 710/729 [00:32<00:00, 23.89it/s] 98%|█████████▊| 713/729 [00:32<00:00, 24.11it/s] 98%|█████████▊| 716/729 [00:33<00:00, 23.44it/s] 99%|█████████▊| 719/729 [00:33<00:00, 23.23it/s] 99%|█████████▉| 722/729 [00:33<00:00, 23.43it/s] 99%|█████████▉| 725/729 [00:33<00:00, 22.78it/s]100%|█████████▉| 728/729 [00:33<00:00, 23.06it/s]                                                 ...  0%|          | 0/46 [00:00<?, ?it/s]                                        0%|          | 0/379 [00:00<?, ?it/s]  9%|▊         | 33/379 [00:00<00:01, 314.07it/s] 17%|█▋        | 65/379 [00:00<00:01, 213.36it/s] 23%|██▎       | 89/379 [00:00<00:01, 193.46it/s] 29%|██▉       | 110/379 [00:00<00:01, 189.76it/s] 34%|███▍      | 130/379 [00:00<00:01, 184.69it/s] 39%|███▉      | 149/379 [00:00<00:01, 179.08it/s] 44%|████▍     | 168/379 [00:00<00:01, 178.64it/s] 49%|████▉     | 186/379 [00:00<00:01, 177.76it/s] 54%|█████▍    | 204/379 [00:01<00:00, 176.96it/s] 59%|█████▊    | 222/379 [00:01<00:00, 173.05it/s] 64%|██████▎   | 241/379 [00:01<00:00, 175.22it/s] 68%|██████▊   | 259/379 [00:01<00:00, 172.38it/s] 73%|███████▎  | 277/379 [00:01<00:00, 167.80it/s] 78%|███████▊  | 294/379 [00:01<00:00, 149.66it/s] 82%|████████▏ | 310/379 [00:01<00:00, 146.53it/s] 86%|████████▋ | 327/379 [00:01<00:00, 151.89it/s] 91%|█████████ | 344/379 [00:01<00:00, 155.18it/s] 95%|█████████▌| 361/379 [00:02<00:00, 154.81it/s]100%|█████████▉| 378/379 [00:02<00:00, 158.38it/s]                                                  .........
+----------------------------------------------------------------------
+Ran 15 tests in 45.937s
+
+OK
+<end of output>
+Test time =  46.42 sec
+----------------------------------------------------------
+Test Passed.
+"shapes" end time: Sep 12 12:02 CEST
+"shapes" time elapsed: 00:00:46
+----------------------------------------------------------
+
+25/32 Testing: window
+25/32 Test: window
+Command: "/Users/oliver/ClionProjects/testing/venv/bin/python3.11" "/Users/oliver/ClionProjects/testing/src/media/tests/window.py"
+Directory: /Users/oliver/ClionProjects/testing/cmake-build-release-2/src/media/tests
+"window" start time: Sep 12 12:02 CEST
+Output:
+----------------------------------------------------------
+[2023-09-12 12:02:08,931]: WARNING: (/Users/oliver/ClionProjects/testing/src/media/window.py:33) We have failed to read from the camera on attempt = 1
+.[2023-09-12 12:02:10,184]: WARNING: (/Users/oliver/ClionProjects/testing/src/media/window.py:33) We have failed to read from the camera on attempt = 1
+[2023-09-12 12:02:10,184]: WARNING: (/Users/oliver/ClionProjects/testing/src/media/window.py:55) We have failed to read from the camera too many times (retries = 0).
+.
+----------------------------------------------------------------------
+Ran 2 tests in 1.353s
+
+OK
+<end of output>
+Test time =   2.10 sec
+----------------------------------------------------------
+Test Passed.
+"window" end time: Sep 12 12:02 CEST
+"window" time elapsed: 00:00:02
+----------------------------------------------------------
+
+End testing: Sep 12 12:02 CEST

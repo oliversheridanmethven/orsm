@@ -67,4 +67,6 @@ TabWidth: 4
 UseTab: Never
 SeparateDefinitionBlocks: Always
 EmptyLineBeforeAccessModifier: Always
+InsertNewlineAtEOF: true
+
 

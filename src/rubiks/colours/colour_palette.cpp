@@ -14,28 +14,29 @@ namespace colours
         std::stringstream coloured;
         /*
      * The coloured string will have the following ANSI colour code specification:
-     * "\033[{FORMAT_ATTRIBUTE};{FORGROUND_COLOR};{BACKGROUND_COLOR}m{TEXT}\033[{RESET_FORMATE_ATTRIBUTE}m"
+     * "\033[{FORMAT_ATTRIBUTE};{FOREGROUND_COLOR};{BACKGROUND_COLOR}m{TEXT}\033[{RESET_FORMATE_ATTRIBUTE}m"
      *
      * */
         coloured << "\033[0;";
         switch (colour)
         {
-            case Colour::red:
+            using enum ColourPalette::Colour;
+            case red:
                 coloured << "31";
                 break;
-            case Colour::yellow:
+            case yellow:
                 coloured << "33";
                 break;
-            case Colour::blue:
+            case blue:
                 coloured << "34";
                 break;
-            case Colour::green:
+            case green:
                 coloured << "32";
                 break;
-            case Colour::white:
+            case white:
                 coloured << "97";
                 break;
-            case Colour::light_yellow:
+            case light_yellow:
                 coloured << "93";
                 break;
         }
@@ -47,17 +48,19 @@ namespace colours
     {
         switch (colour)
         {
-            case Colour::red:
+            using enum ColourPalette::Colour;
+
+            case red:
                 return "red";
-            case Colour::yellow:
+            case yellow:
                 return "orange";
-            case Colour::blue:
+            case blue:
                 return "blue";
-            case Colour::green:
+            case green:
                 return "green";
-            case Colour::white:
+            case white:
                 return "white";
-            case Colour::light_yellow:
+            case light_yellow:
                 return "yellow";
         }
         throw std::runtime_error("Unknown colour name encountered.");
@@ -68,11 +71,11 @@ namespace colours
         return static_cast<std::underlying_type<std::decay<decltype(colour)>::type>::type>(colour);
     }
 
-    using Colour = ColourPalette::Colour;
-    const std::vector<ColourPalette::Colour> ColourPalette::colours = {Colour::red,
-                                                                       Colour::yellow,
-                                                                       Colour::blue,
-                                                                       Colour::green,
-                                                                       Colour::white,
-                                                                       Colour::light_yellow};
+    using enum ColourPalette::Colour;
+    const std::vector<ColourPalette::Colour> ColourPalette::colours = {red,
+                                                                       yellow,
+                                                                       blue,
+                                                                       green,
+                                                                       white,
+                                                                       light_yellow};
 }// namespace colours

@@ -57,6 +57,14 @@ plugins:
         - "*license.html"
         - "*LICENSE.html"
         - _skbuild/*
+        - cmake-build*/*
+        - .cache/*
+        - .cmake/*
+        - Testing/*
+        - testing.egg-info/*
+        - CMakeFiles/*
+        - build/*
+
   - same-dir # Allows us to operate from the root directory.
   - awesome-pages:
       collapse_single_pages: true

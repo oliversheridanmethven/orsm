@@ -2,6 +2,4 @@ nav:
     - Home: README.md
     - Documentation: docs
     - Source: src
-    - Building: build
     - ...
-    - FAQs: docs/faqs.md

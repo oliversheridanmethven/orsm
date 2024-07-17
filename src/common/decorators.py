@@ -5,6 +5,7 @@ import traceback
 
 def disable_decorator(disable, /, *args, reason=None, notify=True, **kwargs):
     """Disable a decorator if a condition is met."""
+    location = traceback.extract_stack()[-2]
 
     def null_decorator(func):
         @wraps(func)
@@ -15,9 +16,7 @@ def disable_decorator(disable, /, *args, reason=None, notify=True, **kwargs):
 
     def notification(decorator):
         if notify:
-            stack = traceback.extract_stack()
-            location = stack[-3]
-            logging.info(f"Disabling the decorator: {decorator.__name__} at {location.filename}:{location.lineno} because: {reason}")
+            logging.debug(f"Disabling the decorator: {decorator.__name__} (decoration at {location.filename}:{location.lineno}) because: {reason}")
 
     def nullify_decorator(decorator):
         notification(decorator)
@@ -34,14 +33,14 @@ def disable_decorator(disable, /, *args, reason=None, notify=True, **kwargs):
         enabled_decorator = disable_decorator(False, reason=reason, notify=False)(decorator)
         disabled_decorator = disable_decorator(True, reason=reason, notify=False)(decorator)
 
-        def conditional_decorator(decorator):
-            @wraps(decorator)
+        def conditional_decorator(func):
+            @wraps(func)
             def wrapper(*args, **kwargs):
                 logging.debug("Inside the conditional decorator")
                 runtime_disable = disable(*args, **kwargs)
                 if runtime_disable:
                     notification(decorator)
-                dec_func = disabled_decorator(decorator) if runtime_disable else enabled_decorator(decorator)
+                dec_func = disabled_decorator(func) if runtime_disable else enabled_decorator(func)
                 return dec_func(*args, **kwargs)
 
             return wrapper
@@ -89,7 +88,7 @@ if __name__ == "__main__":
             self.value = None
 
         def __call__(self, *args, **kwargs):
-            logging.info("Calling predicate function.")
+            logging.debug("Calling predicate function.")
             return self.value
 
         def set_value(self, value):

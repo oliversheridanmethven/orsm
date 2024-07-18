@@ -17,6 +17,7 @@ classifiers = [
 
 [tool.setuptools_scm]
 version_file = "src/orsm/_version.py"
+local_scheme = "no-local-version"
 
 [tool.setuptools.dynamic]
 dependencies = { file = ["requirements.txt"] }

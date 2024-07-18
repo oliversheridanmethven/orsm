@@ -10,7 +10,7 @@ difficulties is also with C extensions.
 
 import unittest
 
-from output import Suppressor
+from orsm.output import Suppressor
 import io
 import sys
 import contextlib

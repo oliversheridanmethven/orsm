@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 import unittest
-from logger import log, set_logging_level, log_file_extensions
-from variables import variable_names_and_objects
+from orsm.logger import log, set_logging_level, log_file_extensions
+from orsm.variables import variable_names_and_objects
 import sys
 from subprocess import Popen, PIPE
 import cli_print_logs
@@ -17,7 +17,7 @@ class Logger(unittest.TestCase):
     def test_regular_output(self):
         names_and_messages = {}
         with LogCapture(level=log.PRINT) as l:
-            for name, logger in variable_names_and_objects(log.trace, log.debug, log.info, log.print, log.warning, log.error, log.critical):
+            for name, logger in variable_names_and_objects(log.trace, log.debug, log.info, log.print, log.warning, log.error, log.critical, vars_only=True):
                 message = f"A message from {name}"
                 logger(message)
                 if log.getLevelNamesMapping()[name.upper()] >= log.PRINT:
@@ -28,7 +28,7 @@ class Logger(unittest.TestCase):
         names_and_messages = {}
         with LogCapture() as l:
             set_logging_level(level=log.TRACE)
-            for name, logger in variable_names_and_objects(log.trace, log.debug, log.info, log.print, log.warning, log.error, log.critical):
+            for name, logger in variable_names_and_objects(log.trace, log.debug, log.info, log.print, log.warning, log.error, log.critical, vars_only=True):
                 message = f"A message from {name}"
                 logger(message)
                 names_and_messages[name] = message
@@ -43,7 +43,7 @@ class LoggerVerbosity(unittest.TestCase):
         output, err = p.communicate(b"")
         rc = p.returncode
         self.assertEqual(rc, 0, f"We were unable to run the subprocess {command = }, encountering\noutput:\n{output=}\nerror:\n{err}")
-        for name, logger in variable_names_and_objects(log.trace, log.debug, log.info, log.print, log.warning, log.error, log.critical):
+        for name, logger in variable_names_and_objects(log.trace, log.debug, log.info, log.print, log.warning, log.error, log.critical, vars_only=True):
             message = f"A message from {name}"
             if log.getLevelNamesMapping()[name.upper()] > log.DEFAULT_LEVEL:
                 self.assertIn(message, err.decode())
@@ -66,7 +66,7 @@ class LoggerVerbosity(unittest.TestCase):
             rc = p.returncode
             self.assertEqual(rc, 0, f"We were unable to run the subprocess {command = } with {flag = }, encountering\noutput:\n{output=}\nerror:\n{err}")
             all_output = "".join([i.decode() for i in [output, err]])
-            for name, logger in variable_names_and_objects(log.trace, log.debug, log.info, log.print, log.warning, log.error, log.critical):
+            for name, logger in variable_names_and_objects(log.trace, log.debug, log.info, log.print, log.warning, log.error, log.critical, vars_only=True):
                 message = f"A message from {name}"
                 if log.getLevelNamesMapping()[name.upper()] >= level:
                     self.assertIn(message, all_output)

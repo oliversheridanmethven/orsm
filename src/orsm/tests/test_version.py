@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import unittest
-from variables import variable_names_and_objects
-import version
+from orsm.variables import variable_names_and_objects
+from orsm import version
 
 
 class VersionInfo(unittest.TestCase):

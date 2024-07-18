@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=40.8.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -9,34 +9,28 @@ authors = [{ name="Dr Oliver Sheridan-Methven", email="oliver.sheridan-methven@h
 description = "Useful utility scripts"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = [
-    "py",
-    "varname",
-    "more-itertools",
-    "haggis",
-    "termcolor",
-    "testfixtures",
-    "pillow",
-    "numpy",
-]
+dynamic = ["dependencies", "optional-dependencies"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
 
-[project.optional-dependencies]
-gui = ["PyQt5"]
-cli = [
-      "mkdocs",
-      "mkdocs-material",
-      "mkdocs-exclude",
-      "mkdocs-same-dir",
-      "mkdocs-awesome-pages-plugin",
-      "mkdocs-git-revision-date-localized-plugin",
-      "mkdocs-material[imaging]",
-      "mike",
-]
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+
+#[project.optional-dependencies]
+#cli = [
+#      "mkdocs",
+#      "mkdocs-material",
+#      "mkdocs-exclude",
+#      "mkdocs-same-dir",
+#      "mkdocs-awesome-pages-plugin",
+#      "mkdocs-git-revision-date-localized-plugin",
+#      "mkdocs-material[imaging]",
+#      "mike",
+#]
 
 [project.urls]
 Homepage = "https://github.com/oliversheridanmethven/orsm"

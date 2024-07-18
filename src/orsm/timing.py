@@ -5,8 +5,8 @@ Timing functionality.
 """
 
 import time
-from output import Suppressor
-from variables import variable_names_and_objects
+from orsm.output import Suppressor
+from orsm.variables import variable_names_and_objects
 import signal
 
 

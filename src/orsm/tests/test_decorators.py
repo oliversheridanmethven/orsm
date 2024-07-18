@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import unittest
 
-from decorators import disable_decorator, null_decorator
+from orsm.decorators import disable_decorator, null_decorator
 from functools import wraps
 
 

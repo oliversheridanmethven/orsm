@@ -1,4 +1,4 @@
-from logger import log as logging
+from orsm.logger import log as logging
 from functools import wraps
 import traceback
 

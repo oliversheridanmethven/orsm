@@ -6,8 +6,8 @@ print(sys.path)
 
 import unittest
 import time
-from timing import time_function, Timeout, TimeoutError
-from arguments import all_kwarg_combinations
+from orsm.timing import time_function, Timeout, TimeoutError
+from orsm.arguments import all_kwarg_combinations
 
 
 class TimeoutHandler(unittest.TestCase):

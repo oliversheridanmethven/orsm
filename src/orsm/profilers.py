@@ -8,11 +8,11 @@ This is largely copied from: https://medium.com/uncountable-engineering/pythons-
 from line_profiler import LineProfiler
 from functools import wraps
 import inspect
-from logger import log as logging
-import cli
+from orsm.logger import log as logging
+from orsm import cli
 import atexit
 import tracemalloc
-from decorators import disable_decorator
+from orsm.decorators import disable_decorator
 
 
 def is_in_debugger():

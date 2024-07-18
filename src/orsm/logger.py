@@ -4,7 +4,7 @@ Some wrapping around the default logging module.
 """
 
 import logging
-from variables import variable_names_and_objects
+from orsm.variables import variable_names_and_objects
 import sys
 from haggis.logs import add_logging_level
 from termcolor import colored

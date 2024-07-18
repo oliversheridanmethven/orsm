@@ -10,6 +10,8 @@ from orsm.logger import log as logging
 from orsm.logger import set_logging_level, redirect_logging_to_file, suppress_console_output, remove_console_output
 from orsm import repo
 from textwrap import dedent
+from pathlib import Path
+
 
 class HelpFormatter(argparse.RawDescriptionHelpFormatter, argparse.ArgumentDefaultsHelpFormatter):
     pass
@@ -68,6 +70,24 @@ class ShowVersion(argparse.Action):
     def __call__(self, parser, args, values, option_string=None):
         print(repo.repo_version())
         sys.exit(0)
+
+
+class PathToFile(argparse.Action):
+    def __call__(self, parser, args, values, option_string=None):
+        assert isinstance(values, str) and str
+        file_path = Path(values)
+        assert file_path.exists(), f"{file_path = } does not exist."
+        assert file_path.is_file(), f"{file_path = } is not a file."
+        setattr(args, self.dest, file_path)
+
+
+class PathToDir(argparse.Action):
+    def __call__(self, parser, args, values, option_string=None):
+        assert isinstance(values, str) and str
+        file_path = Path(values)
+        assert file_path.exists(), f"{file_path = } does not exist."
+        assert file_path.is_dir(), f"{file_path = } is not a directory."
+        setattr(args, self.dest, file_path)
 
 
 def setup_standard_parser(*args, **kwargs):

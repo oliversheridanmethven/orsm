@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 import unittest
-from common.logger import log, set_logging_level, log_file_extensions
-from common.variables import variable_names_and_objects
+from logger import log, set_logging_level, log_file_extensions
+from variables import variable_names_and_objects
 import sys
 from subprocess import Popen, PIPE
 import cli_print_logs

@@ -5,8 +5,8 @@ Timing functionality.
 """
 
 import time
-from common.output import Suppressor
-from common.variables import variable_names_and_objects
+from output import Suppressor
+from variables import variable_names_and_objects
 import signal
 
 

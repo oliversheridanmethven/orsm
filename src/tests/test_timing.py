@@ -6,7 +6,7 @@ print(sys.path)
 
 import unittest
 import time
-from common.timing import time_function, Timeout, TimeoutError
+from timing import time_function, Timeout, TimeoutError
 from arguments import all_kwarg_combinations
 
 

@@ -4,7 +4,7 @@ Handling arguments.
 """
 
 import itertools
-from common.variables import variable_names_and_objects
+from variables import variable_names_and_objects
 
 
 def all_combinations(iterable, *, min_length=None, max_length=None):

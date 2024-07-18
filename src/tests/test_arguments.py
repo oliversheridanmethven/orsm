@@ -5,7 +5,7 @@ import sys
 print(sys.path)
 
 import unittest
-from common.arguments import all_combinations, all_kwarg_combinations
+from arguments import all_combinations, all_kwarg_combinations
 
 
 class Combinations(unittest.TestCase):

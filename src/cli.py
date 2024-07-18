@@ -4,10 +4,9 @@ Tools for constructing the CLI
 """
 
 import argparse
-import os
 import sys
 
-from common.logger import log, set_logging_level, redirect_logging_to_file, suppress_console_output, remove_console_output
+from logger import log, set_logging_level, redirect_logging_to_file, suppress_console_output, remove_console_output
 import version
 from textwrap import dedent
 

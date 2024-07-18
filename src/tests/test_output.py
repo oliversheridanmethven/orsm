@@ -10,11 +10,10 @@ difficulties is also with C extensions.
 
 import unittest
 
-from common.output import Suppressor
+from output import Suppressor
 import io
 import sys
 import contextlib
-from binding.examples import hello_world as hello_world_c_extension
 
 
 class SuppressorTest(unittest.TestCase):
@@ -23,7 +22,6 @@ class SuppressorTest(unittest.TestCase):
         f = io.StringIO()
         with contextlib.redirect_stdout(f):
             print(expect_output)
-            hello_world_c_extension()
         self.assertTrue(expect_output in f.getvalue())
 
     def test_no_suppressor_stderr(self):

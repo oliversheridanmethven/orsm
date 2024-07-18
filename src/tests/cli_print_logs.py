@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 
-from common import cli
-import argparse
-from common.variables import variable_names_and_objects
-from common.logger import log, set_logging_level
+import cli
+from variables import variable_names_and_objects
+from logger import log
 from time import sleep
 
 

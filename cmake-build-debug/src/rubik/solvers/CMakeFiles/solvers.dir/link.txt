@@ -1,2 +1,0 @@
-/usr/bin/ar qc libsolvers.a CMakeFiles/solvers.dir/meet_in_middle_recursive.cpp.o
-/usr/local/opt/llvm/bin/llvm-ranlib libsolvers.a

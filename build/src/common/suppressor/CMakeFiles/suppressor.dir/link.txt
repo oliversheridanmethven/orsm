@@ -1,2 +1,0 @@
-/opt/local/bin/ar qc libsuppressor.a CMakeFiles/suppressor.dir/suppressor.c.o
-/opt/local/bin/ranlib libsuppressor.a

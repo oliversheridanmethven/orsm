@@ -1,7 +1,0 @@
-py
-varname
-more-itertools
-haggis
-termcolor
-testfixtures
-opencv-python

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libpaths.a CMakeFiles/paths.dir/path.cpp.o
-/usr/local/opt/llvm/bin/llvm-ranlib libpaths.a

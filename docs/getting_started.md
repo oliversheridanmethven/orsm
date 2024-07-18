@@ -25,7 +25,4 @@ Alternatively, you can launch your own server by running
 ```bash
 mike serve
 ```
-and clicking the link to the server is has created.
-(Typically this is e.g. [http://127.0.0.1:8000/
-](http://127.0.0.1:8000/
-)).
+and clicking the link to the server.

@@ -2,21 +2,6 @@
 
 ## List of dependencies
 
-The project relies on a few dependencies, the most notable of
-which include:
-
-### The source code
-
-- GCC (with C23 and C++23 support).
-- CMake (for building).
-- GLIB (for logging).
-- Argp (for the CLI).
-- Criterion (for testing).
-
-### Python bindings
-
-- scikit-build (for Python bindings).
-
 ### The documentation
 
 - mkdocs (for documentation).
@@ -35,5 +20,5 @@ or similar.
 
 ### Virtual environments
 
-In our setup, we use a Python-3.11 based virtual environment
+In our setup, we use a Python-3.12 based virtual environment
 based in the root directory of the project. 

@@ -15,7 +15,7 @@ def nullify_decorator(decorator):
     return null_decorator
 
 
-def disable_decorator(disable, /, *args, reason=None, notify=True, **kwargs):
+def disable_decorator(should_disable, /, *args, reason=None, notify=True, **kwargs):
     """Disable a decorator if a condition is met."""
     location = traceback.extract_stack()[-2]
 
@@ -28,11 +28,11 @@ def disable_decorator(disable, /, *args, reason=None, notify=True, **kwargs):
         return nullify_decorator(null_decorator)
 
     # For "static" condition checking.
-    if isinstance(disable, bool):
-        return _nullify_decorator if disable else null_decorator
+    if isinstance(should_disable, bool):
+        return _nullify_decorator if should_disable else null_decorator
 
     # For "runtime" condition checking.
-    assert callable(disable), f"Require a callable predicate: {disable =}"
+    assert callable(should_disable), f"Require a callable predicate: {should_disable =}"
 
     def conditionally_null_decorator(decorator):
         enabled_decorator = disable_decorator(False, reason=reason, notify=False)(decorator)
@@ -42,7 +42,7 @@ def disable_decorator(disable, /, *args, reason=None, notify=True, **kwargs):
             @wraps(func)
             def wrapper(*args, **kwargs):
                 logging.debug("Inside the conditional decorator")
-                runtime_disable = disable(*args, **kwargs)
+                runtime_disable = should_disable(*args, **kwargs)
                 if runtime_disable:
                     notification(decorator)
                 dec_func = disabled_decorator(func) if runtime_disable else enabled_decorator(func)

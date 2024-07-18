@@ -7,7 +7,6 @@ from abc import ABC, abstractmethod
 from rubiks.shapes.shape import Path, Shape
 from common.variables import variable_names_and_objects
 from common.logger import progressbar
-from common.profiling import profiler, profile
 from functools import wraps
 
 

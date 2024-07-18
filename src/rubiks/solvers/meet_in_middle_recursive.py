@@ -3,7 +3,6 @@
 from rubiks.paths.path import Path
 from rubiks.solvers.solver import Solver, check_solver_inputs, next_generation_of_shapes_without_paths
 from common.logger import log
-from common.profiling import profile
 from common.variables import variable_names_and_objects
 
 

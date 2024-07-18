@@ -32,6 +32,25 @@ def set_verbosity_level(level):
     return SetVerbosityAction
 
 
+class Predicate:
+
+    def __init__(self, value=None, /):
+        self.value = value
+
+    def __call__(self, *args, **kwargs):
+        return self.value
+
+
+profiling_disabled = Predicate(True)
+
+
+class SetProfiling(argparse.Action):
+    def __call__(self, parser, args, values, option_string=None):
+        global profiling_disabled
+        log.info(f"Enabling profiling decorators.")
+        profiling_disabled.value = False
+
+
 class SetLogFileAction(argparse.Action):
     def __call__(self, parser, args, values, option_string=None):
         filename = "" if values is None else values
@@ -74,6 +93,7 @@ def setup_standard_parser(*args, **kwargs):
     parser.add_argument("--silent", help="Suppress most logging and output. Absolutely silent!", action=set_verbosity_level(log.ERROR), nargs=0)
     parser.add_argument("--log_files", type=str, metavar="FILENAME", help="Store log output to files. Split into regular output and error output.", action=SetLogFileAction, nargs="?")
     parser.add_argument("--suppress_console_output", help="Whether to suppress output to the console.", action=SetConsoleSuppression, nargs=0)
+    parser.add_argument("--profiling", help="Show results from profilers", action=SetProfiling, nargs=0)
     return parser
 
 

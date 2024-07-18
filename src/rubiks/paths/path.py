@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from copy import deepcopy
-from common.profiling import profile
 
 
 class Path:
@@ -57,7 +56,6 @@ class Path:
         new._set_path()
         return new
 
-    # @profile
     def __copy__(self):
         new = type(self)(self.shape)
         new.moves = deepcopy(self.moves)
@@ -65,7 +63,6 @@ class Path:
         new._set_path()
         return new
 
-    # @profile
     def add(self, *, move, reverse, **kwargs):
         new = self.__copy__()
         new._append(move=move, reverse=reverse)

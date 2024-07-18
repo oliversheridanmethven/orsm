@@ -4,7 +4,7 @@
 
 To download the repo run
 ```bash
-git clone https://github.com/oliversheridanmethven/testing.git
+git clone https://github.com/oliversheridanmethven/orsm.git
 ```
 
 ### Dependencies

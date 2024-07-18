@@ -3,8 +3,8 @@ def repo_name():
 
 
 def repo_version():
-    # TODO: Get the build or version control system to generate this...
-    return "vX.Y.Z"
+    from ._version import version
+    return version
 
 
 def repo_author():

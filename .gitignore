@@ -10,3 +10,4 @@ misc/
 *.log
 
 dist/
+src/orsm/_version.py

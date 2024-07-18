@@ -1,20 +1,22 @@
 [build-system]
-requires = ["setuptools>=40.8.0", "wheel"]
+requires = ["setuptools>=40.8.0", "wheel", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "orsm"
-version = "0.0.1"
 authors = [{ name="Dr Oliver Sheridan-Methven", email="oliver.sheridan-methven@hotmail.co.uk" }]
 description = "Useful utility scripts"
 readme = "README.md"
 requires-python = ">=3.12"
-dynamic = ["dependencies", "optional-dependencies"]
+dynamic = ["dependencies", "optional-dependencies", "version"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+
+[tool.setuptools_scm]
+version_file = "src/orsm/_version.py"
 
 [tool.setuptools.dynamic]
 dependencies = { file = ["requirements.txt"] }

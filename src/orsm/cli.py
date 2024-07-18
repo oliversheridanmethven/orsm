@@ -8,7 +8,7 @@ import sys
 
 from orsm.logger import log as logging
 from orsm.logger import set_logging_level, redirect_logging_to_file, suppress_console_output, remove_console_output
-from orsm import version
+from orsm import repo
 from textwrap import dedent
 
 class HelpFormatter(argparse.RawDescriptionHelpFormatter, argparse.ArgumentDefaultsHelpFormatter):
@@ -66,21 +66,21 @@ class SetConsoleSuppression(argparse.Action):
 
 class ShowVersion(argparse.Action):
     def __call__(self, parser, args, values, option_string=None):
-        print(version.repo_version())
+        print(repo.repo_version())
         sys.exit(0)
 
 
 def setup_standard_parser(*args, **kwargs):
     epilogue = dedent(f"""
     Version: 
-        {version.repo_name()} {version.repo_version()}
+        {repo.repo_name()} {repo.repo_version()}
         
     Author: 
-        {version.repo_author()}
+        {repo.repo_author()}
         
     Maintained by: 
-        {version.repo_author()}
-        <{version.repo_email()}>
+        {repo.repo_author()}
+        <{repo.repo_email()}>
     """)
     parser = argparse.ArgumentParser(*args, **kwargs, formatter_class=HelpFormatter, allow_abbrev=False, epilog=epilogue)
     parser.add_argument("--version", help="Show the version of this program.", action=ShowVersion, nargs=0)

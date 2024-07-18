@@ -1,7 +1,0 @@
-add_executable(hello_world_test hello_world.c)
-target_link_libraries(hello_world_test testing hello_world_c)
-add_test(NAME hello_world_test COMMAND hello_world_test)
-
-add_executable(hello_world_test_cpp hello_world.cpp)
-target_link_libraries(hello_world_test_cpp testing hello_world_cpp)
-add_test(NAME hello_world_test_cpp COMMAND hello_world_test_cpp)

@@ -1,12 +1,12 @@
-site_name: Testing
+site_name: ORSM
 
 docs_dir: .
 site_dir: site
-site_url: https://oliversheridanmethven.github.io/testing
-site_description: The testing suite.
+site_url: https://oliversheridanmethven.github.io/orsm
+site_description: The ORSM suite.
 site_author: Dr Oliver Sheridan-Methven
-repo_name: testing
-repo_url: https://github.com/oliversheridanmethven/testing
+repo_name: orsm
+repo_url: https://github.com/oliversheridanmethven/orsm
 
 use_directory_urls: false
 # Because we use the `README.md` convention rather than
@@ -40,7 +40,7 @@ extra_css:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/oliversheridanmethven/testing
+      link: https://github.com/oliversheridanmethven/orsm
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/oliver-sheridan-methven/
     - icon: fontawesome/solid/envelope
@@ -57,19 +57,11 @@ plugins:
         - "*license.html"
         - "*LICENSE.html"
         - _skbuild/*
-        - cmake-build*/*
         - .cache/*
-        - .cmake/*
-        - Testing/*
-        - testing.egg-info/*
-        - CMakeFiles/*
-        - build/*
+        - orsm.egg-info/*
 
   - same-dir # Allows us to operate from the root directory.
   - awesome-pages:
       collapse_single_pages: true
   - git-revision-date-localized:
       enable_creation_date: true
-#  - git-committers:
-#      repository: oliversheridanmethven/testing
-#      branch: main

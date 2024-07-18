@@ -1,4 +1,4 @@
-# Testing
+# ORSM
 
 ## Author
 
@@ -7,10 +7,9 @@ Dr Oliver Sheridan-Methven
 
 ## Description
 
-A collection of various code snippets designed to 
-test various ideas and code fragments, akin to a code scratch
-space. 
+A collection of various code snippets that are frequently 
+useful (or entertaining). 
 
 ## Documentation 
 
-The full documentation can be found here: [Documentation](https://oliversheridanmethven.github.io/testing/).
+The full documentation can be found here: [Documentation](https://oliversheridanmethven.github.io/orsm/).

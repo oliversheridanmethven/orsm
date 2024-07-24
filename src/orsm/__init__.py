@@ -1,1 +1,1 @@
-from ._version import *
+from orsm._version import *

@@ -2,42 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://oliversheridanmethven.github.io/orsm/index.html</loc>
-         <lastmod>2024-07-18</lastmod>
+         <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://oliversheridanmethven.github.io/orsm/LICENSE.html</loc>
-         <lastmod>2024-07-18</lastmod>
+         <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://oliversheridanmethven.github.io/orsm/docs/advanced.html</loc>
-         <lastmod>2024-07-18</lastmod>
+         <loc>https://oliversheridanmethven.github.io/orsm/documentation/SUMMARY.html</loc>
+         <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://oliversheridanmethven.github.io/orsm/docs/dependencies.html</loc>
-         <lastmod>2024-07-18</lastmod>
+         <loc>https://oliversheridanmethven.github.io/orsm/documentation/orsm/cli/cli.html</loc>
+         <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://oliversheridanmethven.github.io/orsm/docs/faqs.html</loc>
-         <lastmod>2024-07-18</lastmod>
+         <loc>https://oliversheridanmethven.github.io/orsm/documentation/orsm/cli/repo.html</loc>
+         <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://oliversheridanmethven.github.io/orsm/docs/getting_started.html</loc>
-         <lastmod>2024-07-18</lastmod>
+         <loc>https://oliversheridanmethven.github.io/orsm/documentation/orsm/combinations/combinations.html</loc>
+         <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://oliversheridanmethven.github.io/orsm/docs/todo.html</loc>
-         <lastmod>2024-07-18</lastmod>
+         <loc>https://oliversheridanmethven.github.io/orsm/documentation/orsm/decorators/disabling.html</loc>
+         <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://oliversheridanmethven.github.io/orsm/src/orsm/index.html</loc>
-         <lastmod>2024-07-18</lastmod>
+         <loc>https://oliversheridanmethven.github.io/orsm/documentation/orsm/decorators/nullifying.html</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://oliversheridanmethven.github.io/orsm/documentation/orsm/logger/logger.html</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://oliversheridanmethven.github.io/orsm/documentation/orsm/logger/progress.html</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://oliversheridanmethven.github.io/orsm/documentation/orsm/outputs/suppressors.html</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://oliversheridanmethven.github.io/orsm/documentation/orsm/profilers/memory/memory_profilers.html</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://oliversheridanmethven.github.io/orsm/documentation/orsm/profilers/time/time_profilers.html</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://oliversheridanmethven.github.io/orsm/documentation/orsm/timing/timing.html</loc>
+         <lastmod>2024-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://oliversheridanmethven.github.io/orsm/documentation/orsm/variables/variables.html</loc>
+         <lastmod>2024-07-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

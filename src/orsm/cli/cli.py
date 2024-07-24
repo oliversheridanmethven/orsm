@@ -109,7 +109,7 @@ def setup_standard_parser(*argparse_args, **argparse_kwargs) -> argparse.Argumen
 
     Returns
     -------
-    argparse.ArgumentParser:
+    argparse.ArgumentParser :
         An argument parser.
 
     """
@@ -151,7 +151,7 @@ def standard_parse(*argparse_args, **argparse_kwargs) -> argparse.Namespace:
 
     Returns
     -------
-    argparse.Namespace:
+    argparse.Namespace :
         The namespace generated from the standard parse.
 
     """
@@ -165,8 +165,8 @@ def unit_test_parse(*argparse_args, **argparse_kwargs) -> None:
 
     Notes
     -----
-        To allow our command line combinations to be parsed ahead of running unit tests. Useful for logging.
-        Taken from: https://stackoverflow.com/a/44248445/5134817
+    To allow our command line combinations to be parsed ahead of running unit tests. Useful for logging.
+    Taken from: https://stackoverflow.com/a/44248445/5134817
 
     Parameters
     ----------
@@ -177,7 +177,7 @@ def unit_test_parse(*argparse_args, **argparse_kwargs) -> None:
 
     Returns
     -------
-    None:
+    None :
 
     """
     import sys

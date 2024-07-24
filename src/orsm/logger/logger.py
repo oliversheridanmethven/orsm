@@ -4,7 +4,7 @@ Some wrapping around the default logging module.
 Exports `log` as our alias for the usual logging module. Users
 are encouraged to using the following alias.
 
-from osrm.logger.logger import log as logging
+>>> from osrm.logger.logger import log as logging
 """
 
 import logging
@@ -21,7 +21,7 @@ add_logging_level('PRINT', logging.WARNING - 5)
 
 
 class MyFormatter(logging.Formatter):
-    """A nice formatter for logging messages."""
+    #A nice formatter for logging messages.
     line_formatting = f" {colored('(%(pathname)s:%(lineno)d)', 'light_grey')}"
     timestamp_formatting = f"{colored('[%(asctime)s]: ', 'green')}"
     trace_format = f"{colored('TRACE', 'cyan')}: %(msg)s"

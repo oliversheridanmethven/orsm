@@ -36,15 +36,15 @@ class TestVariableNamesAndObjects(unittest.TestCase):
 
 
     def test_import_variable(self):
-        from variables_foo import bar as _bar
+        from .variables_foo import bar as _bar
         self.assertEqual("_bar", next(iter(variable_names_and_objects(_bar)))[0])
 
     def test_import_function(self):
-        from variables_foo import baz as _baz
+        from .variables_foo import baz as _baz
         self.assertEqual("_baz", next(iter(variable_names_and_objects(_baz)))[0])
 
     def test_import_class(self):
-        from variables_foo import qux as _qux
+        from .variables_foo import qux as _qux
         self.assertEqual("_qux", next(iter(variable_names_and_objects(_qux)))[0])
 
 

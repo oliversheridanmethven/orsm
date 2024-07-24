@@ -34,7 +34,7 @@ theme:
     primary: custom
 
 extra_css:
-  - docs/colour_scheme.css
+  - mkdoc_scripts/colour_scheme.css
 
 extra:
   social:
@@ -52,7 +52,7 @@ plugins:
   - social
   - gen-files:
       scripts:
-      - scripts/gen_ref_pages.py
+      - mkdoc_scripts/generate_documentation_pages.py
   - mkdocstrings:
       handlers:
         python:
@@ -64,6 +64,7 @@ plugins:
   - exclude:
       glob:
         - venv/*
+        - docs/*
         - "*license.html"
         - "*LICENSE.html"
         - _skbuild/*
@@ -72,12 +73,6 @@ plugins:
 
   - same-dir # Allows us to operate from the root directory.
   - awesome-pages:
-#      collapse_single_pages: true
+      collapse_single_pages: true
   - git-revision-date-localized:
       enable_creation_date: true
-
-nav:
-# rest of the navigation...
-- Home: README.md
-- License: LICENSE.md
-- ...

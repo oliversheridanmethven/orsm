@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
-from orsm import cli
+from orsm.cli import cli
 from orsm.variables.variables import variable_names_and_objects
-from orsm.logger.logger import log
+from orsm.logger.logger import log as logging
 from time import sleep
 
 
 def main(**kwargs):
-    for name, logger in variable_names_and_objects(log.trace, log.debug, log.info, log.print, log.warning, log.error, log.critical, vars_only=True):
+    for name, logger in variable_names_and_objects(logging.trace, logging.debug, logging.info, logging.print, logging.warning, logging.error, logging.critical, vars_only=True):
         sleep(0.01)  # So we can see the timestamp increments more clearly.
         logger(f"A message from {name}")
 

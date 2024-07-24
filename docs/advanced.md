@@ -37,3 +37,10 @@ the most relevant commit by calling:
 mkdocs gh-deploy --clean
 ```
 
+# Pushing onto PyPi
+
+```bash
+python -m build
+python -m twine upload --verbose --skip-existing --repository pypi dist/*
+```
+

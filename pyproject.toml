@@ -8,7 +8,7 @@ authors = [{ name = "Dr Oliver Sheridan-Methven", email = "oliver.sheridan-methv
 description = "Useful utility scripts"
 readme = "README.md"
 requires-python = ">=3.12"
-dynamic = ["dependencies", "optional-dependencies", "version"]
+dynamic = ["dependencies", "version"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -22,9 +22,8 @@ local_scheme = "no-local-version"
 [tool.setuptools.dynamic]
 dependencies = { file = ["requirements.txt"] }
 
-
 [project.optional-dependencies]
-cli = [
+dev = [
     "mkdocs",
     "mkdocs-material",
     "mkdocs-exclude",
@@ -37,7 +36,7 @@ cli = [
     "mkdocs-literate-nav",
     "mkdocs-section-index",
     "mkdocs-gen-files",
-    "mike",
+    "mike"
 ]
 
 [project.urls]

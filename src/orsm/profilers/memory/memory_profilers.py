@@ -4,6 +4,8 @@ Memory profiler.
 from functools import wraps
 import tracemalloc
 from orsm.logger.logger import log as logging
+from orsm.decorators.disabling import disable_decorator
+from orsm.cli import cli
 from typing import Callable
 
 
@@ -24,7 +26,7 @@ class MemoryProfiler:
 
 memory_profiler = MemoryProfiler()
 
-
+@disable_decorator(cli.profiling_disabled, reason="Memory profiling has not been enabled from the command line.")
 def profile_memory(func: Callable) -> Callable:
     """
     Decorator to profile a function's memory usage.

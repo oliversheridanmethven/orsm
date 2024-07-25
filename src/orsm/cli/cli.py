@@ -11,6 +11,7 @@ from orsm.logger.logger import set_logging_level, redirect_logging_to_file, supp
 from orsm.cli import repo
 from textwrap import dedent
 from pathlib import Path
+import atexit
 
 
 class HelpFormatter(argparse.RawDescriptionHelpFormatter, argparse.ArgumentDefaultsHelpFormatter):
@@ -50,6 +51,13 @@ class SetProfiling(argparse.Action):
         global profiling_disabled
         logging.info(f"Enabling profiling decorators.")
         profiling_disabled.value = False
+
+@atexit.register
+def _print_profilers():
+    if not profiling_disabled():
+        from orsm.profilers import _profilers
+        for profiler in _profilers:
+            profiler.print_stats()
 
 
 class SetLogFileAction(argparse.Action):

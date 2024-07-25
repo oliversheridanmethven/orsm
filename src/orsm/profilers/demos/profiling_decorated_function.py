@@ -1,5 +1,6 @@
-from orsm import cli
-from orsm.profilers import profile_memory, profile_time
+from orsm.cli import cli
+from orsm.profilers.time.time_profilers import profile_time
+from orsm.profilers.memory.memory_profilers import profile_memory
 
 if __name__ == "__main__":
     parser = cli.setup_standard_parser()
